@@ -1,11 +1,10 @@
-import { Router, route } from "svelte-guard-history-router";
+import { Router, route, NotFound } from "svelte-guard-history-router";
 
-import Categories from "./pages/Queues.svelte";
+import Categories from "./pages/Categories.svelte";
 import Category from "./pages/Category.svelte";
 import About from "./pages/About.svelte";
 import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
-import NotFound from "./pages/NotFound.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
 

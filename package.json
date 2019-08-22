@@ -6,6 +6,10 @@
     "prepare": "rollup -c",
     "start": "rollup -c -w"
   },
+  "dependencies": {
+    "svelte-guard-history-router": "git+https://github.com/arlac77/svelte-guard-history-router.git",
+    "svelte-session-manager": "git+https://github.com/arlac77/svelte-session-manager.git"
+  },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.6",
     "browser-sync": "^2.26.7",
@@ -37,14 +41,14 @@
   },
   "homepage": "https://github.com/arlac77/konsum-frontend-svelte#readme",
   "config": {
-    "api": "api",
+    "api": "/services/konsum/api",
     "proxyTarget": "https://somewhere/",
-    "urlPrefix": "/services/konsum-frontend-svelte/"
+    "urlPrefix": "/services/konsum"
   },
   "pacman": {
-    "groups": "{{group}}",
+    "groups": "home automation",
     "hooks": "pacman/install.sh",
-    "installdir": "/services/konsum-frontend-svelte/frontend",
+    "installdir": "/services/konsum/frontend",
     "content": {
       "${installdir}/": {
         "base": "public"

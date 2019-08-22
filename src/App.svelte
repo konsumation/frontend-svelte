@@ -1,6 +1,6 @@
 <script>
   import { Outlet, Link } from "svelte-guard-history-router";
-  import { router } from "../main.mjs";
+  import { router } from "./main.mjs";
 </script>
 
 <div class="wrapper">
