@@ -1,1 +1,76 @@
-{"name": "konsum-frontend-svelte"}
+{
+  "name": "konsum-frontend-svelte",
+  "version": "0.0.0-semantic-release",
+  "description": "svelte web frontend for konsum",
+  "scripts": {
+    "prepare": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "devDependencies": {
+    "@semantic-release/exec": "^3.3.6",
+    "browser-sync": "^2.26.7",
+    "connect-history-api-fallback": "^1.6.0",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.19.1",
+    "npm-pkgbuild": "^6.9.0",
+    "postcss": "^7.0.17",
+    "postcss-import": "^12.0.1",
+    "rollup": "^1.20.1",
+    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.1.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "semantic-release": "^15.13.23",
+    "svelte": "^3.9.1",
+    "svelte-preprocess": "^2.15.0"
+  },
+  "engines": {
+    "node": ">=10.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arlac77/konsum-frontend-svelte.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arlac77/konsum-frontend-svelte/issues"
+  },
+  "homepage": "https://github.com/arlac77/konsum-frontend-svelte#readme",
+  "config": {
+    "api": "api",
+    "proxyTarget": "https://somewhere/",
+    "urlPrefix": "/services/konsum-frontend-svelte/"
+  },
+  "pacman": {
+    "groups": "{{group}}",
+    "hooks": "pacman/install.sh",
+    "installdir": "/services/konsum-frontend-svelte/frontend",
+    "content": {
+      "${installdir}/": {
+        "base": "public"
+      },
+      "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
+    },
+    "depends": {
+      "systemd": ">=242.32",
+      "nginx-mainline": ">=1.17.3"
+    }
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --pkgver ${nextRelease.version} pkgbuild pacman makepkg"
+        }
+      ]
+    ]
+  },
+  "template": {
+    "repository": {
+      "url": "https://github.com/arlac77/npm-package-template-svelte-app.git"
+    }
+  }
+}
