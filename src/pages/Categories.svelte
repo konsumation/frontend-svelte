@@ -9,9 +9,9 @@
   <table class="bordered striped hoverable">
     <thead>
       <tr>
-        <th class="sortable">Name</th>
-        <th class="sortable">Unit</th>
-        <th class="sortable">Description</th>
+        <th aria-sort="none">Name</th>
+        <th aria-sort="none">Unit</th>
+        <th aria-sort="none">Description</th>
       </tr>
     </thead>
     <tbody>
