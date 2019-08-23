@@ -2,11 +2,11 @@
   import { name, version, description, config } from "../../package.json";
   import { session } from "svelte-session-manager";
 
-  const dateFormatter = new Intl.DateTimeFormat(/*{
+  const dateFormatter = new Intl.DateTimeFormat("default", {
     hour: "numeric",
     minute: "numeric",
     second: "numeric"
-  }*/);
+  });
 </script>
 
 <div>
