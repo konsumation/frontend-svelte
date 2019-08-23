@@ -18,7 +18,7 @@
       {#each $categories as category (category.name)}
         <tr>
           <td>
-            <Link href="/category/{category.name}"/>
+            <Link href="/category/{category.name}">{category.name}</Link>
           </td>
           <td>{category.unit}</td>
           <td>{category.description}</td>
