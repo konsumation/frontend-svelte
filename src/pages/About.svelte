@@ -1,5 +1,4 @@
 <script>
-  import { onDestroy } from "svelte";
   import { name, version, description, config } from "../../package.json";
   import { session } from "svelte-session-manager";
 
