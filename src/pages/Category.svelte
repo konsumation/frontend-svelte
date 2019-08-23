@@ -3,13 +3,16 @@
   import { TimeSeries, DataSet } from "svelte-time-series";
 
   import { categories } from "../store.mjs";
+  import { category, values } from "../main.mjs";
   export let context;
 
+  /*
   let category;
 
   const categoryKey = context.keys.get("category");
 
   $: category = $categories.find(c => c.name === $categoryKey);
+*/
 
   const points = [
     { x: 1979, y: 7.19 },
@@ -67,5 +70,16 @@
     <TimeSeries {padding} {width} {height} {xTicks} {yTicks} {points}>
       <DataSet {padding} {width} {height} {xTicks} {yTicks} {points} />
     </TimeSeries>
+
+    <table>
+      <tbody>
+        {#each $values as { time, value }, i}
+          <tr>
+            <td>{time}</td>
+            <td>{value}</td>
+          </tr>
+        {/each}
+      </tbody>
+    </table>
   {:else}No such category {context.props.category}{/if}
 </div>
