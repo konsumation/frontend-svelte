@@ -14,6 +14,8 @@
   $: category = $categories.find(c => c.name === $categoryKey);
 */
 
+  $: console.log($values);
+
   const points = [
     { x: 1979, y: 7.19 },
     { x: 1980, y: 7.83 },
@@ -71,6 +73,7 @@
       <DataSet {padding} {width} {height} {xTicks} {yTicks} {points} />
     </TimeSeries>
 
+<!--
     <table>
       <tbody>
         {#each $values as { time, value }, i}
@@ -81,5 +84,6 @@
         {/each}
       </tbody>
     </table>
+    -->
   {:else}No such category {context.props.category}{/if}
 </div>
