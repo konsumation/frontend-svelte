@@ -3,6 +3,7 @@
   "version": "0.0.0-semantic-release",
   "description": "svelte web frontend for konsum",
   "scripts": {
+    "deploy": "scp public/* root@odroid1:/services/konsum/frontend/",
     "prepare": "rollup -c",
     "start": "rollup -c -w",
     "package": "npm-pkgbuild pkgbuild pacman makepkg"
