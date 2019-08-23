@@ -7,31 +7,32 @@
   export let context;
 
   const padding = { top: 20, right: 15, bottom: 22, left: 25 };
-  const yTicks = [0, 3, 6, 9, 12];
+  const yTicks = [0, 5, 10, 16, 20];
   const xTicks = [941673600, 1566467076];
-  let points = [{x:941673600, y:0}];
+  let points = [{ x: 941673600, y: 0 }];
 
   $: {
     const vv = $values;
 
     if (vv) {
       points = [];
-      let last = vv[0].value;
+      let last = vv[0];
 
-      for (const { value, time } of vv) {
-        const y = value - last;
+      for (const c of vv) {
+        const days = (c.time - last.time) / (24 * 60 * 60);
+        const y = (c.value - last.value) / days;
 
-        if (time > 0 && y >= 0) {
-          points.push({ x: time, y });
+        if (c.time > 0 && y >= 0) {
+          points.push({ x: c.time, y });
         }
-        last = value;
+        last = c;
       }
 
       console.log(points);
     }
   }
 
-  const width = 1000;
+  const width = 1500;
   const height = 300;
 </script>
 
