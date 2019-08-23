@@ -26,7 +26,7 @@ export const router = new Router(
 );
 
 export const category = derived(
-  [categories, router.keys.get("category")],
+  [categories, router.keys.category],
   ([$categories, $categoryKey], set) => {
     set($categories.find(a => a.name === $categoryKey));
     return () => {};
