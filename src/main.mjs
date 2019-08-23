@@ -11,7 +11,6 @@ import App from "./App.svelte";
 import { config } from "../package.json";
 import { categories } from "./store.mjs";
 
-
 export const router = new Router(
   [
     route("*", NotFound),
@@ -36,17 +35,21 @@ export const category = derived(
 export const values = derived(
   [session, category],
   ([$session, $category], set) => {
-    fetch(config.api + `/category/${$category.name}/values`, {
-      method: "GET",
-      headers: {
-        "content-type": "application/json",
-        ...$session.authorizationHeader
-      }
-    }).then(async data => set(await data.json()));
+    const c = $category;
+    if (c === undefined) {
+      set([]);
+    } else {
+      fetch(config.api + `/category/${c.name}/values`, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          ...$session.authorizationHeader
+        }
+      }).then(async data => set(await data.json()));
+    }
     return () => {};
   }
 );
-
 
 export default new App({
   target: document.body
