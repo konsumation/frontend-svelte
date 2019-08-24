@@ -14,12 +14,12 @@ import { categories } from "./store.mjs";
 export const router = new Router(
   [
     route("*", NotFound),
-    route("/index.html", Home),
     route("/*", Home),
     route("/login", Login),
     route("/about", About),
     route("/category", Categories),
-    route("/category/:category", Category)
+    route("/category/:category", Category),
+    route("/insert", Insert)
   ],
   config.urlPrefix
 );

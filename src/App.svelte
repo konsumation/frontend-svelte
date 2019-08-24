@@ -14,6 +14,9 @@
         <Link href="/category">Categories</Link>
       </li>
       <li>
+        <Link href="/insert">Insert</Link>
+      </li>
+      <li>
         <Link href="/about">About</Link>
       </li>
       <li>
