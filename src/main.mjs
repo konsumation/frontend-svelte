@@ -4,6 +4,7 @@ import { session } from "svelte-session-manager";
 
 import Categories from "./pages/Categories.svelte";
 import Category from "./pages/Category.svelte";
+import Insert from "./pages/Insert.svelte";
 import About from "./pages/About.svelte";
 import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
