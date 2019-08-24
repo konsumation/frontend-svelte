@@ -46,10 +46,7 @@ export default {
       preferConst: true,
       compact: true
     }),
-    production && terser(),
-    copy({
-      targets: [{ src: "node_modules/mf-styling/global.css", dest: dist }]
-    })
+    production && terser()
   ],
   watch: {
     clearScreen: false
