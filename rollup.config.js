@@ -1,3 +1,5 @@
+import copy from 'rollup-plugin-copy';
+
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
@@ -22,28 +24,25 @@ export default {
     format: "esm",
     file: `${dist}/bundle.mjs`
   },
-  plugins: [
-    svelte({
-      dev: !production,
+  plugins: [svelte({
+    dev: !production,
 
-      preprocess: autoPreprocess({
-        transformers: {
-          postcss: {
-            plugins: [postcssImport]
-          }
+    preprocess: autoPreprocess({
+      transformers: {
+        postcss: {
+          plugins: [postcssImport]
         }
-      }),
-      css: css => css.write(`${dist}/bundle.css`)
+      }
     }),
-
-    resolve({ browser: true }),
-    commonjs(),
-    json({
-      preferConst: true,
-      compact: true
-    }),
-    production && terser()
-  ],
+    css: css => css.write(`${dist}/bundle.css`)
+  }), resolve({ browser: true }), commonjs(), json({
+    preferConst: true,
+    compact: true
+  }), production && terser(), copy({
+    targets: [
+      { src: 'node_modules/mf-styling/global.css', dest: dist }
+    ]
+  })],
   watch: {
     clearScreen: false
   }
