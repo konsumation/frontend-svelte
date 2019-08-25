@@ -4,6 +4,6 @@
   export let context;
 </script>
 
-<div>
+<div class="center">
   <Login endpoint={config.api + "/authenticate"}/>
 </div>
