@@ -1,12 +1,26 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import { categories } from "../store.mjs";
-
+  import { readable } from "svelte/store";
   export let context;
+
+  export const now = readable(new Date(), (set) => {
+    const interval = setInterval(() => set(new Date()), 1000);
+    return () => clearInterval(interval);
+  });
+
+  const formatter = new Intl.DateTimeFormat("default", {
+    hour12: false,
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit"
+  });
 
   let active = false;
   let message;
   let time, value;
+
+  $: time = formatter.format($now);
 
   async function submit() {
     try {
@@ -21,8 +35,19 @@
 </script>
 
 <div>
-  {#each $categories as category (category.name)}
-    <form on:submit|preventDefault={submit}>
+  <form on:submit|preventDefault={submit}>
+    <label for="time">
+      Time
+      <input
+        id="time"
+        type="text"
+        placeholder="00:00:00"
+        name="time"
+        required
+        bind:value={time}/>
+    </label>
+
+    {#each $categories as category (category.name)}
       <label for="value">
         Value {category.name} ({category.unit})
         <input
@@ -34,17 +59,8 @@
           bind:value />
       </label>
 
-      <label for="time">
-        Time
-        <input
-          id="{category.name}.time"
-          type="text"
-          placeholder="Time"
-          name="{category.name}.time"
-          required
-          bind:value={time} />
-      </label>
       <button id="{category.name}.submit" type="submit" disabled>Insert</button>
-    </form>
-  {/each}
+    {/each}
+  </form>
+
 </div>
