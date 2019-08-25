@@ -4,7 +4,7 @@
   import { readable } from "svelte/store";
   export let context;
 
-  export const now = readable(new Date(), (set) => {
+  export const now = readable(new Date(), set => {
     const interval = setInterval(() => set(new Date()), 1000);
     return () => clearInterval(interval);
   });
@@ -44,7 +44,7 @@
         placeholder="00:00:00"
         name="time"
         required
-        bind:value={time}/>
+        bind:value={time} />
     </label>
 
     {#each $categories as category (category.name)}
