@@ -24,7 +24,7 @@
     "postcss": "^7.0.17",
     "postcss-import": "^12.0.1",
     "rollup": "^1.20.2",
-    "rollup-plugin-commonjs": "^10.0.2",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
@@ -35,7 +35,7 @@
     "svelte-preprocess": "^2.15.0"
   },
   "engines": {
-    "node": ">=10.16.0"
+    "node": ">=12.9.1"
   },
   "repository": {
     "type": "git",
