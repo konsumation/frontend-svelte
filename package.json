@@ -6,7 +6,7 @@
     "deploy": "scp public/* root@odroid1:/services/konsum/frontend/",
     "package": "npm-pkgbuild pkgbuild pacman makepkg",
     "prepare": "rollup -c",
-    "start": "light-server -s public --servePrefix /services/konsum --historyindex /services/konsum/index.html -p 5000 --proxypath /services/konsum/api -x https://mfelten.dynv6.net -w src/**,public/** # rollup -c"
+    "start": "light-server -s public --servePrefix /services/konsum-frontend-svelte --historyindex /services/konsum-frontend-svelte/index.html -p 5000 --proxypath /services/konsum-frontend-svelte/api -x https://mfelten.dynv6.net -w src/**,public/** # rollup -c"
   },
   "dependencies": {
     "mf-styling": "git+https://github.com/arlac77/mf-styling.git",
@@ -18,7 +18,7 @@
     "@semantic-release/exec": "^3.3.6",
     "light-server": "^2.6.3",
     "npm-pkgbuild": "^6.9.0",
-    "rollup": "^1.20.2",
+    "rollup": "^1.20.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-json": "^4.0.0",
