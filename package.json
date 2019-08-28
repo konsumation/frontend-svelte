@@ -6,7 +6,7 @@
     "deploy": "scp public/* root@odroid1:/services/konsum/frontend/",
     "package": "npm-pkgbuild pkgbuild pacman makepkg",
     "prepare": "rollup -c",
-    "start": "rollup -c -w"
+    "start": "light-server -s public --servePrefix /services/konsum --historyindex /services/konsum/index.html -p 5000 --proxypath /services/konsum/api -x https://mfelten.dynv6.net -w src/**,public/** # rollup -c"
   },
   "dependencies": {
     "mf-styling": "git+https://github.com/arlac77/mf-styling.git",
@@ -16,13 +16,8 @@
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.6",
-    "browser-sync": "^2.26.7",
-    "connect-history-api-fallback": "^1.6.0",
-    "express": "^4.17.1",
-    "http-proxy-middleware": "^0.19.1",
+    "light-server": "^2.6.3",
     "npm-pkgbuild": "^6.9.0",
-    "postcss": "^7.0.17",
-    "postcss-import": "^12.0.1",
     "rollup": "^1.20.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.1.0",
@@ -31,8 +26,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.1",
     "semantic-release": "^15.13.24",
-    "svelte": "^3.9.1",
-    "svelte-preprocess": "^2.15.0"
+    "svelte": "^3.9.1"
   },
   "engines": {
     "node": ">=12.9.1"
@@ -47,7 +41,7 @@
   "homepage": "https://github.com/arlac77/konsum-frontend-svelte#readme",
   "config": {
     "api": "/services/konsum/api",
-    "proxyTarget": "https://somewhere/",
+    "proxyTarget": "https://mfelten.dynv6.net",
     "urlPrefix": "/services/konsum"
   },
   "pacman": {
