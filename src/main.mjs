@@ -25,6 +25,18 @@ export const router = new Router(
   config.urlPrefix
 );
 
+export const categories = derived(
+  session,
+  ($session, set) => {
+    fetch(config.api + "/categories", {
+      method: "GET",
+      headers: $session.authorizationHeader
+    }).then(async data => set(await data.json()));
+    return () => {};
+  },
+  []
+);
+
 export const category = derived(
   [categories, router.keys.category],
   ([$categories, $categoryKey], set) => {

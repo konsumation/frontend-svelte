@@ -1,6 +1,6 @@
 <script>
   import { Link } from "svelte-guard-history-router";
-  import { categories }  from "../store.mjs";
+  import { categories }  from "../main.mjs";
 
   export let context;
 </script>
