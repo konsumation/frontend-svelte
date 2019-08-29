@@ -10,7 +10,6 @@ import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
-import { categories } from "./store.mjs";
 
 export const router = new Router(
   [

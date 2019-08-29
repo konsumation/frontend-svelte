@@ -10,7 +10,6 @@
       <img class="logo" src="konsum.svg" alt="Konsum" />
       <h2>Konsum</h2>
     </Link>
-        {$session.isValid ? $session.username : "-"}
 
     <ul>
       <li>
@@ -26,6 +25,7 @@
         <Link href="/login">Login</Link>
       </li>
     </ul>
+    {$session.isValid ? $session.username : '-'}
   </header>
   <main>
     <Outlet {router}>nothing there</Outlet>
