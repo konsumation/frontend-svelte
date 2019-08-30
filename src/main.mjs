@@ -30,11 +30,21 @@ export const categories = derived(
     fetch(config.api + "/categories", {
       method: "GET",
       headers: $session.authorizationHeader
-    }).then(async data => set(await data.json()));
+    }).then(async data => set(new _Category(await data.json())));
     return () => {};
   },
   []
 );
+
+export class _Category {
+  constructor(json) {
+    Object.defineProperties(this, {
+      name: { value: json.name },
+      unit: { value: json.unit },
+      description: { value: json.description }
+    });
+  }
+}
 
 export const category = derived(
   [categories, router.keys.category],
@@ -43,6 +53,30 @@ export const category = derived(
     return () => {};
   }
 );
+
+/*
+export const latest = derived(
+  categories,
+  async ($categories, set) => {
+    const data = await Promise.all($categories.map(c => 
+    (await fetch(config.api + `/category/${c.name}/values?reverse&limit=1`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+        ...$session.authorizationHeader
+      }})).json()));
+
+    const l = [{
+      name: $categories[0].name,
+      value: data[0][0].value
+    }
+    ];
+
+    set(l);
+    return () => {};
+  }
+);
+*/
 
 export const values = derived(
   [session, category],
