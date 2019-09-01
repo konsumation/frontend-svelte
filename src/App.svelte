@@ -22,10 +22,13 @@
         <Link href="/about">About</Link>
       </li>
       <li>
-        <Link href="/login">Login</Link>
+        {#if $session.isValid}
+          <Link href="/login">Login</Link>
+        {:else}
+          <Link href="/logout">Logout {$session.username}</Link>
+        {/if}
       </li>
     </ul>
-    {$session.isValid ? $session.username : '-'}
   </header>
   <main>
     <Outlet {router}>nothing there</Outlet>
