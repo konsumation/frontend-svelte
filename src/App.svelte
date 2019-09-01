@@ -2,6 +2,10 @@
   import { Outlet, Link } from "svelte-guard-history-router";
   import { session } from "svelte-session-manager";
   import { router } from "./main.mjs";
+
+  function logout() {
+    $session.invalidate();
+  }
 </script>
 
 <div class="wrapper">
@@ -25,7 +29,9 @@
         {#if $session.isValid}
           <Link href="/login">Login</Link>
         {:else}
-          <Link href="/logout">Logout {$session.username}</Link>
+          <a href="/" on:click|preventDefault={logout}>
+            Logout {$session.username}
+          </a>
         {/if}
       </li>
     </ul>
