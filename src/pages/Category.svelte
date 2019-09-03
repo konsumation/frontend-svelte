@@ -27,7 +27,7 @@
         last = c;
       }
 
-      console.log(points);
+      //console.log(points);
     }
   }
 
