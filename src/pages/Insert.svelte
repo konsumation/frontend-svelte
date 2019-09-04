@@ -25,6 +25,13 @@
 
   $: time = formatter.format($now);
 
+
+    for (c of $categories) {
+      const l = c.latest;
+      values[c.name] = $l;
+    }
+  
+
   async function submit() {
     try {
       message = undefined;
