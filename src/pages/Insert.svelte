@@ -2,7 +2,7 @@
   import { Link } from "svelte-guard-history-router";
   import { readable } from "svelte/store";
   import { categories } from "../main.mjs";
-  export let context;
+  export let state;
 
   export const now = readable(new Date(), set => {
     const interval = setInterval(() => set(new Date()), 1000);
