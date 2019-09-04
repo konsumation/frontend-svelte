@@ -25,13 +25,15 @@
       <li>
         <Link href="/about">About</Link>
       </li>
-      {#if $session.isValid}
-        <a href="/" on:click|preventDefault={logout}>
-          Logout {$session.username}
-        </a>
-      {:else}
-        <Link href="/login">Login</Link>
-      {/if}
+      <li>
+        {#if $session.isValid}
+          <a href="/" on:click|preventDefault={logout}>
+            Logout {$session.username}
+          </a>
+        {:else}
+          <Link href="/login">Login</Link>
+        {/if}
+      </li>
     </ul>
   </header>
   <main>
