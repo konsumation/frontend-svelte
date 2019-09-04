@@ -31,15 +31,16 @@ export const categories = derived(
       method: "GET",
       headers: $session.authorizationHeader
     });
-    set((await data.json()).map(c => new _Category(c)));
+    set((await data.json()).map(c => new _Category(c,$session)));
     return () => {};
   },
   []
 );
 
 export class _Category {
-  constructor(json) {
+  constructor(json,session) {
     Object.defineProperties(this, {
+      session: { value: session },
       name: { value: json.name },
       unit: { value: json.unit },
       description: { value: json.description },
@@ -54,7 +55,7 @@ export class _Category {
         method: "GET",
         headers: {
           "content-type": "application/json",
-          ...$session.authorizationHeader
+          ...this.session.authorizationHeader
         }
       }
     );
@@ -63,12 +64,10 @@ export class _Category {
 
   get latest() {
     return {
-      subscribe(subscription) {
+      subscribe: subscription => {
         this._latestSubscriptions.add(subscription);
         subscription(0.0);
-        this._latest().then(v => {
-          this._latestSubscriptions.forEach(s => s.set(v.value));
-        });
+        this._latest().then(v => this._latestSubscriptions.forEach(s => s(v.value)));
 
         return () => this._latestSubscriptions.delete(subscription);
       }

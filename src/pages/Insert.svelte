@@ -20,17 +20,16 @@
   let message;
   let time;
   let values = {
-    ev : 7
+    ev: 7
   };
 
   $: time = formatter.format($now);
 
-
-    for (c of $categories) {
-      const l = c.latest;
-      values[c.name] = $l;
-    }
-  
+  for (const c of $categories) {
+    const unsubscribe = c.latest.subscribe(value => {
+      values[c.name] = value;
+    });
+  }
 
   async function submit() {
     try {
