@@ -42,7 +42,8 @@ export class _Category {
     Object.defineProperties(this, {
       name: { value: json.name },
       unit: { value: json.unit },
-      description: { value: json.description }
+      description: { value: json.description },
+      _latestSubscriptions: { value: new Set() }
     });
   }
 
@@ -63,13 +64,13 @@ export class _Category {
   get latest() {
     return {
       subscribe(subscription) {
-        this.subscriptions.add(subscription);
+        this._latestSubscriptions.add(subscription);
         subscription(0.0);
         this._latest().then(v => {
-          this.subscriptions.forEach(s => s.set(v.value));
+          this._latestSubscriptions.forEach(s => s.set(v.value));
         });
 
-        return () => this.subscriptions.delete(subscription);
+        return () => this._latestSubscriptions.delete(subscription);
       }
     };
   }
