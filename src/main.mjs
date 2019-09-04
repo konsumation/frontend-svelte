@@ -42,17 +42,36 @@ export class _Category {
     Object.defineProperties(this, {
       name: { value: json.name },
       unit: { value: json.unit },
-      description: { value: json.description },
-      latest: { async get() {
-        const data = await fetch(config.api + `/category/${this.name}/values?reverse&limit=1`, {
-          method: "GET",
-          headers: {
-            "content-type": "application/json",
-            ...$session.authorizationHeader
-          }});
-        return (await data.json())[0].value;  
-      } }
+      description: { value: json.description }
     });
+  }
+
+  async _latest() {
+    const data = await fetch(
+      config.api + `/category/${this.name}/values?reverse&limit=1`,
+      {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          ...$session.authorizationHeader
+        }
+      }
+    );
+    return (await data.json())[0];
+  }
+
+  get latest() {
+    return {
+      subscribe(subscription) {
+        this.subscriptions.add(subscription);
+        subscription(0.0);
+        this._latest().then(v => {
+          this.subscriptions.forEach(s => s.set(v.value));
+        });
+
+        return () => this.subscriptions.delete(subscription);
+      }
+    };
   }
 }
 
@@ -63,7 +82,6 @@ export const category = derived(
     return () => {};
   }
 );
-
 
 export const values = derived(
   [session, category],

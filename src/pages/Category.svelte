@@ -1,8 +1,7 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import { TimeSeries, DataSet } from "svelte-time-series";
-
-  import { categories, category, values } from "../main.mjs";
+  import { category, values } from "../main.mjs";
   export let context;
 
   const padding = { top: 20, right: 15, bottom: 22, left: 25 };
@@ -26,8 +25,6 @@
         }
         last = c;
       }
-
-      //console.log(points);
     }
   }
 
@@ -36,7 +33,6 @@
 </script>
 
 <div>
-
   {#if category}
     <h1>{category.name}</h1>
 
