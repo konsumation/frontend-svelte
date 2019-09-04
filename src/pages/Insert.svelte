@@ -18,7 +18,10 @@
 
   let active = false;
   let message;
-  let time, value;
+  let time;
+  let values = {
+    ev : 7
+  };
 
   $: time = formatter.format($now);
 
@@ -56,7 +59,7 @@
           placeholder="Value"
           name="{category.name}.value"
           required
-          bind:value />
+          bind:value={values[category.name]} />
       </label>
 
       <button id="{category.name}.submit" type="submit" disabled>Insert</button>
