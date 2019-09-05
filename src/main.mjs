@@ -1,4 +1,4 @@
-import { Router, route, NotFound } from "svelte-guard-history-router";
+import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { derived } from "svelte/store";
 import { session } from "svelte-session-manager";
 
@@ -11,15 +11,36 @@ import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
 
+class SessionGuard extends Guard {
+
+  attach(route) {
+  //  console.log("attach", route);
+    session.subscribe(value => {
+      route.session = value;
+     // console.log("attach session", route, value);
+    });
+  }
+
+  async enter(state) {
+    console.log(state.route);
+
+    /*if(! session.isValid) {
+      return "/login";
+    }*/
+  }
+}
+
+const needsSession = new SessionGuard();
+
 export const router = new Router(
   [
     route("*", NotFound),
     route("/*", Home),
     route("/login", Login),
     route("/about", About),
-    route("/category", Categories),
-    route("/category/:category", Category),
-    route("/insert", Insert)
+    route("/category", needsSession, Categories),
+    route("/category/:category", needsSession, Category),
+    route("/insert", needsSession, Insert)
   ],
   config.urlPrefix
 );
