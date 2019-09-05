@@ -29,7 +29,7 @@
     });
   }
 
-  async function submit() {
+  async function submit(event) {
     try {
       message = undefined;
       active = true;
@@ -42,7 +42,7 @@
 </script>
 
 <div>
-  <form on:submit|preventDefault={submit}>
+  <form>
     <label for="time">
       Time
       <input
@@ -55,18 +55,20 @@
     </label>
 
     {#each $categories as category (category.name)}
-      <label for="value">
-        Value {category.name} ({category.unit})
-        <input
-          id="{category.name}.value"
-          type="text"
-          placeholder="Value"
-          name="{category.name}.value"
-          required
-          bind:value={values[category.name]} />
-      </label>
+      <fieldset>
+        <label for="value">
+          {category.name} ({category.unit})
+          <input
+            id="{category.name}.value"
+            type="text"
+            placeholder="Value"
+            name="{category.name}.value"
+            required
+            bind:value={values[category.name]} />
+        </label>
 
-      <button id="{category.name}.submit" type="submit" disabled>Insert</button>
+        <button id="{category.name}.submit" type="submit" on:click|once={submit}>Insert</button>
+      </fieldset>
     {/each}
   </form>
 

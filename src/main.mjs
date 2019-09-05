@@ -30,14 +30,14 @@ export const categories = derived(
     const data = await fetch(config.api + "/categories", {
       headers: $session.authorizationHeader
     });
-    set((await data.json()).map(c => new _Category(c,$session)));
+    set((await data.json()).map(c => new _Category(c, $session)));
     return () => {};
   },
   []
 );
 
 export class _Category {
-  constructor(json,session) {
+  constructor(json, session) {
     Object.defineProperties(this, {
       session: { value: session },
       name: { value: json.name },
@@ -65,11 +65,21 @@ export class _Category {
       subscribe: subscription => {
         this._latestSubscriptions.add(subscription);
         subscription(0.0);
-        this._latest().then(v => this._latestSubscriptions.forEach(s => s(v.value)));
+        this._latest().then(v =>
+          this._latestSubscriptions.forEach(s => s(v.value))
+        );
 
         return () => this._latestSubscriptions.delete(subscription);
       }
     };
+  }
+
+  async insert(value, time) {
+    return fetch(config.api + `/category/${this.name}/insert`, {
+      method: "POST",
+      headers: this.session.authorizationHeader,
+      body: JSON.stringify({ value, time })
+    });
   }
 }
 
@@ -83,17 +93,18 @@ export const category = derived(
 
 export const values = derived(
   [session, category],
-  ([$session, $category], set) => {
+  async ([$session, $category], set) => {
     const c = $category;
     if (c === undefined) {
       set([]);
     } else {
-      fetch(config.api + `/category/${c.name}/values`, {
+      const data = await fetch(config.api + `/category/${c.name}/values`, {
         headers: {
           "content-type": "application/json",
           ...$session.authorizationHeader
         }
-      }).then(async data => set(await data.json()));
+      });
+      set(await data.json());
     }
     return () => {};
   }
