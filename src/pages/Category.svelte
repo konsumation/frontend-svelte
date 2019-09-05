@@ -33,11 +33,11 @@
 </script>
 
 <div>
-  {#if category}
-    <h1>{category.name}</h1>
+  {#if $category}
+    <h1>{$category.name}</h1>
 
     <TimeSeries {padding} {width} {height} {xTicks} {yTicks} {points}>
       <DataSet {padding} {width} {height} {xTicks} {yTicks} {points} />
     </TimeSeries>
-  {:else}No such category {state.props.category}{/if}
+  {:else}No such category {JSON.stringify(state.props)}{/if}
 </div>

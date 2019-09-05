@@ -28,7 +28,6 @@ export const categories = derived(
   session,
   async ($session, set) => {
     const data = await fetch(config.api + "/categories", {
-      method: "GET",
       headers: $session.authorizationHeader
     });
     set((await data.json()).map(c => new _Category(c,$session)));
@@ -52,7 +51,6 @@ export class _Category {
     const data = await fetch(
       config.api + `/category/${this.name}/values?reverse=1&limit=1`,
       {
-        method: "GET",
         headers: {
           "content-type": "application/json",
           ...this.session.authorizationHeader
@@ -91,7 +89,6 @@ export const values = derived(
       set([]);
     } else {
       fetch(config.api + `/category/${c.name}/values`, {
-        method: "GET",
         headers: {
           "content-type": "application/json",
           ...$session.authorizationHeader

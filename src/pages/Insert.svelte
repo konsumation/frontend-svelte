@@ -19,9 +19,7 @@
   let active = false;
   let message;
   let time;
-  let values = {
-    ev: 7
-  };
+  let values = {};
 
   $: time = formatter.format($now);
 
