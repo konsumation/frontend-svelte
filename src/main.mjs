@@ -50,7 +50,7 @@ export class _Category {
 
   async _latest() {
     const data = await fetch(
-      config.api + `/category/${this.name}/values?reverse&limit=1`,
+      config.api + `/category/${this.name}/values?reverse=1&limit=1`,
       {
         method: "GET",
         headers: {
