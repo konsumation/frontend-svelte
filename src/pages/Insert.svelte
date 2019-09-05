@@ -2,6 +2,7 @@
   import { Link } from "svelte-guard-history-router";
   import { readable } from "svelte/store";
   import { categories } from "../main.mjs";
+  import CategoryInsert from '../CategoryInsert.svelte';
   export let state;
 
   export const now = readable(new Date(), set => {
@@ -55,20 +56,7 @@
     </label>
 
     {#each $categories as category (category.name)}
-      <fieldset>
-        <label for="value">
-          {category.name} ({category.unit})
-          <input
-            id="{category.name}.value"
-            type="text"
-            placeholder="Value"
-            name="{category.name}.value"
-            required
-            bind:value={values[category.name]} />
-        </label>
-
-        <button id="{category.name}.submit" type="submit" on:click|once={submit}>Insert</button>
-      </fieldset>
+      <CategoryInsert category={category} value={values[category.name]}/>
     {/each}
   </form>
 
