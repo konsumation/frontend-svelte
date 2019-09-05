@@ -1,4 +1,7 @@
 
+import { config } from "./package.json";
+
+import { spawn } from "child_process";
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
