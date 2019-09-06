@@ -13,14 +13,14 @@ import { config } from "../package.json";
 
 class SessionGuard extends Guard {
   attach(route) {
-    //  console.log("attach", route);
-    session.subscribe(value => {
-      route.session = value;
-      // console.log("attach session", route, value);
-    });
+    session.subscribe(value => route.session = value);
   }
 
   async enter(state) {
+    if(state.route === undefined) {
+      alert("route undefined");
+      return;
+    }
     const session = state.route.session;
 
     console.log(state.route, session);
