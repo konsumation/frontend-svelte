@@ -17,10 +17,6 @@ class SessionGuard extends Guard {
   }
 
   async enter(state) {
-    if(state.route === undefined) {
-      alert("route undefined");
-      return;
-    }
     const session = state.route.session;
 
     console.log(state.route, session);
