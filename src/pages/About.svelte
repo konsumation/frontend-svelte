@@ -8,6 +8,22 @@
     minute: "numeric",
     second: "numeric"
   });
+
+/*
+  let uptime;
+
+  const durations = [[86400, "day"], [3600,"h"], [60, "min"], [1, 's']];
+
+  $ : {
+    let rest = $state.uptime;
+
+    durations.reduce((a,c) => {
+      if(c[0] > a) {
+        const units = a / c[0];
+      }
+    }, $state.uptime);
+  }
+  */
 </script>
 
 <div>
@@ -26,6 +42,14 @@
       <tr>
         <td>Server Uptime</td>
         <td>{$state.uptime}</td>
+      </tr>
+      <tr>
+        <td>Server Heap Total (Mb)</td>
+        <td>{$state.memory.heapTotal / 1048576}</td>
+      </tr>
+      <tr>
+        <td>Server Heap Used (Mb)</td>
+        <td>{$state.memory.heapUsed / 1048576}</td>
       </tr>
       <tr>
         <td>Mounted</td>
