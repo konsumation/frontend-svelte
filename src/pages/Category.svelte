@@ -35,10 +35,8 @@
 <div>
   {#if $category}
     <h1>{$category.name}</h1>
-  {$category.unit}
-  <div>
-  {$category.description}
-  </div>
+    {$category.unit}
+    <div>{$category.description}</div>
     <TimeSeries {padding} {width} {height} {xTicks} {yTicks} {points}>
       <DataSet {padding} {width} {height} {xTicks} {yTicks} {points} />
     </TimeSeries>

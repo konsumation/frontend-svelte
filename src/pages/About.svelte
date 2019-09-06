@@ -1,6 +1,7 @@
 <script>
-  import { name, version, description, config } from "../../package.json";
   import { session } from "svelte-session-manager";
+  import { name, version, description, config } from "../../package.json";
+  import { state } from "../main.mjs";
 
   const dateFormatter = new Intl.DateTimeFormat("default", {
     hour: "numeric",
@@ -17,6 +18,14 @@
       <tr>
         <td>Version</td>
         <td>{version}</td>
+      </tr>
+      <tr>
+        <td>Server Version</td>
+        <td>{$state.version}</td>
+      </tr>
+      <tr>
+        <td>Server Uptime</td>
+        <td>{$state.uptime}</td>
       </tr>
       <tr>
         <td>Mounted</td>

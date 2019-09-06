@@ -1,5 +1,5 @@
 import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
-import { derived } from "svelte/store";
+import { derived, readable } from "svelte/store";
 import { session } from "svelte-session-manager";
 
 import Categories from "./pages/Categories.svelte";
@@ -11,22 +11,21 @@ import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
 
-
 class SessionGuard extends Guard {
   attach(route) {
-  //  console.log("attach", route);
+    //  console.log("attach", route);
     session.subscribe(value => {
       route.session = value;
-     // console.log("attach session", route, value);
+      // console.log("attach session", route, value);
     });
   }
 
   async enter(state) {
     const session = state.route.session;
-    
+
     console.log(state.route, session);
-    
-    if(session === undefined || !session.isValid) {
+
+    if (session === undefined || !session.isValid) {
       alert("login");
       //state.router.current = Login;
     }
@@ -133,6 +132,18 @@ export const values = derived(
     return () => {};
   }
 );
+
+export const state = readable({ version: "unknown", uptime: -1 }, async set => {
+  const f = async () => {
+    const data = await fetch(config.api + "/state");
+    set(await data.json());
+  };
+
+  f();
+  const interval = setInterval(() => f(), 5000);
+
+  return () => clearInterval(interval);
+});
 
 export default new App({
   target: document.body
