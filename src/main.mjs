@@ -11,8 +11,8 @@ import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
 
-class SessionGuard extends Guard {
 
+class SessionGuard extends Guard {
   attach(route) {
   //  console.log("attach", route);
     session.subscribe(value => {
@@ -22,11 +22,14 @@ class SessionGuard extends Guard {
   }
 
   async enter(state) {
-    console.log(state.route);
-
-    /*if(! session.isValid) {
-      return "/login";
-    }*/
+    const session = state.route.session;
+    
+    console.log(state.route, session);
+    
+    if(session === undefined || !session.isValid) {
+      alert("login");
+      //state.router.current = Login;
+    }
   }
 }
 
