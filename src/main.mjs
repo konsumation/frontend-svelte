@@ -40,7 +40,7 @@ export const router = new Router(
     route("*", NotFound),
     route("/*", Home),
     route("/login", Login),
-    route("/about", About),
+    route("/about", needsSession, About),
     route("/category", needsSession, Categories),
     route("/category/:category", needsSession, Category),
     route("/insert", needsSession, Insert)
