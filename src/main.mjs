@@ -133,17 +133,20 @@ export const values = derived(
   }
 );
 
-export const state = readable({ version: "unknown", uptime: -1 }, async set => {
-  const f = async () => {
-    const data = await fetch(config.api + "/state");
-    set(await data.json());
-  };
+export const state = readable(
+  { version: "unknown", uptime: -1, memory: { heapTotal: 0, heapUsed: 0 } },
+  async set => {
+    const f = async () => {
+      const data = await fetch(config.api + "/state");
+      set(await data.json());
+    };
 
-  f();
-  const interval = setInterval(() => f(), 5000);
+    f();
+    const interval = setInterval(() => f(), 5000);
 
-  return () => clearInterval(interval);
-});
+    return () => clearInterval(interval);
+  }
+);
 
 export default new App({
   target: document.body
