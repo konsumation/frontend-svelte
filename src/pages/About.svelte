@@ -1,7 +1,6 @@
 <script>
-  import { session } from "svelte-session-manager";
   import { name, version, description, config } from "../../package.json";
-  import { state } from "../main.mjs";
+  import { state, session } from "../main.mjs";
 
   const dateFormatter = new Intl.DateTimeFormat("default", {
     hour: "numeric",
@@ -17,11 +16,19 @@
     const k = 1024;
     const i = Math.floor(Math.log(bytes) / Math.log(k));
 
-    return  parseFloat((bytes / Math.pow(k, i)).toFixed(decimals)) + " " + sizes[i];
+    return (
+      parseFloat((bytes / Math.pow(k, i)).toFixed(decimals)) + " " + sizes[i]
+    );
   }
 
   function formatDuration(seconds) {
-    const durations = [[604800, "w"],[86400, "d"], [3600, "h"], [60, "m"], [1, "s"]];
+    const durations = [
+      [604800, "w"],
+      [86400, "d"],
+      [3600, "h"],
+      [60, "m"],
+      [1, "s"]
+    ];
 
     let out = [];
     for (const d of durations) {
@@ -32,9 +39,8 @@
       }
     }
 
-    return out.join(' ');
+    return out.join(" ");
   }
-
 </script>
 
 <div>
@@ -71,19 +77,21 @@
         <td>{config.api}</td>
       </tr>
       <tr>
-        <td>Usrname</td>
+        <td>Username</td>
         <td>{$session.username}</td>
       </tr>
       <tr>
         <td>Session Expiration</td>
         <td>{dateFormatter.format($session.expirationDate)}</td>
       </tr>
-      {#each [...$session.entitlements] as name}
-        <tr>
-          <td>Entitlement</td>
-          <td>{name}</td>
-        </tr>
-      {/each}
+      <tr>
+        <td>Entitlements</td>
+        <td>
+          {#each [...$session.entitlements] as name}
+            <div>{name}</div>
+          {/each}
+        </td>
+      </tr>
     </tbody>
   </table>
 </div>

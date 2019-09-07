@@ -1,6 +1,6 @@
-import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { derived, readable } from "svelte/store";
-import { session } from "svelte-session-manager";
+import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
+import { Session } from "svelte-session-manager";
 
 import Categories from "./pages/Categories.svelte";
 import Category from "./pages/Category.svelte";
@@ -11,19 +11,12 @@ import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import { config } from "../package.json";
 
+export const session = new Session(localStorage);
+
 class SessionGuard extends Guard {
-  attach(route) {
-    session.subscribe(value => route.session = value);
-  }
-
   async enter(state) {
-    const session = state.route.session;
-
-    console.log(state.route, session);
-
-    if (session === undefined || !session.isValid) {
+    if (!session.isValid) {
       alert("login");
-      //state.router.current = Login;
     }
   }
 }

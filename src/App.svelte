@@ -1,10 +1,9 @@
 <script>
   import { Outlet, Link } from "svelte-guard-history-router";
-  import { session } from "svelte-session-manager";
-  import { router } from "./main.mjs";
+  import { router, session } from "./main.mjs";
 
   function logout() {
-    $session.invalidate();
+    session.invalidate();
   }
 </script>
 
