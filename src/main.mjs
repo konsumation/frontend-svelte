@@ -42,7 +42,7 @@ export const categories = derived(
     const data = await fetch(config.api + "/categories", {
       headers: $session.authorizationHeader
     });
-    set((await data.json()).map(c => new _Category(c, $session)));
+    set((await data.json()).map(c => new _Category(c, session)));
     return () => {};
   },
   []
