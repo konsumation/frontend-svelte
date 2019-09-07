@@ -82,7 +82,9 @@
       </tr>
       <tr>
         <td>Session Expiration</td>
-        <td class="{$session.isValid ? 'ok':'error'}">{dateFormatter.format($session.expirationDate)}</td>
+        <td class={$session.isValid ? 'ok' : 'error'}>
+          {dateFormatter.format($session.expirationDate)}
+        </td>
       </tr>
       <tr>
         <td>Entitlements</td>

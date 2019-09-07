@@ -1,14 +1,9 @@
 <script>
-  import { Link } from "svelte-guard-history-router";
   import { readable } from "svelte/store";
-  import { categories } from "../main.mjs";
-  import CategoryInsert from '../CategoryInsert.svelte';
+  import { Link } from "svelte-guard-history-router";
+  import { categories, now } from "../main.mjs";
+  import CategoryInsert from "../components/CategoryInsert.svelte";
   export let state;
-
-  export const now = readable(new Date(), set => {
-    const interval = setInterval(() => set(new Date()), 1000);
-    return () => clearInterval(interval);
-  });
 
   const formatter = new Intl.DateTimeFormat("default", {
     hour12: false,
@@ -42,22 +37,19 @@
   }
 </script>
 
-<div>
-  <form>
-    <label for="time">
-      Time
-      <input
-        id="time"
-        type="text"
-        placeholder="00:00:00"
-        name="time"
-        required
-        bind:value={time} />
-    </label>
+<form>
+  <label for="time">
+    Time
+    <input
+      id="time"
+      type="text"
+      placeholder="00:00:00"
+      name="time"
+      required
+      bind:value={time} />
+  </label>
 
-    {#each $categories as category (category.name)}
-      <CategoryInsert category={category} value={values[category.name]}/>
-    {/each}
-  </form>
-
-</div>
+  {#each $categories as category (category.name)}
+    <CategoryInsert {category} value={values[category.name]} />
+  {/each}
+</form>
