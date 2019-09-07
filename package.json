@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
-    "svelte-guard-history-router": "git+https://github.com/arlac77/svelte-guard-history-router.git",
-    "svelte-session-manager": "git+https://github.com/arlac77/svelte-session-manager.git",
-    "svelte-time-series": "git+https://github.com/arlac77/svelte-time-series.git"
+    "svelte-guard-history-router": "arlac77/svelte-guard-history-router",
+    "svelte-session-manager": "arlac77/svelte-session-manager",
+    "svelte-time-series": "arlac77/svelte-time-series"
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.6",
-    "light-server": "git+https://github.com/arlac77/light-server.git",
+    "light-server": "arlac77/light-server",
     "npm-pkgbuild": "^6.9.1",
     "rollup": "^1.20.3",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -55,9 +55,9 @@
       "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
     },
     "depends": {
-      "systemd": ">=242.32",
+      "systemd": ">=242.84",
       "nginx-mainline": ">=1.17.3",
-      "konsum": ">=1.29.5"
+      "konsum": ">=1.31.0"
     }
   },
   "release": {
