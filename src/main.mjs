@@ -76,7 +76,9 @@ export class _Category {
         }
       }
     );
-    return (await data.json())[0];
+
+    const entry = (await data.json())[0];
+    this._latestSubscriptions.forEach(subscription => subscription(entry.value));
   }
 
   get latest() {
@@ -84,10 +86,7 @@ export class _Category {
       subscribe: subscription => {
         this._latestSubscriptions.add(subscription);
         subscription(0.0);
-        this._latest().then(v =>
-          this._latestSubscriptions.forEach(s => s(v.value))
-        );
-
+        this._latest();
         return () => this._latestSubscriptions.delete(subscription);
       }
     };
