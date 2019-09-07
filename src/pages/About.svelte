@@ -87,7 +87,7 @@
       <tr>
         <td>Entitlements</td>
         <td>
-          {#each [...$session.entitlements] as name}
+          {#each [...$session.entitlements].sort() as name}
             <div>{name}</div>
           {/each}
         </td>
