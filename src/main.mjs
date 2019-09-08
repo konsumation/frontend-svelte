@@ -3,6 +3,7 @@ import { Router, route, NotFound, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 
 import Categories from "./pages/Categories.svelte";
+import CategoryValueList from "./pages/CategoryValueList.svelte";
 import Category from "./pages/Category.svelte";
 import Insert from "./pages/Insert.svelte";
 import About from "./pages/About.svelte";
@@ -30,6 +31,7 @@ export const router = new Router(
     route("/login", Login),
     route("/about", About),
     route("/category", needsSession, Categories),
+    route("/category/:category/list", needsSession, CategoryValueList),
     route("/category/:category", needsSession, Category),
     route("/insert", needsSession, Insert)
   ],
@@ -59,7 +61,8 @@ export class _Category {
       name: { value: json.name },
       unit: { value: json.unit },
       description: { value: json.description },
-      _latestSubscriptions: { value: new Set() }
+      _latestSubscriptions: { value: new Set() },
+      _valuesSubscriptions: { value: new Set() }
     });
   }
 
@@ -75,9 +78,7 @@ export class _Category {
     );
 
     const entry = (await data.json())[0];
-    this._latestSubscriptions.forEach(subscription =>
-      subscription(entry)
-    );
+    this._latestSubscriptions.forEach(subscription => subscription(entry));
   }
 
   get latest() {
@@ -91,6 +92,29 @@ export class _Category {
     };
   }
 
+  async _values() {
+    const data = await fetch(config.api + `/category/${this.name}/values`, {
+      headers: {
+        "content-type": "application/json",
+        ...session.authorizationHeader
+      }
+    });
+
+    const values = await data.json();
+    this._valuesSubscriptions.forEach(subscription => subscription(values));
+  }
+
+  get values() {
+    return {
+      subscribe: subscription => {
+        this._valuesSubscriptions.add(subscription);
+        subscription([]);
+        this._values();
+        return () => this._valuesSubscriptions.delete(subscription);
+      }
+    };
+  }
+
   async insert(value, time) {
     return fetch(config.api + `/category/${this.name}/insert`, {
       method: "POST",
@@ -98,7 +122,7 @@ export class _Category {
         "content-type": "application/json",
         ...session.authorizationHeader
       },
-    body: JSON.stringify({ value, time: time.getTime() })
+      body: JSON.stringify({ value, time: time.getTime() })
     });
   }
 }
@@ -138,7 +162,7 @@ export const state = readable(
     };
 
     f();
-    
+
     const interval = setInterval(() => f(), 5000);
 
     return () => clearInterval(interval);
