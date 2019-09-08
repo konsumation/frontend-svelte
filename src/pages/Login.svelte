@@ -7,5 +7,5 @@
 </script>
 
 <div class="center">
-  <Login session={session} endpoint={config.api + '/authenticate'} />
+  <Login {session} endpoint={config.api + '/authenticate'} />
 </div>
