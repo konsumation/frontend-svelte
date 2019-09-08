@@ -16,7 +16,7 @@ export const session = new Session(localStorage);
 class SessionGuard extends Guard {
   async enter(transition) {
     if (!session.isValid) {
-      return transition.redirect('/login');
+      return transition.redirect("/login");
     }
   }
 }
@@ -38,20 +38,24 @@ export const router = new Router(
 
 export const categories = derived(
   session,
-  async ($session, set) => {
-    const data = await fetch(config.api + "/categories", {
-      headers: $session.authorizationHeader
-    });
-    set((await data.json()).map(c => new _Category(c, session)));
+  ($session, set) => {
+    if ($session.isValid) {
+      fetch(config.api + "/categories", {
+        headers: session.authorizationHeader
+      }).then(async data =>
+        set((await data.json()).map(c => new _Category(c)))
+      );
+    } else {
+      set([]);
+    }
     return () => {};
   },
   []
 );
 
 export class _Category {
-  constructor(json, session) {
+  constructor(json) {
     Object.defineProperties(this, {
-      session: { value: session },
       name: { value: json.name },
       unit: { value: json.unit },
       description: { value: json.description },
@@ -65,13 +69,15 @@ export class _Category {
       {
         headers: {
           "content-type": "application/json",
-          ...this.session.authorizationHeader
+          ...session.authorizationHeader
         }
       }
     );
 
     const entry = (await data.json())[0];
-    this._latestSubscriptions.forEach(subscription => subscription(entry.value));
+    this._latestSubscriptions.forEach(subscription =>
+      subscription(entry.value)
+    );
   }
 
   get latest() {
@@ -88,7 +94,7 @@ export class _Category {
   async insert(value, time) {
     return fetch(config.api + `/category/${this.name}/insert`, {
       method: "POST",
-      headers: this.session.authorizationHeader,
+      headers: session.authorizationHeader,
       body: JSON.stringify({ value, time })
     });
   }
@@ -104,18 +110,17 @@ export const category = derived(
 
 export const values = derived(
   [session, category],
-  async ([$session, $category], set) => {
+  ([$session, $category], set) => {
     const c = $category;
-    if (c === undefined) {
+    if (c === undefined || !session.isValid) {
       set([]);
     } else {
-      const data = await fetch(config.api + `/category/${c.name}/values`, {
+      fetch(config.api + `/category/${c.name}/values`, {
         headers: {
           "content-type": "application/json",
-          ...$session.authorizationHeader
+          ...session.authorizationHeader
         }
-      });
-      set(await data.json());
+      }).then(async data => set(await data.json()));
     }
     return () => {};
   }
@@ -123,13 +128,14 @@ export const values = derived(
 
 export const state = readable(
   { version: "unknown", uptime: -1, memory: { heapTotal: 0, heapUsed: 0 } },
-  async set => {
+  set => {
     const f = async () => {
       const data = await fetch(config.api + "/state");
       set(await data.json());
     };
 
     f();
+    
     const interval = setInterval(() => f(), 5000);
 
     return () => clearInterval(interval);
