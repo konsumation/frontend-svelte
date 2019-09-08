@@ -53,7 +53,7 @@ export default {
       preferConst: true,
       compact: true
     }),
-    production && terser()
+  /*  production && terser()*/
   ],
   watch: {
     clearScreen: false
