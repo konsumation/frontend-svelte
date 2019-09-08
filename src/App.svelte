@@ -9,7 +9,7 @@
 </script>
 
 <div class="wrapper">
-  <header id="topnav">
+  <nav>
     <Link href="/">
       <img class="logo" src="konsum.svg" alt="Konsum" />
       <h2>Konsum</h2>
@@ -17,18 +17,18 @@
 
     <ul>
       <li>
-        <Link href="/category">Categories</Link>
+        <Link href="/category"><h3>Categories</h3></Link>
       </li>
       <li>
-        <Link href="/insert">Insert</Link>
+        <Link href="/insert"><h3>Insert</h3></Link>
       </li>
       <li>
-        <Link href="/about">About</Link>
+        <Link href="/about"><h3>About</h3></Link>
       </li>
       <li>
         {#if $session.isValid}
           <Menue>
-            <div slot="title">{$session.username}</div>
+            <h3 slot="title" class="dropdown-trigger">{$session.username}</h3>
             <ul class="dropdown-content">
               <li>
                 <a href="#!" on:click|preventDefault={logout}>
@@ -38,11 +38,11 @@
             </ul>
           </Menue>
         {:else}
-          <Link href="/login">Login</Link>
+          <Link href="/login"><h3>Login</h3></Link>
         {/if}
       </li>
     </ul>
-  </header>
+  </nav>
   <main>
     <Outlet {router}>nothing there</Outlet>
   </main>
