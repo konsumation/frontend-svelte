@@ -76,7 +76,7 @@ export class _Category {
 
     const entry = (await data.json())[0];
     this._latestSubscriptions.forEach(subscription =>
-      subscription(entry.value)
+      subscription(entry)
     );
   }
 
@@ -84,7 +84,7 @@ export class _Category {
     return {
       subscribe: subscription => {
         this._latestSubscriptions.add(subscription);
-        subscription(0.0);
+        subscription(undefined);
         this._latest();
         return () => this._latestSubscriptions.delete(subscription);
       }
@@ -94,8 +94,11 @@ export class _Category {
   async insert(value, time) {
     return fetch(config.api + `/category/${this.name}/insert`, {
       method: "POST",
-      headers: session.authorizationHeader,
-      body: JSON.stringify({ value, time })
+      headers: {
+        "content-type": "application/json",
+        ...session.authorizationHeader
+      },
+    body: JSON.stringify({ value, time: time.getTime() })
     });
   }
 }

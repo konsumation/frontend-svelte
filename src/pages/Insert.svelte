@@ -2,12 +2,12 @@
   import { categories } from "../main.mjs";
   import CategoryInsert from "../components/CategoryInsert.svelte";
   export let state;
+
+  function submit() {}
 </script>
 
-<div>
-  <form>
-    {#each $categories as category}
-      <CategoryInsert {category} />
-    {/each}
-  </form>
-</div>
+<form on:submit|preventDefault={submit}>
+  {#each $categories as category}
+    <CategoryInsert {category} value="" time=""/>
+  {/each}
+</form>
