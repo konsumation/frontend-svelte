@@ -3,9 +3,13 @@
   import { state, session } from "../main.mjs";
 
   const dateFormatter = new Intl.DateTimeFormat("default", {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour12: false,
     hour: "numeric",
-    minute: "numeric",
-    second: "numeric"
+    minute: "2-digit",
+    second: "2-digit"
   });
 
   function formatBytes(bytes, decimals = 2) {
