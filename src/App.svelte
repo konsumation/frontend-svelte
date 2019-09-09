@@ -11,29 +11,23 @@
 <nav>
   <Link href="/">
     <img class="logo" src="konsum.svg" alt="Konsum" />
-    <h2>Konsum</h2>
+    Konsum
   </Link>
 
   <ul>
     <li>
-      <Link href="/category">
-        <h3>Categories</h3>
-      </Link>
+      <Link href="/category">Categories</Link>
     </li>
     <li>
-      <Link href="/insert">
-        <h3>Insert</h3>
-      </Link>
+      <Link href="/insert">Insert</Link>
     </li>
     <li>
-      <Link href="/about">
-        <h3>About</h3>
-      </Link>
+      <Link href="/about">About</Link>
     </li>
     <li>
       {#if $session.isValid}
         <Menue>
-          <h3 slot="title" class="dropdown-trigger">{$session.username}</h3>
+          <div slot="title" class="dropdown-trigger">{$session.username}</div>
           <ul class="dropdown-content">
             <li>
               <a href="#!" on:click|preventDefault={logout}>
@@ -43,9 +37,7 @@
           </ul>
         </Menue>
       {:else}
-        <Link href="/login">
-          <h3>Login</h3>
-        </Link>
+        <Link href="/login">Login</Link>
       {/if}
     </li>
   </ul>
