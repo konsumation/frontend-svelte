@@ -2796,7 +2796,7 @@ merge2@^1.2.3:
 
 mf-styling@arlac77/mf-styling:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/59cde645d1872555bf590536f7853e7d22f60908"
+  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/5e0557720147b57352588e6b96e42318153f0d23"
 
 micromatch@^4.0.2:
   version "4.0.2"
@@ -2874,9 +2874,9 @@ minimist@~0.0.1:
   integrity sha1-3j+YVD2/lggr5IrRoMfNqDYwHc8=
 
 minipass@^2.2.1, minipass@^2.3.5:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.5.0.tgz#dddb1d001976978158a05badfcbef4a771612857"
-  integrity sha512-9FwMVYhn6ERvMR8XFdOavRz4QK/VJV8elU1x50vYexf9lslDcWe/f4HBRxCPd185ekRSjU6CfYyJCECa/CQy7Q==
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.5.1.tgz#cf435a9bf9408796ca3a3525a8b851464279c9b8"
+  integrity sha512-dmpSnLJtNQioZFI5HfQ55Ad0DzzsMAb+HfokwRTNXwEQjepbTkl5mtIlSVxGIkOkxlpX7wIn5ET/oAd9fZ/Y/Q==
   dependencies:
     safe-buffer "^5.1.2"
     yallist "^3.0.0"
@@ -4681,7 +4681,7 @@ supports-hyperlinks@^1.0.1:
 
 svelte-guard-history-router@arlac77/svelte-guard-history-router:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/svelte-guard-history-router/tar.gz/f5caa91ebd7b41b64e044e72d845daf3bda9f864"
+  resolved "https://codeload.github.com/arlac77/svelte-guard-history-router/tar.gz/aa194979d869d75bdbcfdae9e115b252361eb17b"
   dependencies:
     multi-path-matcher "^2.0.3"
 

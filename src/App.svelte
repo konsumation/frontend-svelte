@@ -25,6 +25,9 @@
       <Link href="/about">About</Link>
     </li>
     <li>
+      <Link href="/admin/backup">Backup</Link>
+    </li>
+    <li>
       {#if $session.isValid}
         <Menue>
           <div slot="title" class="dropdown-trigger">{$session.username}</div>

@@ -7,6 +7,7 @@ import CategoryValueList from "./pages/CategoryValueList.svelte";
 import Category from "./pages/Category.svelte";
 import Insert from "./pages/Insert.svelte";
 import About from "./pages/About.svelte";
+import Backup from "./pages/Backup.svelte";
 import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
@@ -33,7 +34,8 @@ export const router = new Router(
     route("/category", needsSession, Categories),
     route("/category/:category/list", needsSession, CategoryValueList),
     route("/category/:category", needsSession, Category),
-    route("/insert", needsSession, Insert)
+    route("/insert", needsSession, Insert),
+    route("/admin/backup", needsSession, Backup)
   ],
   config.urlPrefix
 );

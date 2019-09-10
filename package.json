@@ -57,7 +57,7 @@
     "depends": {
       "systemd": ">=242.84",
       "nginx-mainline": ">=1.17.3",
-      "konsum": ">=1.31.0"
+      "konsum": ">=1.32.0"
     }
   },
   "release": {
