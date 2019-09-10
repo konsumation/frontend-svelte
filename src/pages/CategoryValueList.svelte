@@ -22,6 +22,7 @@
   }
 </script>
 
+{#if $category}
 <table class="bordered striped hoverable">
   <thead>
     <th>Date</th>
@@ -36,3 +37,4 @@
     {/each}
   </tbody>
 </table>
+{/if}

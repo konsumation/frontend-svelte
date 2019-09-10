@@ -4,6 +4,7 @@ import { Session } from "svelte-session-manager";
 
 import Categories from "./pages/Categories.svelte";
 import CategoryValueList from "./pages/CategoryValueList.svelte";
+import CategoryGraph from "./pages/CategoryGraph.svelte";
 import Category from "./pages/Category.svelte";
 import Insert from "./pages/Insert.svelte";
 import About from "./pages/About.svelte";
@@ -32,8 +33,9 @@ export const router = new Router(
     route("/login", Login),
     route("/about", About),
     route("/category", needsSession, Categories),
-    route("/category/:category/list", needsSession, CategoryValueList),
     route("/category/:category", needsSession, Category),
+    route("/category/:category/list", needsSession, CategoryValueList),
+    route("/category/:category/graph", needsSession, CategoryGraph),
     route("/insert", needsSession, Insert),
     route("/admin/backup", needsSession, Backup)
   ],
@@ -59,12 +61,28 @@ export const categories = derived(
 
 export class _Category {
   constructor(json) {
+    this.unit = json.unit;
+    this.description = json.description;
+
     Object.defineProperties(this, {
       name: { value: json.name },
+      /*
       unit: { value: json.unit },
       description: { value: json.description },
+      */
       _latestSubscriptions: { value: new Set() },
       _valuesSubscriptions: { value: new Set() }
+    });
+  }
+
+  async save() {
+    return await fetch(config.api + `/category/${this.name}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        ...session.authorizationHeader
+      },
+      body: JSON.stringify({ unit: this.unit, description: this.description })
     });
   }
 

@@ -6,10 +6,9 @@
   }
 </script>
 
-{#if open}
-  <slot />
-{:else}
-  <a href="#!" on:click|preventDefault={toggleOpen}>
-    <slot name="title" />
-  </a>
-{/if}
+<a href="#!" on:click|preventDefault={toggleOpen}>
+  <slot name="title" />
+  {#if open}
+    <slot name="content" />
+  {/if}
+</a>

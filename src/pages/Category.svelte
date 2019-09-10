@@ -1,44 +1,60 @@
 <script>
   import { Link } from "svelte-guard-history-router";
-  import { TimeSeries, DataSet } from "svelte-time-series";
-  import { category, values } from "../main.mjs";
+  import { category } from "../main.mjs";
   export let state;
 
-  const padding = { top: 20, right: 15, bottom: 22, left: 25 };
-  const yTicks = [0, 5, 10, 16, 20];
-  const xTicks = [941673600, 1566467076];
-  let points = [{ x: 941673600, y: 0 }];
+  let active;
 
-  $: {
-    const vv = $values;
+  async function submit() {
+    active = true;
 
-    if (vv) {
-      points = [];
-      let last = vv[0];
-
-      for (const c of vv) {
-        const days = (c.time - last.time) / (24 * 60 * 60);
-        const y = (c.value - last.value) / days;
-
-        if (c.time > 0 && y >= 0) {
-          points.push({ x: c.time, y });
-        }
-        last = c;
-      }
+    try {
+      await $category.save();
+    }
+    finally {
+      active = false;
     }
   }
-
-  const width = 1500;
-  const height = 300;
 </script>
 
 <div>
-  {#if $category}
-    <h1>{$category.name}</h1>
-    {$category.unit}
-    <div>{$category.description}</div>
-    <TimeSeries {padding} {width} {height} {xTicks} {yTicks} {points}>
-      <DataSet {padding} {width} {height} {xTicks} {yTicks} {points} />
-    </TimeSeries>
-  {:else}No such category {JSON.stringify(state.props)}{/if}
+  <h1>{$category.name}</h1>
+  <form on:submit|preventDefault={submit}>
+    <label for="description">
+      Description
+      <input
+        id="description"
+        type="text"
+        placeholder="Description"
+        name="description"
+        required
+        bind:value={$category.description} />
+    </label>
+    <label for="unit">
+      Unit
+      <input
+        id="unit"
+        type="text"
+        placeholder="Unit"
+        name="unit"
+        required
+        bind:value={$category.unit} />
+    </label>
+
+    <button id="submit" type="submit">
+      Save
+      {#if active}
+        <div class="spinner" />
+      {/if}
+    </button>
+  </form>
+
+  <ul>
+    <li>
+      <Link href="/category/{$category.name}/list">List</Link>
+    </li>
+    <li>
+      <Link href="/category/{$category.name}/graph">Graph</Link>
+    </li>
+  </ul>
 </div>
