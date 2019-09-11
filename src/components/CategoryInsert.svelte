@@ -1,5 +1,7 @@
 <script>
   import { onDestroy } from "svelte";
+    import { ActionButton } from "svelte-common";
+
   import { now } from "../main.mjs";
 
   export let category;
@@ -27,15 +29,8 @@
   });
   onDestroy(() => unsubscribe());
 
-  let active = false;
-
   async function insert() {
-    active = true;
-    try {
       await category.insert(value, $now);
-    } finally {
-      active = false;
-    }
   }
 </script>
 
@@ -62,10 +57,7 @@
       bind:value />
   </label>
 
-  <button id="{category.name}.submit" type="submit" on:click|once={insert}>
+  <ActionButton action={insert}>
     Insert {category.name}
-    {#if active}
-      <div class="spinner" />
-    {/if}
-  </button>
+  </ActionButton>
 </fieldset>

@@ -1,7 +1,7 @@
 <script>
+  import { dateFormatter, formatDuration, formatBytes } from "svelte-common";
   import { name, version, description, config } from "../../package.json";
   import { state, session } from "../main.mjs";
-  import { dateFormatter, formatDuration, formatBytes } from "../util.mjs";
 </script>
 
 <div>

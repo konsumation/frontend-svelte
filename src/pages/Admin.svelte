@@ -1,7 +1,7 @@
 <script>
+  import { ActionButton } from "svelte-common";
   import { config } from "../../package.json";
   import { session } from "../main.mjs";
-  import ActionButton from "../components/ActionButton.svelte";
 
   async function backup() {
     await fetch(config.api + "/admin/backup", {
@@ -11,18 +11,14 @@
 
   async function restore() {
     await fetch(config.api + "/admin/restore", {
-      method: 'POST',
+      method: "POST",
       headers: session.authorizationHeader
     });
   }
 </script>
 
 <div>
-  <ActionButton action={backup}>
-    Backup
-  </ActionButton>
+  <ActionButton action={backup}>Backup</ActionButton>
 
-  <ActionButton action={restore}>
-    Restore
-  </ActionButton>
+  <ActionButton action={restore}>Restore</ActionButton>
 </div>
