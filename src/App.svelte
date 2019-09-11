@@ -25,7 +25,7 @@
       <Link href="/about">About</Link>
     </li>
     <li>
-      <Link href="/admin/backup">Backup</Link>
+      <Link href="/admin">Admin</Link>
     </li>
     <li>
       {#if $session.isValid}
