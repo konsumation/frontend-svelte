@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
+    "svelte-common": "arlac77/svelte-common",
     "svelte-guard-history-router": "arlac77/svelte-guard-history-router",
-    "svelte-session-manager": "arlac77/svelte-session-manager",
-    "svelte-time-series": "arlac77/svelte-time-series",
-    "svelte-common": "arlac77/svelte-common"
+    "svelte-session-manager": "^1.0.0",
+    "svelte-time-series": "arlac77/svelte-time-series"
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.6",
