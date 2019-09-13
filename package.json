@@ -27,7 +27,7 @@
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.2",
     "semantic-release": "^15.13.24",
-    "svelte": "^3.12.0"
+    "svelte": "^3.12.1"
   },
   "engines": {
     "node": ">=12.10.0"
