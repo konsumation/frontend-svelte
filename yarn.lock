@@ -4077,7 +4077,7 @@ rollup-plugin-svelte@^5.1.0:
     rollup-pluginutils "^2.3.3"
     sourcemap-codec "^1.4.4"
 
-rollup-plugin-terser@^5.1.1:
+rollup-plugin-terser@^5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-terser/-/rollup-plugin-terser-5.1.2.tgz#3e41256205cb75f196fc70d4634227d1002c255c"
   integrity sha512-sWKBCOS+vUkRtHtEiJPAf+WnBqk/C402fBD9AVHxSIXMqjsY7MnYWKYEUqGixtr0c8+1DjzUEPlNgOYQPVrS1g==
@@ -4651,14 +4651,14 @@ svelte-common@arlac77/svelte-common:
   version "0.0.0-semantic-release"
   resolved "https://codeload.github.com/arlac77/svelte-common/tar.gz/2a32375b6685c4e6f6c0817ab688df76558a46a1"
 
-svelte-guard-history-router@1.0.0:
+svelte-guard-history-router@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.0.0.tgz#36fc69f1808bcb8b08cbbb6e2f57be05a0cbec7f"
   integrity sha512-aR9vxcSpCicLcZYaMTcRGhqg4LBBco7SW9YH6TzwrsvzwYmppjzg0XO8mBBnQqiGiUBw1rVEh5yCxXGbMFNisQ==
   dependencies:
     multi-path-matcher "^2.0.3"
 
-svelte-session-manager@1.0.0:
+svelte-session-manager@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/svelte-session-manager/-/svelte-session-manager-1.0.0.tgz#f238806b416dfbcabcb1dcaf06bd00f50cc21be2"
   integrity sha512-VrJsZVE2dIN3vUarFcogf2OQ8Q10L2sQR6clnMHJrcvbx6ZDuw+IRChpV/VipBxC+Y8PAl6a4R5xalpRwerx5g==
@@ -4669,7 +4669,7 @@ svelte-time-series@arlac77/svelte-time-series:
   dependencies:
     d3-scale "^3.0.1"
 
-svelte@^3.12.0:
+svelte@^3.12.1:
   version "3.12.1"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.12.1.tgz#ddfacd43272ac3255907c682b74ee7d3d8b06b0c"
   integrity sha512-t29WJNjHIqfrdMcVXqIyRfgLEaNz7MihKXTpb8qHlbzvf0WyOOIhIlwIGvl6ahJ9+9CLJwz0sjhFNAmPgo8BHg==
