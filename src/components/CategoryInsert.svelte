@@ -1,6 +1,6 @@
 <script>
   import { onDestroy } from "svelte";
-    import { ActionButton } from "svelte-common";
+  import { ActionButton } from "svelte-common";
 
   import { now } from "../main.mjs";
 
@@ -20,8 +20,30 @@
 
   //$: time = formatter.format($now);
 
+  function parseDate(str)
+  {
+    //8.9.2019, 19:38:34
+    const m = str.match(/(\d+)\.(\d+)\.(\d+)[\s,]+(\d+):(\d+):(\d+)/);
+    if(m) {
+      const date = new Date();
+
+      date.setDate(parseInt(m[1],10));
+      date.setMonth(parseInt(m[2],10) - 1);
+      date.setFullYear(parseInt(m[3],10));
+
+      date.setHours(parseInt(m[4],10));
+      date.setMinutes(parseInt(m[5],10));
+      date.setSeconds(parseInt(m[6],10));
+
+      console.log(str,date);
+      return date;
+    }
+  }
+
   const unsubscribe = category.latest.subscribe(v => {
-    if(v === undefined) { return; }
+    if (v === undefined) {
+      return;
+    }
     const d = new Date();
     d.setTime(v.time * 1000);
     value = v.value;
@@ -30,7 +52,7 @@
   onDestroy(() => unsubscribe());
 
   async function insert() {
-      await category.insert(value, $now);
+    await category.insert(parseFloat(value), parseDate(time));
   }
 </script>
 
@@ -57,7 +79,5 @@
       bind:value />
   </label>
 
-  <ActionButton action={insert}>
-    Insert {category.name}
-  </ActionButton>
+  <ActionButton action={insert}>Insert {category.name}</ActionButton>
 </fieldset>
