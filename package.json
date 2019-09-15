@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.6",
-    "light-server": "arlac77/light-server",
+    "light-server": "^2.6.4",
     "npm-pkgbuild": "^6.9.1",
     "rollup": "^1.21.3",
     "rollup-plugin-commonjs": "^10.1.0",
