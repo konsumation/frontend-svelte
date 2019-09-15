@@ -19,7 +19,7 @@
     "@semantic-release/exec": "^3.3.6",
     "light-server": "arlac77/light-server",
     "npm-pkgbuild": "^6.9.1",
-    "rollup": "^1.21.2",
+    "rollup": "^1.21.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-json": "^4.0.0",
