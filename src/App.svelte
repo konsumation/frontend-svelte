@@ -1,5 +1,5 @@
 <script>
-  import { Outlet, Link } from "svelte-guard-history-router";
+  import { Outlet, link, active } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
   import { router, session } from "./main.mjs";
 
@@ -9,23 +9,23 @@
 </script>
 
 <nav>
-  <Link href="/">
+  <a href="/" use:link={router} use:active={router}>
     <img class="logo" src="konsum.svg" alt="Konsum" />
     Konsum
-  </Link>
+  </a>
 
   <ul>
     <li>
-      <Link href="/category">Categories</Link>
+      <a href="/category" use:link={router} use:active={router}>Categories</a>
     </li>
     <li>
-      <Link href="/insert">Insert</Link>
+      <a href="/insert" use:link={router} use:active={router}>Insert</a>
     </li>
     <li>
-      <Link href="/about">About</Link>
+      <a href="/about" use:link={router} use:active={router}>About</a>
     </li>
     <li>
-      <Link href="/admin">Admin</Link>
+      <a href="/admin" use:link={router} use:active={router}>Admin</a>
     </li>
     <li>
       {#if $session.isValid}
@@ -40,7 +40,7 @@
           </ul>
         </Menue>
       {:else}
-        <Link href="/login">Login</Link>
+        <a href="/login" use:link={router} use:active={router}>Login</a>
       {/if}
     </li>
   </ul>
