@@ -13,8 +13,7 @@
     <img class="logo" src="konsum.svg" alt="Konsum" />
     Konsum
   </a>
-
-  <ul>
+  <ul class="left">
     <li>
       <a href="/category" use:link={router} use:active={router}>Categories</a>
     </li>
@@ -27,6 +26,8 @@
     <li>
       <a href="/admin" use:link={router} use:active={router}>Admin</a>
     </li>
+  </ul>
+  <ul>
     <li>
       {#if $session.isValid}
         <Menue>
@@ -46,5 +47,5 @@
   </ul>
 </nav>
 <main>
-  <Outlet {router}>nothing there</Outlet>
+  <Outlet {router} />
 </main>
