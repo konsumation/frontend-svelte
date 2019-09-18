@@ -1,18 +1,10 @@
 <script>
   import { onDestroy } from "svelte";
   import { Link } from "svelte-guard-history-router";
+  import { dateFormatter } from "svelte-common";
+
   import { category, values } from "../main.mjs";
   export let state;
-
-  const dateFormatter = new Intl.DateTimeFormat("default", {
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-    hour12: false,
-    hour: "numeric",
-    minute: "2-digit",
-    second: "2-digit"
-  });
 
   const date = new Date();
 
@@ -22,7 +14,7 @@
   }
 </script>
 
-{#if $category}
+{#if $category && $values}
 <table class="bordered striped hoverable">
   <thead>
     <th>Date</th>

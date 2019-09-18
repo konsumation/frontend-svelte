@@ -32,7 +32,7 @@
   const height = 300;
 </script>
 
-{#if $category}
+{#if $category && points.length}
   <TimeSeries {padding} {width} {height} {xTicks} {yTicks} {points}>
     <DataSet {padding} {width} {height} {xTicks} {yTicks} {points} />
   </TimeSeries>

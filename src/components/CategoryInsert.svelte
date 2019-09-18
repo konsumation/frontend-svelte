@@ -1,6 +1,6 @@
 <script>
   import { onDestroy } from "svelte";
-  import { ActionButton } from "svelte-common";
+  import { ActionButton, dateFormatter } from "svelte-common";
 
   import { now } from "../main.mjs";
 
@@ -8,17 +8,7 @@
   export let value;
   export let time;
 
-  const formatter = new Intl.DateTimeFormat("default", {
-    year: "numeric",
-    month: "numeric",
-    day: "numeric",
-    hour12: false,
-    hour: "numeric",
-    minute: "2-digit",
-    second: "2-digit"
-  });
-
-  //$: time = formatter.format($now);
+  //$: time = dateFormatter.format($now);
 
   function parseDate(str)
   {
@@ -45,7 +35,7 @@
     const d = new Date();
     d.setTime(v.time * 1000);
     value = v.value;
-    time = formatter.format(d);
+    time = dateFormatter.format(d);
   });
   onDestroy(() => unsubscribe());
 
