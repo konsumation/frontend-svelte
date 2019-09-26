@@ -1,5 +1,4 @@
 import dev from "rollup-plugin-dev";
-import { spawn } from "child_process";
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
@@ -10,26 +9,7 @@ import { config } from "./package.json";
 
 const production = !process.env.ROLLUP_WATCH;
 const dist = "public";
-
-if (!production) {
-  const ls = spawn("./node_modules/.bin/light-server", [
-    "-s",
-    dist,
-    "--servePrefix",
-    config.urlPrefix,
-    "--historyindex",
-    config.urlPrefix + "/index.html",
-    "-p",
-    "5000",
-    "--proxypath",
-    config.api,
-    "-x",
-    config.proxyTarget,
-    "-w",
-    `${dist}/*.mjs,${dist}/*.css`
-  ]);
-  ls.stdout.pipe(process.stdout);
-}
+const port = 5000;
 
 export default {
   input: "src/main.mjs",
