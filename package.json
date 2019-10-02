@@ -33,7 +33,7 @@
     "svelte": "^3.12.1"
   },
   "engines": {
-    "node": ">=12.11.0"
+    "node": ">=12.10.0"
   },
   "repository": {
     "type": "git",
@@ -59,8 +59,7 @@
       "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
     },
     "depends": {
-      "systemd": ">=242.84",
-      "nginx-mainline": ">=1.17.3",
+      "nginx-mainline": ">=1.17.4",
       "konsum": ">=1.32.0"
     }
   },
