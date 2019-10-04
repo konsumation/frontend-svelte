@@ -39,7 +39,7 @@ export const router = new Router(
     route("/insert", needsSession, Insert),
     route("/admin", needsSession, Admin)
   ],
-  config.urlPrefix
+  config.base
 );
 
 export const categories = derived(

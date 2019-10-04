@@ -31,7 +31,7 @@
       </tr>
       <tr>
         <td>Mounted</td>
-        <td>{config.urlPrefix}</td>
+        <td>{config.base}</td>
       </tr>
       <tr>
         <td>API</td>

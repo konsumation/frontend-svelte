@@ -44,9 +44,9 @@
   },
   "homepage": "https://github.com/arlac77/konsum-frontend-svelte#readme",
   "config": {
+    "base": "/services/konsum",
     "api": "/services/konsum/api",
-    "proxyTarget": "https://mfelten.dynv6.net",
-    "urlPrefix": "/services/konsum"
+    "proxyTarget": "https://mfelten.dynv6.net"
   },
   "pacman": {
     "groups": "home automation",
