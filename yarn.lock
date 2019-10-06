@@ -4689,7 +4689,7 @@ svelte-common@arlac77/svelte-common:
   version "0.0.0-semantic-release"
   resolved "https://codeload.github.com/arlac77/svelte-common/tar.gz/84f21f506d51d321f4774141440f4fa0caf8b4f9"
 
-svelte-guard-history-router@^1.1.4:
+svelte-guard-history-router@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.5.tgz#2f74c8f2f437f5aae74e862e687c934f0a6d96a7"
   integrity sha512-TlGCaEXFML4wVEwwRPzA3aqkdIk11K+zQ4SZvaheWQ68RzMfVlTDx/vYctwJ/sN0zvY3d5rz6Fka7S1Fe900fA==
