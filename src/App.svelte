@@ -23,22 +23,19 @@
     <li>
       <a href="/about" use:link={router} use:active={router}>About</a>
     </li>
-    <li>
-      <a href="/admin" use:link={router} use:active={router}>Admin</a>
-    </li>
   </ul>
   <ul>
     <li>
       {#if $session.isValid}
         <Menue>
           <div slot="title" class="dropdown-trigger">{$session.username}</div>
-          <ul slot="content" class="dropdown-content">
-            <li>
-              <a href="#!" on:click|preventDefault={logout}>
-                Logout {$session.username}
-              </a>
-            </li>
-          </ul>
+          <div slot="content" class="dropdown-menu dropdown-menu-sw">
+            <a href="/" class="dropdown-item" on:click|preventDefault={logout}>
+              Logout {$session.username}
+            </a>
+            <div class="dropdown-divider" />
+            <a href="/admin" class="dropdown-item" use:link={router} use:active={router}>Admin</a>
+          </div>
         </Menue>
       {:else}
         <a href="/login" use:link={router} use:active={router}>Login</a>
