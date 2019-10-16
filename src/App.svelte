@@ -10,7 +10,7 @@
 
 <nav>
   <a href="/" use:link={router} use:active={router}>
-    <img class="logo" src="konsum.svg" alt="Konsum" />
+    <img class="logo" src="logo.svg" alt="Konsum" />
     Konsum
   </a>
   <ul class="left">

@@ -994,9 +994,9 @@ cyclist@^1.0.1:
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
 "d3-array@1.2.0 - 2":
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.3.2.tgz#4a943835e5f35ad00ef0a90e79d2c7a990be9d71"
-  integrity sha512-cg73UOh7D7e72FQQER4l5aXnEwlizah8TIggMn8qtEO/7APe5s6bAZhlDlVw0BRml6Qi4bd44WJ5HGuiK7fRyw==
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/d3-array/-/d3-array-2.3.3.tgz#e90c39fbaedccedf59fc30473092f99a0e14efa2"
+  integrity sha512-syv3wp0U5aB6toP2zb2OdBkhTy1MWDsCAaYk6OXJZv+G4u7bSWEmYgxLoFyc88RQUhZYGCebW9a9UD1gFi5+MQ==
 
 d3-color@1:
   version "1.4.0"
@@ -4732,10 +4732,10 @@ svelte-common@^1.0.5:
   resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-1.0.5.tgz#248a5f368d55950814e47e067e0054a483a88cf5"
   integrity sha512-jsoEhtrk4qxqjaECz2wMF2DRSZLU8FF5AXijgEtn/utJLYOVuDXqzT0//pVDnDKwMPNgOvUlCtIlalhiu6ojwg==
 
-svelte-guard-history-router@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.5.tgz#2f74c8f2f437f5aae74e862e687c934f0a6d96a7"
-  integrity sha512-TlGCaEXFML4wVEwwRPzA3aqkdIk11K+zQ4SZvaheWQ68RzMfVlTDx/vYctwJ/sN0zvY3d5rz6Fka7S1Fe900fA==
+svelte-guard-history-router@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.6.tgz#ebe79e4e554ae19fb58eed0b6150e870513a8d9c"
+  integrity sha512-Q7Oy2edYdQwcOerPmiBSiPDprioF/SY+v6fpZMa6IAKhRIzYuIzvaUcTZuUHjL8IsqWocT0rTc5Dm9/pV1ZY9Q==
   dependencies:
     multi-path-matcher "^2.0.3"
 
@@ -4746,7 +4746,7 @@ svelte-session-manager@^1.0.2:
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/f35bf03dab5404a464fd095deb23a82e4c49c097"
+  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/339cabab7eb3881a7a115bfea14b10b4983a2fc2"
   dependencies:
     d3-scale "^3.0.1"
 
