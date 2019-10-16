@@ -182,9 +182,9 @@
   integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
 
 "@types/fs-extra@^8.0.0":
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.0.0.tgz#d3e2c313ca29f95059f198dd60d1f774642d4b25"
-  integrity sha512-bCtL5v9zdbQW86yexOlXWTEGvLNqWxMFyi7gQA7Gcthbezr2cPSOb8SkESVKA937QD5cIwOFLDFt0MQoXOEr9Q==
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@types/fs-extra/-/fs-extra-8.0.1.tgz#a2378d6e7e8afea1564e44aafa2e207dadf77686"
+  integrity sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
   dependencies:
     "@types/node" "*"
 
@@ -2885,7 +2885,7 @@ methods@~1.1.0:
 
 mf-styling@arlac77/mf-styling:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/f5563847425abc7935e7320842f0b07036752242"
+  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/a37870c597b7ae5a48acf3fdc0b96a92211845a9"
 
 micromatch@^4.0.2:
   version "4.0.2"
@@ -4727,10 +4727,10 @@ supports-hyperlinks@^1.0.1:
     has-flag "^2.0.0"
     supports-color "^5.0.0"
 
-svelte-common@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-1.0.4.tgz#7e83eccf8ca44a278110618ebda5539c039b00a1"
-  integrity sha512-eYJVGy9ieFGI1sZkmZbEdsO5mEyovr1R4pfDE6+jRgq4VWKEr9m//3bWx7kh/6WXzyy/DaH3W65SUgFWg4lpGQ==
+svelte-common@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-1.0.5.tgz#248a5f368d55950814e47e067e0054a483a88cf5"
+  integrity sha512-jsoEhtrk4qxqjaECz2wMF2DRSZLU8FF5AXijgEtn/utJLYOVuDXqzT0//pVDnDKwMPNgOvUlCtIlalhiu6ojwg==
 
 svelte-guard-history-router@^1.1.5:
   version "1.1.5"

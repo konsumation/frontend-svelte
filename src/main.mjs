@@ -59,6 +59,14 @@ export const categories = derived(
   []
 );
 
+
+function headers(session) {
+  return {
+    "content-type": "application/json",
+    ...session.authorizationHeader
+  };
+}
+
 export class _Category {
   constructor(json) {
     this.unit = json.unit;
@@ -78,10 +86,7 @@ export class _Category {
   async save() {
     return await fetch(config.api + `/category/${this.name}`, {
       method: "PUT",
-      headers: {
-        "content-type": "application/json",
-        ...session.authorizationHeader
-      },
+      headers: headers(session),
       body: JSON.stringify({ unit: this.unit, description: this.description })
     });
   }
@@ -90,10 +95,7 @@ export class _Category {
     const data = await fetch(
       config.api + `/category/${this.name}/values?reverse=1&limit=1`,
       {
-        headers: {
-          "content-type": "application/json",
-          ...session.authorizationHeader
-        }
+        headers: headers(session)
       }
     );
 
@@ -114,10 +116,7 @@ export class _Category {
 
   async _values() {
     const data = await fetch(config.api + `/category/${this.name}/values`, {
-      headers: {
-        "content-type": "application/json",
-        ...session.authorizationHeader
-      }
+      headers: headers(session)
     });
 
     const values = await data.json();
@@ -138,10 +137,7 @@ export class _Category {
   async insert(value, time) {
     return fetch(config.api + `/category/${this.name}/insert`, {
       method: "POST",
-      headers: {
-        "content-type": "application/json",
-        ...session.authorizationHeader
-      },
+      headers: headers(session),
       body: JSON.stringify({ value, time: time.getTime() })
     });
   }
@@ -163,10 +159,7 @@ export const values = derived(
       set([]);
     } else {
       fetch(config.api + `/category/${c.name}/values`, {
-        headers: {
-          "content-type": "application/json",
-          ...session.authorizationHeader
-        }
+        headers: headers(session),
       }).then(async data => set(await data.json()));
     }
     return () => {};
