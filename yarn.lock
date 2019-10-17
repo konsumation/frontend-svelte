@@ -1393,7 +1393,7 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@^2.0.2, execa@^2.0.4:
+execa@^2.0.2:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-2.1.0.tgz#e5d3ecd837d2a60ec50f3da78fd39767747bbe99"
   integrity sha512-Y/URAVapfbYy2Xp/gb6A0E7iR8xeqOCXsuuaoMn7A5PzrXUK84E1gyiEfq0wQd/GHA6GsoHWwhNq8anb0mleIw==
@@ -1403,6 +1403,22 @@ execa@^2.0.2, execa@^2.0.4:
     is-stream "^2.0.0"
     merge-stream "^2.0.0"
     npm-run-path "^3.0.0"
+    onetime "^5.1.0"
+    p-finally "^2.0.0"
+    signal-exit "^3.0.2"
+    strip-final-newline "^2.0.0"
+
+execa@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-3.2.0.tgz#18326b79c7ab7fbd6610fd900c1b9e95fa48f90a"
+  integrity sha512-kJJfVbI/lZE1PZYDI5VPxp8zXPO9rtxOkhpZ0jMKha56AI9y2gGVC6bkukStQf0ka5Rh15BA5m7cCCH4jmHqkw==
+  dependencies:
+    cross-spawn "^7.0.0"
+    get-stream "^5.0.0"
+    human-signals "^1.1.1"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^4.0.0"
     onetime "^5.1.0"
     p-finally "^2.0.0"
     signal-exit "^3.0.2"
@@ -1889,6 +1905,11 @@ https-proxy-agent@^3.0.0:
   dependencies:
     agent-base "^4.3.0"
     debug "^3.1.0"
+
+human-signals@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
+  integrity sha512-SEQu7vl8KjNL2eoGBLF3+wAjpsNfA9XMlXAYj/3EdaNfAlxKthD1xjEQfGOUhllCGGJVNY34bRr6lPINhNjyZw==
 
 humanize-ms@^1.2.1:
   version "1.2.1"
@@ -3012,10 +3033,10 @@ ms@^2.0.0, ms@^2.1.1, ms@^2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-multi-path-matcher@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/multi-path-matcher/-/multi-path-matcher-2.0.3.tgz#77021cea0d30c3ad95ea03137f3779878e905e79"
-  integrity sha512-jXDwZKH+0MNIajH6dvF8lzGU3h6/jrzLp5yeM2Cexk1KpWqiGf3FbTxSfVf7zk9sHr0dYEvr4h66ils6boXsBA==
+multi-path-matcher@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/multi-path-matcher/-/multi-path-matcher-2.0.4.tgz#1c6460635af4df1193cd8b41677ff2fd031f52f5"
+  integrity sha512-zsoFxHGDiWHoAsgjFqlAwJwNoDQa14agjY+n3vBqEhquNkbOf4D7Kz2131uyE1tso0t7UlNj8BNSTzjT9lYAWw==
 
 mute-stream@~0.0.4:
   version "0.0.8"
@@ -3190,13 +3211,13 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.10.1:
-  version "6.10.1"
-  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.10.1.tgz#134b9fa4be1539c6e0d486e67471f0ea6070a95c"
-  integrity sha512-tLX8C+MHReEHtAdXPzF7YZ94rh8eS6VnB2LTdj+hvd0vKmMzICssSQa/rVgoSYXw7kVhWqt6l1A/raQ7Uaxahw==
+npm-pkgbuild@^6.10.2:
+  version "6.10.2"
+  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.10.2.tgz#b9cfca022b66f0980318a782d67cd94a0de59648"
+  integrity sha512-xz8jIQQmB7mI+5SwIrG5s8tDBvI0xjrgQ7qe3zy6KBT/8h+2cDldy/8DwD+PWJTa6nE2R6WJgn0N8+L2vwv5Qw==
   dependencies:
     commander "^3.0.0"
-    execa "^2.0.4"
+    execa "^3.1.0"
     expression-expander "^7.0.2"
     globby "^10.0.1"
     iterable-string-interceptor "^1.0.1"
@@ -3234,6 +3255,13 @@ npm-run-path@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-3.1.0.tgz#7f91be317f6a466efed3c9f2980ad8a4ee8b0fa5"
   integrity sha512-Dbl4A/VfiVGLgQv29URL9xshU8XDY1GeLy+fsaZ1AA8JDSfjvr5P5+pzRbWqRSBxk6/DW7MIh8lTM/PaGnP2kg==
+  dependencies:
+    path-key "^3.0.0"
+
+npm-run-path@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-4.0.0.tgz#d644ec1bd0569187d2a52909971023a0a58e8438"
+  integrity sha512-8eyAOAH+bYXFPSnNnKr3J+yoybe8O87Is5rtAQ8qRczJz1ajcsjg8l2oZqP+Ppx15Ii3S1vUTjQN2h4YO2tWWQ==
   dependencies:
     path-key "^3.0.0"
 
@@ -4732,12 +4760,12 @@ svelte-common@^1.0.5:
   resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-1.0.5.tgz#248a5f368d55950814e47e067e0054a483a88cf5"
   integrity sha512-jsoEhtrk4qxqjaECz2wMF2DRSZLU8FF5AXijgEtn/utJLYOVuDXqzT0//pVDnDKwMPNgOvUlCtIlalhiu6ojwg==
 
-svelte-guard-history-router@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.6.tgz#ebe79e4e554ae19fb58eed0b6150e870513a8d9c"
-  integrity sha512-Q7Oy2edYdQwcOerPmiBSiPDprioF/SY+v6fpZMa6IAKhRIzYuIzvaUcTZuUHjL8IsqWocT0rTc5Dm9/pV1ZY9Q==
+svelte-guard-history-router@^1.1.7:
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.7.tgz#441bda8860f224643fbaa7f6e36bf558d75fba38"
+  integrity sha512-Y9wHVGosFVk5jTXR+MB9s8wxj4aJNl8PG5WPx2uKCSnuzaVbwtYjFballVzTkrRKMzhKz02XKyozR0Q8dpKbJQ==
   dependencies:
-    multi-path-matcher "^2.0.3"
+    multi-path-matcher "^2.0.4"
 
 svelte-session-manager@^1.0.2:
   version "1.0.2"
