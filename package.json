@@ -20,7 +20,7 @@
     "svelte-time-series": "arlac77/svelte-time-series"
   },
   "devDependencies": {
-    "@semantic-release/exec": "^3.3.7",
+    "@semantic-release/exec": "^3.3.8",
     "npm-pkgbuild": "^6.10.2",
     "rollup": "^1.25.2",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -30,7 +30,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.2",
-    "semantic-release": "^15.13.27",
+    "semantic-release": "^15.13.28",
     "svelte": "^3.12.1"
   },
   "engines": {
