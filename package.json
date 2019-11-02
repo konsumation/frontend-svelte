@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@semantic-release/exec": "^3.3.8",
-    "npm-pkgbuild": "^6.10.2",
+    "npm-pkgbuild": "^6.10.4",
     "rollup": "^1.26.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-copy": "^3.1.0",
@@ -30,7 +30,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.0",
     "rollup-plugin-terser": "^5.1.2",
-    "semantic-release": "^15.13.28",
+    "semantic-release": "^15.13.29",
     "svelte": "^3.12.1"
   },
   "engines": {
