@@ -51,7 +51,7 @@
   },
   "pacman": {
     "groups": "home automation",
-    "hooks": "pacman/install.sh",
+    "hooks": "pacman/hooks.sh",
     "installdir": "/services/konsum/frontend",
     "content": {
       "${installdir}/": {
