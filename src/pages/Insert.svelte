@@ -1,7 +1,6 @@
 <script>
   import { categories } from "../main.mjs";
   import CategoryInsert from "../components/CategoryInsert.svelte";
-  export let state;
 
   function submit() {}
 </script>

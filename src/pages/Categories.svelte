@@ -1,8 +1,6 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import { categories }  from "../main.mjs";
-
-  export let state;
 </script>
 
 <div>

@@ -2,9 +2,7 @@
   import { onDestroy } from "svelte";
   import { Link } from "svelte-guard-history-router";
   import { dateFormatter } from "svelte-common";
-
   import { category, values } from "../main.mjs";
-  export let state;
 
   const date = new Date();
 

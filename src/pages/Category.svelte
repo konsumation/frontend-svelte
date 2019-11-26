@@ -1,7 +1,6 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import { category } from "../main.mjs";
-  export let state;
 
   let active;
 
