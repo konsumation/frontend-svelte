@@ -12,7 +12,8 @@ import Admin from "./pages/Admin.svelte";
 import Login from "./pages/Login.svelte";
 import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
-import { config } from "../package.json";
+import base from 'consts:base';
+import api from 'consts:api';
 
 export const session = new Session(localStorage);
 
@@ -39,14 +40,14 @@ export const router = new Router(
     route("/insert", needsSession, Insert),
     route("/admin", needsSession, Admin)
   ],
-  config.base
+  base
 );
 
 export const categories = derived(
   session,
   ($session, set) => {
     if ($session.isValid) {
-      fetch(config.api + "/categories", {
+      fetch(api + "/categories", {
         headers: session.authorizationHeader
       }).then(async data =>
         set((await data.json()).map(c => new _Category(c)))
@@ -84,7 +85,7 @@ export class _Category {
   }
 
   async save() {
-    return await fetch(config.api + `/category/${this.name}`, {
+    return await fetch(api + `/category/${this.name}`, {
       method: "PUT",
       headers: headers(session),
       body: JSON.stringify({ unit: this.unit, description: this.description })
@@ -93,7 +94,7 @@ export class _Category {
 
   async _latest() {
     const data = await fetch(
-      config.api + `/category/${this.name}/values?reverse=1&limit=1`,
+      api + `/category/${this.name}/values?reverse=1&limit=1`,
       {
         headers: headers(session)
       }
@@ -115,7 +116,7 @@ export class _Category {
   }
 
   async _values() {
-    const data = await fetch(config.api + `/category/${this.name}/values`, {
+    const data = await fetch(api + `/category/${this.name}/values`, {
       headers: headers(session)
     });
 
@@ -135,7 +136,7 @@ export class _Category {
   }
 
   async insert(value, time) {
-    return fetch(config.api + `/category/${this.name}/insert`, {
+    return fetch(api + `/category/${this.name}/insert`, {
       method: "POST",
       headers: headers(session),
       body: JSON.stringify({ value, time: time.getTime() })
@@ -158,7 +159,7 @@ export const values = derived(
     if (c === undefined || !session.isValid) {
       set([]);
     } else {
-      fetch(config.api + `/category/${c.name}/values`, {
+      fetch(api + `/category/${c.name}/values`, {
         headers: headers(session),
       }).then(async data => set(await data.json()));
     }
@@ -170,7 +171,7 @@ export const state = readable(
   { version: "unknown", uptime: -1, memory: { heapTotal: 0, heapUsed: 0 } },
   set => {
     const f = async () => {
-      const data = await fetch(config.api + "/state");
+      const data = await fetch(api + "/state");
       set(await data.json());
     };
 

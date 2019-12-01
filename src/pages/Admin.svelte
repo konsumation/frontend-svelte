@@ -1,16 +1,16 @@
 <script>
   import { ActionButton } from "svelte-common";
-  import { config } from "../../package.json";
   import { session } from "../main.mjs";
+  import api from 'consts:api';
 
   async function backup() {
-    await fetch(config.api + "/admin/backup", {
+    await fetch(api + "/admin/backup", {
       headers: session.authorizationHeader
     });
   }
 
   async function restore() {
-    await fetch(config.api + "/admin/restore", {
+    await fetch(api + "/admin/restore", {
       method: "POST",
       headers: session.authorizationHeader
     });

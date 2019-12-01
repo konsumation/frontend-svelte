@@ -1,7 +1,12 @@
 <script>
   import { dateFormatter, formatDuration, formatBytes } from "svelte-common";
-  import { name, version, description, config } from "../../package.json";
   import { state, session } from "../main.mjs";
+  import name from 'consts:name';
+  import version from 'consts:version';
+  import description from 'consts:description';
+  import base from 'consts:base';
+  import api from 'consts:api';
+
 </script>
 
 <div>
@@ -31,11 +36,11 @@
       </tr>
       <tr>
         <td>Mounted</td>
-        <td>{config.base}</td>
+        <td>{base}</td>
       </tr>
       <tr>
         <td>API</td>
-        <td>{config.api}</td>
+        <td>{api}</td>
       </tr>
       <tr>
         <td>Username</td>
