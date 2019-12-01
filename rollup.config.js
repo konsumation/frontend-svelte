@@ -1,3 +1,4 @@
+import consts from 'rollup-plugin-consts';
 import dev from "rollup-plugin-dev";
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
@@ -34,6 +35,12 @@ export default {
     spa: `${dist}/index.html`,
     basePath: config.base,
     proxy: { [`${config.api}/*`]: [config.proxyTarget, { https: true }] }
+  }), consts({
+    name,
+    version,
+    description,
+    api: config.api,
+    base: config.base
   })],
   watch: {
     clearScreen: false
