@@ -1,4 +1,3 @@
-import acornClassFields from "acorn-class-fields";
 import consts from 'rollup-plugin-consts';
 import dev from "rollup-plugin-dev";
 import svelte from "rollup-plugin-svelte";
