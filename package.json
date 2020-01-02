@@ -16,14 +16,14 @@
     "mf-styling": "arlac77/mf-styling",
     "svelte-common": "^1.1.2",
     "svelte-guard-history-router": "^1.1.9",
-    "svelte-session-manager": "^1.0.3",
+    "svelte-session-manager": "^1.0.4",
     "svelte-time-series": "arlac77/svelte-time-series"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^6.0.0",
     "@semantic-release/exec": "^3.3.8",
-    "npm-pkgbuild": "^6.11.1",
+    "npm-pkgbuild": "^6.11.2",
     "rollup": "^1.27.14",
     "rollup-plugin-consts": "^1.0.1",
     "rollup-plugin-copy": "^3.1.0",
