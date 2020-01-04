@@ -20,8 +20,8 @@
     "svelte-time-series": "arlac77/svelte-time-series"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.0.0",
-    "@rollup/plugin-node-resolve": "^6.0.0",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^6.1.0",
     "@semantic-release/exec": "^3.3.8",
     "npm-pkgbuild": "^6.11.2",
     "rollup": "^1.27.14",
