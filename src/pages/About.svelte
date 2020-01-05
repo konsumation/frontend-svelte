@@ -1,12 +1,11 @@
 <script>
-  import { dateFormatter, formatDuration, formatBytes } from "svelte-common";
+  import { Duration, dateFormatter, formatDuration, formatBytes } from "svelte-common";
   import { state, session } from "../main.mjs";
   import name from 'consts:name';
   import version from 'consts:version';
   import description from 'consts:description';
   import base from 'consts:base';
   import api from 'consts:api';
-
 </script>
 
 <div>
@@ -24,7 +23,7 @@
       </tr>
       <tr>
         <td>Server Uptime</td>
-        <td>{formatDuration($state.uptime)}</td>
+        <td><Duration seconds={$state.uptime}/></td>
       </tr>
       <tr>
         <td>Server Heap Total</td>
