@@ -1,14 +1,12 @@
 <script>
-  import { onDestroy } from "svelte";
   import { Link } from "svelte-guard-history-router";
-  import { dateFormatter } from "svelte-common";
+  import { DateTime } from "svelte-common";
   import { category, values } from "../main.mjs";
 
-  const date = new Date();
-
-  function asDate(time) {
+  function time2Date(time) {
+    const date = new Date();
     date.setTime(time * 1000);
-    return dateFormatter.format(date);
+    return date;
   }
 </script>
 
@@ -21,7 +19,7 @@
   <tbody>
     {#each $values as entry}
       <tr>
-        <td>{asDate(entry.time)}</td>
+        <td><DateTime date={time2Date(entry.time)}/></td>
         <td>{entry.value}</td>
       </tr>
     {/each}
