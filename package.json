@@ -22,7 +22,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
-    "@semantic-release/exec": "^4.0.0",
+    "@semantic-release/exec": "^5.0.0",
     "npm-pkgbuild": "^6.11.4",
     "rollup": "^1.30.1",
     "rollup-plugin-consts": "^1.0.1",
@@ -31,7 +31,7 @@
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.2.0",
     "semantic-release": "^17.0.0",
-    "svelte": "^3.17.3"
+    "svelte": "^3.18.1"
   },
   "engines": {
     "node": ">=12.14.1"
