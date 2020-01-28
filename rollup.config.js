@@ -1,3 +1,10 @@
+import pkg from "./package.json";
+
+import builtins from "builtin-modules";
+import cleanup from "rollup-plugin-cleanup";
+
+import executable from "rollup-plugin-executable";
+import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 

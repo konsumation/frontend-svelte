@@ -10,7 +10,11 @@
     "deploy": "scp public/* root@odroid1:/services/konsum/frontend/",
     "package": "npm-pkgbuild pkgbuild pacman makepkg",
     "prepare": "rollup -c",
-    "start": "rollup -c -w"
+    "start": "rollup -c -w",
+    "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
+    "test": "ava",
+    "docs": "documentation readme {{module}} --section=API",
+    "lint": "documentation lint {{module}}"
   },
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
@@ -21,13 +25,21 @@
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-json": "^4.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "@semantic-release/exec": "^4.0.0",
+    "ava": "^2.4.0",
+    "builtin-modules": "^3.1.0",
+    "c8": "^7.0.1",
+    "documentation": "^12.1.4",
+    "esm": "^3.2.25",
     "npm-pkgbuild": "^6.11.4",
     "rollup": "^1.30.1",
+    "rollup-plugin-cleanup": "^3.1.1",
     "rollup-plugin-consts": "^1.0.1",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-dev": "^1.1.1",
+    "rollup-plugin-executable": "^1.5.2",
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.2.0",
     "semantic-release": "^17.0.0",
@@ -74,6 +86,19 @@
           "publishCmd": "npx npm-pkgbuild --pkgver ${nextRelease.version} pkgbuild pacman makepkg"
         }
       ]
+    ]
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ],
+    "extensions": [
+      "mjs"
+    ],
+    "babel": false,
+    "compileEnhancements": false,
+    "files": [
+      "tests/*-test.mjs"
     ]
   },
   "template": {

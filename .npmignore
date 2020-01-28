@@ -5,7 +5,7 @@ doc
 *.tmp
 .test
 .tmp
-.npmrc
 .travis.yml
 .vscode
-.nyc_output
+rollup.config.js
+.DS_Store
