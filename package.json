@@ -23,7 +23,7 @@
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@semantic-release/exec": "^5.0.0",
-    "npm-pkgbuild": "^6.11.4",
+    "npm-pkgbuild": "^6.11.5",
     "rollup": "^1.31.0",
     "rollup-plugin-consts": "^1.0.1",
     "rollup-plugin-copy": "^3.3.0",
