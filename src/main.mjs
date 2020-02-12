@@ -72,6 +72,7 @@ export class _Category {
   constructor(json) {
     this.unit = json.unit;
     this.description = json.description;
+    this.order = json.order || 1.0;
 
     Object.defineProperties(this, {
       name: { value: json.name },
@@ -88,7 +89,7 @@ export class _Category {
     return await fetch(api + `/category/${this.name}`, {
       method: "PUT",
       headers: headers(session),
-      body: JSON.stringify({ unit: this.unit, description: this.description })
+      body: JSON.stringify({ order: this.order, unit: this.unit, description: this.description })
     });
   }
 
