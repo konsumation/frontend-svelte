@@ -24,7 +24,7 @@
     "@rollup/plugin-node-resolve": "^7.1.1",
     "@semantic-release/exec": "^5.0.0",
     "npm-pkgbuild": "^6.11.5",
-    "rollup": "^1.31.0",
+    "rollup": "^1.31.1",
     "rollup-plugin-consts": "^1.0.1",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-dev": "^1.1.1",
