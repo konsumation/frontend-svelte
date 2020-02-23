@@ -7,10 +7,10 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "prepare": "rollup -c",
-    "start": "rollup -c -w",
     "deploy": "scp public/* root@odroid1:/services/konsum/frontend/",
-    "package": "npm-pkgbuild pkgbuild pacman makepkg"
+    "package": "npm-pkgbuild pkgbuild pacman makepkg",
+    "prepare": "rollup -c",
+    "start": "rollup -c -w"
   },
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
@@ -31,7 +31,7 @@
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.2.0",
     "semantic-release": "^17.0.4",
-    "svelte": "^3.18.2"
+    "svelte": "^3.19.0"
   },
   "engines": {
     "node": ">=13.8.0"
