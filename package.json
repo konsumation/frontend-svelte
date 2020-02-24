@@ -7,10 +7,10 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "prepare": "rollup -c",
-    "start": "rollup -c -w",
     "deploy": "scp public/* root@odroid1:/services/konsum/frontend/",
-    "package": "npm-pkgbuild pkgbuild pacman makepkg"
+    "package": "npm-pkgbuild pkgbuild pacman makepkg",
+    "prepare": "rollup -c",
+    "start": "rollup -c -w"
   },
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
