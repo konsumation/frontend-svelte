@@ -77,7 +77,10 @@
   },
   "template": {
     "repository": {
-      "url": "https://github.com/arlac77/npm-package-template-svelte-app.git"
+      "url": [
+        "arlac77/npm-package-template-svelte-app",
+        "arlac77/npm-package-template-github"
+      ]
     }
   }
 }
