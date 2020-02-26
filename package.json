@@ -7,7 +7,6 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "deploy": "scp public/* root@odroid1:/services/konsum/frontend/",
     "package": "npm-pkgbuild pkgbuild pacman makepkg",
     "prepare": "rollup -c",
     "start": "rollup -c -w"
