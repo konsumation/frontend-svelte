@@ -1,1 +1,13 @@
-{"name":"konsum-frontend-svelte","description":"svelte web frontend for konsum","icons":[{"src":"facicon.ico","sizes":"16x16"}],"start_url":"/index.html","display":"standalone","orientation":"portrait"}
+{
+  "name": "{{name}}",
+  "description": "{{description}}",
+  "icons": [
+    {
+      "src": "facicon.ico",
+      "sizes": "16x16"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
+}
