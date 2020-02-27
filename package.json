@@ -7,9 +7,9 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
+    "package": "npm-pkgbuild pkgbuild pacman makepkg",
     "prepare": "rollup -c",
-    "start": "rollup -c -w",
-    "package": "npm-pkgbuild pkgbuild pacman makepkg"
+    "start": "rollup -c -w"
   },
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
@@ -79,7 +79,9 @@
     "repository": {
       "url": [
         "arlac77/npm-package-template-svelte-app",
-        "arlac77/npm-package-template-github"
+        "arlac77/npm-package-template-github",
+        "https://github.com/arlac77/npm-package-template-svelte-app.git",
+        "https://github.com/arlac77/npm-package-template-github.git"
       ]
     }
   }
