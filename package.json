@@ -14,8 +14,8 @@
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
     "svelte-common": "^1.3.0",
-    "svelte-guard-history-router": "^1.1.11",
-    "svelte-session-manager": "^1.0.6",
+    "svelte-guard-history-router": "^1.1.13",
+    "svelte-session-manager": "^1.0.7",
     "svelte-time-series": "arlac77/svelte-time-series"
   },
   "devDependencies": {
@@ -30,10 +30,10 @@
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.2.0",
     "semantic-release": "^17.0.4",
-    "svelte": "^3.19.0"
+    "svelte": "^3.19.1"
   },
   "engines": {
-    "node": ">=13.8.0"
+    "node": ">=13.9.0"
   },
   "repository": {
     "type": "git",
