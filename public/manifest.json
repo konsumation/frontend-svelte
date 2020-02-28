@@ -6,5 +6,8 @@
       "src": "facicon.ico",
       "sizes": "16x16"
     }
-  ]
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "orientation": "portrait"
 }
