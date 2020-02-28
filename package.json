@@ -3,7 +3,8 @@
   "version": "0.0.0-semantic-release",
   "description": "svelte web frontend for konsum",
   "keywords": [
-    "svelte"
+    "svelte",
+    "web"
   ],
   "license": "BSD-2-Clause",
   "scripts": {
