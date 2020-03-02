@@ -5,3 +5,6 @@ public/bundle.*
 public/global.css
 *.dump
 *.log
+.tmp
+*.node
+.test
