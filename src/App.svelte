@@ -1,4 +1,5 @@
 <script>
+  import * as style from "./main.css";
   import { Outlet, link, active } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
   import { router, session } from "./main.mjs";
