@@ -1,3 +1,6 @@
+import postcssImport from 'postcss-import';
+
+import postcss from 'rollup-plugin-postcss'
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 
@@ -20,32 +23,28 @@ export default {
     file: `${dist}/bundle.mjs`,
     plugins: [production && terser()]
   },
-  plugins: [
-    consts({
-      name,
-      version,
-      description,
-      ...config
-    }),
-    copy({
-      targets: [{ src: "node_modules/mf-styling/global.css", dest: dist }]
-    }),
-    svelte({
-      dev: !production,
-      css: css => {
-        css.write(`${dist}/bundle.css`);
-      }
-    }),
-    resolve({ browser: true }),
-    commonjs(),
-    dev({
-      port,
-      dirs: [dist],
-      spa: `${dist}/index.html`,
-      basePath: config.base,
-      proxy: { [`${config.api}/*`]: [config.proxyTarget, { https: true }] }
-    })
-  ],
+  plugins: [consts({
+    name,
+    version,
+    description,
+    ...config
+  }), copy({
+    targets: [{ src: "node_modules/mf-styling/global.css", dest: dist }]
+  }), svelte({
+    dev: !production,
+    css: css => {
+      css.write(`${dist}/bundle.css`);
+    }
+  }), resolve({ browser: true }), commonjs(), dev({
+    port,
+    dirs: [dist],
+    spa: `${dist}/index.html`,
+    basePath: config.base,
+    proxy: { [`${config.api}/*`]: [config.proxyTarget, { https: true }] }
+  }), postcss({
+    extract: true,
+    plugins: [postcssImport]
+  })],
   watch: {
     clearScreen: false
   }
