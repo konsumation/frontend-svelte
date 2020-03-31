@@ -1,3 +1,4 @@
+import { readFileSync } from "fs";
 import fs from "fs";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
