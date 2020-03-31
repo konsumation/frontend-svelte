@@ -1,5 +1,4 @@
 import { readFileSync } from "fs";
-import fs from "fs";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 
@@ -17,7 +16,7 @@ const port = 5000;
 
 export default () => {
   const { name, description, version, config } = JSON.parse(
-    fs.readFileSync("./package.json", { endoding: "utf8" })
+    readFileSync("./package.json", { endoding: "utf8" })
   );
 
   return {
