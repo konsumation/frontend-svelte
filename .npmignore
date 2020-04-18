@@ -7,5 +7,8 @@ doc
 .tmp
 .travis.yml
 .vscode
+*.css.map
 .github
 rollup.config.mjs
+*.js.map
+*.mjs.map
