@@ -37,7 +37,7 @@
     "svelte": "^3.21.0"
   },
   "engines": {
-    "node": ">=13.13.0"
+    "node": ">=14.0.0"
   },
   "repository": {
     "type": "git",
