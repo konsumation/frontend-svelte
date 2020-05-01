@@ -24,9 +24,9 @@
     js-tokens "^4.0.0"
 
 "@babel/runtime@^7.9.2":
-  version "7.9.2"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
-  integrity sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q==
+  version "7.9.6"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.6.tgz#a9102eb5cadedf3f31d08a9ecf294af7827ea29f"
+  integrity sha512-64AF1xY3OAkFHqOb9s4jpgk1Mm5vDZ4L3acHvAml+53nO1XbXLuDodsVpO4OIUsmemlUHMxNdYMNJmsvOwLrvQ==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -1406,7 +1406,7 @@ d3-interpolate@^1.2.0:
   dependencies:
     d3-color "1"
 
-d3-scale@^3.0.1:
+d3-scale@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-3.2.1.tgz#da1684adce7261b4bc7a76fe193d887f0e909e69"
   integrity sha512-huz5byJO/6MPpz6Q8d4lg7GgSpTjIZW/l+1MQkzKfu2u8P6hjaXaStOpmyrD6ymKoW87d2QVFCKvSjLwjzx/rA==
@@ -1664,9 +1664,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.413:
-  version "1.3.420"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.420.tgz#e95b731f475433d29d2835a200dab413e45ba819"
-  integrity sha512-iVmQhf25F+5bdAyDrfOmCMjyLlIwsr9UT/LyYPQ3J1Vrypr9IgHf2PxqlsnzicnRAYDev6S9cl1tYlDHZUHY/g==
+  version "1.3.425"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.425.tgz#96b7b5aa9115e42baf59be88d2432c9f406128c4"
+  integrity sha512-JTEOWiqCY4snuKuQAaFy0z6LK2Gdb8Lojkd/csQwpNHgMUF8I6QRjGVKk44IH46dHQhUFKzr4o6zxZrtDBjc2Q==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
@@ -1854,9 +1854,9 @@ execa@^4.0.0:
     strip-final-newline "^2.0.0"
 
 expression-expander@^7.0.4:
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/expression-expander/-/expression-expander-7.0.4.tgz#4e31684be639f7958788303ccbb1ce2d1905c6b7"
-  integrity sha512-T/ucHnkSrzxjeBjOcDzCgSUABUfUnmNpibb2Z/WU+x4MUtrTL6kQ1ye6onlhxUtro/cBWyO6yYDf7x+G7CO/fQ==
+  version "7.0.5"
+  resolved "https://registry.yarnpkg.com/expression-expander/-/expression-expander-7.0.5.tgz#111758a50be2a5527025edf4dd9f36a1a8207e0d"
+  integrity sha512-SatxuPs/VtMkSoN/5ppJm9Tajkqq071Alh7HVptvPkTHzyhgUau6i4YDEA/aaREIJMHN47FVlxcmj4FngA0L4A==
 
 extend@~3.0.2:
   version "3.0.2"
@@ -2213,9 +2213,9 @@ got@^6.7.1:
     url-parse-lax "^1.0.0"
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.2, graceful-fs@^4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
-  integrity sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
+  integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
 handlebars@^4.4.0:
   version "4.7.6"
@@ -3534,7 +3534,7 @@ methods@~1.1.0:
 
 mf-styling@arlac77/mf-styling:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/b386b59806ab12fc7a9516553dfeb263974f3611"
+  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/3159bad77e0a7cf39188af17c5cf48f7b33bc662"
 
 micromatch@^4.0.2:
   version "4.0.2"
@@ -3855,10 +3855,10 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.11.16:
-  version "6.11.16"
-  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.11.16.tgz#37358ebdf6aae8bea52071319e98539f02eb6aa5"
-  integrity sha512-Pm7KmGVnGdDZv0PCZRIGs73DrjVojl7/HnBZxT8rue0v4UFSq6f0BpkQYzStfmMJO/KaYZzREIumIZmtzyxsag==
+npm-pkgbuild@^6.11.18:
+  version "6.11.18"
+  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.11.18.tgz#0badd80cf3dd738f9ef414b609436016abd41a22"
+  integrity sha512-KRbSwForyqcrZwkqHZkDZAwyvJ+VKywMNf3j5y/kBgWboDPMPELFME9GZ7Xsc/WiZJGooTtts+5csAzJjgpSEQ==
   dependencies:
     commander "^5.0.0"
     execa "^4.0.0"
@@ -3877,9 +3877,9 @@ npm-profile@^4.0.2, npm-profile@^4.0.4:
     npm-registry-fetch "^4.0.0"
 
 npm-registry-fetch@^4.0.0, npm-registry-fetch@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/npm-registry-fetch/-/npm-registry-fetch-4.0.3.tgz#3c2179e39e04f9348b1c2979545951d36bee8766"
-  integrity sha512-WGvUx0lkKFhu9MbiGFuT9nG2NpfQ+4dCJwRwwtK2HK5izJEvwDxMeUyqbuMS7N/OkpVCqDorV6rO5E4V9F8lJw==
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/npm-registry-fetch/-/npm-registry-fetch-4.0.4.tgz#2da1ecf3f43d419d96abf313664291a4623d3ea5"
+  integrity sha512-6jb34hX/iYNQebqWUHtU8YF6Cjb1H6ouTFPClYsyiW6lpFkljTpdeftm53rRojtja1rKAvKNIIiTS5Sjpw4wsA==
   dependencies:
     JSONStream "^1.3.4"
     bluebird "^3.5.1"
@@ -4808,9 +4808,9 @@ postcss-value-parser@^3.0.0, postcss-value-parser@^3.2.3:
   integrity sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==
 
 postcss-value-parser@^4.0.2:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.0.3.tgz#651ff4593aa9eda8d5d0d66593a2417aeaeb325d"
-  integrity sha512-N7h4pG+Nnu5BEIzyeaaIYWs0LI5XC40OrRh5L60z0QjFsqGWcHcbkBvpe1WYpcIS9yQ8sOi/vIPt1ejQCrMVrg==
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
+  integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
 
 postcss@6.0.1:
   version "6.0.1"
@@ -5323,9 +5323,9 @@ rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.2, rimraf@^2.6.3, rimraf@^2.7.1:
     glob "^7.1.3"
 
 rollup-plugin-consts@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-consts/-/rollup-plugin-consts-1.0.1.tgz#f809981e59d4523f4831015bded7969231b7376f"
-  integrity sha512-DxGHhH4rw6k7BtlGT34tzq2F0SpNPOBOvEuGPQRgk1Ox9yZn1xYtZXhRjMXaZIRt+073IX8/AT/j70e4YUwUOg==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-consts/-/rollup-plugin-consts-1.0.2.tgz#b02906ee288929e92119d55ab4d423551675aeda"
+  integrity sha512-vsy9uyIGTXHsVVlD6c2f43xgiQQYRWY29ycC3ezewxc9AHySjQh5Oi3NEX/9c4OnRnnxe+PMwOtvYBMyP0993Q==
 
 rollup-plugin-dev@^1.1.2:
   version "1.1.2"
@@ -5388,10 +5388,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.7.3:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.7.3.tgz#24ebb08533b9ca6bc5a7aef8100e155e50035c31"
-  integrity sha512-lAWJGZ5BQzcu/5fhMKGJrh5oy9LQUoaCid8cQV8k+E2vE9E/UWptzcM+bSBg+u8akORsvnybsqQUE/wVChIazg==
+rollup@^2.7.6:
+  version "2.7.6"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.7.6.tgz#8e6682e64ca65eb33b896dcce902696f0415ce1a"
+  integrity sha512-AdHosxHBKyBsdtbT1/AqbWNQ87O4SSxS4N9iMwEpoCDAT6e4Du3uJSy83mp3ckgmCxly5VeXGx0WHsm21Djytg==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -5962,28 +5962,28 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-common@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.0.2.tgz#892d458427809a8f771342117042bf54cc49a745"
-  integrity sha512-4VWFabbw7j4HXUw1iIfoKXj8tnx+52hDi5/cu8BaITeLOouBX6cDo5fRVuEzy7ogLvB5G/1jeYlWIkAM/vSqyQ==
+svelte-common@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.0.3.tgz#1605ac9cea0803e536aa87d52a2d3abc8179fc6c"
+  integrity sha512-U3yA3ZnLqV8RFYzPckiXnnfGfbOz5cpllddZE/NiBhJo575qhFnI63ccCJ3k/pxxvFZANFkUcJYLibvnYWhAOg==
 
-svelte-guard-history-router@^1.1.17:
-  version "1.1.17"
-  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.17.tgz#a5e6f53afa06fd9e55c93bb91f58e509c4e0269f"
-  integrity sha512-n9Q1JofbHqWPAM42Mn2OxOBwaQ9ln6RyMP/FOe5ZMPp5ET5WcIz1RH0p6As1YxHNYDlf/mQ4yv5bl7teEdPJtA==
+svelte-guard-history-router@^1.1.18:
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/svelte-guard-history-router/-/svelte-guard-history-router-1.1.18.tgz#574bd036a53c68011600d60192a8359c6045a5e4"
+  integrity sha512-y5R/X+IJQ0XDdDe/hmQjfnlAEDH1nMoBrdhAJ4r0iX3iqsG+rVWlfAK6nLheF4pPBl+KnmEy/SHunPOEr8zr/Q==
   dependencies:
     multi-path-matcher "^2.0.11"
 
-svelte-session-manager@^1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/svelte-session-manager/-/svelte-session-manager-1.0.10.tgz#0e8d7ae48e61f6fbb04a14d4cf26e0398c872faf"
-  integrity sha512-VfmRNkPG5q8PNqmWr5Otfv1ibWaW6bJ4fuG6wdYIYz4FJbPX4uMYiPoLeySoF4+0VLGVIAXxGx7mKKU9fzgxMg==
+svelte-session-manager@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/svelte-session-manager/-/svelte-session-manager-1.0.11.tgz#426ed4e4f57851dcf0605ad8292ac7ad43430be5"
+  integrity sha512-dyp9hdFi/iuRLygWcOMvTrmFlH25PbAGrIgYUNdCmsXpbZDtVveP4yiLTGh3OkQ3YJHK4yNMt/pSRSCyF6kGzA==
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/64759eb377fd45b4c0ef5646c0771bbba042cd66"
+  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/624e45fcd007d70edd6dc73bf109777caa3af4e4"
   dependencies:
-    d3-scale "^3.0.1"
+    d3-scale "^3.2.1"
 
 svelte@^3.21.0:
   version "3.21.0"
@@ -6045,9 +6045,9 @@ term-size@^1.2.0:
     execa "^0.7.0"
 
 terser@^4.6.2:
-  version "4.6.12"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-4.6.12.tgz#44b98aef8703fdb09a3491bf79b43faffc5b4fee"
-  integrity sha512-fnIwuaKjFPANG6MAixC/k1TDtnl1YlPLUlLVIxxGZUn1gfUx2+l3/zGNB72wya+lgsb50QBi2tUV75RiODwnww==
+  version "4.6.13"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.6.13.tgz#e879a7364a5e0db52ba4891ecde007422c56a916"
+  integrity sha512-wMvqukYgVpQlymbnNbabVZbtM6PN63AzqexpwJL8tbh/mRT9LE5o+ruVduAGL7D6Fpjl+Q+06U5I9Ul82odAhw==
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"
