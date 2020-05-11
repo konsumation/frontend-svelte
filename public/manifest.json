@@ -9,5 +9,6 @@
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "short_name": "{{name}}"
 }
