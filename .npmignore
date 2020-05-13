@@ -1,3 +1,4 @@
+example
 build
 tests
 doc
@@ -12,3 +13,4 @@ rollup.config.*
 .github
 *.js.map
 *.mjs.map
+test-results
