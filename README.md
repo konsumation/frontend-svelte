@@ -1,4 +1,3 @@
-[![Svelte v3](https://img.shields.io/badge/svelte-v3-orange.svg)](https://svelte.dev)
 [![npm](https://img.shields.io/npm/v/konsum-frontend-svelte.svg)](https://www.npmjs.com/package/konsum-frontend-svelte)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![minified size](https://badgen.net/bundlephobia/min/konsum-frontend-svelte)](https://bundlephobia.com/result?p=konsum-frontend-svelte)
