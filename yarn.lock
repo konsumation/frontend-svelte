@@ -5924,10 +5924,10 @@ svelte-guard-history-router@^1.1.18:
   dependencies:
     multi-path-matcher "^2.0.11"
 
-svelte-session-manager@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/svelte-session-manager/-/svelte-session-manager-1.0.11.tgz#426ed4e4f57851dcf0605ad8292ac7ad43430be5"
-  integrity sha512-dyp9hdFi/iuRLygWcOMvTrmFlH25PbAGrIgYUNdCmsXpbZDtVveP4yiLTGh3OkQ3YJHK4yNMt/pSRSCyF6kGzA==
+svelte-session-manager@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/svelte-session-manager/-/svelte-session-manager-1.0.12.tgz#338968fb16250171f2f18dd5ce8119e46b5e80ff"
+  integrity sha512-ZNRxwAVeQQoiXFD9VOA1q7jBGGsgVPIdwOnkgnSjb2MIT5EzhCwBlhBcVLjx+4dhkQte5hvzzp6NN7UpzecwCw==
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"

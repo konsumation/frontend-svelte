@@ -16,7 +16,7 @@
     "mf-styling": "arlac77/mf-styling",
     "svelte-common": "^2.0.3",
     "svelte-guard-history-router": "^1.1.18",
-    "svelte-session-manager": "^1.0.11",
+    "svelte-session-manager": "^1.0.12",
     "svelte-time-series": "arlac77/svelte-time-series"
   },
   "devDependencies": {
