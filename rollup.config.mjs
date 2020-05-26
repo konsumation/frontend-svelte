@@ -1,3 +1,5 @@
+import virtual from '@rollup/plugin-virtual';
+
 import { readFileSync } from "fs";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
