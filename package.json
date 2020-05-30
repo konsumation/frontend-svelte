@@ -24,7 +24,7 @@
   "dependencies": {
     "mf-styling": "arlac77/mf-styling",
     "svelte-common": "^2.0.3",
-    "svelte-guard-history-router": "^1.1.18",
+    "svelte-guard-history-router": "^1.1.20",
     "svelte-session-manager": "^1.0.12",
     "svelte-time-series": "arlac77/svelte-time-series"
   },
@@ -36,7 +36,7 @@
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/release-notes-generator": "^9.0.1",
-    "npm-pkgbuild": "^6.11.19",
+    "npm-pkgbuild": "^6.12.1",
     "postcss-import": "^12.0.1",
     "rollup": "^2.11.2",
     "rollup-plugin-consts": "^1.0.2",
