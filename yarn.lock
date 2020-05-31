@@ -103,11 +103,11 @@
   integrity sha512-ywoxP68aOT3zHCLgWZgwUJatiENeHE7xJzYjfz8WI0goynp96wETBF+d95b8g/uL4QmS6owPVlaxiz3wyMAzcw==
 
 "@octokit/plugin-rest-endpoint-methods@^3.12.2":
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-3.13.0.tgz#c514c7fe12a0325618a981b32c41f8e0446263a7"
-  integrity sha512-ArFHeq3L0Qo+zadptmslTJ2ug7bTinDUdx7Iul2vgwONvvgVEq4KSJWZ5Ab8AXEyO19x7yUjMVXZl1UgyGgeKw==
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-3.13.1.tgz#ebab57ce1bb71afcda1921b4136595a0a0fdb850"
+  integrity sha512-DzzJJ1pp73WJSmh7DyvIqUfoO4CNVUAjcSO2WtyTbCgUwgRL2XRdk8RqyE66vdvSaacObLVbidjUjJLJXxMscw==
   dependencies:
-    "@octokit/types" "^4.1.1"
+    "@octokit/types" "^4.1.2"
     deprecation "^2.3.1"
 
 "@octokit/request-error@^2.0.0":
@@ -143,10 +143,10 @@
     "@octokit/plugin-request-log" "^1.0.0"
     "@octokit/plugin-rest-endpoint-methods" "^3.12.2"
 
-"@octokit/types@^4.0.1", "@octokit/types@^4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-4.1.1.tgz#e2dc79d49b04c7f0e84fe61b0da28187d9bbaa2c"
-  integrity sha512-gOuIVmMCfHzSv3QBwLZjGDEDtYC73A5+tYcccEoq+Jd/h9rG/Mfc+h0+GEU+mpGhx86n7eBw6J/0BZ0zAmLkKg==
+"@octokit/types@^4.0.1", "@octokit/types@^4.1.2":
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-4.1.2.tgz#3ffb15612be48974afae6a9edaea1677cb197e69"
+  integrity sha512-MoUW1bt6lQCcxbXZw/IkgwEknv67+5OUOnzJmmx+NXrV1hVI49m+aC8yKci010qiQE2pTVyFq5cM5VXqn3H/ow==
   dependencies:
     "@types/node" ">= 8"
 
@@ -5392,10 +5392,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.11.2:
-  version "2.11.2"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.11.2.tgz#b1273ad3e43953d09807672f6b72d08f9f9bc008"
-  integrity sha512-pJT6mfH+/gh1sOWyNMAWxjbYGL5x2AfsaR0SWLRwq2e7vxOKt/0mBjtYDTVYF8JXxVzmnuDzA+EpsPLWt/oyrg==
+rollup@^2.12.0:
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.12.0.tgz#12d49d1db23020f75184da725d064d3db5245678"
+  integrity sha512-vKwc/xFkZGM9DRai3Eztpr/4g0yYDgNKVq8tLXhq/aSLbR+/EVL6rTjEW9bgWgeYEIKoN66/5w2Bjv1gzyHR/w==
   optionalDependencies:
     fsevents "~2.1.2"
 
