@@ -10,5 +10,6 @@
       "src": "logo.svg",
       "sizes": "48x48"
     }
-  ]
+  ],
+  "background_color": "#ffffff"
 }
