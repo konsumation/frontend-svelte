@@ -1,8 +1,7 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import { TimeSeries, DataSet } from "svelte-time-series";
-  import { category, values } from "../main.mjs";
-  export let state;
+  import { category, values, router } from "../main.mjs";
 
   const padding = { top: 20, right: 15, bottom: 22, left: 25 };
   const yTicks = [0, 5, 10, 16, 20];
@@ -36,4 +35,4 @@
   <TimeSeries {padding} {width} {height} {xTicks} {yTicks} {points}>
     <DataSet {padding} {width} {height} {xTicks} {yTicks} {points} />
   </TimeSeries>
-{:else}No such category {JSON.stringify(state.props)}{/if}
+{:else}No such category {JSON.stringify(router.props)}{/if}
