@@ -3531,7 +3531,8 @@ methods@~1.1.0:
 
 mf-styling@arlac77/mf-styling:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/3159bad77e0a7cf39188af17c5cf48f7b33bc662"
+  uid f238af6f5b24a19274881c209ec494e2395515f4
+  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/f238af6f5b24a19274881c209ec494e2395515f4"
 
 micromatch@^4.0.2:
   version "4.0.2"
