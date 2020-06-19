@@ -52,6 +52,7 @@
       type="text"
       placeholder="31.12.2000, 23:59:59"
       name="{category.name}.time"
+      size="20"
       required
       bind:value={time} />
   </label>
@@ -63,6 +64,7 @@
       type="text"
       placeholder="0.0"
       name="{category.name}.value"
+      soze="16"
       required
       bind:value />
   </label>
