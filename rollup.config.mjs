@@ -54,7 +54,7 @@ export default () => {
         dev: !production,
         css: css => css.write(`${dist}/bundle.svelte.css`)
       }),
-      resolve.nodeResolve({
+      resolve({
         browser: true,
         preferBuiltins: false,
         dedupe: importee =>
