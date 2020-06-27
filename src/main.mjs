@@ -1,16 +1,10 @@
 import { derived, readable } from "svelte/store";
-import { Router, route, Guard } from "svelte-guard-history-router";
+import { BaseRouter, SkeletonRoute, route, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 
-import Categories from "./pages/Categories.svelte";
 import CategoryValueList from "./pages/CategoryValueList.svelte";
 import CategoryGraph from "./pages/CategoryGraph.svelte";
 import Category from "./pages/Category.svelte";
-import Insert from "./pages/Insert.svelte";
-import About from "./pages/About.svelte";
-import Admin from "./pages/Admin.svelte";
-import Login from "./pages/Login.svelte";
-import Home from "./pages/Home.svelte";
 import App from "./App.svelte";
 import base from 'consts:base';
 import api from 'consts:api';
@@ -25,19 +19,13 @@ class SessionGuard extends Guard {
   }
 }
 
-const needsSession = new SessionGuard();
+export const needsSession = new SessionGuard();
 
-export const router = new Router(
+export const router = new BaseRouter(
   [
-    route("*", Home),
-    route("/login", Login),
-    route("/about", About),
-    route("/category", needsSession, Categories),
-    route("/category/:category", needsSession, Category),
-    route("/category/:category/list", needsSession, CategoryValueList),
-    route("/category/:category/graph", needsSession, CategoryGraph),
-    route("/insert", needsSession, Insert),
-    route("/admin", needsSession, Admin)
+    route("/category/:category", SkeletonRoute, needsSession, Category),
+    route("/category/:category/list", SkeletonRoute, needsSession, CategoryValueList),
+    route("/category/:category/graph", SkeletonRoute, needsSession, CategoryGraph)
   ],
   base
 );
