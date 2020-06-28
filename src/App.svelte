@@ -66,6 +66,6 @@
     </ul>
   </nav>
   <main>
-    <Outlet {router} />
+    <Outlet/>
   </main>
 </Router>
