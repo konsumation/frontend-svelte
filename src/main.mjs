@@ -1,5 +1,5 @@
 import { derived, readable } from "svelte/store";
-import { BaseRouter, SkeletonRoute, route, Guard } from "svelte-guard-history-router";
+import { BaseRouter, route, Guard } from "svelte-guard-history-router";
 import { Session } from "svelte-session-manager";
 
 import CategoryValueList from "./pages/CategoryValueList.svelte";
@@ -23,9 +23,9 @@ export const needsSession = new SessionGuard();
 
 export const router = new BaseRouter(
   [
-    route("/category/:category", SkeletonRoute, needsSession, Category),
-    route("/category/:category/list", SkeletonRoute, needsSession, CategoryValueList),
-    route("/category/:category/graph", SkeletonRoute, needsSession, CategoryGraph)
+    route("/category/:category", needsSession, Category),
+    route("/category/:category/list", needsSession, CategoryValueList),
+    route("/category/:category/graph", needsSession, CategoryGraph)
   ],
   base
 );
