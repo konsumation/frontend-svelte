@@ -24,12 +24,12 @@
     </Route>
     <ul class="left">
       <li>
-        <Route path="/category" guards={[needsSession]} component={Categories}>
+        <Route path="/category" guards={needsSession} component={Categories}>
           Categories
         </Route>
       </li>
       <li>
-        <Route path="/insert" guards={[needsSession]} component={Insert}>
+        <Route path="/insert" guards={needsSession} component={Insert}>
           Insert
         </Route>
       </li>
@@ -52,7 +52,7 @@
               <div class="dropdown-divider" />
               <Route
                 path="/admin"
-                guards={[needsSession]}
+                guards={needsSession}
                 class="dropdown-item"
                 component={Admin}>
                 Admin
