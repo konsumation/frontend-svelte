@@ -1,6 +1,6 @@
 <script>
   import * as style from "./main.css";
-  import { Outlet, Route, Router } from "svelte-guard-history-router";
+  import { Outlet, Route, Router, Link } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
   import About from "./pages/About.svelte";
   import Login from "./pages/Login.svelte";
@@ -9,7 +9,8 @@
   import Categories from "./pages/Categories.svelte";
   import Insert from "./pages/Insert.svelte";
 
-  import { router, needsSession, session } from "./main.mjs";
+  import { router, needsSession } from "./main.mjs";
+  import { session } from "./util.mjs";
 
   function logout() {
     session.invalidate();
@@ -18,15 +19,15 @@
 
 <Router {router}>
   <nav>
-    <Route path="/" component={Home}>
+    <Route href="/" path="*" component={Home}>
       <img class="logo" src="logo.svg" alt="Konsum" />
       Konsum
     </Route>
     <ul class="left">
       <li>
-        <Route path="/category" guards={needsSession} component={Categories}>
+        <Link href="/category">
           Categories
-        </Route>
+        </Link>
       </li>
       <li>
         <Route path="/insert" guards={needsSession} component={Insert}>

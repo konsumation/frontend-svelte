@@ -1,6 +1,6 @@
 <script>
-  import { Link } from "svelte-guard-history-router";
-  import { categories }  from "../main.mjs";
+  import { ObjectLink } from "svelte-guard-history-router";
+  import { categoriesRoute }  from "../main.mjs";
 </script>
 
 <div>
@@ -8,18 +8,18 @@
     <thead>
       <tr>
         <th aria-sort="none">Name</th>
-        <th aria-sort="none">Unit</th>
         <th aria-sort="none">Description</th>
+        <th aria-sort="none">Unit</th>
       </tr>
     </thead>
     <tbody>
-      {#each $categories as category (category.name)}
+      {#each $categoriesRoute as category (category.name)}
         <tr>
           <td>
-            <Link href="/category/{category.name}">{category.name}</Link>
+            <ObjectLink object={category}/>
           </td>
-          <td>{category.unit}</td>
           <td>{category.description}</td>
+          <td>{category.unit}</td>
         </tr>
       {/each}
     </tbody>

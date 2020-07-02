@@ -1,6 +1,7 @@
 <script>
   import { DateTime, Duration, dateFormatter, formatDuration, formatBytes } from "svelte-common";
-  import { state, session } from "../main.mjs";
+  import { state } from "../main.mjs";
+  import { session } from "../util.mjs";
   import name from 'consts:name';
   import version from 'consts:version';
   import description from 'consts:description';

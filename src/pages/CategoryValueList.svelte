@@ -1,7 +1,7 @@
 <script>
   import { Link } from "svelte-guard-history-router";
   import { DateTime } from "svelte-common";
-  import { category, values } from "../main.mjs";
+  import { categoryRoute, valuesListRoute } from "../main.mjs";
 
   function time2Date(time) {
     const date = new Date();
@@ -10,14 +10,14 @@
   }
 </script>
 
-{#if $category && $values}
+{#if $valuesListRoute}
 <table class="bordered striped hoverable">
   <thead>
     <th>Date</th>
     <th>Value</th>
   </thead>
   <tbody>
-    {#each $values as entry}
+    {#each $valuesListRoute as entry}
       <tr>
         <td><DateTime date={time2Date(entry.time)}/></td>
         <td>{entry.value}</td>

@@ -1,15 +1,16 @@
-import { derived, readable } from "svelte/store";
+import { readable } from "svelte/store";
 import { BaseRouter, route, Guard } from "svelte-guard-history-router";
-import { Session } from "svelte-session-manager";
 
 import CategoryValueList from "./pages/CategoryValueList.svelte";
 import CategoryGraph from "./pages/CategoryGraph.svelte";
 import Category from "./pages/Category.svelte";
+import Categories from "./pages/Categories.svelte";
+import CategoryLink from "./components/CategoryLink.svelte";
 import App from "./App.svelte";
-import base from 'consts:base';
-import api from 'consts:api';
-
-export const session = new Session(localStorage);
+import base from "consts:base";
+import api from "consts:api";
+import { CategoryRoute, CategoriesRoute, ValuesRoute } from "./category.mjs";
+import { session } from "./util.mjs";
 
 class SessionGuard extends Guard {
   async enter(transition) {
@@ -21,138 +22,22 @@ class SessionGuard extends Guard {
 
 export const needsSession = new SessionGuard();
 
+export const categoriesRoute = route("/category", CategoriesRoute, needsSession, Categories);
+
+export const categoryRoute = route("/category/:category", CategoryRoute, needsSession, Category);
+categoryRoute.linkComponent = CategoryLink;
+
+export const valuesListRoute = route("/category/:category/values/list", ValuesRoute, needsSession, CategoryValueList);
+export const valuesGraphRoute = route("/category/:category/values/graph", ValuesRoute, needsSession, CategoryGraph);
+
 export const router = new BaseRouter(
   [
-    route("/category/:category", needsSession, Category),
-    route("/category/:category/list", needsSession, CategoryValueList),
-    route("/category/:category/graph", needsSession, CategoryGraph)
+    categoriesRoute,
+    categoryRoute,
+    valuesListRoute,
+    valuesGraphRoute
   ],
   base
-);
-
-export const categories = derived(
-  session,
-  ($session, set) => {
-    if ($session.isValid) {
-      fetch(api + "/categories", {
-        headers: session.authorizationHeader
-      }).then(async data =>
-        set((await data.json()).map(c => new _Category(c)))
-      );
-    } else {
-      set([]);
-    }
-    return () => {};
-  },
-  []
-);
-
-
-function headers(session) {
-  return {
-    "content-type": "application/json",
-    ...session.authorizationHeader
-  };
-}
-
-export class _Category {
-  constructor(json) {
-    this.unit = json.unit;
-    this.description = json.description;
-    this.order = json.order || 1.0;
-
-    Object.defineProperties(this, {
-      name: { value: json.name },
-      /*
-      unit: { value: json.unit },
-      description: { value: json.description },
-      */
-      _latestSubscriptions: { value: new Set() },
-      _valuesSubscriptions: { value: new Set() }
-    });
-  }
-
-  async save() {
-    return await fetch(api + `/category/${this.name}`, {
-      method: "PUT",
-      headers: headers(session),
-      body: JSON.stringify({ order: this.order, unit: this.unit, description: this.description })
-    });
-  }
-
-  async _latest() {
-    const data = await fetch(
-      api + `/category/${this.name}/values?reverse=1&limit=1`,
-      {
-        headers: headers(session)
-      }
-    );
-
-    const entry = (await data.json())[0];
-    this._latestSubscriptions.forEach(subscription => subscription(entry));
-  }
-
-  get latest() {
-    return {
-      subscribe: subscription => {
-        this._latestSubscriptions.add(subscription);
-        subscription(undefined);
-        this._latest();
-        return () => this._latestSubscriptions.delete(subscription);
-      }
-    };
-  }
-
-  async _values() {
-    const data = await fetch(api + `/category/${this.name}/values`, {
-      headers: headers(session)
-    });
-
-    const values = await data.json();
-    this._valuesSubscriptions.forEach(subscription => subscription(values));
-  }
-
-  get values() {
-    return {
-      subscribe: subscription => {
-        this._valuesSubscriptions.add(subscription);
-        subscription([]);
-        this._values();
-        return () => this._valuesSubscriptions.delete(subscription);
-      }
-    };
-  }
-
-  async insert(value, time) {
-    return fetch(api + `/category/${this.name}/insert`, {
-      method: "POST",
-      headers: headers(session),
-      body: JSON.stringify({ value, time: time.getTime() })
-    });
-  }
-}
-
-export const category = derived(
-  [categories, router.keys.category],
-  ([$categories, $categoryKey], set) => {
-    set($categories.find(a => a.name === $categoryKey));
-    return () => {};
-  }
-);
-
-export const values = derived(
-  [session, category],
-  ([$session, $category], set) => {
-    const c = $category;
-    if (c === undefined || !session.isValid) {
-      set([]);
-    } else {
-      fetch(api + `/category/${c.name}/values`, {
-        headers: headers(session),
-      }).then(async data => set(await data.json()));
-    }
-    return () => {};
-  }
 );
 
 export const state = readable(
