@@ -24,11 +24,15 @@ export const needsSession = new SessionGuard();
 
 export const categoriesRoute = route("/category", CategoriesRoute, needsSession, Categories);
 
-export const categoryRoute = route("/category/:category", CategoryRoute, needsSession, Category);
+export const categoryRoute = route("/:category", CategoryRoute, needsSession, Category);
+categoryRoute.parent = categoriesRoute;
 categoryRoute.linkComponent = CategoryLink;
 
-export const valuesListRoute = route("/category/:category/values/list", ValuesRoute, needsSession, CategoryValueList);
-export const valuesGraphRoute = route("/category/:category/values/graph", ValuesRoute, needsSession, CategoryGraph);
+export const valuesListRoute = route("/values/list", ValuesRoute, needsSession, CategoryValueList);
+valuesListRoute.parent = categoryRoute;
+
+export const valuesGraphRoute = route("/values/graph", ValuesRoute, needsSession, CategoryGraph);
+valuesGraphRoute.parent = categoryRoute;
 
 export const router = new BaseRouter(
   [
