@@ -22,25 +22,37 @@ class SessionGuard extends Guard {
 
 export const needsSession = new SessionGuard();
 
-export const categoriesRoute = route("/category", CategoriesRoute, needsSession, Categories);
+export const categoriesRoute = route(
+  "/category",
+  CategoriesRoute,
+  needsSession,
+  Categories
+);
 
-export const categoryRoute = route("/:category", CategoryRoute, needsSession, Category);
-categoryRoute.parent = categoriesRoute;
+export const categoryRoute = route(
+  categoriesRoute,
+  "/:category",
+  CategoryRoute,
+  needsSession,
+  Category
+);
 categoryRoute.linkComponent = CategoryLink;
 
-export const valuesListRoute = route("/values/list", ValuesRoute, needsSession, CategoryValueList);
-valuesListRoute.parent = categoryRoute;
-
-export const valuesGraphRoute = route("/values/graph", ValuesRoute, needsSession, CategoryGraph);
-valuesGraphRoute.parent = categoryRoute;
+export const valuesListRoute = route(
+  categoryRoute,
+  "/values/list",
+  ValuesRoute,
+  CategoryValueList
+);
+export const valuesGraphRoute = route(
+  categoryRoute,
+  "/values/graph",
+  ValuesRoute,
+  CategoryGraph
+);
 
 export const router = new BaseRouter(
-  [
-    categoriesRoute,
-    categoryRoute,
-    valuesListRoute,
-    valuesGraphRoute
-  ],
+  [categoriesRoute, categoryRoute, valuesListRoute, valuesGraphRoute],
   base
 );
 
