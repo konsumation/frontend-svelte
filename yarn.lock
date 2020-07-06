@@ -1430,7 +1430,7 @@ d3-interpolate@^1.2.0:
   dependencies:
     d3-color "1"
 
-d3-scale@^3.0.1:
+d3-scale@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-3.2.1.tgz#da1684adce7261b4bc7a76fe193d887f0e909e69"
   integrity sha512-huz5byJO/6MPpz6Q8d4lg7GgSpTjIZW/l+1MQkzKfu2u8P6hjaXaStOpmyrD6ymKoW87d2QVFCKvSjLwjzx/rA==
@@ -5369,10 +5369,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.18.2:
-  version "2.18.2"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.18.2.tgz#886ac6e4549e493df106c3e2580c89aeb997be25"
-  integrity sha512-+mzyZhL9ZyLB3eHBISxRNTep9Z2qCuwXzAYkUbFyz7yNKaKH03MFKeiGOS1nv2uvPgDb4ASKv+FiS5mC4h5IFQ==
+rollup@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.19.0.tgz#6484868882281552b0dc33aa5bc5b36a9c920452"
+  integrity sha512-nny5Vs4jwY3vbQAXgOyU4ZDZqLvMKm/umnsVry/demVL6ve8ke1XhdpYE0eiWencASmx/qFPw6pP8P7MLJl9XA==
   optionalDependencies:
     fsevents "~2.1.2"
 
