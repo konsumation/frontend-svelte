@@ -5953,7 +5953,8 @@ svelte-session-manager@^1.1.4:
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/5155fe32068da0d87d54f48a4866326cf414f151"
+  uid "5835b8406725013fb4cb1f2528f1020d63c48f09"
+  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/5835b8406725013fb4cb1f2528f1020d63c48f09"
   dependencies:
     d3-scale "^3.2.1"
 
