@@ -10,6 +10,8 @@
   import Insert from "./pages/Insert.svelte";
 
   import { router, needsSession } from "./main.mjs";
+  import { CategoriesRoute } from "./category.mjs";
+
   import { session } from "./util.mjs";
 
   function logout() {
@@ -30,7 +32,7 @@
         </Link>
       </li>
       <li>
-        <Route path="/insert" guards={needsSession} component={Insert}>
+        <Route path="/insert" factory={CategoriesRoute} guards={needsSession} component={Insert}>
           Insert
         </Route>
       </li>
