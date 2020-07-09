@@ -1,7 +1,12 @@
 <script>
   import { Link } from "svelte-guard-history-router";
-  import { categoryRoute } from "../main.mjs";
 
+  export let router;
+  
+  const route = router.route;
+
+  const category = $route;
+    
   let active;
 
   async function submit() {
@@ -15,8 +20,8 @@
   }
 </script>
 
-{#if $categoryRoute}
-<h1>{$categoryRoute.name}</h1>
+{#if category}
+<h1>{category.name}</h1>
 <form on:submit|preventDefault={submit}>
   <label for="description">
     Description
@@ -26,7 +31,7 @@
       placeholder="Description"
       name="description"
       required
-      bind:value={$categoryRoute.description} />
+      bind:value={category.description} />
   </label>
   <label for="unit">
     Unit
@@ -36,7 +41,7 @@
       placeholder="Unit"
       name="unit"
       required
-      bind:value={$categoryRoute.unit} />
+      bind:value={category.unit} />
   </label>
 
   <button id="submit" type="submit">
@@ -49,12 +54,12 @@
 
 <ul>
   <li>
-    <Link href="/category/{$categoryRoute.name}/values/list">List</Link>
+    <Link href="/category/{category.name}/values/list">List</Link>
   </li>
   <li>
-    <Link href="/category/{$categoryRoute.name}/values/graph">Graph</Link>
+    <Link href="/category/{category.name}/values/graph">Graph</Link>
   </li>
 </ul>
 {:else}
-Nothing found
+No such Category
 {/if}

@@ -1,6 +1,9 @@
 <script>
   import { ObjectLink } from "svelte-guard-history-router";
-  import { categoriesRoute }  from "../main.mjs";
+  
+  export let router;
+  
+  const route = router.route;
 </script>
 
 <div>
@@ -13,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each $categoriesRoute as category (category.name)}
+      {#each $route as category (category.name)}
         <tr>
           <td>
             <ObjectLink object={category}/>
