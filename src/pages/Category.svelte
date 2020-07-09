@@ -5,23 +5,21 @@
 
   const route = router.route;
 
-  const category = $route;
-
   let active;
 
   async function submit() {
     active = true;
 
     try {
-      await category.save();
+      await $route.save();
     } finally {
       active = false;
     }
   }
 </script>
 
-{#if category}
-  <h1>{category.name}</h1>
+{#if $route}
+  <h1>{$route.name}</h1>
   <form on:submit|preventDefault={submit}>
     <label for="description">
       Description
@@ -31,7 +29,7 @@
         placeholder="Description"
         name="description"
         required
-        bind:value={category.description} />
+        bind:value={$route.description} />
     </label>
     <label for="unit">
       Unit
@@ -41,7 +39,7 @@
         placeholder="Unit"
         name="unit"
         required
-        bind:value={category.unit} />
+        bind:value={$route.unit} />
     </label>
 
     <button id="submit" type="submit">
@@ -54,10 +52,10 @@
 
   <ul>
     <li>
-      <Link href="/category/{category.name}/values/list">List</Link>
+      <Link href="/category/{$route.name}/values/list">List</Link>
     </li>
     <li>
-      <Link href="/category/{category.name}/values/graph">Graph</Link>
+      <Link href="/category/{$route.name}/values/graph">Graph</Link>
     </li>
   </ul>
 {:else}No such Category{/if}

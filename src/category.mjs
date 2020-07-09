@@ -5,24 +5,32 @@ import {
 import api from "consts:api";
 import { session, headers } from "./util.mjs";
 
-const _categories = [];
-
 export class CategoriesRoute extends IteratorStoreRoute {
   async *iteratorFor() {
-    const response = await fetch(`${api}/categories`, {
-      headers: headers(session)
-    });
-    for (const c of await response.json()) {
-      const category = new Category(c);
-      _categories.push(category);
-      yield category;
+    if (this.categories) {
+      yield* this.categories;
+    } else {
+      this.categories = [];
+
+      const response = await fetch(`${api}/categories`, {
+        headers: headers(session)
+      });
+      for (const c of await response.json()) {
+        const category = new Category(c);
+        this.categories.push(category);
+        yield category;
+      }
     }
   }
 }
 
 export class CategoryRoute extends ObjectStoreRoute {
   async objectFor(properties) {
-    return _categories.find(c => c.name === properties.category);
+    for await (const category of this.parent.iteratorFor()) {
+      if (category.name === properties.category) {
+        return category;
+      }
+    }
   }
 
   propertiesFor(category) {

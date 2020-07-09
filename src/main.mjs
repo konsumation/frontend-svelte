@@ -1,8 +1,7 @@
 import { readable } from "svelte/store";
-import { BaseRouter, Guard } from "svelte-guard-history-router";
+import { Guard } from "svelte-guard-history-router";
 
 import App from "./App.svelte";
-import base from "consts:base";
 import api from "consts:api";
 import { session } from "./util.mjs";
 
@@ -15,11 +14,6 @@ class SessionGuard extends Guard {
 }
 
 export const needsSession = new SessionGuard();
-
-export const router = new BaseRouter(
-  [],
-  base
-);
 
 export const state = readable(
   { version: "unknown", uptime: -1, memory: { heapTotal: 0, heapUsed: 0 } },

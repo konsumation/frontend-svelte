@@ -12,8 +12,9 @@
   import CategoryValueList from "./pages/CategoryValueList.svelte";
   import CategoryGraph from "./pages/CategoryGraph.svelte";
   import CategoryLink from "./components/CategoryLink.svelte";
+  import base from "consts:base";
 
-  import { router, needsSession } from "./main.mjs";
+  import { needsSession } from "./main.mjs";
   import { CategoriesRoute, CategoryRoute, ValuesRoute } from "./category.mjs";
 
   import { session } from "./util.mjs";
@@ -23,7 +24,7 @@
   }
 </script>
 
-<Router {router}>
+<Router {base}>
   <nav>
     <Route href="/" path="*" component={Home}>
       <img class="logo" src="logo.svg" alt="Konsum" />
@@ -35,10 +36,13 @@
           path="/category"
           factory={CategoriesRoute}
           guards={needsSession}
-          linkComponent={CategoryLink}
           component={Categories}>
           Categories
-          <Route path="/:category" factory={CategoryRoute} component={Category}>
+          <Route
+            path="/:category"
+            factory={CategoryRoute}
+            linkComponent={CategoryLink}
+            component={Category}>
             <Route
               path="/values/list"
               factory={ValuesRoute}
