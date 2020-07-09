@@ -7,10 +7,14 @@
   import Home from "./pages/Home.svelte";
   import Admin from "./pages/Admin.svelte";
   import Categories from "./pages/Categories.svelte";
+  import Category from "./pages/Category.svelte";
   import Insert from "./pages/Insert.svelte";
+  import CategoryValueList from "./pages/CategoryValueList.svelte";
+  import CategoryGraph from "./pages/CategoryGraph.svelte";
+  import CategoryLink from "./components/CategoryLink.svelte";
 
   import { router, needsSession } from "./main.mjs";
-  import { CategoriesRoute } from "./category.mjs";
+  import { CategoriesRoute, CategoryRoute, ValuesRoute } from "./category.mjs";
 
   import { session } from "./util.mjs";
 
@@ -27,12 +31,31 @@
     </Route>
     <ul class="left">
       <li>
-        <Link href="/category">
+        <Route
+          path="/category"
+          factory={CategoriesRoute}
+          guards={needsSession}
+          linkComponent={CategoryLink}
+          component={Categories}>
           Categories
-        </Link>
+          <Route path="/:category" factory={CategoryRoute} component={Category}>
+            <Route
+              path="/values/list"
+              factory={ValuesRoute}
+              component={CategoryValueList} />
+            <Route
+              path="/values/graph"
+              factory={ValuesRoute}
+              component={CategoryGraph} />
+          </Route>
+        </Route>
       </li>
       <li>
-        <Route path="/insert" factory={CategoriesRoute} guards={needsSession} component={Insert}>
+        <Route
+          path="/insert"
+          factory={CategoriesRoute}
+          guards={needsSession}
+          component={Insert}>
           Insert
         </Route>
       </li>
@@ -69,6 +92,6 @@
     </ul>
   </nav>
   <main>
-    <Outlet/>
+    <Outlet />
   </main>
 </Router>

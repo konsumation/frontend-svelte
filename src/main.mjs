@@ -1,15 +1,9 @@
 import { readable } from "svelte/store";
-import { BaseRouter, route, Guard } from "svelte-guard-history-router";
+import { BaseRouter, Guard } from "svelte-guard-history-router";
 
-import CategoryValueList from "./pages/CategoryValueList.svelte";
-import CategoryGraph from "./pages/CategoryGraph.svelte";
-import Category from "./pages/Category.svelte";
-import Categories from "./pages/Categories.svelte";
-import CategoryLink from "./components/CategoryLink.svelte";
 import App from "./App.svelte";
 import base from "consts:base";
 import api from "consts:api";
-import { CategoryRoute, CategoriesRoute, ValuesRoute } from "./category.mjs";
 import { session } from "./util.mjs";
 
 class SessionGuard extends Guard {
@@ -22,37 +16,8 @@ class SessionGuard extends Guard {
 
 export const needsSession = new SessionGuard();
 
-export const categoriesRoute = route(
-  "/category",
-  CategoriesRoute,
-  needsSession,
-  Categories
-);
-
-export const categoryRoute = route(
-  categoriesRoute,
-  "/:category",
-  CategoryRoute,
-  needsSession,
-  Category
-);
-categoryRoute.linkComponent = CategoryLink;
-
-export const valuesListRoute = route(
-  categoryRoute,
-  "/values/list",
-  ValuesRoute,
-  CategoryValueList
-);
-export const valuesGraphRoute = route(
-  categoryRoute,
-  "/values/graph",
-  ValuesRoute,
-  CategoryGraph
-);
-
 export const router = new BaseRouter(
-  [categoriesRoute, categoryRoute, valuesListRoute, valuesGraphRoute],
+  [],
   base
 );
 
