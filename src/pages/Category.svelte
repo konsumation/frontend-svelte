@@ -28,6 +28,7 @@
         type="text"
         placeholder="Description"
         name="description"
+        size="20"
         required
         bind:value={$route.description} />
     </label>
@@ -38,6 +39,7 @@
         type="text"
         placeholder="Unit"
         name="unit"
+        size="20"
         required
         bind:value={$route.unit} />
     </label>
