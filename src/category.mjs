@@ -28,10 +28,6 @@ export class CategoryRoute extends ChildStoreRoute {
   get factory() {
     return Category;
   }
-
-  get propertyMapping() {
-    return { category: "name" };
-  }
 }
 
 export class ValuesRoute extends IteratorStoreRoute {

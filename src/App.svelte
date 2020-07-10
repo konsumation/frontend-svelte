@@ -41,6 +41,7 @@
           <Route
             path="/:category"
             factory={CategoryRoute}
+            propertyMapping={{ category: 'name' }}
             linkComponent={CategoryLink}
             component={Category}>
             <Route
