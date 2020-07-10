@@ -1,6 +1,6 @@
 import {
-  ObjectStoreRoute,
-  IteratorStoreRoute
+  IteratorStoreRoute,
+  ChildStoreRoute
 } from "svelte-guard-history-router";
 import api from "consts:api";
 import { session, headers } from "./util.mjs";
@@ -24,13 +24,10 @@ export class CategoriesRoute extends IteratorStoreRoute {
   }
 }
 
-export class CategoryRoute extends ObjectStoreRoute {
-  async objectFor(properties) {
-    for await (const category of this.parent.iteratorFor()) {
-      if (category.name === properties.category) {
-        return category;
-      }
-    }
+export class CategoryRoute extends ChildStoreRoute {
+  matches(object,properties)
+  {
+    return object.name === properties.category;
   }
 
   propertiesFor(category) {
