@@ -25,15 +25,12 @@ export class CategoriesRoute extends IteratorStoreRoute {
 }
 
 export class CategoryRoute extends ChildStoreRoute {
-  matches(object,properties)
-  {
-    return object.name === properties.category;
+  get factory() {
+    return Category;
   }
 
-  propertiesFor(category) {
-    return category instanceof Category
-      ? { category: category.name }
-      : undefined;
+  get propertyMapping() {
+    return { category: "name" };
   }
 }
 
@@ -50,7 +47,7 @@ export class ValuesRoute extends IteratorStoreRoute {
     }
   }
 
-  propertiesFor(category) {
+  propertiesFor() {
     return undefined;
   }
 }
