@@ -14,7 +14,7 @@
   import CategoryLink from "./components/CategoryLink.svelte";
   import base from "consts:base";
 
-  import { needsSession } from "./main.mjs";
+  import { enshureSession } from "./main.mjs";
   import { CategoriesRoute, CategoryRoute, ValuesRoute } from "./category.mjs";
 
   import { session } from "./util.mjs";
@@ -35,7 +35,7 @@
         <Route
           path="/category"
           factory={CategoriesRoute}
-          guards={needsSession}
+          guards={enshureSession}
           component={Categories}>
           Categories
           <Route
@@ -58,7 +58,7 @@
         <Route
           path="/insert"
           factory={CategoriesRoute}
-          guards={needsSession}
+          guards={enshureSession}
           component={Insert}>
           Insert
         </Route>
@@ -82,7 +82,7 @@
               <div class="dropdown-divider" />
               <Route
                 path="/admin"
-                guards={needsSession}
+                guards={enshureSession}
                 class="dropdown-item"
                 component={Admin}>
                 Admin
