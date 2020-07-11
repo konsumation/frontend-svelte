@@ -1,6 +1,6 @@
 <script>
   import * as style from "./main.css";
-  import { Outlet, Route, Router, Link } from "svelte-guard-history-router";
+  import { Outlet, Route, ChildStoreRoute, Router, Link } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
   import About from "./pages/About.svelte";
   import Login from "./pages/Login.svelte";
@@ -15,7 +15,7 @@
   import base from "consts:base";
 
   import { enshureSession } from "./main.mjs";
-  import { CategoriesRoute, CategoryRoute, ValuesRoute } from "./category.mjs";
+  import { CategoriesRoute, ValuesRoute } from "./category.mjs";
 
   import { session } from "./util.mjs";
 
@@ -40,7 +40,7 @@
           Categories
           <Route
             path="/:category"
-            factory={CategoryRoute}
+            factory={ChildStoreRoute}
             propertyMapping={{ category: 'name' }}
             linkComponent={CategoryLink}
             component={Category}>

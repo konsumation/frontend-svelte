@@ -1,11 +1,15 @@
 import {
-  IteratorStoreRoute,
-  ChildStoreRoute
+  IteratorStoreRoute
+  
 } from "svelte-guard-history-router";
 import api from "consts:api";
 import { session, headers } from "./util.mjs";
 
 export class CategoriesRoute extends IteratorStoreRoute {
+  get objectInstance() {
+    return Category;
+  }
+
   async *iteratorFor() {
     if (this.categories) {
       yield* this.categories;
@@ -21,12 +25,6 @@ export class CategoriesRoute extends IteratorStoreRoute {
         yield category;
       }
     }
-  }
-}
-
-export class CategoryRoute extends ChildStoreRoute {
-  get factory() {
-    return Category;
   }
 }
 
