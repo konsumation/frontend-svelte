@@ -6,10 +6,6 @@ import api from "consts:api";
 import { session, headers } from "./util.mjs";
 
 export class CategoriesRoute extends IteratorStoreRoute {
-  get objectInstance() {
-    return Category;
-  }
-
   async *iteratorFor() {
     if (this.categories) {
       yield* this.categories;

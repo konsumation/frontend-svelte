@@ -1,21 +1,26 @@
 <script>
   import * as style from "./main.css";
-  import { Outlet, Route, ChildStoreRoute, Router, Link } from "svelte-guard-history-router";
+  import {
+    Outlet,
+    Route,
+    ChildStoreRoute,
+    Router,
+    Link
+  } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
   import About from "./pages/About.svelte";
   import Login from "./pages/Login.svelte";
   import Home from "./pages/Home.svelte";
   import Admin from "./pages/Admin.svelte";
-  import Categories from "./pages/Categories.svelte";
-  import Category from "./pages/Category.svelte";
+  import CategoriesPage from "./pages/Categories.svelte";
+  import CategoryPage from "./pages/Category.svelte";
   import Insert from "./pages/Insert.svelte";
   import CategoryValueList from "./pages/CategoryValueList.svelte";
   import CategoryGraph from "./pages/CategoryGraph.svelte";
   import CategoryLink from "./components/CategoryLink.svelte";
   import base from "consts:base";
-
   import { enshureSession } from "./main.mjs";
-  import { CategoriesRoute, ValuesRoute } from "./category.mjs";
+  import { Category, CategoriesRoute, ValuesRoute } from "./category.mjs";
 
   import { session } from "./util.mjs";
 
@@ -36,14 +41,15 @@
           path="/category"
           factory={CategoriesRoute}
           guards={enshureSession}
-          component={Categories}>
+          component={CategoriesPage}>
           Categories
           <Route
             path="/:category"
-            factory={ChildStoreRoute}
+            objectInstance={Category}
             propertyMapping={{ category: 'name' }}
+            factory={ChildStoreRoute}
             linkComponent={CategoryLink}
-            component={Category}>
+            component={CategoryPage}>
             <Route
               path="/values/list"
               factory={ValuesRoute}
