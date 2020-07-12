@@ -5,7 +5,8 @@
     Route,
     ChildStoreRoute,
     Router,
-    Link
+    Link,
+    redirectGuard
   } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
   import About from "./pages/About.svelte";
@@ -19,7 +20,6 @@
   import CategoryGraph from "./pages/CategoryGraph.svelte";
   import CategoryLink from "./components/CategoryLink.svelte";
   import base from "consts:base";
-  import { enshureSession } from "./main.mjs";
   import { Category, CategoriesRoute, ValuesRoute } from "./category.mjs";
 
   import { session } from "./util.mjs";
@@ -27,6 +27,7 @@
   function logout() {
     session.invalidate();
   }
+  export const enshureSession = redirectGuard("/login",() => !session.isValid);
 </script>
 
 <Router {base}>

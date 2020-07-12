@@ -1,11 +1,6 @@
 import { readable } from "svelte/store";
-import { redirectGuard } from "svelte-guard-history-router";
-
 import App from "./App.svelte";
 import api from "consts:api";
-import { session } from "./util.mjs";
-
-export const enshureSession = redirectGuard("/login",() => !session.isValid);
 
 export const state = readable(
   { version: "unknown", uptime: -1, memory: { heapTotal: 0, heapUsed: 0 } },
