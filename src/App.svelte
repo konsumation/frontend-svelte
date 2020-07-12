@@ -53,16 +53,14 @@
             factory={ChildStoreRoute}
             linkComponent={CategoryLink}
             component={CategoryPage}>
-            <Route path="/values">
+            <Route path="/values" iteratorFor={valueIterator}>
               <Route
                 path="/list"
                 factory={IteratorStoreRoute}
-                iteratorFor={valueIterator}
                 component={CategoryValueList} />
               <Route
                 path="/graph"
                 factory={IteratorStoreRoute}
-                iteratorFor={valueIterator}
                 component={CategoryGraph} />
             </Route>
           </Route>
