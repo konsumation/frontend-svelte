@@ -1,4 +1,3 @@
-import { IteratorStoreRoute } from "svelte-guard-history-router";
 import api from "consts:api";
 import { session, headers } from "./util.mjs";
 
@@ -19,21 +18,15 @@ export async function* categoryIterator() {
   }
 }
 
-export class ValuesRoute extends IteratorStoreRoute {
-  async *iteratorFor(properties) {
-    const response = await fetch(
-      `${api}/category/${properties.category}/values`,
-      {
-        headers: headers(session)
-      }
-    );
-    for (const value of await response.json()) {
-      yield value;
+export async function* valueIterator(properties) {
+  const response = await fetch(
+    `${api}/category/${properties.category}/values`,
+    {
+      headers: headers(session)
     }
-  }
-
-  propertiesFor() {
-    return undefined;
+  );
+  for (const value of await response.json()) {
+    yield value;
   }
 }
 

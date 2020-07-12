@@ -21,7 +21,7 @@
   import CategoryGraph from "./pages/CategoryGraph.svelte";
   import CategoryLink from "./components/CategoryLink.svelte";
   import base from "consts:base";
-  import { Category, ValuesRoute, categoryIterator } from "./category.mjs";
+  import { Category, categoryIterator, valueIterator } from "./category.mjs";
 
   import { session } from "./util.mjs";
 
@@ -56,11 +56,13 @@
             <Route path="/values">
               <Route
                 path="/list"
-                factory={ValuesRoute}
+                factory={IteratorStoreRoute}
+                iteratorFor={valueIterator}
                 component={CategoryValueList} />
               <Route
                 path="/graph"
-                factory={ValuesRoute}
+                factory={IteratorStoreRoute}
+                iteratorFor={valueIterator}
                 component={CategoryGraph} />
             </Route>
           </Route>
