@@ -27,7 +27,7 @@
   function logout() {
     session.invalidate();
   }
-  export const enshureSession = redirectGuard("/login",() => !session.isValid);
+  export const enshureSession = redirectGuard("/login", () => !session.isValid);
 </script>
 
 <Router {base}>
@@ -51,14 +51,16 @@
             factory={ChildStoreRoute}
             linkComponent={CategoryLink}
             component={CategoryPage}>
-            <Route
-              path="/values/list"
-              factory={ValuesRoute}
-              component={CategoryValueList} />
-            <Route
-              path="/values/graph"
-              factory={ValuesRoute}
-              component={CategoryGraph} />
+            <Route path="/values">
+              <Route
+                path="/list"
+                factory={ValuesRoute}
+                component={CategoryValueList} />
+              <Route
+                path="/graph"
+                factory={ValuesRoute}
+                component={CategoryGraph} />
+            </Route>
           </Route>
         </Route>
       </li>
