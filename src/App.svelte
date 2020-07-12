@@ -3,6 +3,7 @@
   import {
     Outlet,
     Route,
+    IteratorStoreRoute,
     ChildStoreRoute,
     Router,
     Link,
@@ -20,7 +21,7 @@
   import CategoryGraph from "./pages/CategoryGraph.svelte";
   import CategoryLink from "./components/CategoryLink.svelte";
   import base from "consts:base";
-  import { Category, CategoriesRoute, ValuesRoute } from "./category.mjs";
+  import { Category, ValuesRoute, categoryIterator } from "./category.mjs";
 
   import { session } from "./util.mjs";
 
@@ -40,7 +41,8 @@
       <li>
         <Route
           path="/category"
-          factory={CategoriesRoute}
+          factory={IteratorStoreRoute}
+          iteratorFor={categoryIterator}
           guards={enshureSession}
           component={CategoriesPage}>
           Categories
@@ -67,7 +69,8 @@
       <li>
         <Route
           path="/insert"
-          factory={CategoriesRoute}
+          factory={IteratorStoreRoute}
+          iteratorFor={categoryIterator}
           guards={enshureSession}
           component={Insert}>
           Insert
