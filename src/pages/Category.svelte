@@ -1,5 +1,5 @@
 <script>
-  import { Link } from "svelte-guard-history-router";
+  import { Link, ObjectLink } from "svelte-guard-history-router";
 
   export let router;
 
@@ -58,6 +58,9 @@
     </li>
     <li>
       <Link href="/category/{$route.name}/values/graph">Graph</Link>
+    </li>
+    <li>
+      <ObjectLink object={$route} suffix="/value/graph">Graph</ObjectLink>
     </li>
   </ul>
 {:else}No such Category{/if}
