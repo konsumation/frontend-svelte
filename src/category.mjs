@@ -1,7 +1,7 @@
 import api from "consts:api";
 import { session, headers } from "./util.mjs";
 
-export async function* categoryIterator() {
+export async function* categoryIterator(transition, properties) {
   if (this.categories) {
     yield* this.categories;
   } else {
@@ -18,7 +18,7 @@ export async function* categoryIterator() {
   }
 }
 
-export async function* valueIterator(properties) {
+export async function* valueIterator(transition, properties) {
   const response = await fetch(
     `${api}/category/${properties.category}/values`,
     {
