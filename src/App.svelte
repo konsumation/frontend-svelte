@@ -22,7 +22,6 @@
   import CategoryLink from "./components/CategoryLink.svelte";
   import base from "consts:base";
   import { Category, categoryIterator, valueIterator } from "./category.mjs";
-
   import { session } from "./util.mjs";
 
   function logout() {
