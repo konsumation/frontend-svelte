@@ -54,13 +54,13 @@
 
   <ul>
     <li>
-      <Link href="/category/{$route.name}/values/list">List</Link>
+      <Link href="/category/{$route.name}/values/list#last">List</Link>
     </li>
     <li>
       <Link href="/category/{$route.name}/values/graph">Graph</Link>
     </li>
     <li>
-      <ObjectLink object={$route} suffix="/value/list">List</ObjectLink>
+      <ObjectLink object={$route} suffix="/value/list#last">List</ObjectLink>
     </li>
     <li>
       <ObjectLink object={$route} suffix="/value/graph">Graph</ObjectLink>

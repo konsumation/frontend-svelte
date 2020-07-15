@@ -20,8 +20,8 @@
     <th>Value</th>
   </thead>
   <tbody>
-    {#each $route as entry}
-      <tr>
+    {#each $route as entry, i}
+      <tr id={i === 0 ? 'first' : i === $route.length - 1 ? 'last' : ''}>
         <td><DateTime date={time2Date(entry.time)}/></td>
         <td>{entry.value}</td>
       </tr>
