@@ -60,6 +60,9 @@
       <Link href="/category/{$route.name}/values/graph">Graph</Link>
     </li>
     <li>
+      <ObjectLink object={$route} suffix="/value/list">List</ObjectLink>
+    </li>
+    <li>
       <ObjectLink object={$route} suffix="/value/graph">Graph</ObjectLink>
     </li>
   </ul>
