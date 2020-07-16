@@ -3,10 +3,14 @@
   import { session, headers } from "../util.mjs";
   import api from "consts:api";
 
+  let dump;
+
   async function backup() {
-    await fetch(api + "/admin/backup", {
+    const response = await fetch(api + "/admin/backup", {
       headers: headers(session)
     });
+
+    dump = await response.text();
   }
 
   async function restore() {
@@ -21,4 +25,6 @@
   <ActionButton action={backup}>Backup</ActionButton>
 
   <ActionButton action={restore}>Restore</ActionButton>
+
+  <textarea bind:value={dump}></textarea>
 </div>
