@@ -27,7 +27,8 @@
   function logout() {
     session.invalidate();
   }
-  export const enshureSession = redirectGuard("/login", () => !session.isValid);
+  
+  const enshureSession = redirectGuard("/login", () => !session.isValid);
 </script>
 
 <Router {base}>
