@@ -54,16 +54,10 @@
 
   <ul>
     <li>
-      <Link href="/category/{$route.name}/values/list#last">List</Link>
+      <ObjectLink object={$route} suffix="/values/list#last">List</ObjectLink>
     </li>
     <li>
-      <Link href="/category/{$route.name}/values/graph">Graph</Link>
-    </li>
-    <li>
-      <ObjectLink object={$route} suffix="/value/list#last">List</ObjectLink>
-    </li>
-    <li>
-      <ObjectLink object={$route} suffix="/value/graph">Graph</ObjectLink>
+      <ObjectLink object={$route} suffix="/values/graph">Graph</ObjectLink>
     </li>
   </ul>
 {:else}No such Category{/if}
