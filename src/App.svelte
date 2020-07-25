@@ -24,10 +24,6 @@
   import { Category, categoryIterator, valueIterator } from "./category.mjs";
   import { session } from "./util.mjs";
 
-  function logout() {
-    session.invalidate();
-  }
-  
   const enshureSession = redirectGuard("/login", () => !session.isValid);
 </script>
 
@@ -89,7 +85,7 @@
               <a
                 href="/"
                 class="dropdown-item"
-                on:click|preventDefault={logout}>
+                on:click|preventDefault={() => session.invalidate()}>
                 Logout {$session.username}
               </a>
               <div class="dropdown-divider" />
