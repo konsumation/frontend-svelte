@@ -1,5 +1,6 @@
 <script>
   import { onDestroy } from "svelte";
+  import { imask } from "@imask/svelte";
   import { ActionButton, dateFormatter } from "svelte-common";
 
   import { now } from "../main.mjs";
@@ -10,20 +11,19 @@
 
   //$: time = dateFormatter.format($now);
 
-  function parseDate(str)
-  {
+  function parseDate(str) {
     //8.9.2019, 19:38:34
     const m = str.match(/(\d+)\.(\d+)\.(\d+)[\s,]+(\d+):(\d+):(\d+)/);
-    if(m) {
+    if (m) {
       const date = new Date();
 
-      date.setDate(parseInt(m[1],10));
-      date.setMonth(parseInt(m[2],10) - 1);
-      date.setFullYear(parseInt(m[3],10));
+      date.setDate(parseInt(m[1], 10));
+      date.setMonth(parseInt(m[2], 10) - 1);
+      date.setFullYear(parseInt(m[3], 10));
 
-      date.setHours(parseInt(m[4],10));
-      date.setMinutes(parseInt(m[5],10));
-      date.setSeconds(parseInt(m[6],10));
+      date.setHours(parseInt(m[4], 10));
+      date.setMinutes(parseInt(m[5], 10));
+      date.setSeconds(parseInt(m[6], 10));
       return date;
     }
   }
@@ -41,6 +41,24 @@
 
   async function insert() {
     await category.insert(parseFloat(value), parseDate(time));
+  }
+
+  const options = {
+    mask: Number,
+    scale: 3,
+    signed: false,
+    thousandsSeparator: "",
+    padFractionalZeros: true,
+    normalizeZeros: true,
+    radix: ".",
+    //mapToRadix: ["."],
+    min: 0,
+    max: 999999
+  };
+
+  function accept({ detail: maskRef }) {
+    console.log("accept", maskRef.value);
+    value = maskRef.value;
   }
 </script>
 
@@ -66,6 +84,8 @@
       name="{category.name}.value"
       size="16"
       required
+      use:imask={options}
+      on:accept={accept}
       bind:value />
   </label>
 
