@@ -2,7 +2,6 @@
   import { onDestroy } from "svelte";
   import { imask } from "@imask/svelte";
   import { ActionButton, dateFormatter } from "svelte-common";
-
   import { now } from "../main.mjs";
 
   export let category;
@@ -45,7 +44,7 @@
 
   const options = {
     mask: Number,
-    scale: 3,
+    scale: category.fractionalDigits,
     signed: false,
     thousandsSeparator: "",
     padFractionalZeros: true,

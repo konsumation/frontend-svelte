@@ -1441,7 +1441,7 @@ d3-interpolate@^1.2.0:
   dependencies:
     d3-color "1"
 
-d3-scale@^3.2.1:
+d3-scale@^3.0.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-3.2.1.tgz#da1684adce7261b4bc7a76fe193d887f0e909e69"
   integrity sha512-huz5byJO/6MPpz6Q8d4lg7GgSpTjIZW/l+1MQkzKfu2u8P6hjaXaStOpmyrD6ymKoW87d2QVFCKvSjLwjzx/rA==
@@ -5908,7 +5908,7 @@ svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
   resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/0caaf2a10efeb70dc2ed0bef2f39ef88a5e68efe"
   dependencies:
-    d3-scale "^3.0.1"
+    d3-scale "^3.2.1"
 
 svelte@^3.24.0:
   version "3.24.0"

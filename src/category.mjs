@@ -36,28 +36,29 @@ export class Category {
   constructor(json) {
     this.unit = json.unit;
     this.description = json.description;
+    this.fractionalDigits = json.fractionalDigits || 2;
     this.order = json.order || 1.0;
 
     Object.defineProperties(this, {
       name: { value: json.name },
-      /*
-        unit: { value: json.unit },
-        description: { value: json.description },
-        */
       _latestSubscriptions: { value: new Set() },
       _valuesSubscriptions: { value: new Set() }
     });
   }
 
   async save() {
+    this.fractionalDigits = parseInt(this.fractionalDigits);
+    const body = JSON.stringify({
+      order: this.order,
+      unit: this.unit,
+      fractionalDigits: this.fractionalDigits,
+      description: this.description
+    });
+
     return await fetch(`${api}/category/${this.name}`, {
       method: "PUT",
       headers: headers(session),
-      body: JSON.stringify({
-        order: this.order,
-        unit: this.unit,
-        description: this.description
-      })
+      body
     });
   }
 
