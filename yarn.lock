@@ -5306,10 +5306,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.26.3:
-  version "2.26.3"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.26.3.tgz#502c755872a4590937cfa4e8f7eb99d3bc3c4025"
-  integrity sha512-Mlt39/kL2rA9egcbQbaZV1SNVplGqYYhDDMcGgHPPE0tvM3R4GrB+IEdYy2QtTrdzMQx57ZcqDFf/KWWm8F+uw==
+rollup@^2.26.4:
+  version "2.26.4"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.26.4.tgz#a8350fd6bd56fce9873a7db2bd9547d40de3992b"
+  integrity sha512-6+qsGuP0MXGd7vlYmk72utm1MrgZj5GfXibGL+cRkKQ9+ZL/BnFThDl0D5bcl7AqlzMjAQXRAwZX1HVm22M/4Q==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -5906,8 +5906,8 @@ svelte-session-manager@^1.1.7:
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
-  uid "8407ccdba617bf761e75b99bcf7a303c72c44465"
-  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/8407ccdba617bf761e75b99bcf7a303c72c44465"
+  uid "1a43efbd83e091b7a34895b7722ed16d0326c00e"
+  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/1a43efbd83e091b7a34895b7722ed16d0326c00e"
   dependencies:
     d3-scale "^3.2.1"
 
