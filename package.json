@@ -18,9 +18,8 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "prepare": "rollup -c",
-    "start": "rollup -c -w",
-    "package": "npm-pkgbuild pkgbuild pacman makepkg"
+    "prepare": "rollup -c rollup.config.mjs",
+    "start": "rollup -c rollup.config.mjs -w"
   },
   "dependencies": {
     "@imask/svelte": "^6.0.5",
