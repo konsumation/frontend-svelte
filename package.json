@@ -18,8 +18,8 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "prepare": "rollup -c",
-    "start": "rollup -c -w",
+    "prepare": "rollup -c && rollup -c rollup.config.mjs",
+    "start": "rollup -c -w && rollup -c -w rollup.config.mjs",
     "package": "npm-pkgbuild pkgbuild pacman makepkg"
   },
   "dependencies": {
