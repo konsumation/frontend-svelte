@@ -19,7 +19,7 @@
   "license": "BSD-2-Clause",
   "scripts": {
     "prepare": "rollup -c rollup.config.mjs",
-    "start": "rollup -c rollup.config.mjs -w && rollup -c -w rollup.config.mjs"
+    "start": "rollup -c -w rollup.config.mjs"
   },
   "dependencies": {
     "@imask/svelte": "^6.0.5",
