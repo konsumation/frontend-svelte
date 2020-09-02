@@ -10,3 +10,4 @@ public/bundle.*
 *.css.map
 *.js.map
 *.mjs.map
+bundle.*
