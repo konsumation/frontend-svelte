@@ -35,14 +35,6 @@
         <td>{formatBytes($state.memory.heapUsed)}</td>
       </tr>
       <tr>
-        <td>Mounted</td>
-        <td>{base}</td>
-      </tr>
-      <tr>
-        <td>API</td>
-        <td>{api}</td>
-      </tr>
-      <tr>
         <td>Username</td>
         <td>{$session.username}</td>
       </tr>
