@@ -1,5 +1,5 @@
 <script>
-  import { imask } from "@imask/svelte";
+  import imask from "../imask.mjs";
 
   export let category;
 

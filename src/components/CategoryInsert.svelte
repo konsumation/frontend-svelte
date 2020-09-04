@@ -1,8 +1,8 @@
 <script>
   import { onDestroy } from "svelte";
-  import { imask } from "@imask/svelte";
   import { ActionButton, dateFormatter } from "svelte-common";
   import { now } from "../main.mjs";
+  import imask from "../imask.mjs";
 
   export let category;
   export let value;
