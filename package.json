@@ -70,7 +70,7 @@
     },
     "depends": {
       "nginx-mainline": ">=1.19.2",
-      "konsum": ">=1.34.49"
+      "konsum": ">=1.34.54"
     },
     "groups": "home automation",
     "hooks": "pacman/hooks.sh",
