@@ -1,57 +1,38 @@
 <script>
-  import { DateTime, Duration, dateFormatter, formatDuration, formatBytes } from "svelte-common";
+  import {
+    DateTime,
+    Duration,
+    dateFormatter,
+    formatDuration,
+    formatBytes,
+    About,
+    SessionDetails
+  } from "svelte-common";
   import { state } from "../main.mjs";
   import { session } from "../util.mjs";
-  import name from 'consts:name';
-  import version from 'consts:version';
-  import description from 'consts:description';
-  import base from 'consts:base';
-  import api from 'consts:api';
+  import name from "consts:name";
+  import version from "consts:version";
+  import description from "consts:description";
 </script>
 
-<div>
-  <h2>{name}</h2>
-  <p>{description}</p>
-  <table class="bordered striped hoverable">
-    <tbody>
-      <tr>
-        <td>Version</td>
-        <td>{version}</td>
-      </tr>
-      <tr>
-        <td>Server Version</td>
-        <td>{$state.version}</td>
-      </tr>
-      <tr>
-        <td>Server Uptime</td>
-        <td><Duration seconds={$state.uptime}/></td>
-      </tr>
-      <tr>
-        <td>Server Heap Total</td>
-        <td>{formatBytes($state.memory.heapTotal)}</td>
-      </tr>
-      <tr>
-        <td>Server Heap Used</td>
-        <td>{formatBytes($state.memory.heapUsed)}</td>
-      </tr>
-      <tr>
-        <td>Username</td>
-        <td>{$session.username}</td>
-      </tr>
-      <tr>
-        <td>Session Expiration</td>
-        <td class={$session.isValid ? 'ok' : 'error'}>
-          <DateTime date={$session.expirationDate}/>
-        </td>
-      </tr>
-      <tr>
-        <td>Entitlements</td>
-        <td>
-          {#each [...$session.entitlements].sort() as name}
-            <div>{name}</div>
-          {/each}
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<About {name} {version} {description}>
+  <tr>
+    <td>Server Version</td>
+    <td>{$state.version}</td>
+  </tr>
+  <tr>
+    <td>Server Uptime</td>
+    <td>
+      <Duration seconds={$state.uptime} />
+    </td>
+  </tr>
+  <tr>
+    <td>Server Heap Total</td>
+    <td>{formatBytes($state.memory.heapTotal)}</td>
+  </tr>
+  <tr>
+    <td>Server Heap Used</td>
+    <td>{formatBytes($state.memory.heapUsed)}</td>
+  </tr>
+  <SessionDetails session={$session} />
+</About>

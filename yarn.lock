@@ -5291,10 +5291,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.26.9:
-  version "2.26.9"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.26.9.tgz#4b6ce4e9044dd257d7314d8ed9b4d4d8a7d166c9"
-  integrity sha512-XIiWYLayLqV+oY4S2Lub/shJq4uk/QQLwWToYCL4LjZbYHbFK3czea4UDVRUJu+zNmKmxq5Zb/OG7c5HSvH2TQ==
+rollup@^2.26.10:
+  version "2.26.10"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.26.10.tgz#0ffe0390d35f07af850382f22f1b8525c7f57f07"
+  integrity sha512-dUnjCWOA0h9qNX6qtcHidyatz8FAFZxVxt1dbcGtKdlJkpSxGK3G9+DLCYvtZr9v94D129ij9zUhG+xbRoqepw==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -5872,10 +5872,10 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-common@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.2.1.tgz#3b6fc974c5eb9f6d6027c75dd6f057adecd2fe31"
-  integrity sha512-LTIpa2ZPxZa/FJMSu+nwW76d+M6wlwCwtv0Txkcv2eJCHEJIpUHKUsVg5qGTJOYFP/VPl51gTq4+fgluJGcreg==
+svelte-common@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.4.0.tgz#adabff1e4641a252b6c703ea350d23261abb2f43"
+  integrity sha512-WrjHqdAXDvWOzNvYd0Jfzu/z+6zs67GGSxUlAeUw77qTR8++vm5xMql95BP/CXAKTqnmqx1VIkf5u5YIC+baIg==
 
 svelte-guard-history-router@^2.24.0:
   version "2.24.0"
@@ -5891,7 +5891,6 @@ svelte-session-manager@^1.1.7:
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
-  uid "5144a402e935b8fcc235d362e18b4e9ca193e2b7"
   resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/5144a402e935b8fcc235d362e18b4e9ca193e2b7"
   dependencies:
     d3-scale "^3.2.2"
