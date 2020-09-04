@@ -1,7 +1,7 @@
 import IMask from "imask";
 
 function fireEvent(el, eventName, data) {
-  var e = document.createEvent("CustomEvent");
+  const e = document.createEvent("CustomEvent");
   e.initCustomEvent(eventName, true, true, data);
   el.dispatchEvent(e);
 }
