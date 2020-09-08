@@ -1423,7 +1423,7 @@ cyclist@^1.0.1:
   dependencies:
     d3-color "1 - 2"
 
-d3-scale@^3.2.1:
+d3-scale@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-3.2.2.tgz#36d4cbc94dc38bbb5bd91ba5eddb44c6d19bad3e"
   integrity sha512-3Mvi5HfqPFq0nlyeFlkskGjeqrR/790pINMHc4RXKJ2E6FraTd3juaRIRZZHyMAbi3LjAMW0EH4FB1WgoGyeXg==
@@ -5884,9 +5884,10 @@ svelte-session-manager@^1.1.7:
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/97346eb17979edaa1f99ef616c49d27892014e3a"
+  uid f300b2a953267b2cf0187162871992360fa1e0f6
+  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/f300b2a953267b2cf0187162871992360fa1e0f6"
   dependencies:
-    d3-scale "^3.2.1"
+    d3-scale "^3.2.2"
 
 svelte@^3.24.1:
   version "3.24.1"
