@@ -3838,10 +3838,10 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.12.6:
-  version "6.12.6"
-  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.12.6.tgz#a877afd04a090718d75b015eb4d271111b7b26bf"
-  integrity sha512-H80f/ARn1BextPoIq/OKrRL2yZ3DtHhROqiD27daSs9NwkofN8hvPtWOLsyacAQY/Cbi/x55UXXSGKbN8peE9g==
+npm-pkgbuild@^6.12.7:
+  version "6.12.7"
+  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.12.7.tgz#7964bc76d2187013d0da000916c2d6633034dec8"
+  integrity sha512-6EoK7rGZgXYmR5cv4qIGSjjEajm0iYIgfFivEev3uhoX7CsubjUJ6Om/f5V9N0bN5AYaKS+EnGTnq7zpnUTMOg==
   dependencies:
     commander "^6.0.0"
     execa "^4.0.3"
@@ -5258,19 +5258,19 @@ rollup-plugin-postcss@^3.1.8:
     safe-identifier "^0.4.1"
     style-inject "^0.3.0"
 
-rollup-plugin-svelte@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-svelte/-/rollup-plugin-svelte-6.0.0.tgz#a5b15354371ec17fe67bd4def4d4ea1b915f74cb"
-  integrity sha512-y9qtWa+iNYwXdOZqaEqz3i6k3gzofC9JXzv+WVKDOt0DLiJxJaSrlKKf4YkKG91RzTK5Lo+0fW8in9QH/DxEhA==
+rollup-plugin-svelte@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-svelte/-/rollup-plugin-svelte-6.0.1.tgz#a4fc9c19c5c4277e6dbf8e79185c4cbd6b4383bf"
+  integrity sha512-kS9/JZMBNgpKTqVKlwV8mhmGwxu8NiNf6+n5ZzdZ8yDp3+ADqjf8Au+JNEpoOn6kLlh1hLS2Gsa76k9RP57HDQ==
   dependencies:
     require-relative "^0.8.7"
     rollup-pluginutils "^2.8.2"
     sourcemap-codec "^1.4.8"
 
-rollup-plugin-terser@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/rollup-plugin-terser/-/rollup-plugin-terser-7.0.1.tgz#df72d8272e03fcb504a76f414b9509c63c5eaf54"
-  integrity sha512-HL0dgzSxBYG/Ly9i/E5Sc+PuKKZ0zBzk11VmLCfdUtpqH4yYqkLclPkTqRy85FU9246yetImOClaQ/ufnj08vg==
+rollup-plugin-terser@^7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-terser/-/rollup-plugin-terser-7.0.2.tgz#e8fbba4869981b2dc35ae7e8a502d5c6c04d324d"
+  integrity sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==
   dependencies:
     "@babel/code-frame" "^7.10.4"
     jest-worker "^26.2.1"
@@ -5284,10 +5284,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.26.10:
-  version "2.26.10"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.26.10.tgz#0ffe0390d35f07af850382f22f1b8525c7f57f07"
-  integrity sha512-dUnjCWOA0h9qNX6qtcHidyatz8FAFZxVxt1dbcGtKdlJkpSxGK3G9+DLCYvtZr9v94D129ij9zUhG+xbRoqepw==
+rollup@^2.26.11:
+  version "2.26.11"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.26.11.tgz#4fc31de9c7b83d50916fc8395f8c3d24730cdaae"
+  integrity sha512-xyfxxhsE6hW57xhfL1I+ixH8l2bdoIMaAecdQiWF3N7IgJEMu99JG+daBiSZQjnBpzFxa0/xZm+3pbCdAQehHw==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -5884,9 +5884,10 @@ svelte-session-manager@^1.1.7:
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
-  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/97346eb17979edaa1f99ef616c49d27892014e3a"
+  uid d862fd2b4dc79ccc292ca5d553764af540a163b7
+  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/d862fd2b4dc79ccc292ca5d553764af540a163b7"
   dependencies:
-    d3-scale "^3.2.1"
+    d3-scale "^3.2.2"
 
 svelte@^3.24.1:
   version "3.24.1"
