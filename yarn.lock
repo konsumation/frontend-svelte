@@ -1423,7 +1423,7 @@ cyclist@^1.0.1:
   dependencies:
     d3-color "1 - 2"
 
-d3-scale@^3.2.2:
+d3-scale@^3.2.1:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/d3-scale/-/d3-scale-3.2.2.tgz#36d4cbc94dc38bbb5bd91ba5eddb44c6d19bad3e"
   integrity sha512-3Mvi5HfqPFq0nlyeFlkskGjeqrR/790pINMHc4RXKJ2E6FraTd3juaRIRZZHyMAbi3LjAMW0EH4FB1WgoGyeXg==
@@ -5328,10 +5328,10 @@ sax@~1.2.4:
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
 
-semantic-release@^17.1.1:
-  version "17.1.1"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.1.1.tgz#d9775968e841b2b7c5020559e4481aea8520ca75"
-  integrity sha512-9H+207eynBJElrQBHySZm+sIEoJeUhPA2zU4cdlY1QSInd2lnE8GRD2ALry9EassE22c9WW+aCREwBhro5AIIg==
+semantic-release@^17.1.2:
+  version "17.1.2"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.1.2.tgz#7d77555185722012b34e3ca74e4d13f813daf3cd"
+  integrity sha512-szYBXm10QjQO5Tb1S2PSkvOBW3MajWJat5EWtx+MzaVT/jquuxf9o+Zn8FC1j157xvJ5p9r1d/MZGslgs7oQQg==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -5865,10 +5865,10 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-common@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.7.1.tgz#9849132a2af093ee4ddd36f8e04ebd25ad2cd107"
-  integrity sha512-n/5K21eciXjrq9gVZPrexCszkEWxlmQn4pXwh+rsBK5w3hCB4XaVFHgHEL8yksvtnWQeacn97nVgtjXw1eUv5Q==
+svelte-common@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.8.0.tgz#5e09bbb816da9340d13b77cc78569da14e69415b"
+  integrity sha512-SSChWct2Pzg+vsnR7y4T5kDXxLpAGMhvbSee73YwW5U5Ycr9/aleEZe6uqhEVnM1R6l6oNh6VYjRSaS4vGAeBg==
 
 svelte-guard-history-router@^2.24.0:
   version "2.24.0"
@@ -5886,7 +5886,7 @@ svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
   resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/8e5154ff65392f873c2258c56b6da2c8c1a7d795"
   dependencies:
-    d3-scale "^3.2.1"
+    d3-scale "^3.0.1"
 
 svelte@^3.25.1:
   version "3.25.1"

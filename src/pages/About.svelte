@@ -1,6 +1,6 @@
 <script>
   import { About, SessionDetails, ServerDetails } from "svelte-common";
-  import { state } from "../main.mjs";
+  import { server } from "../main.mjs";
   import { session } from "../util.mjs";
   import name from "consts:name";
   import version from "consts:version";
@@ -8,6 +8,6 @@
 </script>
 
 <About {name} {version} {description}>
-  <ServerDetails server={$state} />
+  <ServerDetails server={$server} />
   <SessionDetails session={$session} />
 </About>

@@ -2,7 +2,7 @@ import { readable } from "svelte/store";
 import App from "./App.svelte";
 import api from "consts:api";
 
-export const state = readable(
+export const server = readable(
   { memory: {} },
   set => {
     const f = async () => {
