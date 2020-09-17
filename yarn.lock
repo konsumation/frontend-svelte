@@ -5865,7 +5865,7 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-common@^2.6.0:
+svelte-common@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.7.0.tgz#9f6c669d8242064f04439cdcfb2d80753462a6d3"
   integrity sha512-NtQQsBDnOIA2RQjzkOmbIvIjVOmt5vHMRaTTccKNFYMlD6YQ0ZiDMBkOfFqtVWpEA9PTYUnK3XzM+X/upxQEHQ==
