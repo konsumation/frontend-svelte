@@ -3,7 +3,7 @@ import App from "./App.svelte";
 import api from "consts:api";
 
 export const state = readable(
-  { version: "unknown", uptime: -1, memory: { heapTotal: 0, heapUsed: 0 } },
+  { memory: {} },
   set => {
     const f = async () => {
       const data = await fetch(api + "/state");
