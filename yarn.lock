@@ -5865,10 +5865,10 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-common@^2.5.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.6.0.tgz#006e503d176099d14bbb378ee0c6b845c088f65c"
-  integrity sha512-9pOjB4vCubVvrN2HSroSc+yDHHCvtVqbrtaUujyY8baPu88QziHsQTFMJg+nUHs+WhLn91nH7/Hb5Fnsis3JSw==
+svelte-common@^2.6.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/svelte-common/-/svelte-common-2.7.0.tgz#9f6c669d8242064f04439cdcfb2d80753462a6d3"
+  integrity sha512-NtQQsBDnOIA2RQjzkOmbIvIjVOmt5vHMRaTTccKNFYMlD6YQ0ZiDMBkOfFqtVWpEA9PTYUnK3XzM+X/upxQEHQ==
 
 svelte-guard-history-router@^2.24.0:
   version "2.24.0"
@@ -5884,8 +5884,8 @@ svelte-session-manager@^1.1.7:
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
-  uid a1fb1d48a12bf94979e9e1614fd8db10bbb28144
-  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/a1fb1d48a12bf94979e9e1614fd8db10bbb28144"
+  uid "8e5154ff65392f873c2258c56b6da2c8c1a7d795"
+  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/8e5154ff65392f873c2258c56b6da2c8c1a7d795"
   dependencies:
     d3-scale "^3.2.2"
 
