@@ -1,5 +1,10 @@
 <script>
-  import { About, SessionDetails, ServerDetails } from "svelte-common";
+  import {
+    About,
+    ApplicationDetails,
+    SessionDetails,
+    ServerDetails
+  } from "svelte-common";
   import { server } from "../main.mjs";
   import { session } from "../util.mjs";
   import name from "consts:name";
@@ -7,7 +12,8 @@
   import description from "consts:description";
 </script>
 
-<About {name} {version} {description}>
+<About>
+  <ApplicationDetails {name} {version} {description} />
   <ServerDetails server={$server} />
   <SessionDetails session={$session} />
 </About>
