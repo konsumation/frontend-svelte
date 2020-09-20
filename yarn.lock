@@ -1028,9 +1028,9 @@ commander@^2.20.0:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
 
-commander@^6.0.0:
+commander@^6.1.0:
   version "6.1.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-6.1.0.tgz#f8d722b78103141006b66f4c7ba1e97315ba75bc"
+  resolved "https://registry.npmjs.org/commander/-/commander-6.1.0.tgz#f8d722b78103141006b66f4c7ba1e97315ba75bc"
   integrity sha512-wl7PNrYWd2y5mp1OK/LhTlv8Ff4kQJQRXXAvF+uU/TPNiVJUxZLRYGj/B0y/lPGAVcSbJqH2Za/cvHmrPMC8mA==
 
 commondir@^1.0.1:
@@ -3838,12 +3838,12 @@ npm-pick-manifest@^3.0.0, npm-pick-manifest@^3.0.2:
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
 
-npm-pkgbuild@^6.12.7:
-  version "6.12.7"
-  resolved "https://registry.yarnpkg.com/npm-pkgbuild/-/npm-pkgbuild-6.12.7.tgz#7964bc76d2187013d0da000916c2d6633034dec8"
-  integrity sha512-6EoK7rGZgXYmR5cv4qIGSjjEajm0iYIgfFivEev3uhoX7CsubjUJ6Om/f5V9N0bN5AYaKS+EnGTnq7zpnUTMOg==
+npm-pkgbuild@^6.12.8:
+  version "6.12.8"
+  resolved "https://registry.npmjs.org/npm-pkgbuild/-/npm-pkgbuild-6.12.8.tgz#f01b1d3f490d728edcb41e4e5e9e0b0a38cb364b"
+  integrity sha512-Hr3C3nnqpTBTWDwhmJ8zCqnly4IV+HDNspNstFQNhh67x9T6wvMKMoj9NF9r61lMGHn7rN+YV/KLty1stTIb9w==
   dependencies:
-    commander "^6.0.0"
+    commander "^6.1.0"
     execa "^4.0.3"
     expression-expander "^7.0.5"
     globby "^11.0.1"
@@ -5865,10 +5865,10 @@ supports-hyperlinks@^2.1.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-common@^2.9.0:
-  version "2.9.0"
-  resolved "https://registry.npmjs.org/svelte-common/-/svelte-common-2.9.0.tgz#be1e601d0d5fae1be169e8e263077d7b3e805323"
-  integrity sha512-lY2vaAdOq/XlqPvH9W1m2gQ2wqI9snZP1AoL+3EzC2ko6amQ1sbisFasgOumbZIDymtprdvH2uzsoGBt2dkfLw==
+svelte-common@^2.11.1:
+  version "2.11.1"
+  resolved "https://registry.npmjs.org/svelte-common/-/svelte-common-2.11.1.tgz#faea16468b69d25a76116906d4a800ec159e1657"
+  integrity sha512-Bi93mGzTyf6/WwDK4DRob7goOJSk8f7wrAIERNYHR9wXm/6nrnaKSuJJvY61Bs1aS+XzJaOaKt+pAvPA14HBwg==
 
 svelte-guard-history-router@^2.24.0:
   version "2.24.0"
@@ -5886,7 +5886,7 @@ svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
   resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/f5aa6fd13d881003d6f47fad3e67cc6f566e48cd"
   dependencies:
-    d3-scale "^3.2.2"
+    d3-scale "^3.0.1"
 
 svelte@^3.25.1:
   version "3.25.1"
