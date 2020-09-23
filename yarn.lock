@@ -3520,8 +3520,8 @@ methods@~1.1.0:
 
 mf-styling@arlac77/mf-styling:
   version "0.0.0-semantic-release"
-  uid b815c7b91df78682213e5b14df2b03e89ff9d099
-  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/b815c7b91df78682213e5b14df2b03e89ff9d099"
+  uid db9c4544279aad2e751b3946f2ca0a8b915b5984
+  resolved "https://codeload.github.com/arlac77/mf-styling/tar.gz/db9c4544279aad2e751b3946f2ca0a8b915b5984"
 
 micromatch@^4.0.2:
   version "4.0.2"
@@ -5885,15 +5885,15 @@ svelte-session-manager@^1.1.7:
 
 svelte-time-series@arlac77/svelte-time-series:
   version "0.0.0-semantic-release"
-  uid b04a29b89c5dee7296f3eece43a9a3e188bef436
-  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/b04a29b89c5dee7296f3eece43a9a3e188bef436"
+  uid "78d42afcc5d8a8e16cb924ef887968b2599ea413"
+  resolved "https://codeload.github.com/arlac77/svelte-time-series/tar.gz/78d42afcc5d8a8e16cb924ef887968b2599ea413"
   dependencies:
     d3-scale "^3.2.2"
 
-svelte@^3.25.1:
-  version "3.25.1"
-  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.25.1.tgz#218def1243fea5a97af6eb60f5e232315bb57ac4"
-  integrity sha512-IbrVKTmuR0BvDw4ii8/gBNy8REu7nWTRy9uhUz+Yuae5lIjWgSGwKlWtJGC2Vg95s+UnXPqDu0Kk/sUwe0t2GQ==
+svelte@^3.26.0:
+  version "3.26.0"
+  resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.26.0.tgz#20ae354e55689ad37d872d2ce3276aeaa9bf305d"
+  integrity sha512-9tclNfffORwbSewfofEHddqXhfhFvFcgJlkF3QhZfMuoh6whPOPY87eHiJRHph4na3VxQoGDyEWAZcNAl1K/2A==
 
 svgo@^1.0.0:
   version "1.3.2"
