@@ -6,7 +6,6 @@
     IteratorStoreRoute,
     ChildStoreRoute,
     Router,
-    Link,
     redirectGuard
   } from "svelte-guard-history-router";
   import { Menue } from "svelte-common";
@@ -30,7 +29,7 @@
 <Router {base}>
   <nav>
     <Route href="/" path="*" component={Home}>
-      <img class="logo" src="logo.svg" alt="Konsum" />
+      <img class="logo" src="images/logo.svg" alt="Konsum" />
       Konsum
     </Route>
     <ul class="left">

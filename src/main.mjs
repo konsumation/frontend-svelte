@@ -1,4 +1,6 @@
 import { readable } from "svelte/store";
+import { initializeServiceWorker } from "svelte-common";
+
 import App from "./App.svelte";
 import api from "consts:api";
 
@@ -22,6 +24,9 @@ export const now = readable(new Date(), set => {
   const interval = setInterval(() => set(new Date()), 1000);
   return () => clearInterval(interval);
 });
+
+const { serviceWorker } = initializeServiceWorker("bundle.service-worker.mjs");
+export { serviceWorker };
 
 export default new App({
   target: document.body
