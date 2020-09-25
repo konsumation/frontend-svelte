@@ -1,3 +1,5 @@
+
+
 import { readFileSync } from "fs";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
@@ -21,6 +23,8 @@ const { name, description, version, config } = JSON.parse(
   readFileSync("./package.json", { endoding: "utf8" })
 );
 
+const external = [];
+
 const prePlugins = [
   virtual({
     "node-fetch": "export default fetch",
@@ -28,7 +32,7 @@ const prePlugins = [
   }),
   inject({
     Buffer: ["buffer", "Buffer"]
-  }),
+  }),  
   consts({
     name,
     version,
@@ -46,16 +50,18 @@ const resolverPlugins = [
   commonjs()
 ];
 
+const output = {
+  interop: false,
+  sourcemap: true,
+  format: "esm",
+  file: `${bundlePrefix}main.mjs`,
+  plugins: [production && terser()]
+};
+
 export default [
   {
     input: "src/main.mjs",
-    output: {
-      interop: false,
-      sourcemap: true,
-      format: "esm",
-      file: `${bundlePrefix}main.mjs`,
-      plugins: [production && terser()]
-    },
+    output,
     plugins: [
       ...prePlugins,
       postcss({
@@ -76,11 +82,11 @@ export default [
           spa: `${dist}/index.html`,
           basePath: config.base,
           proxy: {
-            [`${config.journalApi}/*`]: [config.proxyTarget, { https: true }],
             [`${config.api}/*`]: [config.proxyTarget, { https: true }]
           }
         })
     ],
+    external,
     watch: {
       clearScreen: false
     }
@@ -88,12 +94,10 @@ export default [
   {
     input: "src/service-worker.mjs",
     output: {
-      interop: false,
-      sourcemap: true,
-      format: "esm",
+      ...output,
       file: `${bundlePrefix}service-worker.mjs`,
-      plugins: [production && terser()]
     },
-    plugins: [...prePlugins, ...resolverPlugins]
+    plugins: [...prePlugins, ...resolverPlugins],
+    external
   }
 ];
