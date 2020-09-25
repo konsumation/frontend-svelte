@@ -5,12 +5,14 @@
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
-  "categories": ["productivity"],
   "icons": [
     {
       "src": "images/logo.svg",
       "sizes": "48x48"
     }
   ],
-  "background_color": "#6e3e81"
+  "background_color": "#6e3e81",
+  "categories": [
+    "productivity"
+  ]
 }
