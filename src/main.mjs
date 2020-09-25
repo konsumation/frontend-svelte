@@ -25,8 +25,8 @@ export const now = readable(new Date(), set => {
   return () => clearInterval(interval);
 });
 
-const { serviceWorker } = initializeServiceWorker("bundle.service-worker.mjs");
-export { serviceWorker };
+const { serviceWorker, serviceWorkerRegistration } = initializeServiceWorker("bundle.service-worker.mjs");
+export { serviceWorker, serviceWorkerRegistration };
 
 export default new App({
   target: document.body
