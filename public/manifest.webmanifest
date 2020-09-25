@@ -5,6 +5,7 @@
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
+  "categories": ["productivity"],
   "icons": [
     {
       "src": "images/logo.svg",
