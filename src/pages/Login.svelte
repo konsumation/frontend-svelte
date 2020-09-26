@@ -11,5 +11,5 @@
   <Login
     {session}
     endpoint={api + '/authenticate'}
-    result={() => router.continue()} />
+    result={() => router.continue('/')} />
 </Modal>
