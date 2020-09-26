@@ -57,6 +57,7 @@
   },
   "homepage": "https://github.com/arlac77/konsum-frontend-svelte#readme",
   "config": {
+    "title": "Konsum",
     "api": "/services/konsum/api",
     "base": "/services/konsum",
     "proxyTarget": "https://mfelten.dynv6.net"
