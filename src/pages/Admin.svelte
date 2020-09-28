@@ -1,8 +1,9 @@
 <script>
+  import streamSaver from "streamsaver";
+
   import { ActionButton } from "svelte-common";
   import { session, headers } from "../util.mjs";
   import api from "consts:api";
-
   let dump;
 
   async function backup() {
@@ -10,7 +11,16 @@
       headers: headers(session)
     });
 
-    dump = await response.text();
+    try {
+      const fileStream = streamSaver.createWriteStream("backup.txt");
+
+      return response.body
+        .pipeTo(fileStream)
+        .then(() => console.log("done writing"));
+    } catch (e) {
+      console.log(e);
+      dump = await response.text();
+    }
   }
 
   async function restore() {
@@ -26,5 +36,5 @@
 
   <ActionButton action={restore}>Restore</ActionButton>
 
-  <textarea bind:value={dump}></textarea>
+  {#if dump !== undefined}<textarea bind:value={dump} />{/if}
 </div>
