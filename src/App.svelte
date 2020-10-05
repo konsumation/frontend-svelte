@@ -8,7 +8,7 @@
     Router,
     redirectGuard
   } from "svelte-guard-history-router";
-  import { Menue } from "svelte-common";
+  import { Menue, TopNav } from "svelte-common";
   import About from "./pages/About.svelte";
   import Login from "./pages/Login.svelte";
   import Home from "./pages/Home.svelte";
@@ -27,7 +27,7 @@
 </script>
 
 <Router {base}>
-  <nav>
+  <TopNav offset={42}>
     <Route href="/" path="*" component={Home}>
       <img class="logo" src="images/logo.svg" alt="Konsum" />
       Konsum
@@ -85,7 +85,8 @@
                 href="/"
                 class="dropdown-item"
                 on:click|preventDefault={() => session.invalidate()}>
-                Logout {$session.username}
+                Logout
+                {$session.username}
               </a>
               <div class="dropdown-divider" />
               <Route
@@ -102,7 +103,7 @@
         {/if}
       </li>
     </ul>
-  </nav>
+  </TopNav>
   <main>
     <Outlet />
   </main>
