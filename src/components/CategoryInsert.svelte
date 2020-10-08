@@ -66,7 +66,7 @@
     Time
     <input
       id="{category.name}.time"
-      type="text"
+      type="datetime-local"
       placeholder="31.12.2000, 23:59:59"
       name="{category.name}.time"
       size="16"
