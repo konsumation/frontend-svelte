@@ -63,8 +63,7 @@
 
 <fieldset>
   <label for="{category.name}.time">
-    Time
-    <input
+    Time<input
       id="{category.name}.time"
       type="datetime-local"
       placeholder="31.12.2000, 23:59:59"
@@ -75,8 +74,7 @@
   </label>
 
   <label for="{category.name}.value">
-    {category.name} ({category.unit})
-    <input
+    {category.name} ({category.unit})<input
       id="{category.name}.value"
       type="text"
       placeholder="0.0"

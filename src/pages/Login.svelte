@@ -7,7 +7,7 @@
   export let router;
 </script>
 
-<Modal close={() => router.abort()}>
+<Modal close={() => router.abort('/')}>
   <Login
     {session}
     endpoint={api + '/authenticate'}

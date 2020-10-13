@@ -32,6 +32,20 @@ export async function* valueIterator(transition, properties) {
   }
 }
 
+export class Meter {
+  constructor(category,json) {
+    this.category = category;
+    Object.assign(this, json);
+  }
+}
+
+export class Note {
+  constructor(category,json) {
+    this.category = category;
+    Object.assign(this, json);
+  }
+}
+
 export class Category {
   constructor(json) {
     this.unit = json.unit;
@@ -44,6 +58,24 @@ export class Category {
       _latestSubscriptions: { value: new Set() },
       _valuesSubscriptions: { value: new Set() }
     });
+  }
+
+  async *meters() {
+    const response = await fetch(`${api}/category/${this.name}/meters`, {
+      headers: headers(session)
+    });
+    for (const item of await response.json()) {
+      yield new Meter(this,item);
+    }
+  }
+
+  async *notes() {
+    const response = await fetch(`${api}/category/${this.name}/notes`, {
+      headers: headers(session)
+    });
+    for (const item of await response.json()) {
+      yield new Note(this,item);
+    }
   }
 
   async save() {
