@@ -25,8 +25,8 @@
     "imask": "^6.0.5",
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.4",
-    "svelte-common": "2.19.0",
-    "svelte-guard-history-router": "^2.26.3",
+    "svelte-common": "^2.19.0",
+    "svelte-guard-history-router": "^2.26.4",
     "svelte-session-manager": "^1.1.7",
     "svelte-time-series": "arlac77/svelte-time-series"
   },
