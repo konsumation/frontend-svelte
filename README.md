@@ -3,7 +3,4 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![minified size](https://badgen.net/bundlephobia/min/konsum-frontend-svelte)](https://bundlephobia.com/result?p=konsum-frontend-svelte)
 [![downloads](http://img.shields.io/npm/dm/konsum-frontend-svelte.svg?style=flat-square)](https://npmjs.org/package/konsum-frontend-svelte)
-[![GitHub Issues](https://img.shields.io/github/issues/arlac77/konsum-frontend-svelte.svg?style=flat-square)](https://github.com/arlac77/konsum-frontend-svelte/issues)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/arlac77/konsum-frontend-svelte.git)
-[![Build Action Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fkonsum-frontend-svelte%2Fbadge&style=flat)](https://actions-badge.atrox.dev/arlac77/konsum-frontend-svelte/goto)
-[![Coverage Status](https://coveralls.io/repos/arlac77/konsum-frontend-svelte/badge.svg)](https://coveralls.io/r/arlac77/konsum-frontend-svelte)
