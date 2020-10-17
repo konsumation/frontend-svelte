@@ -38,12 +38,12 @@
           path="/category"
           factory={IteratorStoreRoute}
           iteratorFor={categoryIterator}
+          objectInstance={Category}
           guards={enshureSession}
           component={CategoriesPage}>
           Categories
           <Route
             path="/:category"
-            objectInstance={Category}
             propertyMapping={{ category: 'name' }}
             factory={ChildStoreRoute}
             linkComponent={CategoryLink}
