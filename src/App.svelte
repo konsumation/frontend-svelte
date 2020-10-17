@@ -39,7 +39,7 @@
           factory={IteratorStoreRoute}
           iteratorFor={categoryIterator}
           objectInstance={Category}
-          guards={enshureSession}
+          guard={enshureSession}
           component={CategoriesPage}>
           Categories
           <Route
@@ -66,7 +66,7 @@
           path="/insert"
           factory={IteratorStoreRoute}
           iteratorFor={categoryIterator}
-          guards={enshureSession}
+          guard={enshureSession}
           component={Insert}>
           Insert
         </Route>
@@ -91,7 +91,7 @@
               <div class="dropdown-divider" />
               <Route
                 path="/admin"
-                guards={enshureSession}
+                guard={enshureSession}
                 class="dropdown-item"
                 component={Admin}>
                 Admin
