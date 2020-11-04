@@ -26,7 +26,7 @@
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.4",
     "svelte-common": "^2.19.0",
-    "svelte-guard-history-router": "^3.2.1",
+    "svelte-guard-history-router": "^3.2.2",
     "svelte-session-manager": "^1.1.8",
     "svelte-time-series": "arlac77/svelte-time-series"
   },
