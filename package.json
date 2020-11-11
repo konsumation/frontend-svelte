@@ -27,7 +27,7 @@
     "streamsaver": "^2.0.4",
     "svelte-common": "^2.19.0",
     "svelte-guard-history-router": "^3.3.6",
-    "svelte-session-manager": "^1.1.9",
+    "svelte-session-manager": "^1.1.10",
     "svelte-time-series": "arlac77/svelte-time-series"
   },
   "devDependencies": {
