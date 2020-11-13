@@ -3,8 +3,8 @@
   import {
     Outlet,
     Route,
-    IteratorStoreRoute,
-    ChildStoreRoute,
+    MasterRoute,
+    DetailRoute,
     Router,
     redirectGuard
   } from "svelte-guard-history-router";
@@ -36,7 +36,7 @@
       <li>
         <Route
           path="/category"
-          factory={IteratorStoreRoute}
+          factory={MasterRoute}
           iteratorFor={categoryIterator}
           objectInstance={Category}
           guard={enshureSession}
@@ -45,17 +45,17 @@
           <Route
             path="/:category"
             propertyMapping={{ category: 'name' }}
-            factory={ChildStoreRoute}
+            factory={DetailRoute}
             linkComponent={CategoryLink}
             component={CategoryPage}>
             <Route path="/values" iteratorFor={valueIterator}>
               <Route
                 path="/list"
-                factory={IteratorStoreRoute}
+                factory={MasterRoute}
                 component={CategoryValueList} />
               <Route
                 path="/graph"
-                factory={IteratorStoreRoute}
+                factory={MasterRoute}
                 component={CategoryGraph} />
             </Route>
           </Route>
@@ -64,7 +64,7 @@
       <li>
         <Route
           path="/insert"
-          factory={IteratorStoreRoute}
+          factory={MasterRoute}
           iteratorFor={categoryIterator}
           guard={enshureSession}
           component={Insert}>
