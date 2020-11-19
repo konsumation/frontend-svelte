@@ -4,6 +4,7 @@
   export let router;
   
   const route = router.route;
+  const categories = $route.value;
 </script>
 
 <div>
@@ -16,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each $route as category (category.name)}
+      {#each categories as category (category.name)}
         <tr>
           <td>
             <ObjectLink object={category}/>

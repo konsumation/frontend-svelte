@@ -1,5 +1,4 @@
 <script>
-  import { Link } from "svelte-guard-history-router";
   import { TimeSeries, DataSet } from "svelte-time-series";
 
   export let router;
@@ -12,7 +11,7 @@
   let points = [{ x: 941673600, y: 0 }];
 
   $: {
-    const vv = $route;
+    const vv = $route.value;
 
     if (vv) {
       points = [];

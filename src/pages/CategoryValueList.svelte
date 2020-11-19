@@ -4,6 +4,7 @@
   export let router;
 
   const route = router.route;
+  const entries = $route.value;
 
   function time2Date(time) {
     const date = new Date();
@@ -21,15 +22,15 @@
   }, 1000);
 </script>
 
-{#if $route}
+{#if entries}
   <table class="bordered striped hoverable">
     <thead>
       <th>Date</th>
       <th>Value</th>
     </thead>
     <tbody>
-      {#each $route as entry, i}
-        <tr id={i === 0 ? 'first' : i === $route.length - 1 ? 'last' : ''}>
+      {#each entries as entry, i}
+        <tr id={i === 0 ? 'first' : i === entries.length - 1 ? 'last' : ''}>
           <td>
             <DateTime date={time2Date(entry.time)} />
           </td>

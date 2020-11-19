@@ -4,12 +4,13 @@
   export let router;
   
   const route = router.route;
-  
+  const categories = $route.value;
+
   function submit() {}
 </script>
 
 <form on:submit|preventDefault={submit}>
-  {#each $route as category}
+  {#each categories as category}
     <CategoryInsert {category} value="" time=""/>
   {/each}
 </form>
