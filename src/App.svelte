@@ -6,7 +6,8 @@
     MasterRoute,
     DetailRoute,
     Router,
-    redirectGuard
+    redirectGuard,
+    NamedObjectLink
   } from "svelte-guard-history-router";
   import { Menue, TopNav } from "svelte-common";
   import About from "./pages/About.svelte";
@@ -18,7 +19,6 @@
   import Insert from "./pages/Insert.svelte";
   import CategoryValueList from "./pages/CategoryValueList.svelte";
   import CategoryGraph from "./pages/CategoryGraph.svelte";
-  import CategoryLink from "./components/CategoryLink.svelte";
   import base from "consts:base";
   import { Category, categoryIterator, valueIterator } from "./category.mjs";
   import { session } from "./util.mjs";
@@ -46,7 +46,7 @@
             path="/:category"
             propertyMapping={{ category: 'name' }}
             factory={DetailRoute}
-            linkComponent={CategoryLink}
+            linkComponent={NamedObjectLink}
             component={CategoryPage}>
             <Route path="/values" iteratorFor={valueIterator}>
               <Route
