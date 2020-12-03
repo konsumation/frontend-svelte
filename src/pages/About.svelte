@@ -9,7 +9,7 @@
   } from "svelte-common";
   import { server } from "../main.mjs";
   import { session } from "../util.mjs";
-  import { serviceWorker, serviceWorkerRegistration } from "../main.mjs";
+  import { serviceWorker, serviceWorkerRegistration } from "../service-worker/registration.mjs";
   import name from "consts:title";
   import version from "consts:version";
   import description from "consts:description";

@@ -1,4 +1,4 @@
-import { ASSET_GENERATION, ASSETS } from "./service-worker-assets.mjs";
+import { ASSET_GENERATION, ASSETS } from "./assets.mjs";
 
 const CURRENT_ASSET_CACHE = `assets-${ASSET_GENERATION}`;
 const RUNTIME_CACHE = "runtime";
