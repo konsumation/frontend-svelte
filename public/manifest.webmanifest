@@ -9,6 +9,11 @@
     {
       "src": "images/logo.svg",
       "sizes": "48x48"
+    },
+    {
+      "src": "images/icon.svg",
+      "sizes": "150x150",
+      "purpose": "any"
     }
   ],
   "background_color": "#6e3e81",
