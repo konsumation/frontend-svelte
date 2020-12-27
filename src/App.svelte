@@ -29,7 +29,7 @@
 <Router {base}>
   <TopNav offset={42}>
     <Route href="/" path="*" component={Home}>
-      <img class="logo" src="images/logo.svg" alt="Konsum" />
+      <img class="logo" src="images/icon.svg" alt="Konsum" />
       Konsum
     </Route>
     <ul class="left">
