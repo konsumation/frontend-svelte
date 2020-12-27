@@ -38,6 +38,7 @@
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/release-notes-generator": "^9.0.1",
+    "konsum": "github:konsumation/konsum",
     "npm-pkgbuild": "^6.12.18",
     "postcss": "^8.2.1",
     "postcss-import": "^14.0.0",
@@ -96,6 +97,7 @@
     "inheritFrom": [
       "arlac77/template-arlac77-github",
       "arlac77/template-svelte-app",
+      "arlac77/template-testcafe",
       "konsumation/template"
     ]
   }
