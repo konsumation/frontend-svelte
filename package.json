@@ -53,12 +53,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arlac77/konsum-frontend-svelte.git"
+    "url": "https://github.com/konsumation/konsum-frontend-svelte.git"
   },
   "bugs": {
-    "url": "https://github.com/arlac77/konsum-frontend-svelte/issues"
+    "url": "https://github.com/konsumation/konsum-frontend-svelte/issues"
   },
-  "homepage": "https://github.com/arlac77/konsum-frontend-svelte#readme",
+  "homepage": "https://github.com/konsumation/konsum-frontend-svelte#readme",
   "config": {
     "api": "/services/konsum/api",
     "base": "/services/konsum",
@@ -95,7 +95,6 @@
   "template": {
     "inheritFrom": [
       "arlac77/template-arlac77-github",
-      "arlac77/template-github-action",
       "arlac77/template-svelte-app"
     ]
   }
