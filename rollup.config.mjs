@@ -27,7 +27,7 @@ const { name, description, version, config } = JSON.parse(
 const external = [];
 
 if (!production) {
-  mkdirSync("build",{recursive:true});
+  mkdirSync("build", { recursive: true });
   const konsum = execFile(
     "node",
     ["node_modules/konsum/src/konsum-cli.mjs", "-c", "tests/config", "start"],
@@ -40,10 +40,7 @@ if (!production) {
     readFileSync("tests/config/config.json", { endoding: "utf8" })
   );
 
-  //config.api = "";
-  //config.base = "/";
   config.proxyTarget = `http://localhost:${http.port}/`;
-  console.log(config);
 }
 
 const prePlugins = [
@@ -99,7 +96,6 @@ export default [
       ...resolverPlugins,
       !production &&
         dev({
-          silent: false,
           port,
           dirs: [dist],
           spa: `${dist}/index.html`,
@@ -107,7 +103,11 @@ export default [
           proxy: {
             [`${config.api}/*`]: [
               config.proxyTarget,
-              { https: config.proxyTarget.startsWith("https:") }
+              {
+                https: config.proxyTarget.startsWith("https:"),
+                proxyReqPathResolver: ctx =>
+                  ctx.url.substring(config.api.length)
+              }
             ]
           }
         })
