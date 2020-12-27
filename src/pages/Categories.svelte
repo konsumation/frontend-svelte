@@ -1,31 +1,29 @@
 <script>
   import { ObjectLink } from "svelte-guard-history-router";
-  
+
   export let router;
-  
+
   const route = router.route;
   const categories = $route.value;
 </script>
 
-<div>
-  <table class="bordered striped hoverable">
-    <thead>
+<table class="bordered striped hoverable">
+  <thead>
+    <tr>
+      <th aria-sort="none">Name</th>
+      <th aria-sort="none">Description</th>
+      <th aria-sort="none">Unit</th>
+    </tr>
+  </thead>
+  <tbody>
+    {#each categories as category (category.name)}
       <tr>
-        <th aria-sort="none">Name</th>
-        <th aria-sort="none">Description</th>
-        <th aria-sort="none">Unit</th>
+        <td>
+          <ObjectLink object={category} />
+        </td>
+        <td>{category.description}</td>
+        <td>{category.unit}</td>
       </tr>
-    </thead>
-    <tbody>
-      {#each categories as category (category.name)}
-        <tr>
-          <td>
-            <ObjectLink object={category}/>
-          </td>
-          <td>{category.description}</td>
-          <td>{category.unit}</td>
-        </tr>
-      {/each}
-    </tbody>
-  </table>
-</div>
+    {/each}
+  </tbody>
+</table>
