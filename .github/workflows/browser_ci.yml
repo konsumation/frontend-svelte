@@ -1,0 +1,46 @@
+name: CI
+'on': push
+jobs:
+  test:
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        node:
+          - -12
+          - -13
+          - -14
+          - 14.15.3
+        browser:
+          - chrome
+          - firefox
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '${{ matrix.node }}'
+      - run: npm install
+      - run: npm test
+        env:
+          BROWSER: '${{ matrix.browser }}'
+      - uses: actions/upload-artifact@v2
+        with:
+          path: '${{ github.workspace }}/build/test/**/*'
+          retention-days: 3
+        if: always()
+  release:
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14.15.3
+      - run: npm install
+      - run: npx semantic-release
+        env:
+          CI: 'true'
+          NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
