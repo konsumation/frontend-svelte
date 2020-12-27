@@ -16,6 +16,7 @@
   import Admin from "./pages/Admin.svelte";
   import CategoriesPage from "./pages/Categories.svelte";
   import CategoryPage from "./pages/Category.svelte";
+  import AddCategoryPage from "./pages/AddCategory.svelte";
   import Insert from "./pages/Insert.svelte";
   import CategoryValueList from "./pages/CategoryValueList.svelte";
   import CategoryGraph from "./pages/CategoryGraph.svelte";
@@ -42,6 +43,9 @@
           guard={enshureSession}
           component={CategoriesPage}>
           Categories
+          <Route
+            path="/add"
+            component={AddCategoryPage} />
           <Route
             path="/:category"
             propertyMapping={{ category: 'name' }}

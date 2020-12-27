@@ -8,6 +8,18 @@
   }
 </script>
 
+<label for="name">
+  Name
+  <input
+    id="name"
+    type="text"
+    placeholder="Name"
+    name="name"
+    size="20"
+    required
+    bind:value={category.name} />
+</label>
+
 <label for="description">
   Description
   <input
