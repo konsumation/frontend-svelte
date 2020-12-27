@@ -1,6 +1,7 @@
 import livereload from "rollup-plugin-livereload";
 
-import { readFileSync } from "fs";
+import { mkdirSync, readFileSync } from "fs";
+import { execFile } from "child_process";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import virtual from "@rollup/plugin-virtual";
@@ -24,6 +25,26 @@ const { name, description, version, config } = JSON.parse(
 );
 
 const external = [];
+
+if (!production) {
+  mkdirSync("build",{recursive:true});
+  const konsum = execFile(
+    "node",
+    ["node_modules/konsum/src/konsum-cli.mjs", "-c", "tests/config", "start"],
+    (error, stdout, stderr) => {
+      console.log(error, stdout, stderr);
+    }
+  );
+
+  const { http } = JSON.parse(
+    readFileSync("tests/config/config.json", { endoding: "utf8" })
+  );
+
+  //config.api = "";
+  //config.base = "/";
+  config.proxyTarget = `http://localhost:${http.port}/`;
+  console.log(config);
+}
 
 const prePlugins = [
   virtual({
@@ -78,12 +99,16 @@ export default [
       ...resolverPlugins,
       !production &&
         dev({
+          silent: false,
           port,
           dirs: [dist],
           spa: `${dist}/index.html`,
           basePath: config.base,
           proxy: {
-            [`${config.api}/*`]: [config.proxyTarget, { https: true }]
+            [`${config.api}/*`]: [
+              config.proxyTarget,
+              { https: config.proxyTarget.startsWith("https:") }
+            ]
           }
         })
     ],

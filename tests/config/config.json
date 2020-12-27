@@ -1,0 +1,23 @@
+{
+  "database": {
+    "file": "build/db"
+  },
+  "auth": {
+    "users": {
+      "admin": {
+        "password": "start123",
+        "entitlements": ["konsum"]
+      }
+    },
+    "jwt": {
+      "options": {
+        "expiresIn": "1h"
+      },
+      "public": "${document('demo.rsa.pub')}",
+      "private": "${document('demo.rsa')}"
+    }
+  },
+  "http": {
+    "port": 12345
+  }
+}
