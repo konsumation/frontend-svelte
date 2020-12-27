@@ -48,13 +48,13 @@ export class Note {
 
 export class Category {
   constructor(json) {
+    this.name = json.name;
     this.unit = json.unit;
     this.description = json.description;
     this.fractionalDigits = json.fractionalDigits || 2;
     this.order = json.order || 1.0;
 
     Object.defineProperties(this, {
-      name: { value: json.name },
       _latestSubscriptions: { value: new Set() },
       _valuesSubscriptions: { value: new Set() }
     });
