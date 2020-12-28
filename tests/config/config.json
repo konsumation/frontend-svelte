@@ -4,8 +4,8 @@
   },
   "auth": {
     "users": {
-      "admin": {
-        "password": "start123",
+      "user1": {
+        "password": "secret",
         "entitlements": ["konsum"]
       }
     },

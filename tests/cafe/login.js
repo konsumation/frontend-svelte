@@ -1,13 +1,24 @@
 import { Selector } from "testcafe";
+import { base, login } from "./helpers/util.js";
 
-const base = "http://localhost:5000";
 
-fixture`login`.page`${base}/index.html`;
+const findElementByTrimmedText = Selector((baseCSSSelector, text) => {
+  const el          = document.querySelector(baseCSSSelector);
+  const trimmedText = el && el.innerText && el.innerText.trim();
+  return trimmedText === text ? el : null;
+});
 
-test("correct credentials", async t => {
+//fixture`login`.page`${base}/index.html`;
+
+fixture `Fixture`
+    .page('./index.html');
+
+test.page`${base}/about`("about", async t => {
   await t
-    .typeText("#username", "user")
-    .typeText("#password", "secret")
-    .click("#submit");
-  await t.expect(Selector("#session_username").innerText).eql("user");
+  .takeScreenshot({
+      fullPage: true
+  });
+
+  const targetElement = findElementByTrimmedText('td', 'Konsum');
+  await t.expect(targetElement.exists).ok();
 });
