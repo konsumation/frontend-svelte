@@ -1,3 +1,4 @@
+import { readFileSync } from "fs";
 import livereload from "rollup-plugin-livereload";
 
 import { mkdirSync, readFileSync } from "fs";
