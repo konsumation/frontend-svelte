@@ -22,15 +22,25 @@ test("About", async t => {
 });
 */
 
-test("Categories", async t => {
+test("Category Add", async t => {
   await t.navigateTo(`${base}/category/add`);
 
   await login(t);
 
-  await t.takeScreenshot({
-    fullPage: true
-  });
+  await t.takeScreenshot();
 
-  const targetElement = findElementByTrimmedText("td", "Konsum");
+  await t
+    .typeText("#name", "mains", { replace: true })
+    .typeText("#description", "mains power", { replace: true })
+    .typeText("#unit", "kWh", { replace: true })
+    .click("#submit");
+
+  await t.navigateTo(`${base}/category`);
+
+  await login(t);
+
+  await t.takeScreenshot();
+
+  const targetElement = findElementByTrimmedText("td", "mains");
   await t.expect(targetElement.exists).ok();
 });
