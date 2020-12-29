@@ -1,4 +1,5 @@
 <script>
+  import { ActionButton } from "svelte-common";
   import { ObjectLink } from "svelte-guard-history-router";
   import CategoryCard from "../components/CategoryCard.svelte";
 
@@ -7,7 +8,7 @@
   const route = router.route;
   const category = $route.value;
 
-  let activeSave, activeDelete;
+  let activeSave;
 
   async function submit() {
     activeSave = true;
@@ -20,13 +21,7 @@
   }
 
   async function deleteCategory() {
-    activeDelete = true;
-
-    try {
-      await category.delete();
-    } finally {
-      activeDelete = false;
-    }
+    await category.delete();
   }
 </script>
 
@@ -40,12 +35,8 @@
         <div class="spinner" />
       {/if}
     </button>
-    <button id="delete" on:click|preventDefault={deleteCategory}>
-      Delete
-      {#if activeDelete}
-        <div class="spinner" />
-      {/if}
-    </button>
+
+    <ActionButton action={deleteCategory}>Delete</ActionButton>
   </form>
 
   <ul>
