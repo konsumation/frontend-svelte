@@ -34,13 +34,13 @@
   <h1>Category {category.name}</h1>
   <form on:submit|preventDefault={submit}>
     <CategoryCard {category} />
-    <button type="submit">
+    <button id="save" type="submit">
       Save
       {#if activeSave}
         <div class="spinner" />
       {/if}
     </button>
-    <button on:click={deleteCategory}>
+    <button id="delete" on:click|preventDefault={deleteCategory}>
       Delete
       {#if activeDelete}
         <div class="spinner" />

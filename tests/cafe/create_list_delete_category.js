@@ -36,11 +36,16 @@ test("category add list remove", async t => {
     .click("#submit");
 
   await clickLink(t, "/category");
-
   await t.takeScreenshot();
 
   const targetElement = findElementByTrimmedText("td", "mains");
   await t.expect(targetElement.exists).ok();
 
   await clickLink(t, "/category/mains");
+  await t.takeScreenshot();
+
+  await t.click("#delete");
+
+  await clickLink(t, "/category");
+  await t.takeScreenshot();
 });
