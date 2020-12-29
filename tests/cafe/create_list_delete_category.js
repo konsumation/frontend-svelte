@@ -1,5 +1,5 @@
 import { Selector } from "testcafe";
-import { base, login } from "./helpers/util.js";
+import { base, login, clickLink } from "./helpers/util.js";
 
 const findElementByTrimmedText = Selector((baseCSSSelector, text) => {
   const el = document.querySelector(baseCSSSelector);
@@ -22,7 +22,7 @@ test("About", async t => {
 });
 */
 
-test("Category Add", async t => {
+test("category add list remove", async t => {
   await t.navigateTo(`${base}/category/add`);
 
   await login(t);
@@ -35,12 +35,12 @@ test("Category Add", async t => {
     .typeText("#unit", "kWh", { replace: true })
     .click("#submit");
 
-  await t.navigateTo(`${base}/category`);
-
-  await login(t);
+  await clickLink(t, "/category");
 
   await t.takeScreenshot();
 
   const targetElement = findElementByTrimmedText("td", "mains");
   await t.expect(targetElement.exists).ok();
+
+  await clickLink(t, "/category/mains");
 });

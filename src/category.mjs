@@ -78,6 +78,13 @@ export class Category {
     }
   }
 
+  async delete() {
+    return await fetch(`${api}/category/${this.name}`, {
+      method: "DELETE",
+      headers: headers(session)
+    });
+  }
+
   async save() {
     this.fractionalDigits = parseInt(this.fractionalDigits);
     const body = JSON.stringify({

@@ -10,3 +10,8 @@ export async function login(t) {
       .click("#submit");
   }
 }
+
+export async function clickLink(t, href) {
+  const a = Selector("a").withAttribute("href", href);
+  await t.click(a);
+}
