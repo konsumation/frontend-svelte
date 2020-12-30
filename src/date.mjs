@@ -11,6 +11,7 @@ export function parseDate(str) {
     date.setHours(parseInt(m[4], 10));
     date.setMinutes(parseInt(m[5], 10));
     date.setSeconds(parseInt(m[6], 10));
+    date.setMilliseconds(0);
     return date;
   }
 }

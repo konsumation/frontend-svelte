@@ -1,11 +1,5 @@
 import { Selector } from "testcafe";
-import { base, login, clickLink } from "./helpers/util.js";
-
-const findElementByTrimmedText = Selector((baseCSSSelector, text) => {
-  const el = document.querySelector(baseCSSSelector);
-  const trimmedText = el && el.innerText && el.innerText.trim();
-  return trimmedText === text ? el : null;
-});
+import { base, login, clickLink, findElementByTrimmedText } from "./helpers/util.js";
 
 fixture`Getting Started`.page`${base}/`;
 
