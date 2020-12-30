@@ -72,7 +72,7 @@
   "config": {
     "api": "/services/konsum/api",
     "base": "/services/konsum",
-    "proxyTarget": "http://localhost:12345",
+    "proxyTarget": "https://mfelten.dynv6.net",
     "title": "Konsum"
   },
   "pacman": {
