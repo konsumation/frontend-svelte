@@ -8,4 +8,5 @@ function dt(t, a, b) {
 dt.title = (providedTitle = "parseDate", a, b) =>
   `${providedTitle} ${a}`.trim();
 
-test(dt, "8.9.2019, 19:38:34", "9.8.2019, 19:38:34");
+  test(dt, "8.9.2019, 19:38:34", "9.8.2019, 19:38:34");
+  test(dt, "2017-06-01T08:30:00", "6.1.2017, 8:30:00");
