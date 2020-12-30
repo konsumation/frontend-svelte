@@ -44,9 +44,9 @@
 </script>
 
 <fieldset>
-  <label for="{category.name}.time">
+  <label for="{category.name}_time">
     Time<input
-      id="{category.name}.time"
+      id="{category.name}_time"
       type="datetime-local"
       placeholder="31.12.2000, 23:59:59"
       name="{category.name}.time"
@@ -55,9 +55,9 @@
       bind:value={time} />
   </label>
 
-  <label for="{category.name}.value">
+  <label for="{category.name}_value">
     {category.name} ({category.unit})<input
-      id="{category.name}.value"
+      id="{category.name}_value"
       type="text"
       placeholder="0.0"
       name="{category.name}.value"

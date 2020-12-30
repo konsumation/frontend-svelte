@@ -3,18 +3,7 @@ import { base, login, clickLink, findElementByTrimmedText } from "./helpers/util
 
 fixture`Getting Started`.page`${base}/`;
 
-/*
-test("About", async t => {
-  await t.navigateTo(`${base}/about`);
-
-  await t.takeScreenshot({
-    fullPage: true
-  });
-
-  const targetElement = findElementByTrimmedText("td", "Konsum");
-  await t.expect(targetElement.exists).ok();
-});
-*/
+const category = "CAT2";
 
 test("category add list remove", async t => {
   await t.navigateTo(`${base}/category/add`);
@@ -24,7 +13,7 @@ test("category add list remove", async t => {
   await t.takeScreenshot();
 
   await t
-    .typeText("#name", "mains", { replace: true })
+    .typeText("#name", category, { replace: true })
     .typeText("#description", "mains power", { replace: true })
     .typeText("#unit", "kWh", { replace: true })
     .click("#submit");
@@ -32,10 +21,10 @@ test("category add list remove", async t => {
   await clickLink(t, "/category");
   await t.takeScreenshot();
 
-  const targetElement = findElementByTrimmedText("td", "mains");
+  const targetElement = findElementByTrimmedText("td", category);
   await t.expect(targetElement.exists).ok();
 
-  await clickLink(t, "/category/mains");
+  await clickLink(t, `/category/${category}`);
   await t.takeScreenshot();
 
   await t.click("#delete");
