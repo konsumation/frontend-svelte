@@ -25,7 +25,8 @@
     "start": "rollup -c -w rollup.config.mjs",
     "test": "npm run test:ava && npm run test:cafe",
     "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 3000 --app \"rollup -c rollup.config.mjs -w\"",
-    "test:ava": "ava --timeout 2m tests/*.mjs"
+    "test:ava": "ava --timeout 2m tests/*.mjs",
+    "cafeHead": "testcafe $BROWSER tests/cafe/insertValues.js -s build/test --app-init-delay 3000"
   },
   "dependencies": {
     "imask": "^6.0.5",
@@ -71,7 +72,7 @@
   "config": {
     "api": "/services/konsum/api",
     "base": "/services/konsum",
-    "proxyTarget": "https://mfelten.dynv6.net",
+    "proxyTarget": "http://localhost:12345",
     "title": "Konsum"
   },
   "pacman": {
