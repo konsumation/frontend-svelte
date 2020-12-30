@@ -14,6 +14,9 @@
     {
       "name": "Markus Felten",
       "email": "markus.felten@gmx.de"
+    },
+    {
+      "name": "Konstantin Karman"
     }
   ],
   "license": "BSD-2-Clause",
@@ -28,7 +31,7 @@
     "layercake": "^4.0.3",
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.4",
-    "svelte-common": "^3.0.9",
+    "svelte-common": "^3.0.10",
     "svelte-guard-history-router": "^4.2.2",
     "svelte-session-manager": "^1.3.1"
   },
@@ -42,7 +45,7 @@
     "@semantic-release/release-notes-generator": "^9.0.1",
     "konsum": "github:konsumation/konsum",
     "npm-pkgbuild": "^6.12.18",
-    "postcss": "^8.2.1",
+    "postcss": "^8.2.2",
     "postcss-import": "^14.0.0",
     "rollup": "^2.35.1",
     "rollup-plugin-consts": "^1.0.2",
@@ -51,7 +54,7 @@
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "semantic-release": "^17.3.0",
+    "semantic-release": "^17.3.1",
     "svelte": "^3.31.0",
     "testcafe": "^1.10.1"
   },
@@ -97,12 +100,11 @@
     ]
   },
   "template": {
-     "properties": {
+    "properties": {
       "testcafe": {
         "options": "--app-init-delay 3000"
       }
     },
-
     "inheritFrom": [
       "arlac77/template-arlac77-github",
       "arlac77/template-svelte-app",
