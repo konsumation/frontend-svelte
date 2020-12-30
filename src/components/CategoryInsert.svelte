@@ -3,29 +3,12 @@
   import { ActionButton, dateFormatter } from "svelte-common";
   import { now } from "../main.mjs";
   import imask from "../imask.mjs";
-
+  import { parseDate } from "../date.mjs";
   export let category;
   export let value;
   export let time;
 
   //$: time = dateFormatter.format($now);
-
-  function parseDate(str) {
-    //8.9.2019, 19:38:34
-    const m = str.match(/(\d+)\.(\d+)\.(\d+)[\s,]+(\d+):(\d+):(\d+)/);
-    if (m) {
-      const date = new Date();
-
-      date.setDate(parseInt(m[1], 10));
-      date.setMonth(parseInt(m[2], 10) - 1);
-      date.setFullYear(parseInt(m[3], 10));
-
-      date.setHours(parseInt(m[4], 10));
-      date.setMinutes(parseInt(m[5], 10));
-      date.setSeconds(parseInt(m[6], 10));
-      return date;
-    }
-  }
 
   const unsubscribe = category.latest.subscribe(v => {
     if (v === undefined) {
