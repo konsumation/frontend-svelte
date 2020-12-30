@@ -7,7 +7,7 @@
     ServiceWorkerDetails,
     ServiceWorkerRegistrationDetails
   } from "svelte-common";
-  import { server } from "../main.mjs";
+  import { server } from "../server.mjs";
   import { session } from "../util.mjs";
   import { serviceWorker, serviceWorkerRegistration } from "../service-worker/registration.mjs";
   import name from "consts:title";

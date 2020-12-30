@@ -1,7 +1,6 @@
 <script>
   import { onDestroy } from "svelte";
   import { ActionButton, dateFormatter } from "svelte-common";
-  import { now } from "../main.mjs";
   import imask from "../imask.mjs";
   import { parseDate } from "../date.mjs";
   export let category;
