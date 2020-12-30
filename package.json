@@ -23,8 +23,9 @@
   "scripts": {
     "prepare": "rollup -c rollup.config.mjs",
     "start": "rollup -c -w rollup.config.mjs",
-    "test": "npm run test:cafe",
-    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 3000 --app \"rollup -c rollup.config.mjs -w\""
+    "test": "npm run test:ava && npm run test:cafe",
+    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 3000 --app \"rollup -c rollup.config.mjs -w\"",
+    "test:ava": "ava --timeout 2m tests/*.mjs"
   },
   "dependencies": {
     "imask": "^6.0.5",
@@ -43,6 +44,7 @@
     "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/exec": "^5.0.0",
     "@semantic-release/release-notes-generator": "^9.0.1",
+    "ava": "^3.14.0",
     "konsum": "github:konsumation/konsum",
     "npm-pkgbuild": "^6.12.18",
     "postcss": "^8.2.2",
@@ -107,6 +109,7 @@
     },
     "inheritFrom": [
       "arlac77/template-arlac77-github",
+      "arlac77/template-ava",
       "arlac77/template-svelte-app",
       "arlac77/template-testcafe",
       "konsumation/template"
