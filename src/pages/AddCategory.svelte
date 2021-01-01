@@ -4,15 +4,11 @@
   import { Category } from "../category.mjs";
 
   const category = new Category({ name: "new" });
-
-  async function saveCategory() {
-    await category.save();
-  }
 </script>
 
 <h1>New Category</h1>
 
-<form on:submit|preventDefault={saveCategory}>
+<form>
   <CategoryCard {category} />
-  <ActionButton action={saveCategory}>Save</ActionButton>
+  <ActionButton action={()=>category.save()}>Save</ActionButton>
 </form>

@@ -7,22 +7,14 @@
 
   const route = router.route;
   const category = $route.value;
-
-  async function saveCategory() {
-    await category.save();
-  }
-
-  async function deleteCategory() {
-    await category.delete();
-  }
 </script>
 
 {#if category}
   <h1>Category {category.name}</h1>
-  <form on:submit|preventDefault={saveCategory}>
+  <form>
     <CategoryCard {category} />
-    <ActionButton action={saveCategory}>Save</ActionButton>
-    <ActionButton action={deleteCategory}>Delete</ActionButton>
+    <ActionButton action={()=>category.save()}>Save</ActionButton>
+    <ActionButton action={()=>category.delete()}>Delete</ActionButton>
   </form>
 
   <ul>
