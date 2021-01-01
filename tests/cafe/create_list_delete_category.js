@@ -1,5 +1,10 @@
 import { Selector } from "testcafe";
-import { base, login, clickLink, findElementByTrimmedText } from "./helpers/util.js";
+import {
+  base,
+  login,
+  clickLink,
+  findElementByTrimmedText
+} from "./helpers/util.js";
 
 fixture`Getting Started`.page`${base}/`;
 
@@ -27,7 +32,7 @@ test("category add list remove", async t => {
   await clickLink(t, `/category/${category}`);
   await t.takeScreenshot();
 
- // await t.click("#delete");
+  await t.click(Selector("button").withText("Delete"));
 
   await clickLink(t, "/category");
   await t.takeScreenshot();
