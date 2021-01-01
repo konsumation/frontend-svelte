@@ -1,31 +1,18 @@
 <script>
+  import { ActionButton } from "svelte-common";
   import CategoryCard from "../components/CategoryCard.svelte";
   import { Category } from "../category.mjs";
 
-  let active;
+  const category = new Category({ name: "new" });
 
-  const category = new Category({ name: "new"});
-
-  async function submit() {
-    active = true;
-
-    try {
-      await category.save();
-    } finally {
-      active = false;
-    }
+  async function saveCategory() {
+    await category.save();
   }
 </script>
 
 <h1>New Category</h1>
 
-<form on:submit|preventDefault={submit}>
+<form on:submit|preventDefault={saveCategory}>
   <CategoryCard {category} />
-
-  <button id="submit" type="submit">
-    Save
-    {#if active}
-      <div class="spinner" />
-    {/if}
-  </button>
+  <ActionButton action={saveCategory}>Save</ActionButton>
 </form>

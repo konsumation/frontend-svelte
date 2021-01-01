@@ -8,16 +8,8 @@
   const route = router.route;
   const category = $route.value;
 
-  let activeSave;
-
-  async function submit() {
-    activeSave = true;
-
-    try {
-      await category.save();
-    } finally {
-      activeSave = false;
-    }
+  async function saveCategory() {
+    await category.save();
   }
 
   async function deleteCategory() {
@@ -27,15 +19,9 @@
 
 {#if category}
   <h1>Category {category.name}</h1>
-  <form on:submit|preventDefault={submit}>
+  <form on:submit|preventDefault={saveCategory}>
     <CategoryCard {category} />
-    <button id="save" type="submit">
-      Save
-      {#if activeSave}
-        <div class="spinner" />
-      {/if}
-    </button>
-
+    <ActionButton action={saveCategory}>Save</ActionButton>
     <ActionButton action={deleteCategory}>Delete</ActionButton>
   </form>
 

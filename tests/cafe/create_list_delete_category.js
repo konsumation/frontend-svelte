@@ -16,7 +16,7 @@ test("category add list remove", async t => {
     .typeText("#name", category, { replace: true })
     .typeText("#description", "mains power", { replace: true })
     .typeText("#unit", "kWh", { replace: true })
-    .click("#submit");
+    .click("button");
 
   await clickLink(t, "/category");
   await t.takeScreenshot();
@@ -27,7 +27,7 @@ test("category add list remove", async t => {
   await clickLink(t, `/category/${category}`);
   await t.takeScreenshot();
 
-  await t.click("#delete");
+ // await t.click("#delete");
 
   await clickLink(t, "/category");
   await t.takeScreenshot();
