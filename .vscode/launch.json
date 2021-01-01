@@ -14,19 +14,6 @@
             "skipFiles": [
               "<node_internals>/**/*"
             ]
-          },
-          {
-            "type": "node",
-            "protocol": "inspector",
-            "request": "launch",
-            "name": "Launch insertValues.js file with TestCafe",
-            "program": "${workspaceRoot}/node_modules/.bin/testcafe",
-            "args": [
-                "chrome",
-                "tests/cafe/insertValues.js"
-            ],
-            "console": "integratedTerminal",
-            "cwd": "${workspaceRoot}"
-        }
+          }
     ]
 }
