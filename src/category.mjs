@@ -5,8 +5,9 @@ export async function* categoryIterator(transition) {
   if (this.categories) {
     yield* this.categories;
   } else {
-    this.categories = [];
+    const categories = [];
 
+    //this.categories = categories;
     //transition.context.categories = categories;
 
     const response = await fetch(`${api}/categories`, {
@@ -14,7 +15,7 @@ export async function* categoryIterator(transition) {
     });
     for (const c of await response.json()) {
       const category = new Category(c);
-      this.categories.push(category);
+      categories.push(category);
       yield category;
     }
   }
