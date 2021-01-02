@@ -1,5 +1,3 @@
-import livereload from "rollup-plugin-livereload";
-
 import { mkdirSync, readFileSync } from "fs";
 import { execFile } from "child_process";
 import resolve from "@rollup/plugin-node-resolve";
@@ -13,6 +11,7 @@ import postcssImport from "postcss-import";
 
 import { terser } from "rollup-plugin-terser";
 import dev from "rollup-plugin-dev";
+import livereload from "rollup-plugin-livereload";
 import consts from "rollup-plugin-consts";
 
 const production = !process.env.ROLLUP_WATCH;
@@ -68,6 +67,30 @@ const resolverPlugins = [
   commonjs()
 ];
 
+const devPlugins = production
+  ? []
+  : [
+      dev({
+        port,
+        dirs: [dist],
+        spa: `${dist}/index.html`,
+        basePath: config.base,
+        proxy: {
+          [`${config.api}/*`]: [
+            config.proxyTarget,
+            {
+              https: config.proxyTarget.startsWith("https:"),
+              proxyReqPathResolver: ctx => ctx.url.substring(config.api.length)
+            }
+          ]
+        }
+      }),
+      livereload({
+        watch: dist,
+        verbose: true
+      })
+    ];
+
 const output = {
   interop: false,
   sourcemap: true,
@@ -94,23 +117,7 @@ export default [
         }
       }),
       ...resolverPlugins,
-      !production &&
-        dev({
-          port,
-          dirs: [dist],
-          spa: `${dist}/index.html`,
-          basePath: config.base,
-          proxy: {
-            [`${config.api}/*`]: [
-              config.proxyTarget,
-              {
-                https: config.proxyTarget.startsWith("https:"),
-                proxyReqPathResolver: ctx =>
-                  ctx.url.substring(config.api.length)
-              }
-            ]
-          }
-        })
+      ...devPlugins
     ],
     external,
     watch: {
