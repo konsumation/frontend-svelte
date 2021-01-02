@@ -17,7 +17,12 @@
     <ActionButton action={() => category.save()} error={handleFailedResponse}>
       Save
     </ActionButton>
-    <ActionButton action={() => category.delete()} error={handleFailedResponse}>
+    <ActionButton
+      action={async () => {
+        await category.delete();
+        router.push("/category");
+      }}
+      error={handleFailedResponse}>
       Delete
     </ActionButton>
   </form>
