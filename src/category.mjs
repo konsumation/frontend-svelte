@@ -80,13 +80,13 @@ export class Category {
   }
 
   async delete() {
-    const result = await fetch(`${api}/category/${this.name}`, {
+    const response = await fetch(`${api}/category/${this.name}`, {
       method: "DELETE",
       headers: headers(session)
     });
 
-    if (!result.ok) {
-      throw new Error(result.statusText);
+    if (!response.ok) {
+      throw new Error(response.statusText);
     }
   }
 
@@ -99,14 +99,14 @@ export class Category {
       description: this.description
     });
 
-    const result = await fetch(`${api}/category/${this.name}`, {
+    const response = await fetch(`${api}/category/${this.name}`, {
       method: "PUT",
       headers: headers(session),
       body
     });
 
-    if (!result.ok) {
-      throw new Error(result.statusText);
+    if (!response.ok) {
+      throw new Error(response.statusText);
     }
   }
 
@@ -154,10 +154,15 @@ export class Category {
   }
 
   async insert(value, time) {
-    return fetch(`${api}/category/${this.name}/insert`, {
+    const response = await fetch(`${api}/category/${this.name}/insert`, {
       method: "POST",
       headers: headers(session),
       body: JSON.stringify({ value, time: time.getTime() })
     });
+
+
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
   }
 }
