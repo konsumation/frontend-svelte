@@ -2,6 +2,7 @@
   import { ActionButton } from "svelte-common";
   import { ObjectLink } from "svelte-guard-history-router";
   import CategoryCard from "../components/CategoryCard.svelte";
+  import { errorHandler } from "../util.mjs";
 
   export let router;
 
@@ -13,8 +14,12 @@
   <h1>Category {category.name}</h1>
   <form>
     <CategoryCard {category} />
-    <ActionButton action={()=>category.save()}>Save</ActionButton>
-    <ActionButton action={()=>category.delete()}>Delete</ActionButton>
+    <ActionButton action={() => category.save()} error={errorHandler}>
+      Save
+    </ActionButton>
+    <ActionButton action={() => category.delete()} error={errorHandler}>
+      Delete
+    </ActionButton>
   </form>
 
   <ul>

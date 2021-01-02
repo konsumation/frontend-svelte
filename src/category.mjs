@@ -34,14 +34,14 @@ export async function* valueIterator(transition) {
 }
 
 export class Meter {
-  constructor(category,json) {
+  constructor(category, json) {
     this.category = category;
     Object.assign(this, json);
   }
 }
 
 export class Note {
-  constructor(category,json) {
+  constructor(category, json) {
     this.category = category;
     Object.assign(this, json);
   }
@@ -66,7 +66,7 @@ export class Category {
       headers: headers(session)
     });
     for (const item of await response.json()) {
-      yield new Meter(this,item);
+      yield new Meter(this, item);
     }
   }
 
@@ -75,15 +75,19 @@ export class Category {
       headers: headers(session)
     });
     for (const item of await response.json()) {
-      yield new Note(this,item);
+      yield new Note(this, item);
     }
   }
 
   async delete() {
-    return await fetch(`${api}/category/${this.name}`, {
+    const result = await fetch(`${api}/category/${this.name}`, {
       method: "DELETE",
       headers: headers(session)
     });
+
+    if (!result.ok) {
+      throw new Error(result.statusText);
+    }
   }
 
   async save() {
@@ -95,11 +99,15 @@ export class Category {
       description: this.description
     });
 
-    return await fetch(`${api}/category/${this.name}`, {
+    const result = await fetch(`${api}/category/${this.name}`, {
       method: "PUT",
       headers: headers(session),
       body
     });
+
+    if (!result.ok) {
+      throw new Error(result.statusText);
+    }
   }
 
   async _latest() {

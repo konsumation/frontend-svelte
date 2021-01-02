@@ -8,3 +8,7 @@ export function headers(session) {
     ...session.authorizationHeader
   };
 }
+
+export function errorHandler(error) {
+  alert(error);
+}

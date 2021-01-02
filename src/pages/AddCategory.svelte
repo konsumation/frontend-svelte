@@ -2,6 +2,7 @@
   import { ActionButton } from "svelte-common";
   import CategoryCard from "../components/CategoryCard.svelte";
   import { Category } from "../category.mjs";
+  import { errorHandler } from "../util.mjs";
 
   const category = new Category({ name: "new" });
 </script>
@@ -10,5 +11,5 @@
 
 <form>
   <CategoryCard {category} />
-  <ActionButton action={()=>category.save()}>Save</ActionButton>
+  <ActionButton action={()=>category.save()} error={errorHandler}>Save</ActionButton>
 </form>
