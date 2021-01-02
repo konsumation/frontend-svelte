@@ -20,11 +20,8 @@
     value = v.value;
     time = dateFormatter.format(d);
   });
-  onDestroy(() => unsubscribe());
 
-  async function insert() {
-    await category.insert(parseFloat(value), parseDate(time));
-  }
+  onDestroy(() => unsubscribe());
 
   const options = {
     mask: Number,
@@ -70,5 +67,5 @@
       bind:value />
   </label>
 
-  <ActionButton action={insert} error={handleFailedResponse}>Insert {category.name}</ActionButton>
+  <ActionButton action={()=>category.insert(parseFloat(value), parseDate(time))} error={handleFailedResponse}>Insert {category.name}</ActionButton>
 </fieldset>

@@ -27,9 +27,9 @@ export async function handleFailedResponse(response) {
         break;
     }
   
-    return message;
-
     console.log(message);
     alert(message);
+
+    return message;
   }
   
