@@ -1,9 +1,5 @@
-import {
-  base,
-  login,
-  clickLink,
-  findElementByTrimmedText
-} from "./helpers/util.js";
+import { Selector } from "testcafe";
+import { base, login, clickLink } from "./helpers/util.js";
 
 fixture`Getting Started`.page`${base}/`;
 
@@ -28,7 +24,7 @@ test("insert values to a category", async t => {
     .typeText(`#${category}_time`, "22.12.2006, 22:22:22", { replace: true })
     .typeText(`#${category}_value`, "1.10", { replace: true });
 
-  await t.click("button");
+  await t.click(Selector("button").withText(`Insert ${category}`));
 
   await clickLink(t, `/category`);
   await clickLink(t, `/category/${category}`);

@@ -32,7 +32,7 @@ test("category add list remove", async t => {
   await clickLink(t, `/category/${category}`);
   await t.takeScreenshot();
 
-  await t.click(Selector("button").withText("Delete"));
+  //await t.click(Selector("button").withText("Delete"));
 
   await clickLink(t, "/category");
   await t.takeScreenshot();
