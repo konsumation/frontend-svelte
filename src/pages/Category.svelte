@@ -2,7 +2,7 @@
   import { ActionButton } from "svelte-common";
   import { ObjectLink } from "svelte-guard-history-router";
   import CategoryCard from "../components/CategoryCard.svelte";
-  import { errorHandler } from "../util.mjs";
+  import { handleFailedResponse } from "../handle-failed-response.mjs";
 
   export let router;
 
@@ -14,10 +14,10 @@
   <h1>Category {category.name}</h1>
   <form>
     <CategoryCard {category} />
-    <ActionButton action={() => category.save()} error={errorHandler}>
+    <ActionButton action={() => category.save()} error={handleFailedResponse}>
       Save
     </ActionButton>
-    <ActionButton action={() => category.delete()} error={errorHandler}>
+    <ActionButton action={() => category.delete()} error={handleFailedResponse}>
       Delete
     </ActionButton>
   </form>

@@ -13,6 +13,11 @@ export async function* categoryIterator(transition) {
     const response = await fetch(`${api}/categories`, {
       headers: headers(session)
     });
+
+    if (!response.ok) {
+      throw response;
+    }
+
     for (const c of await response.json()) {
       const category = new Category(c);
       categories.push(category);
@@ -28,6 +33,11 @@ export async function* valueIterator(transition) {
       headers: headers(session)
     }
   );
+
+  if (!response.ok) {
+    throw response;
+  }
+
   for (const value of await response.json()) {
     yield value;
   }
@@ -65,6 +75,10 @@ export class Category {
     const response = await fetch(`${api}/category/${this.name}/meters`, {
       headers: headers(session)
     });
+    if (!response.ok) {
+      throw response;
+    }
+
     for (const item of await response.json()) {
       yield new Meter(this, item);
     }
@@ -74,6 +88,11 @@ export class Category {
     const response = await fetch(`${api}/category/${this.name}/notes`, {
       headers: headers(session)
     });
+
+    if (!response.ok) {
+      throw response;
+    }
+
     for (const item of await response.json()) {
       yield new Note(this, item);
     }
@@ -86,7 +105,7 @@ export class Category {
     });
 
     if (!response.ok) {
-      throw new Error(response.statusText);
+      throw response;
     }
   }
 
@@ -106,19 +125,23 @@ export class Category {
     });
 
     if (!response.ok) {
-      throw new Error(response.statusText);
+      throw response;
     }
   }
 
   async _latest() {
-    const data = await fetch(
+    const response = await fetch(
       `${api}/category/${this.name}/values?reverse=1&limit=1`,
       {
         headers: headers(session)
       }
     );
 
-    const entry = (await data.json())[0];
+    if (!response.ok) {
+      throw response;
+    }
+
+    const entry = (await response.json())[0];
     this._latestSubscriptions.forEach(subscription => subscription(entry));
   }
 
@@ -134,11 +157,16 @@ export class Category {
   }
 
   async _values() {
-    const data = await fetch(`${api}/category/${this.name}/values`, {
+    const response = await fetch(`${api}/category/${this.name}/values`, {
       headers: headers(session)
     });
 
-    const values = await data.json();
+    if (!response.ok) {
+      throw response;
+    }
+
+
+    const values = await response.json();
     this._valuesSubscriptions.forEach(subscription => subscription(values));
   }
 
@@ -160,9 +188,8 @@ export class Category {
       body: JSON.stringify({ value, time: time.getTime() })
     });
 
-
     if (!response.ok) {
-      throw new Error(response.statusText);
+      throw response;
     }
   }
 }

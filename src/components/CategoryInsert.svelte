@@ -3,7 +3,7 @@
   import { ActionButton, dateFormatter } from "svelte-common";
   import imask from "../imask.mjs";
   import { parseDate } from "../date.mjs";
-  import { errorHandler } from "../util.mjs";
+  import { handleFailedResponse } from "../handle-failed-response.mjs";
   
   export let category;
   export let value;
@@ -70,5 +70,5 @@
       bind:value />
   </label>
 
-  <ActionButton action={insert} error={errorHandler}>Insert {category.name}</ActionButton>
+  <ActionButton action={insert} error={handleFailedResponse}>Insert {category.name}</ActionButton>
 </fieldset>
