@@ -8,7 +8,9 @@ const category = "CAT1";
 const entries = [
   { time: "22.12.2006, 22:22:22", value: "1.1" },
   { time: "23.12.2006, 22:22:22", value: "1.2" },
-  { time: "24.12.2006, 22:22:22", value: "1.3" }
+  { time: "24.12.2006, 22:22:22", value: "1.3" },
+  { time: "25.12.2006, 22:22:22", value: "1.4" },
+  { time: "26.12.2006, 22:22:22", value: "1.9" }
 ];
 
 test("insert values to a category", async t => {

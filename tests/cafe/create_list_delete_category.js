@@ -2,8 +2,7 @@ import { Selector } from "testcafe";
 import {
   base,
   login,
-  clickLink,
-  findElementByTrimmedText
+  clickLink
 } from "./helpers/util.js";
 
 fixture`Getting Started`.page`${base}/`;
@@ -26,13 +25,10 @@ test("category add list remove", async t => {
   await clickLink(t, "/category");
   await t.takeScreenshot();
 
-  const targetElement = findElementByTrimmedText("td", category);
-  await t.expect(targetElement.exists).ok();
-
   await clickLink(t, `/category/${category}`);
   await t.takeScreenshot();
 
-  //await t.click(Selector("button").withText("Delete"));
+  await t.click(Selector("button").withText("Delete"));
 
   await clickLink(t, "/category");
   await t.takeScreenshot();
