@@ -1,5 +1,5 @@
 <script>
-  import { ObjectLink } from "svelte-guard-history-router";
+  import { ObjectLink, Link } from "svelte-guard-history-router";
 
   export let router;
 
@@ -7,6 +7,7 @@
   const categories = $route.value;
 </script>
 
+<Link href="/category/add">Add New Category</Link>
 <table class="bordered striped hoverable">
   <thead>
     <tr>
@@ -27,8 +28,3 @@
     {/each}
   </tbody>
 </table>
-
-
-<!--TODO 
-make some style for that link and try to import some link Element from svelte? -->
-<a href="/services/konsum/category/add">Add New Category</a>
