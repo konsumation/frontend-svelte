@@ -17,6 +17,9 @@
     },
     {
       "name": "Konstantin Karpman"
+    },
+    {
+      "name": "Konstantin Karman"
     }
   ],
   "license": "BSD-2-Clause",
@@ -33,7 +36,7 @@
     "layercake": "^4.0.3",
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.4",
-    "svelte-common": "^3.0.10",
+    "svelte-common": "^3.0.11",
     "svelte-guard-history-router": "^4.2.2",
     "svelte-session-manager": "^1.3.1"
   },
@@ -58,7 +61,7 @@
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "semantic-release": "^17.3.1",
-    "svelte": "^3.31.0",
+    "svelte": "^3.31.1",
     "testcafe": "^1.10.1"
   },
   "repository": {
