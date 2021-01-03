@@ -2,7 +2,7 @@
   import imask from "../imask.mjs";
 
   export let category;
-  export let valid;
+  export let valid = false;
 
   $: {
     valid =

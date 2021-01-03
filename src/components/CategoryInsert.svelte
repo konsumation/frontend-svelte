@@ -3,8 +3,7 @@
   import { ActionButton, dateFormatter } from "svelte-common";
   import imask from "../imask.mjs";
   import { parseDate } from "../date.mjs";
-  import { handleFailedResponse } from "../handle-failed-response.mjs";
-  
+
   export let category;
   export let value = "";
   export let time = "";
@@ -40,6 +39,11 @@
     console.log("accept", maskRef.value);
     value = maskRef.value;
   }
+
+  const action = category.insertAction(() => [
+    parseFloat(value),
+    parseDate(time)
+  ]);
 </script>
 
 <fieldset>
@@ -55,7 +59,8 @@
   </label>
 
   <label for="{category.name}_value">
-    {category.name} ({category.unit})<input
+    {category.name}
+    ({category.unit})<input
       id="{category.name}_value"
       type="text"
       placeholder="0.0"
@@ -67,5 +72,5 @@
       bind:value />
   </label>
 
-  <ActionButton action={()=>category.insert(parseFloat(value), parseDate(time))} error={handleFailedResponse}>Insert {category.name}</ActionButton>
+  <ActionButton {action}>Insert {category.name}</ActionButton>
 </fieldset>

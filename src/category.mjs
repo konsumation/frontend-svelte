@@ -1,3 +1,4 @@
+import { Action, FetchAction } from "svelte-common";
 import api from "consts:api";
 import { session, headers } from "./util.mjs";
 
@@ -58,7 +59,7 @@ export class Note {
 }
 
 export class Category {
-  constructor(json={}) {
+  constructor(json = {}) {
     this.name = json.name;
     this.unit = json.unit;
     this.description = json.description;
@@ -71,8 +72,12 @@ export class Category {
     });
   }
 
+  get url() {
+    return `${api}/category/${this.name}`;
+  }
+
   async *meters() {
-    const response = await fetch(`${api}/category/${this.name}/meters`, {
+    const response = await fetch(`${this.url}/meters`, {
       headers: headers(session)
     });
     if (!response.ok) {
@@ -85,7 +90,7 @@ export class Category {
   }
 
   async *notes() {
-    const response = await fetch(`${api}/category/${this.name}/notes`, {
+    const response = await fetch(`${this.url}/notes`, {
       headers: headers(session)
     });
 
@@ -98,44 +103,35 @@ export class Category {
     }
   }
 
-  async delete() {
-    const response = await fetch(`${api}/category/${this.name}`, {
+  get deleteAction() {
+    return new FetchAction(this.url, {
       method: "DELETE",
       headers: headers(session)
     });
-
-    if (!response.ok) {
-      throw response;
-    }
   }
 
-  async save() {
-    this.fractionalDigits = parseInt(this.fractionalDigits);
-    const body = JSON.stringify({
-      order: this.order,
-      unit: this.unit,
-      fractionalDigits: this.fractionalDigits,
-      description: this.description
-    });
-
-    const response = await fetch(`${api}/category/${this.name}`, {
-      method: "PUT",
-      headers: headers(session),
-      body
-    });
-
-    if (!response.ok) {
-      throw response;
-    }
+  get saveAction() {
+    return new FetchAction(
+      () => this.url,
+      () => {
+        return {
+          method: "PUT",
+          headers: headers(session),
+          body: JSON.stringify({
+            order: this.order,
+            unit: this.unit,
+            fractionalDigits: parseInt(this.fractionalDigits),
+            description: this.description
+          })
+        };
+      }
+    );
   }
 
   async _latest() {
-    const response = await fetch(
-      `${api}/category/${this.name}/values?reverse=1&limit=1`,
-      {
-        headers: headers(session)
-      }
-    );
+    const response = await fetch(`${this.url}/values?reverse=1&limit=1`, {
+      headers: headers(session)
+    });
 
     if (!response.ok) {
       throw response;
@@ -157,14 +153,13 @@ export class Category {
   }
 
   async _values() {
-    const response = await fetch(`${api}/category/${this.name}/values`, {
+    const response = await fetch(`${this.url}/values`, {
       headers: headers(session)
     });
 
     if (!response.ok) {
       throw response;
     }
-
 
     const values = await response.json();
     this._valuesSubscriptions.forEach(subscription => subscription(values));
@@ -181,15 +176,14 @@ export class Category {
     };
   }
 
-  async insert(value, time) {
-    const response = await fetch(`${api}/category/${this.name}/insert`, {
-      method: "POST",
-      headers: headers(session),
-      body: JSON.stringify({ value, time: time.getTime() })
+  insertAction(values) {
+    return new FetchAction(`${this.url}/insert`, () => {
+      const v = values();
+      return {
+        method: "POST",
+        headers: headers(session),
+        body: JSON.stringify({ value: v[0], time: v[1].getTime() })
+      };
     });
-
-    if (!response.ok) {
-      throw response;
-    }
   }
 }

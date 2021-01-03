@@ -2,12 +2,22 @@
   import { ActionButton } from "svelte-common";
   import { ObjectLink } from "svelte-guard-history-router";
   import CategoryCard from "../components/CategoryCard.svelte";
-  import { handleFailedResponse } from "../handle-failed-response.mjs";
 
   export let router;
 
   const route = router.route;
   const category = $route.value;
+
+  const da = category.deleteAction;
+
+  
+  $: {
+    const a = $da;
+    if(a.completed) {
+      router.push('/categories');
+    }
+  }
+
 </script>
 
 {#if category}
@@ -15,18 +25,13 @@
   <form>
     <CategoryCard {category} />
     <ActionButton
-      shortcuts="enter"
-      action={() => category.save()}
-      error={handleFailedResponse}>
+      shortcuts="Enter"
+      action={category.saveAction}>
       Save
     </ActionButton>
     <ActionButton
       shortcuts="Command+d"
-      action={async () => {
-        await category.delete();
-        router.push('/category');
-      }}
-      error={handleFailedResponse}>
+      action={da}>
       Delete
     </ActionButton>
   </form>
