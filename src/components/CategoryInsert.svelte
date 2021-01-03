@@ -6,8 +6,8 @@
   import { handleFailedResponse } from "../handle-failed-response.mjs";
   
   export let category;
-  export let value;
-  export let time;
+  export let value = "";
+  export let time = "";
 
   //$: time = dateFormatter.format($now);
 

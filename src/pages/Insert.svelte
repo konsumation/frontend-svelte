@@ -5,12 +5,10 @@
   
   const route = router.route;
   const categories = $route.value;
-
-  function submit() {}
 </script>
 
-<form on:submit|preventDefault={submit}>
+<form>
   {#each categories as category}
-    <CategoryInsert {category} value="" time=""/>
+    <CategoryInsert {category}/>
   {/each}
 </form>
