@@ -58,7 +58,7 @@ export class Note {
 }
 
 export class Category {
-  constructor(json) {
+  constructor(json={}) {
     this.name = json.name;
     this.unit = json.unit;
     this.description = json.description;

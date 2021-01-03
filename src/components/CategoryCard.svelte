@@ -2,6 +2,18 @@
   import imask from "../imask.mjs";
 
   export let category;
+  export let valid;
+
+  $: {
+    valid =
+      category.name &&
+      category.name.length &&
+      category.description &&
+      category.description.length &&
+      category.unit &&
+      category.unit.length &&
+      category.fractionalDigits;
+  }
 
   function accept({ detail: maskRef }) {
     category.fractionalDigits = maskRef.value;
@@ -52,12 +64,6 @@
     name="fractionalDigits"
     size="20"
     required
-    use:imask={{
-        mask: Number,
-        scale: 0,
-        signed: false,
-        min: 0,
-        max: 5
-      }}
+    use:imask={{ mask: Number, scale: 0, signed: false, min: 0, max: 5 }}
     bind:value={category.fractionalDigits} />
 </label>

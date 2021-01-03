@@ -4,12 +4,19 @@
   import { Category } from "../category.mjs";
   import { handleFailedResponse } from "../handle-failed-response.mjs";
 
-  const category = new Category({ name: "new" });
+  const category = new Category();
+  let valid;
 </script>
 
 <h1>New Category</h1>
 
 <form>
-  <CategoryCard {category} />
-  <ActionButton action={()=>category.save()} error={handleFailedResponse}>Save</ActionButton>
+  <CategoryCard {category} bind:valid={valid}/>
+  <ActionButton
+    active={valid}
+    shortcuts="enter"
+    action={() => category.save()}
+    error={handleFailedResponse}>
+    Save
+  </ActionButton>
 </form>

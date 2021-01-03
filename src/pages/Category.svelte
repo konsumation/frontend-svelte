@@ -14,13 +14,17 @@
   <h1>Category {category.name}</h1>
   <form>
     <CategoryCard {category} />
-    <ActionButton action={() => category.save()} error={handleFailedResponse}>
+    <ActionButton
+      shortcuts="enter"
+      action={() => category.save()}
+      error={handleFailedResponse}>
       Save
     </ActionButton>
     <ActionButton
+      shortcuts="Command+d"
       action={async () => {
         await category.delete();
-        router.push("/category");
+        router.push('/category');
       }}
       error={handleFailedResponse}>
       Delete
