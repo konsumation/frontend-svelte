@@ -27,3 +27,8 @@
     {/each}
   </tbody>
 </table>
+
+
+<!--TODO 
+make some style for that link and try to import some link Element from svelte? -->
+<a href="/services/konsum/category/add">Add New Category</a>
