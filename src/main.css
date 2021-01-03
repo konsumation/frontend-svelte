@@ -1,6 +1,7 @@
 @import "mf-styling/color-primary-fuchsia.css";
 @import "mf-styling/color.css";
 @import "mf-styling/global.css";
+@import "mf-styling/layout.css";
 @import "mf-styling/nav.css";
 @import "mf-styling/dropdown.css";
 @import "mf-styling/table.css";
@@ -10,3 +11,8 @@
 
 @import "svelte-common/src/common.css";
 @import "svelte-entitlement/src/entitlement.css";
+
+form {
+  display: grid;
+  grid-gap: 10px;
+}
