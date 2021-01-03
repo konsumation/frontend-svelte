@@ -24,7 +24,7 @@
     "prepare": "rollup -c rollup.config.mjs",
     "start": "rollup -c -w rollup.config.mjs",
     "test": "npm run test:ava && npm run test:cafe",
-    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 3000 --app \"rollup -c rollup.config.mjs -w\"",
+    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 5000 --app \"rollup -c rollup.config.mjs -w\"",
     "test:ava": "ava --timeout 2m tests/*.mjs",
     "cafeHead": "testcafe $BROWSER tests/cafe/insertValues.js -s build/test"
   },
@@ -105,7 +105,7 @@
   "template": {
     "properties": {
       "testcafe": {
-        "options": "--app-init-delay 3000"
+        "options": "--app-init-delay 5000"
       }
     },
     "inheritFrom": [
