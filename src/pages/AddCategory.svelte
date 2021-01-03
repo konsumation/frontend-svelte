@@ -13,7 +13,7 @@
 <form>
   <CategoryCard {category} bind:valid={valid}/>
   <ActionButton
-    active={valid}
+    disabled={!valid}
     shortcuts="enter"
     action={() => category.save()}
     error={handleFailedResponse}>
