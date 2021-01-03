@@ -5,6 +5,12 @@ fixture`Getting Started`.page`${base}/`;
 
 const category = "CAT1";
 
+const entries = [
+  { time: "22.12.2006, 22:22:22", value: "1.1" },
+  { time: "23.12.2006, 22:22:22", value: "1.2" },
+  { time: "24.12.2006, 22:22:22", value: "1.3" }
+];
+
 test("insert values to a category", async t => {
   await t.navigateTo(`${base}/category/add`);
 
@@ -20,11 +26,13 @@ test("insert values to a category", async t => {
   await clickLink(t, "/insert");
   await t.takeScreenshot();
 
-  await t
-    .typeText(`#${category}_time`, "22.12.2006, 22:22:22", { replace: true })
-    .typeText(`#${category}_value`, "1.10", { replace: true });
+  for (const entry of entries) {
+    await t
+      .typeText(`#${category}_time`, entry.time, { replace: true })
+      .typeText(`#${category}_value`, entry.value, { replace: true });
 
-  await t.click(Selector("button").withText(`Insert ${category}`));
+    await t.click(Selector("button").withText(`Insert ${category}`));
+  }
 
   await clickLink(t, `/category`);
   await clickLink(t, `/category/${category}`);
