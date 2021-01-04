@@ -7,6 +7,10 @@
       "user1": {
         "password": "secret",
         "entitlements": ["konsum"]
+      },
+      "admin1": {
+        "password": "secret",
+        "entitlements": ["konsum", "konsum.admin"]
       }
     },
     "jwt": {

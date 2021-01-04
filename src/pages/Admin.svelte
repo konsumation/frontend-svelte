@@ -1,6 +1,5 @@
 <script>
   import streamSaver from "streamsaver";
-
   import { ActionButton, FetchAction } from "svelte-common";
   import { session, headers } from "../util.mjs";
   import api from "consts:api";

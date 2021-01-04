@@ -2,13 +2,13 @@ import { Selector } from "testcafe";
 
 export const base = "http://localhost:5000/services/konsum";
 
-export async function login(t) {
+export async function login(t, data = { user: "user1", password: "secret" }) {
   if (await Selector("#password").exists) {
     await t
-      .typeText("#username", "user1", { replace: true })
-      .typeText("#password", "secret", { replace: true })
+      .typeText("#username", data.user, { replace: true })
+      .typeText("#password", data.password, { replace: true })
       .click("button");
-    }
+  }
 }
 
 export async function clickLink(t, href) {
