@@ -10,11 +10,11 @@
 
   let valid = false;
 
-  const da = category.deleteAction;
+  const deleteAction = category.deleteAction;
 
   $: {
-    if($da.completed) {
-      router.push('/category');
+    if ($deleteAction.completed) {
+      router.push("/category");
     }
   }
 
@@ -29,16 +29,8 @@
   <h1>Category {category.name}</h1>
   <form>
     <CategoryCard {category} bind:valid />
-    <ActionButton
-      shortcuts="Enter"
-      {action}>
-      Save
-    </ActionButton>
-    <ActionButton
-      shortcuts="Command+d"
-      action={da}>
-      Delete
-    </ActionButton>
+    <ActionButton {action}/>
+    <ActionButton action={deleteAction} />
   </form>
 
   <ul>

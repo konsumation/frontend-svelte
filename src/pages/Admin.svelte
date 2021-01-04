@@ -12,14 +12,17 @@
       {
         headers: headers(session)
       },
-      async response => {
-        try {
-          const fileStream = streamSaver.createWriteStream("backup.txt");
+      {
+        title: "Backup",
+        responseHandler: async response => {
+          try {
+            const fileStream = streamSaver.createWriteStream("backup.txt");
 
-          return response.body.pipeTo(fileStream);
-        } catch (e) {
-          console.log(e);
-          dump = await response.text();
+            return response.body.pipeTo(fileStream);
+          } catch (e) {
+            console.log(e);
+            dump = await response.text();
+          }
         }
       }
     );
@@ -27,15 +30,9 @@
 </script>
 
 <div>
-  <ActionButton action={backupAction}>Backup</ActionButton>
-
+  <ActionButton action={backupAction}/>
   <ActionButton
-    action={new FetchAction(api + '/admin/restore', {
-      method: 'POST',
-      headers: headers(session)
-    })}>
-    Restore
-  </ActionButton>
+    action={new FetchAction(api + '/admin/restore', { method: 'POST', headers: headers(session) }, { title: 'Restore' })} />
 
   {#if dump !== undefined}<textarea bind:value={dump} />{/if}
 </div>

@@ -1,4 +1,4 @@
-import { Action, FetchAction } from "svelte-common";
+import { FetchAction } from "svelte-common";
 import api from "consts:api";
 import { session, headers } from "./util.mjs";
 
@@ -104,10 +104,14 @@ export class Category {
   }
 
   get deleteAction() {
-    return new FetchAction(this.url, {
-      method: "DELETE",
-      headers: headers(session)
-    });
+    return new FetchAction(
+      this.url,
+      {
+        method: "DELETE",
+        headers: headers(session)
+      },
+      { title: "Delete", shortcuts: "Command+d" }
+    );
   }
 
   get saveAction() {
@@ -124,7 +128,8 @@ export class Category {
             description: this.description
           })
         };
-      }
+      },
+      { title: "Save", shortcuts: "Command+s" }
     );
   }
 
@@ -177,13 +182,17 @@ export class Category {
   }
 
   insertAction(values) {
-    return new FetchAction(`${this.url}/insert`, () => {
-      const v = values();
-      return {
-        method: "POST",
-        headers: headers(session),
-        body: JSON.stringify({ value: v[0], time: v[1].getTime() })
-      };
-    });
+    return new FetchAction(
+      `${this.url}/insert`,
+      () => {
+        const v = values();
+        return {
+          method: "POST",
+          headers: headers(session),
+          body: JSON.stringify({ value: v[0], time: v[1].getTime() })
+        };
+      },
+      { title: "Insert" }
+    );
   }
 }

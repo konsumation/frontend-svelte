@@ -17,5 +17,5 @@
 
 <form>
   <CategoryCard {category} bind:valid />
-  <ActionButton shortcuts="Enter" {action}>Save</ActionButton>
+  <ActionButton {action}/>
 </form>
