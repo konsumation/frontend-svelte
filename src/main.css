@@ -11,8 +11,3 @@
 
 @import "svelte-common/src/common.css";
 @import "svelte-entitlement/src/entitlement.css";
-
-form {
-  display: grid;
-  grid-gap: 10px;
-}

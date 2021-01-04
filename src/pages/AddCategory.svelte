@@ -6,16 +6,16 @@
   const category = new Category();
   let valid;
 
+  const action = category.saveAction;
+
+  $: {
+    action.disabled = !valid;
+  }
 </script>
 
 <h1>New Category</h1>
 
 <form>
-  <CategoryCard {category} bind:valid={valid}/>
-  <ActionButton
-    disabled={!valid}
-    shortcuts="Enter"
-    action={category.saveAction}>
-    Save
-  </ActionButton>
+  <CategoryCard {category} bind:valid />
+  <ActionButton shortcuts="Enter" {action}>Save</ActionButton>
 </form>

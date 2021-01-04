@@ -8,25 +8,30 @@
   const route = router.route;
   const category = $route.value;
 
+  let valid = false;
+
   const da = category.deleteAction;
 
-  
   $: {
-    const a = $da;
-    if(a.completed) {
-      router.push('/categories');
+    if($da.completed) {
+      router.push('/category');
     }
   }
 
+  const action = category.saveAction;
+
+  $: {
+    action.disabled = !valid;
+  }
 </script>
 
 {#if category}
   <h1>Category {category.name}</h1>
   <form>
-    <CategoryCard {category} />
+    <CategoryCard {category} bind:valid />
     <ActionButton
       shortcuts="Enter"
-      action={category.saveAction}>
+      {action}>
       Save
     </ActionButton>
     <ActionButton
