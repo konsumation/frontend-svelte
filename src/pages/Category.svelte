@@ -1,5 +1,5 @@
 <script>
-  import { ActionButton } from "svelte-common";
+  import { ActionButton, ConfirmAction } from "svelte-common";
   import { ObjectLink } from "svelte-guard-history-router";
   import CategoryCard from "../components/CategoryCard.svelte";
 
@@ -30,7 +30,7 @@
   <form>
     <CategoryCard {category} bind:valid />
     <ActionButton {action}/>
-    <ActionButton action={deleteAction} />
+    <ActionButton action={new ConfirmAction(deleteAction)} />
   </form>
 
   <ul>

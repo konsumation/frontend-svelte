@@ -1,9 +1,5 @@
 import { Selector } from "testcafe";
-import {
-  base,
-  login,
-  clickLink
-} from "./helpers/util.js";
+import { base, login, clickLink } from "./helpers/util.js";
 
 fixture`Getting Started`.page`${base}/`;
 
@@ -27,6 +23,8 @@ test("category add list remove", async t => {
 
   await clickLink(t, `/category/${category}`);
   await t.takeScreenshot();
+
+  await t.setNativeDialogHandler(() => true);
 
   await t.click(Selector("button").withText("Delete"));
 
