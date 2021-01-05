@@ -8,6 +8,10 @@
         "password": "secret",
         "entitlements": ["konsum"]
       },
+      "user2": {
+        "password": "secret",
+        "entitlements": ["konsum","konsum.delete"]
+      },
       "admin1": {
         "password": "secret",
         "entitlements": ["konsum", "konsum.admin"]
