@@ -192,7 +192,7 @@ export class Category {
           body: JSON.stringify({ value: v[0], time: v[1].getTime() })
         };
       },
-      { title: "Insert" }
+      { title: `Insert ${this.name}` }
     );
   }
 }

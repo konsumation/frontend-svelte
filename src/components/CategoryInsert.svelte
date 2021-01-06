@@ -71,6 +71,5 @@
       on:accept={accept}
       bind:value />
   </label>
-
-  <ActionButton {action}>Insert {category.name}</ActionButton>
+  <ActionButton {action}/>
 </fieldset>
