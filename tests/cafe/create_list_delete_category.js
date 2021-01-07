@@ -31,3 +31,20 @@ test("category add list remove", async t => {
   await clickLink(t, "/category");
   await t.takeScreenshot();
 });
+
+test("category add forbidden", async t => {
+  const category = "CAT3";
+
+  await t.navigateTo(`${base}/category/add`);
+  await login(t, { user: "user2", password: "secret" });
+
+  await t
+  .typeText("#name", category, { replace: true })
+  .typeText("#description", "mains power", { replace: true })
+  .typeText("#unit", "kWh", { replace: true });
+
+  await t.expect(Selector("button").withAttribute('disabled').exists).ok();
+
+  await t.takeScreenshot();
+});
+

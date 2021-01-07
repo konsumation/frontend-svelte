@@ -2,6 +2,7 @@
   import { ActionButton, ConfirmAction } from "svelte-common";
   import { ObjectLink } from "svelte-guard-history-router";
   import CategoryCard from "../components/CategoryCard.svelte";
+  import { session } from "../util.mjs";
 
   export let router;
 
@@ -13,6 +14,8 @@
   const deleteAction = category.deleteAction;
 
   $: {
+    deleteAction.disabled = !session.hasEntitlement("konsum.category.delete");
+
     if ($deleteAction.completed) {
       router.push("/category");
     }
@@ -21,7 +24,7 @@
   const action = category.saveAction;
 
   $: {
-    action.disabled = !valid;
+    action.disabled = !valid || !session.hasEntitlement("konsum.category.modify");
   }
 </script>
 

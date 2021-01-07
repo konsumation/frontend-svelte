@@ -2,6 +2,7 @@
   import { ActionButton } from "svelte-common";
   import CategoryCard from "../components/CategoryCard.svelte";
   import { Category } from "../category.mjs";
+  import { session } from "../util.mjs";
 
   const category = new Category();
   let valid;
@@ -9,7 +10,7 @@
   const action = category.saveAction;
 
   $: {
-    action.disabled = !valid;
+    action.disabled = !valid || !session.hasEntitlement("konsum.category.add");
   }
 </script>
 

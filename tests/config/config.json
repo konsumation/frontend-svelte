@@ -6,15 +6,20 @@
     "users": {
       "user1": {
         "password": "secret",
-        "entitlements": ["konsum"]
+        "entitlements": [
+          "konsum",
+          "konsum.category.add",
+          "konsum.category.modify",
+          "konsum.category.delete"
+        ]
       },
       "user2": {
         "password": "secret",
-        "entitlements": ["konsum","konsum.delete"]
+        "entitlements": ["konsum"]
       },
       "admin1": {
         "password": "secret",
-        "entitlements": ["konsum", "konsum.admin"]
+        "entitlements": ["konsum", "konsum.admin.backup"]
       }
     },
     "jwt": {
