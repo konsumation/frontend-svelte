@@ -52,7 +52,6 @@
       id="{category.name}_time"
       type="datetime-local"
       placeholder="31.12.2000, 23:59:59"
-      name="{category.name}.time"
       size="16"
       required
       bind:value={time} />
@@ -64,7 +63,6 @@
       id="{category.name}_value"
       type="text"
       placeholder="0.0"
-      name="{category.name}.value"
       size="16"
       required
       use:imask={options}

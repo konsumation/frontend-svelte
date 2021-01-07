@@ -26,7 +26,6 @@
     id="name"
     type="text"
     placeholder="Name"
-    name="name"
     size="20"
     required
     bind:value={category.name} />
@@ -38,7 +37,6 @@
     id="description"
     type="text"
     placeholder="Description"
-    name="description"
     size="20"
     required
     bind:value={category.description} />
@@ -49,7 +47,6 @@
     id="unit"
     type="text"
     placeholder="Unit"
-    name="unit"
     size="20"
     required
     bind:value={category.unit} />
@@ -61,7 +58,6 @@
     id="fractionalDigits"
     type="text"
     placeholder="Fractional Digits"
-    name="fractionalDigits"
     size="20"
     required
     use:imask={{ mask: Number, scale: 0, signed: false, min: 0, max: 5 }}
