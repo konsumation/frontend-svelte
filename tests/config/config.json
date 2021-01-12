@@ -10,7 +10,9 @@
           "konsum",
           "konsum.category.add",
           "konsum.category.modify",
-          "konsum.category.delete"
+          "konsum.category.delete",
+          "konsum.value.add",
+          "konsum.value.delete"
         ]
       },
       "user2": {

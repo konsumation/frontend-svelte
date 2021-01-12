@@ -40,4 +40,6 @@ test("insert values to a category", async t => {
   await clickLink(t, `/category/${category}`);
   await clickLink(t, `/category/${category}/values/list#last`);
   await t.takeScreenshot();
+
+  await t.expect(Selector("td").withText("1.9").exists).ok();
 });

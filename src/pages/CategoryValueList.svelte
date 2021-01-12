@@ -6,6 +6,9 @@
   const route = router.route;
   const entries = $route.value;
 
+  const categoryRoute = route.parent.parent;
+  const category = $categoryRoute.value;
+
   function time2Date(time) {
     const date = new Date();
     date.setTime(time * 1000);

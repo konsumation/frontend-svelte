@@ -29,7 +29,7 @@ export async function* categoryIterator(transition) {
 
 export async function* valueIterator(transition) {
   const response = await fetch(
-    `${api}/category/${transition.params.category}/values`,
+    `${api}/category/${transition.params.category}/value`,
     {
       headers: headers(session)
     }
@@ -134,7 +134,7 @@ export class Category {
   }
 
   async _latest() {
-    const response = await fetch(`${this.url}/values?reverse=1&limit=1`, {
+    const response = await fetch(`${this.url}/value?reverse=1&limit=1`, {
       headers: headers(session)
     });
 
@@ -158,7 +158,7 @@ export class Category {
   }
 
   async _values() {
-    const response = await fetch(`${this.url}/values`, {
+    const response = await fetch(`${this.url}/value`, {
       headers: headers(session)
     });
 
@@ -183,7 +183,7 @@ export class Category {
 
   insertAction(values) {
     return new FetchAction(
-      `${this.url}/insert`,
+      `${this.url}/value`,
       () => {
         const v = values();
         return {
