@@ -11,7 +11,7 @@ export async function* categoryIterator(transition) {
     //this.categories = categories;
     //transition.context.categories = categories;
 
-    const response = await fetch(`${api}/categories`, {
+    const response = await fetch(`${api}/category`, {
       headers: headers(session)
     });
 
