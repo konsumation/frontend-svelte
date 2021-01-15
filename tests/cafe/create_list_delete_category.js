@@ -29,7 +29,9 @@ test("category add list remove", async t => {
   await t.click(Selector("button").withText("Delete"));
 
   await clickLink(t, "/category");
-  await t.takeScreenshot();
+  await t.takeScreenshot({
+    path: "category_add_list_remove"
+  });
 });
 
 test("category add forbidden", async t => {
@@ -45,6 +47,8 @@ test("category add forbidden", async t => {
 
   await t.expect(Selector("button").withAttribute('disabled').exists).ok();
 
-  await t.takeScreenshot();
+  await t.takeScreenshot({
+    path: "category_add_forbidden"
+  });
 });
 
