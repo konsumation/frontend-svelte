@@ -17,7 +17,6 @@ test("insert values to a category", async t => {
   await t.navigateTo(`${base}/category/add`);
 
   await login(t);
-  await t.takeScreenshot();
 
   await t
     .typeText("#name", category, { replace: true })
@@ -26,7 +25,9 @@ test("insert values to a category", async t => {
     .click("button");
 
   await clickLink(t, "/insert");
-  await t.takeScreenshot();
+  await t.takeScreenshot({
+    path: "category_insert_values_insert.png"
+  });
 
   for (const entry of entries) {
     await t
@@ -39,7 +40,9 @@ test("insert values to a category", async t => {
   await clickLink(t, `/category`);
   await clickLink(t, `/category/${category}`);
   await clickLink(t, `/category/${category}/values/list#last`);
-  await t.takeScreenshot();
+  await t.takeScreenshot({
+    path: "category_insert_values_overview_after.png"
+  });
 
   await t.expect(Selector("td").withText("1.9").exists).ok();
 });

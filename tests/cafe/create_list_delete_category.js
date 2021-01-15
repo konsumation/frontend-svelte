@@ -10,7 +10,9 @@ test("category add list remove", async t => {
 
   await login(t);
 
-  await t.takeScreenshot();
+  await t.takeScreenshot({
+    path: "category_add_list_remove.png"
+  });
 
   await t
     .typeText("#name", category, { replace: true })
@@ -19,10 +21,14 @@ test("category add list remove", async t => {
     .click("button");
 
   await clickLink(t, "/category");
-  await t.takeScreenshot();
+  await t.takeScreenshot({
+    path: "category_add_list_remove_overview_after_add.png"
+  });
 
   await clickLink(t, `/category/${category}`);
-  await t.takeScreenshot();
+  await t.takeScreenshot({
+    path: "category_add_list_remove_added_category.png"
+  });
 
   await t.setNativeDialogHandler(() => true);
 
@@ -30,7 +36,7 @@ test("category add list remove", async t => {
 
   await clickLink(t, "/category");
   await t.takeScreenshot({
-    path: "category_add_list_remove"
+    path: "category_add_list_remove_overview_after_delete.png"
   });
 });
 
@@ -41,14 +47,13 @@ test("category add forbidden", async t => {
   await login(t, { user: "user2", password: "secret" });
 
   await t
-  .typeText("#name", category, { replace: true })
-  .typeText("#description", "mains power", { replace: true })
-  .typeText("#unit", "kWh", { replace: true });
+    .typeText("#name", category, { replace: true })
+    .typeText("#description", "mains power", { replace: true })
+    .typeText("#unit", "kWh", { replace: true });
 
-  await t.expect(Selector("button").withAttribute('disabled').exists).ok();
+  await t.expect(Selector("button").withAttribute("disabled").exists).ok();
 
   await t.takeScreenshot({
-    path: "category_add_forbidden"
+    path: "category_add_forbidden.png"
   });
 });
-
