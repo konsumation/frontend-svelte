@@ -1,4 +1,4 @@
-import { FetchAction } from "svelte-common";
+import { FetchCommand } from "svelte-command";
 import api from "consts:api";
 import { session, headers } from "./util.mjs";
 
@@ -103,8 +103,8 @@ export class Category {
     }
   }
 
-  get deleteAction() {
-    return new FetchAction(
+  get deleteCommand() {
+    return new FetchCommand(
       this.url,
       {
         method: "DELETE",
@@ -114,8 +114,8 @@ export class Category {
     );
   }
 
-  get saveAction() {
-    return new FetchAction(
+  get saveCommand() {
+    return new FetchCommand(
       () => this.url,
       () => {
         return {
@@ -181,8 +181,8 @@ export class Category {
     };
   }
 
-  insertAction(values) {
-    return new FetchAction(
+  insertCommand(values) {
+    return new FetchCommand(
       `${this.url}/value`,
       () => {
         const v = values();

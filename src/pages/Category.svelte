@@ -1,5 +1,5 @@
 <script>
-  import { ActionButton, ConfirmAction } from "svelte-common";
+  import { CommandButton, ConfirmCommand } from "svelte-command";
   import { ObjectLink } from "svelte-guard-history-router";
   import CategoryCard from "../components/CategoryCard.svelte";
   import { session } from "../util.mjs";
@@ -11,20 +11,20 @@
 
   let valid = false;
 
-  const deleteAction = category.deleteAction;
+  const deleteCommand = category.deleteCommand;
 
   $: {
-    deleteAction.disabled = !session.hasEntitlement("konsum.category.delete");
+    deleteCommand.disabled = !session.hasEntitlement("konsum.category.delete");
 
-    if ($deleteAction.completed) {
+    if ($deleteCommand.completed) {
       router.push("/category");
     }
   }
 
-  const action = category.saveAction;
+  const command = category.saveCommand;
 
   $: {
-    action.disabled = !valid || !session.hasEntitlement("konsum.category.modify");
+    command.disabled = !valid || !session.hasEntitlement("konsum.category.modify");
   }
 </script>
 
@@ -32,8 +32,8 @@
   <h1>Category {category.name}</h1>
   <form>
     <CategoryCard {category} bind:valid />
-    <ActionButton {action}/>
-    <ActionButton action={new ConfirmAction(deleteAction)} />
+    <CommandButton {command}/>
+    <CommandButton command={new ConfirmCommand(deleteCommand)} />
   </form>
 
   <ul>

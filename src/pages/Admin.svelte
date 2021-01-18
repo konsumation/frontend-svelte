@@ -1,12 +1,12 @@
 <script>
   import streamSaver from "streamsaver";
-  import { ActionButton, FetchAction } from "svelte-common";
+  import { CommandButton, FetchCommand } from "svelte-command";
   import { session, headers } from "../util.mjs";
   import api from "consts:api";
   let dump;
 
-  function backupAction() {
-    return new FetchAction(
+  function backupCommand() {
+    return new FetchCommand(
       api + "/admin/backup",
       {
         headers: headers(session)
@@ -29,9 +29,9 @@
 </script>
 
 <div>
-  <ActionButton action={backupAction}/>
-  <ActionButton
-    action={new FetchAction(api + '/admin/restore', { method: 'POST', headers: headers(session) }, { title: 'Restore' })} />
+  <CommandButton command={backupCommand}/>
+  <CommandButton
+    command={new FetchCommand(api + '/admin/restore', { method: 'POST', headers: headers(session) }, { title: 'Restore' })} />
 
   {#if dump !== undefined}<textarea bind:value={dump} />{/if}
 </div>

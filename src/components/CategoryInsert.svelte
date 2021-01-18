@@ -1,6 +1,7 @@
 <script>
   import { onDestroy } from "svelte";
-  import { ActionButton, dateFormatter } from "svelte-common";
+  import { dateFormatter } from "svelte-common";
+  import { CommandButton } from "svelte-command";
   import imask from "../imask.mjs";
   import { parseDate } from "../date.mjs";
 
@@ -69,5 +70,5 @@
       on:accept={accept}
       bind:value />
   </label>
-  <ActionButton {action}/>
+  <CommandButton {action}/>
 </fieldset>
