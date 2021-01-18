@@ -20,7 +20,7 @@ test("insert values to a category", async t => {
 
   await t
     .typeText("#name", category, { replace: true })
-    .typeText("#description", "mains power", { replace: true })
+    .typeText("#description", "mains power 1", { replace: true })
     .typeText("#unit", "kWh", { replace: true })
     .click("button");
 
