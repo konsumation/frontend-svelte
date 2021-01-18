@@ -16,7 +16,7 @@ test("category add list remove", async t => {
 
   await t
     .typeText("#name", category, { replace: true })
-    .typeText("#description", "mains power", { replace: true })
+    .typeText("#description", "mains power 2", { replace: true })
     .typeText("#unit", "kWh", { replace: true })
     .click("button");
 
@@ -48,7 +48,7 @@ test("category add forbidden", async t => {
 
   await t
     .typeText("#name", category, { replace: true })
-    .typeText("#description", "mains power", { replace: true })
+    .typeText("#description", "mains power 3", { replace: true })
     .typeText("#unit", "kWh", { replace: true });
 
   await t.expect(Selector("button").withAttribute("disabled").exists).ok();

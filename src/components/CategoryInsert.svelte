@@ -41,7 +41,7 @@
     value = maskRef.value;
   }
 
-  const action = category.insertAction(() => [
+  const command = category.insertCommand(() => [
     parseFloat(value),
     parseDate(time)
   ]);
@@ -70,5 +70,5 @@
       on:accept={accept}
       bind:value />
   </label>
-  <CommandButton {action}/>
+  <CommandButton {command}/>
 </fieldset>
