@@ -25,6 +25,8 @@
     }
   }, 1000);
 
+//TODO refresh Site after delete value action
+
 </script>
 
 {#if entries}
