@@ -28,6 +28,7 @@
 //TODO refresh Site after delete value action
 
 </script>
+<h1>{category.name}</h1>
 
 {#if entries}
   <table class="bordered striped hoverable">
