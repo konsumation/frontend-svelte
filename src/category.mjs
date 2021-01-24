@@ -195,4 +195,22 @@ export class Category {
       { title: `Insert ${this.name}` }
     );
   }
+    /** delete one value from category
+   * 
+   * @param key database key which should be delete 
+   */
+  deleteValueCommand(key) {
+    console.log(key)
+    return new FetchCommand(
+      `${this.url}/value`,
+      () => {
+        return {
+          method: "DELETE",
+          headers: headers(session),
+          body: JSON.stringify({ key: key })
+        };
+      },
+      { title: `delete value` }
+    );
+  }
 }

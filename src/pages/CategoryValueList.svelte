@@ -1,5 +1,6 @@
 <script>
   import { DateTime } from "svelte-common";
+  import { CommandButton,ConfirmCommand } from "svelte-command";
 
   export let router;
 
@@ -23,6 +24,7 @@
       }
     }
   }, 1000);
+
 </script>
 
 {#if entries}
@@ -30,6 +32,7 @@
     <thead>
       <th>Date</th>
       <th>Value</th>
+      <th>Action</th>
     </thead>
     <tbody>
       {#each entries as entry, i}
@@ -38,6 +41,7 @@
             <DateTime date={time2Date(entry.time)} />
           </td>
           <td>{entry.value}</td>
+          <td> <CommandButton command={new ConfirmCommand(category.deleteValueCommand(entry.time))}/></td>
         </tr>
       {/each}
     </tbody>
