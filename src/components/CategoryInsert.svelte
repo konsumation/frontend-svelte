@@ -51,7 +51,7 @@
   <label for="{category.name}_time">
     Time<input
       id="{category.name}_time"
-      type="datetime-local"
+      type="text"
       placeholder="31.12.2000, 23:59:59"
       size="16"
       required
