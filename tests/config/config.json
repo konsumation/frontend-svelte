@@ -11,6 +11,12 @@
           "konsum.category.add",
           "konsum.category.modify",
           "konsum.category.delete",
+          "konsum.meter.add",
+          "konsum.meter.modify",
+          "konsum.meter.delete",
+          "konsum.note.add",
+          "konsum.note.modify",
+          "konsum.note.delete",
           "konsum.value.add",
           "konsum.value.delete"
         ]
@@ -21,7 +27,7 @@
       },
       "admin1": {
         "password": "secret",
-        "entitlements": ["konsum", "konsum.admin.backup"]
+        "entitlements": ["konsum", "konsum.admin.backup", "konsum.admin.stop"]
       }
     },
     "jwt": {
