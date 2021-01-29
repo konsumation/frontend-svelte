@@ -110,7 +110,7 @@ export class Category {
         method: "DELETE",
         headers: headers(session)
       },
-      { title: "Delete", shortcuts: "Command+d" }
+      { title: "Delete", shortcuts: "alt+d" }
     );
   }
 
@@ -129,7 +129,7 @@ export class Category {
           })
         };
       },
-      { title: "Save", shortcuts: "Command+s" }
+      { title: "Save", shortcuts: "alt+s" }
     );
   }
 
@@ -195,12 +195,14 @@ export class Category {
       { title: `Insert ${this.name}` }
     );
   }
-    /** delete one value from category
-   * 
-   * @param key database key which should be delete 
+  
+  /**
+   * delete one value from category
+   *
+   * @param key database key which should be delete
    */
   deleteValueCommand(key) {
-    console.log(key)
+    console.log(key);
     return new FetchCommand(
       `${this.url}/value`,
       () => {
