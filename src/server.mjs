@@ -2,7 +2,7 @@ import { readable } from "svelte/store";
 import api from "consts:api";
 
 export const server = readable(
-  { memory: {} },
+  { database: {}, memory: {} },
   set => {
     const f = async () => {
       const data = await fetch(api + "/state");
