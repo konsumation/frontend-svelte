@@ -197,12 +197,11 @@ export class Category {
   }
   
   /**
-   * delete one value from category
+   * Delete one value from category.
    *
    * @param key database key which should be delete
    */
   deleteValueCommand(key) {
-    console.log(key);
     return new FetchCommand(
       `${this.url}/value`,
       () => {
