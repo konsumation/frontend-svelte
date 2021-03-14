@@ -84,7 +84,7 @@
       "/etc/nginx/config.d/${name}.conf": "pacman/nginx.conf"
     },
     "depends": {
-      "nginx-mainline": ">=1.19.7",
+      "nginx-mainline": ">=1.19.8",
       "konsum": ">=4.1.0"
     },
     "groups": "home automation",
