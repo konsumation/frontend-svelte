@@ -29,8 +29,8 @@
     "cafeHead": "testcafe $BROWSER tests/cafe/insertValues.js -s build/test"
   },
   "dependencies": {
-    "imask": "^6.0.5",
-    "layercake": "^4.0.3",
+    "imask": "^6.0.7",
+    "layercake": "^4.1.0",
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.4",
     "svelte-command": "^1.1.0",
