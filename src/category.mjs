@@ -195,14 +195,14 @@ export class Category {
       { title: `Insert ${this.name}` }
     );
   }
-  
+
   /**
    * Delete one value from category.
    *
    * @param key database key which should be delete
    */
-  async deleteValueCommand(key) {
-    await new FetchCommand(
+  deleteValueCommand(key) {
+    return new FetchCommand(
       `${this.url}/value`,
       () => {
         return {
@@ -211,10 +211,13 @@ export class Category {
           body: JSON.stringify({ key: key })
         };
       },
-      { title: `delete value` }
+      {
+        title: `delete value`,
+        // TODO commands should act like promises
+        responseHandler: async response => {
+          this._values;
+        }
+      }
     );
-
-    await this._values;
-
   }
 }
