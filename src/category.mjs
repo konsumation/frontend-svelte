@@ -201,8 +201,8 @@ export class Category {
    *
    * @param key database key which should be delete
    */
-  deleteValueCommand(key) {
-    return new FetchCommand(
+  async deleteValueCommand(key) {
+    await new FetchCommand(
       `${this.url}/value`,
       () => {
         return {
@@ -213,5 +213,8 @@ export class Category {
       },
       { title: `delete value` }
     );
+
+    await this._values;
+
   }
 }
