@@ -20,7 +20,7 @@ delete action need to be fullfilles, chrome has error:
 find one element to delete and check if this doesn exists more
 */
 
-test.skip("delete values from a category", async t => {
+test("delete values from a category", async t => {
   await t.navigateTo(`${base}/category/add`);
 
   await login(t);
@@ -50,8 +50,10 @@ test.skip("delete values from a category", async t => {
   await t.expect(Selector("td").withText("1.9").exists).ok();
 
   //find one element to delete and check if this doesn exists more
-  await t.click(Selector("button").withText("delete value"));
-
+  //const link =  Selector('#last');
+  //console.log(await link.textContent)
+  await t.setNativeDialogHandler(() => true).click(Selector("#last > td:nth-child(3) > button"));
+  
   await t.takeScreenshot({
     path: "category_delete_value_after_delete.png"
   });
