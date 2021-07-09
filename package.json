@@ -34,7 +34,7 @@
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.5",
     "svelte-command": "^1.1.3",
-    "svelte-common": "^4.4.8",
+    "svelte-common": "^4.4.9",
     "svelte-guard-history-router": "^4.2.11",
     "svelte-session-manager": "^1.4.5"
   },
