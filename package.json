@@ -48,7 +48,7 @@
     "@semantic-release/release-notes-generator": "^9.0.3",
     "ava": "^3.15.0",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^6.12.43",
+    "npm-pkgbuild": "^6.12.44",
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
     "rollup": "^2.55.1",
