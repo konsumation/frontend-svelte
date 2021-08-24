@@ -38,6 +38,7 @@ export default defineConfig(({ command, mode }) => {
       }
     },
 
+    /*
     define: {
       api: JSON.stringify("/services/konsum/api"),
       base: JSON.stringify("/services/konsum"),
@@ -45,5 +46,6 @@ export default defineConfig(({ command, mode }) => {
       title: JSON.stringify("Konsum"),
       version: JSON.stringify("1.2.3")
     }
+    */
   };
 });

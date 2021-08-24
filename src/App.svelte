@@ -20,14 +20,13 @@
   import Insert from "./pages/Insert.svelte";
   import CategoryValueList from "./pages/CategoryValueList.svelte";
   import CategoryGraph from "./pages/CategoryGraph.svelte";
-  import base from "vite";
   import { Category, categoryIterator, valueIterator } from "./category.mjs";
   import { session } from "./util.mjs";
 
   const enshureSession = redirectGuard("/login", () => !session.isValid);
 </script>
 
-<Router {base}>
+<Router {import.meta.env.BASE_URL}>
   <TopNav offset={42}>
     <Route href="/" path="*" component={Home}>
       <img class="logo" src="images/icon.svg" alt="Konsum" />
