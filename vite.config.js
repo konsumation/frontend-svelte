@@ -5,9 +5,12 @@ import { svelte } from "@sveltejs/vite-plugin-svelte";
 export default defineConfig(({ command, mode }) => {
   const production = mode === "production";
 
+  const base = "/services/konsum/";
+  const api = "api";
+
   return {
     root: "src",
-    base: "/services/konsum/",
+    base,
 
     plugins: [
       svelte({
@@ -31,7 +34,7 @@ export default defineConfig(({ command, mode }) => {
 
     server: {
       proxy: {
-        "/services/konsum/api": {
+        [`${base}${api}`]: {
           target: "http://localhost:12345",
           rewrite: path => path.replace(/^\/services\/konsum\/api/, "")
         }
