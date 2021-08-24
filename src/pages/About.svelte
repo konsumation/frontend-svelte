@@ -14,16 +14,7 @@
   import { serviceWorker, serviceWorkerRegistration } from "../service-worker/registration.mjs";
 */
 
-  /*
-  import name from "vite";
-  import version from "vite";
-  import description from "vite";
-*/
-
-  const name = "x";
-  const version = "x";
-  const description = "x";
-  
+  import { name, version, description } from "../constants.mjs";  
 </script>
 
 <h1>About</h1>

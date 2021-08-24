@@ -1,5 +1,5 @@
 import { FetchCommand } from "svelte-command";
-import api from "vite";
+import { api } from "./constants.mjs";
 import { session, headers } from "./util.mjs";
 
 export async function* categoryIterator(transition) {

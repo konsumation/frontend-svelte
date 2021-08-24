@@ -2,7 +2,7 @@
   import streamSaver from "streamsaver";
   import { CommandButton, FetchCommand } from "svelte-command";
   import { session, headers } from "../util.mjs";
-  import api from "vite";
+  import { api } from "../constants.mjs";
   let dump;
 
   function backupCommand() {
