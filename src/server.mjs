@@ -1,5 +1,5 @@
 import { readable } from "svelte/store";
-import api from "consts:api";
+import api from "vite";
 
 export const server = readable(
   { database: {}, memory: {} },

@@ -10,9 +10,9 @@
   import { server } from "../server.mjs";
   import { session } from "../util.mjs";
   import { serviceWorker, serviceWorkerRegistration } from "../service-worker/registration.mjs";
-  import name from "consts:title";
-  import version from "consts:version";
-  import description from "consts:description";
+  import name from "vite";
+  import version from "vite";
+  import description from "vite";
 </script>
 
 <About>
