@@ -1,8 +1,15 @@
+import { readFile } from "fs/promises";
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
+export default defineConfig(async ({ command, mode }) => {
+  const pkg = JSON.parse(
+    await readFile(new URL("package.json", import.meta.url).pathname, {
+      encoding: "utf8"
+    })
+  );
+
   const production = mode === "production";
 
   const base = "/services/konsum/";
@@ -21,10 +28,7 @@ export default defineConfig(({ command, mode }) => {
     ],
     optimizeDeps: {
       exclude: [
-        "svelte-command",
-        "svelte-common",
-        "svelte-guard-history-router",
-        "svelte-session-manager"
+        ...Object.keys(pkg.dependencies).filter(d => d.startsWith('svelte'))
       ]
     },
 
