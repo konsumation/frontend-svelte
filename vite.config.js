@@ -13,7 +13,7 @@ export default defineConfig(async ({ command, mode }) => {
   const production = mode === "production";
 
   const base = "/services/konsum/";
-  const api = "api";
+  const api = `${base}api`;
 
   process.env["VITE_API"] = api;
   process.env["VITE_NAME"] = pkg.name;
@@ -43,9 +43,9 @@ export default defineConfig(async ({ command, mode }) => {
 
     server: {
       proxy: {
-        [`${base}${api}`]: {
+        [api]: {
           target: "http://localhost:12345",
-          rewrite: path => path.replace(/^\/services\/konsum\/api/, "")
+          rewrite: path => path.substring(api.length)
         }
       }
     }
