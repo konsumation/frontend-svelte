@@ -15,6 +15,11 @@ export default defineConfig(async ({ command, mode }) => {
   const base = "/services/konsum/";
   const api = "api";
 
+  process.env["VITE_API"] = api;
+  process.env["VITE_NAME"] = pkg.name;
+  process.env["VITE_DESCRIPTION"] = pkg.description;
+  process.env["VITE_VERSION"] = pkg.version;
+
   return {
     root: "src",
     base,
@@ -28,7 +33,7 @@ export default defineConfig(async ({ command, mode }) => {
     ],
     optimizeDeps: {
       exclude: [
-        ...Object.keys(pkg.dependencies).filter(d => d.startsWith('svelte'))
+        ...Object.keys(pkg.dependencies).filter(d => d.startsWith("svelte"))
       ]
     },
 
