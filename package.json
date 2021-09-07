@@ -55,7 +55,7 @@
     "postcss-import": "^14.0.2",
     "semantic-release": "^17.4.7",
     "testcafe": "^1.15.3",
-    "vite": "^2.5.3"
+    "vite": "^2.5.4"
   },
   "repository": {
     "type": "git",
