@@ -35,7 +35,7 @@
     "streamsaver": "^2.0.5",
     "svelte-command": "^1.1.4",
     "svelte-common": "^4.4.12",
-    "svelte-guard-history-router": "^4.2.16",
+    "svelte-guard-history-router": "^4.2.17",
     "svelte-session-manager": "^2.0.5"
   },
   "devDependencies": {
