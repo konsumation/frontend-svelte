@@ -1,6 +1,7 @@
 <script>
   import { DateTime } from "svelte-common";
   import { CommandButton,ConfirmCommand } from "svelte-command";
+import filterObject from "layercake/src/utils/filterObject";
 
   export let router;
 
@@ -44,7 +45,7 @@
             <DateTime date={time2Date(entry.time)} />
           </td>
           <td>{entry.value}</td>
-          <td> <CommandButton command={new ConfirmCommand(category.deleteValueCommand(entry.time, async (response) => { console.log("apäter...");}))}/></td>
+          <td> <CommandButton command={new ConfirmCommand(category.deleteValueCommand(entry.time, async (response) => { route.value.splice(i,1);}))}/></td>
         </tr>
       {/each}
     </tbody>
