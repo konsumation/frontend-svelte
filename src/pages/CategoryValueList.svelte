@@ -44,7 +44,7 @@
             <DateTime date={time2Date(entry.time)} />
           </td>
           <td>{entry.value}</td>
-          <td> <CommandButton command={new ConfirmCommand(category.deleteValueCommand(entry.time))}/></td>
+          <td> <CommandButton command={new ConfirmCommand(category.deleteValueCommand(entry.time, async (response) => { console.log("apäter...");}))}/></td>
         </tr>
       {/each}
     </tbody>
