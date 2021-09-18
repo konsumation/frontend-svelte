@@ -1,4 +1,7 @@
 import { readFile } from "fs/promises";
+import { mkdirSync, readFileSync } from "fs";
+import { execFile } from "child_process";
+
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 
@@ -11,7 +14,25 @@ export default defineConfig(async ({ command, mode }) => {
   );
 
   const production = mode === "production";
+  let target = "http://localhost:12345";
 
+  if (!production) {
+    mkdirSync("build/db", { recursive: true });
+    const konsum = execFile(
+      "node",
+      ["node_modules/konsum/src/konsum-cli.mjs", "-c", "tests/config", "start"],
+      (error, stdout, stderr) => {
+        console.log(error, stdout, stderr);
+      }
+    );
+  
+    const { http } = JSON.parse(
+      readFileSync("tests/config/config.json", { endoding: "utf8" })
+    );
+  
+    target = `http://localhost:${http.port}/`;
+  }
+  
   const base = "/services/konsum/";
   const api = `${base}api`;
 
@@ -44,7 +65,7 @@ export default defineConfig(async ({ command, mode }) => {
     server: {
       proxy: {
         [api]: {
-          target: "http://localhost:12345",
+          target,
           rewrite: path => path.substring(api.length)
         }
       }
