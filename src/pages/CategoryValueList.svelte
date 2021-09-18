@@ -45,7 +45,7 @@ import filterObject from "layercake/src/utils/filterObject";
             <DateTime date={time2Date(entry.time)} />
           </td>
           <td>{entry.value}</td>
-          <td> <CommandButton command={new ConfirmCommand(category.deleteValueCommand(entry.time, async (response) => { route.value.splice(i,1);}))}/></td>
+          <td> <CommandButton command={new ConfirmCommand(category.deleteValueCommand(entry.time, async (response) => { route.value = entries.splice(i,1);}))}/></td>
         </tr>
       {/each}
     </tbody>
