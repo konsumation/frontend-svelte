@@ -201,7 +201,7 @@ export class Category {
    *
    * @param key database key which should be delete
    */
-  deleteValueCommand(key,responseHandler) {
+  deleteValueCommand(key, responseHandler) {
     return new FetchCommand(
       `${this.url}/value`,
       () => {
@@ -212,7 +212,7 @@ export class Category {
         };
       },
       {
-        title: `delete value`,
+        title: "Delete",
         // TODO commands should act like promises
         responseHandler
       }
