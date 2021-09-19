@@ -20,9 +20,9 @@
   import Insert from "./pages/Insert.svelte";
   import CategoryValueList from "./pages/CategoryValueList.svelte";
   import CategoryGraph from "./pages/CategoryGraph.svelte";
-  import base from "consts:base";
   import { Category, categoryIterator, valueIterator } from "./category.mjs";
   import { session } from "./util.mjs";
+  import { base } from "./constants.mjs";
 
   const enshureSession = redirectGuard("/login", () => !session.isValid);
 </script>
@@ -30,7 +30,7 @@
 <Router {base}>
   <TopNav offset={42}>
     <Route href="/" path="*" component={Home}>
-      <img class="logo" src="images/icon.svg" alt="Konsum" />
+      <img class="logo" src="assets/images/icon.svg" alt="Konsum" />
       Konsum
     </Route>
     <ul class="left">
@@ -41,26 +41,28 @@
           iteratorFor={categoryIterator}
           objectInstance={Category}
           guard={enshureSession}
-          component={CategoriesPage}>
+          component={CategoriesPage}
+        >
           Categories
-          <Route
-            path="/add"
-            component={AddCategoryPage} />
+          <Route path="/add" component={AddCategoryPage} />
           <Route
             path="/:category"
-            propertyMapping={{ category: 'name' }}
+            propertyMapping={{ category: "name" }}
             factory={DetailRoute}
             linkComponent={NamedObjectLink}
-            component={CategoryPage}>
+            component={CategoryPage}
+          >
             <Route path="/values" iteratorFor={valueIterator}>
               <Route
                 path="/list"
                 factory={MasterRoute}
-                component={CategoryValueList} />
+                component={CategoryValueList}
+              />
               <Route
                 path="/graph"
                 factory={MasterRoute}
-                component={CategoryGraph} />
+                component={CategoryGraph}
+              />
             </Route>
           </Route>
         </Route>
@@ -71,7 +73,8 @@
           factory={MasterRoute}
           iteratorFor={categoryIterator}
           guard={enshureSession}
-          component={Insert}>
+          component={Insert}
+        >
           Insert
         </Route>
       </li>
@@ -88,7 +91,8 @@
               <a
                 href="/"
                 class="dropdown-item"
-                on:click|preventDefault={() => session.invalidate()}>
+                on:click|preventDefault={() => session.invalidate()}
+              >
                 Logout
                 {$session.username}
               </a>
@@ -97,7 +101,8 @@
                 path="/admin"
                 guard={enshureSession}
                 class="dropdown-item"
-                component={Admin}>
+                component={Admin}
+              >
                 Admin
               </Route>
             </div>

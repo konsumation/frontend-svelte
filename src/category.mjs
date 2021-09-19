@@ -1,5 +1,5 @@
 import { FetchCommand } from "svelte-command";
-import api from "consts:api";
+import { api } from "./constants.mjs";
 import { session, headers } from "./util.mjs";
 
 export async function* categoryIterator(transition) {
@@ -201,7 +201,7 @@ export class Category {
    *
    * @param key database key which should be delete
    */
-  deleteValueCommand(key) {
+  deleteValueCommand(key, responseHandler) {
     return new FetchCommand(
       `${this.url}/value`,
       () => {
@@ -212,11 +212,9 @@ export class Category {
         };
       },
       {
-        title: `delete value`,
+        title: "Delete",
         // TODO commands should act like promises
-        responseHandler: async response => {
-          this._values;
-        }
+        responseHandler
       }
     );
   }

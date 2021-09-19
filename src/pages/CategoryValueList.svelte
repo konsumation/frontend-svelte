@@ -1,6 +1,6 @@
 <script>
   import { DateTime } from "svelte-common";
-  import { CommandButton,ConfirmCommand } from "svelte-command";
+  import { CommandButton, ConfirmCommand } from "svelte-command";
 
   export let router;
 
@@ -25,9 +25,9 @@
     }
   }, 1000);
 
-//TODO refresh Site after delete value action
-
+  //TODO refresh Site after delete value action
 </script>
+
 <h1>{category.name}</h1>
 
 {#if entries}
@@ -39,12 +39,20 @@
     </thead>
     <tbody>
       {#each entries as entry, i}
-        <tr id={i === 0 ? 'first' : i === entries.length - 1 ? 'last' : ''}>
+        <tr id={i === 0 ? "first" : i === entries.length - 1 ? "last" : ""}>
           <td>
             <DateTime date={time2Date(entry.time)} />
           </td>
           <td>{entry.value}</td>
-          <td> <CommandButton command={new ConfirmCommand(category.deleteValueCommand(entry.time))}/></td>
+          <td>
+            <CommandButton
+              command={new ConfirmCommand(
+                category.deleteValueCommand(entry.time, async response => {
+                  route.value = entries.splice(i, 1);
+                })
+              )}
+            /></td
+          >
         </tr>
       {/each}
     </tbody>

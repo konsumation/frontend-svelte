@@ -58,6 +58,5 @@ test("delete values from a category", async t => {
     path: "category_delete_value_after_delete.png"
   });
 
-  await t.expect(Selector("td").withText("1.9").notexists).ok();
-
+  await t.expect(Selector("td").withText("1.9").exists).notOk();
 });

@@ -1,5 +1,5 @@
 import { readable } from "svelte/store";
-import api from "consts:api";
+import { api } from "./constants.mjs";
 
 export const server = readable(
   { database: {}, memory: {} },
