@@ -72,7 +72,7 @@
   "pacman": {
     "content": {
       "${installdir}/": {
-        "base": "public"
+        "base": "build"
       },
       "/etc/nginx/sites/common/${name}.conf": "pacman/nginx.conf"
     },
