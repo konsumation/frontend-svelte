@@ -13,6 +13,7 @@
     }
   ],
   "background_color": "#6e3e81",
+  "theme_color" : "#6e3e81",
   "categories": [
     "productivity"
   ]
