@@ -20,10 +20,8 @@ export default defineConfig(async ({ command, mode }) => {
     mkdirSync("build/db", { recursive: true });
     const konsum = execFile(
       "node",
-      ["node_modules/konsum/src/konsum-cli.mjs", "-c", "tests/config", "start"],
-      (error, stdout, stderr) => {
-        console.log(error, stdout, stderr);
-      }
+      ["node_modules/@konsumation/konsum/src/konsum-cli.mjs", "-c", "tests/config", "start"],
+      (error, stdout, stderr) => console.log(error, stdout, stderr)
     );
   
     const { http } = JSON.parse(

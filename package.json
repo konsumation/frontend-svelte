@@ -1,5 +1,5 @@
 {
-  "name": "konsum-frontend-svelte",
+  "name": "@konsumation/frontend-svelte",
   "version": "0.0.0-semantic-release",
   "publishConfig": {
     "access": "public"
@@ -36,7 +36,6 @@
     "install": "^0.13.0",
     "layercake": "^5.0.0",
     "mf-styling": "arlac77/mf-styling",
-    "npm": "^7.22.0",
     "streamsaver": "^2.0.5",
     "svelte-command": "^1.1.4",
     "svelte-common": "^4.4.12",
@@ -44,6 +43,7 @@
     "svelte-session-manager": "^2.0.9"
   },
   "devDependencies": {
+    "@konsumation/konsum": "github:konsumation/konsum",
     "@semantic-release/commit-analyzer": "^9.0.1",
     "@semantic-release/exec": "^6.0.1",
     "@semantic-release/release-notes-generator": "^10.0.2",
