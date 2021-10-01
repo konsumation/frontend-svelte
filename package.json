@@ -40,7 +40,7 @@
     "svelte-command": "^1.1.4",
     "svelte-common": "^4.4.12",
     "svelte-guard-history-router": "^4.2.17",
-    "svelte-session-manager": "^2.0.9"
+    "svelte-session-manager": "^2.0.10"
   },
   "devDependencies": {
     "@konsumation/konsum": "github:konsumation/konsum",
