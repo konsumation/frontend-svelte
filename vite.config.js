@@ -58,7 +58,8 @@ export default defineConfig(async ({ command, mode }) => {
 
     build: {
       outDir: "../build",
-      minify: production
+      minify: production,
+      sourcemap: true
     },
 
     server: {
