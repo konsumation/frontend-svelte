@@ -53,7 +53,7 @@
     "npm-pkgbuild": "^6.12.58",
     "semantic-release": "^18.0.0",
     "testcafe": "^1.16.1",
-    "vite": "^2.6.2"
+    "vite": "^2.6.4"
   },
   "repository": {
     "type": "git",
