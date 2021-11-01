@@ -45,7 +45,7 @@
   "devDependencies": {
     "@konsumation/konsum": "github:konsumation/konsum",
     "@semantic-release/commit-analyzer": "^9.0.1",
-    "@semantic-release/exec": "^6.0.1",
+    "@semantic-release/exec": "^6.0.2",
     "@semantic-release/release-notes-generator": "^10.0.2",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
     "ava": "^3.15.0",
