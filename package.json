@@ -81,7 +81,7 @@
       "konsum": ">=4.1.0"
     },
     "groups": "home automation",
-    "hooks": "pacman/hooks.sh",
+    "hooks": "pkgbuild/hooks.sh",
     "installdir": "/services/konsum/frontend"
   },
   "release": {
