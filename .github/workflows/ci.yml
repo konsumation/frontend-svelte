@@ -6,11 +6,19 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 14.18.1
           - 16.13.1
     steps:
+      - name: Dependencies
+        run: >
+          sudo apt-get update
+
+          sudo apt-get install ksh curl
+
+          wget
+          https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
+
+          sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
       - uses: actions/checkout@v2
-      - name: '--delete-- Cache node modules'
       - name: Build / Test Node ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
