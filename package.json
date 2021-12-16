@@ -35,7 +35,7 @@
   "dependencies": {
     "imask": "^6.2.2",
     "install": "^0.13.0",
-    "layercake": "^5.0.0",
+    "layercake": "^5.0.3",
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.5",
     "svelte-command": "^1.1.4",
@@ -49,7 +49,7 @@
     "@semantic-release/commit-analyzer": "^9.0.1",
     "@semantic-release/exec": "^6.0.2",
     "@semantic-release/release-notes-generator": "^10.0.2",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.31",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.32",
     "ava": "^3.15.0",
     "konsum": "github:konsumation/konsum",
     "npm-pkgbuild": "^7.4.3",
