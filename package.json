@@ -78,8 +78,8 @@
       "/etc/nginx/sites/common/${name}.conf": "pkgbuild/nginx.conf"
     },
     "depends": {
-      "nginx-mainline": ">=1.21.1",
-      "konsum": ">=4.1.0"
+      "nginx-mainline": ">=1.21.4",
+      "konsum": ">=4.3.8"
     },
     "groups": "home automation",
     "hooks": "pkgbuild/hooks.sh",
