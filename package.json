@@ -30,7 +30,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "pkg": "npm-pkgbuild --deb --pkg"
+    "pkg": "npm-pkgbuild -Dversion=1.0.0 --deb --pkg"
   },
   "dependencies": {
     "imask": "^6.2.2",
