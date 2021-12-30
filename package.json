@@ -30,7 +30,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "pkg": "npm-pkgbuild -Dversion=1.0.0 --deb --pkg --rpm"
+    "pkg": "npm-pkgbuild --verbose -Dversion=1.0.0 --pkg"
   },
   "dependencies": {
     "imask": "^6.2.2",
@@ -52,7 +52,7 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.33",
     "ava": "^3.15.0",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^7.8.2",
+    "npm-pkgbuild": "^7.9.0",
     "semantic-release": "^18.0.1",
     "testcafe": "^1.17.0",
     "vite": "^2.7.6"
