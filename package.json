@@ -70,25 +70,25 @@
     "base": "/services/konsum",
     "title": "Konsum"
   },
-  "pkgbuild": {
+  "pkg": {
     "name": "konsum-frontend-svelte",
     "content": {
       "${installdir}/": {
         "base": "build"
       },
-      "${nginx.sites.dir}/${name}.conf": "pkgbuild/nginx.conf"
+      "${nginx.sites.dir}/${name}.conf": "pkg/nginx.conf"
     },
     "depends": {
       "nginx-mainline": ">=1.21.4",
       "konsum": ">=4.3.8"
     },
     "groups": "home automation",
-    "hooks": "pkgbuild/hooks.sh",
+    "hooks": "pkg/hooks.sh",
     "installdir": "/services/konsum/frontend",
     "output": {
       "deb": {},
       "rpm": {},
-      "pkg": {}
+      "arch": {}
     }
   },
   "release": {
