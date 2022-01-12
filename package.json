@@ -54,7 +54,7 @@
     "konsum": "github:konsumation/konsum",
     "npm-pkgbuild": "^7.15.2",
     "semantic-release": "^18.0.1",
-    "testcafe": "^1.17.0",
+    "testcafe": "^15.1.317922",
     "vite": "^2.7.10"
   },
   "repository": {
