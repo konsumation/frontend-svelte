@@ -52,10 +52,10 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.34",
     "ava": "^4.0.1",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^7.15.2",
+    "npm-pkgbuild": "^7.17.0",
     "semantic-release": "^19.0.2",
-    "testcafe": "^1.17.0",
-    "vite": "^2.7.10"
+    "testcafe": "^1.18.2",
+    "vite": "^2.7.13"
   },
   "repository": {
     "type": "git",
