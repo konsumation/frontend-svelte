@@ -113,6 +113,7 @@
     },
     "inheritFrom": [
       "arlac77/template-svelte-app#next",
+      "arlac77/template-pacman#next",
       "arlac77/template-arlac77-github",
       "arlac77/template-ava",
       "arlac77/template-vite",
