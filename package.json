@@ -35,7 +35,7 @@
   "dependencies": {
     "imask": "^6.2.2",
     "install": "^0.13.0",
-    "layercake": "^5.0.3",
+    "layercake": "^6.0.2",
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.5",
     "svelte-command": "^1.1.4",
