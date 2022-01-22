@@ -1,6 +1,6 @@
 {
   "name": "@konsumation/frontend-svelte",
-  "version": "1.30.57",
+  "version": "0.0.0-semantic-release",
   "publishConfig": {
     "access": "public"
   },
@@ -8,6 +8,7 @@
   "keywords": [
     "konsum",
     "svelte",
+    "vite",
     "web"
   ],
   "contributors": [
@@ -21,16 +22,17 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "test": "npm run test:ava && npm run test:cafe",
-    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 7000 --app vite",
-    "test:ava": "ava --timeout 2m tests/*.mjs",
-    "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
     "startkonsum": "node_modules/konsum/src/konsum-cli.mjs -c tests/config start",
     "startfrontend": "npm run dev",
-    "dev": "vite",
+    "start": "vite",
+    "test": "npm run test:ava && npm run test:cafe",
+    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 7000 --app \"rollup -c rollup.config.mjs -w\"",
+    "test:ava": "ava --timeout 2m tests/*.mjs",
     "build": "vite build",
-    "serve": "vite preview",
-    "pkg": "npm-pkgbuild --verbose -Dversion=1.0.0"
+    "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
+    "dev": "vite",
+    "pkg": "npm-pkgbuild --verbose -Dversion=1.0.0",
+    "serve": "vite preview"
   },
   "dependencies": {
     "imask": "^6.2.2",
@@ -46,14 +48,17 @@
   },
   "devDependencies": {
     "@konsumation/konsum": "github:konsumation/konsum",
-    "@semantic-release/commit-analyzer": "^9.0.1",
-    "@semantic-release/exec": "^6.0.2",
-    "@semantic-release/release-notes-generator": "^10.0.2",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.34",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.35",
     "ava": "^4.0.1",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^7.17.0",
+    "npm-pkgbuild": "^7.17.1",
+    "postcss": "^8.4.5",
+    "postcss-import": "^14.0.2",
     "semantic-release": "^19.0.2",
+    "svelte": "^3.46.2",
     "testcafe": "^1.18.2",
     "vite": "^2.7.13"
   },
@@ -68,31 +73,17 @@
   "config": {
     "api": "/services/konsum/api",
     "base": "/services/konsum",
+    "proxyTarget": "https://somewhere/",
     "title": "Konsum"
-  },
-  "pkg": {
-    "name": "konsum-frontend-svelte",
-    "content": {
-      "${installdir}/": {
-        "base": "build"
-      },
-      "${nginx.sites.dir}/${name}.conf": "pkg/nginx.conf"
-    },
-    "depends": {
-      "nginx-mainline": ">=1.21.4",
-      "konsum": ">=4.3.8"
-    },
-    "groups": "home automation",
-    "hooks": "pkg/hooks.sh",
-    "installdir": "/services/konsum/frontend",
-    "output": {
-      "deb": {},
-      "rpm": {},
-      "arch": {}
-    }
   },
   "release": {
     "plugins": [
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --pkgver ${nextRelease.version} pkgbuild pacman makepkg"
+        }
+      ],
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       [
@@ -119,5 +110,26 @@
       "arlac77/template-testcafe",
       "konsumation/template"
     ]
+  },
+  "pkg": {
+    "name": "konsum-frontend-svelte",
+    "content": {
+      "${installdir}/": {
+        "base": "build"
+      },
+      "${nginx.sites.dir}/${name}.conf": "pkg/nginx.conf"
+    },
+    "depends": {
+      "nginx-mainline": ">=1.21.4",
+      "konsum": ">=4.3.8"
+    },
+    "groups": "home automation",
+    "hooks": "pkg/hooks.sh",
+    "installdir": "/services/konsum/frontend",
+    "output": {
+      "deb": {},
+      "rpm": {},
+      "arch": {}
+    }
   }
 }
