@@ -106,7 +106,7 @@
     "name": "konsum-frontend-svelte",
     "content": {
       "${installdir}/": {
-        "base": "public"
+        "base": "build"
       },
       "${nginx.sites.dir}/${name}.conf": "pkg/nginx.conf",
       "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
