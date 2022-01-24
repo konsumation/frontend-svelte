@@ -42,7 +42,7 @@ export default defineConfig(async ({ command, mode }) => {
   return {
     root: "src",
     base,
-
+    
     plugins: [
       svelte({
         compilerOptions: {
@@ -58,6 +58,7 @@ export default defineConfig(async ({ command, mode }) => {
 
     build: {
       outDir: "../build",
+      target: "esnext",
       minify: production,
       sourcemap: true
     },
