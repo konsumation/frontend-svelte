@@ -1,5 +1,6 @@
 <script>
   import * as style from "./main.css";
+  import icon from "./assets/images/icon.svg?url";
   import {
     Outlet,
     Route,
@@ -30,7 +31,7 @@
 <Router {base}>
   <TopNav offset={42}>
     <Route href="/" path="*" component={Home}>
-      <img class="logo" src="assets/images/icon.svg" alt="Konsum" />
+      <img class="logo" src="{icon}" alt="Konsum" />
       Konsum
     </Route>
     <ul class="left">
