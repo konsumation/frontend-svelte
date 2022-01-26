@@ -31,7 +31,7 @@
     "build": "vite build",
     "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
     "dev": "vite",
-    "pkg": "npm-pkgbuild --verbose -Dversion=1.0.0",
+    "pkg": "npm-pkgbuild --verbose -Dversion=0.0.0",
     "serve": "vite preview"
   },
   "dependencies": {
