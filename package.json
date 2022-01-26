@@ -1,6 +1,6 @@
 {
   "name": "@konsumation/frontend-svelte",
-  "version": "1.30.66",
+  "version": "0.0.0-semantic-release",
   "publishConfig": {
     "access": "public"
   },
@@ -57,7 +57,7 @@
     "npm-pkgbuild": "^7.22.5",
     "semantic-release": "^19.0.2",
     "svelte": "^3.46.2",
-    "testcafe": "^1.18.2",
+    "testcafe": "^1.18.3",
     "vite": "^2.7.13"
   },
   "repository": {
@@ -75,6 +75,12 @@
   },
   "release": {
     "plugins": [
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --verbose"
+        }
+      ],
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       [
@@ -106,7 +112,7 @@
     "name": "konsum-frontend-svelte",
     "content": {
       "${installdir}/": {
-        "base": "build"
+        "base": "public/"
       },
       "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
     },
@@ -116,7 +122,7 @@
     },
     "groups": "web",
     "hooks": "pkg/hooks.sh",
-    "installdir": "/services/konsum/frontend",
+    "installdir": "/services/frontend-svelte/frontend",
     "output": {
       "arch": {}
     }
