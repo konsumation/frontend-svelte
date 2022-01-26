@@ -10,11 +10,6 @@
       "src": "images/icon.svg",
       "sizes": "150x150",
       "purpose": "any"
-    },
-    {
-      "src": "images/icon.svg",
-      "sizes": "150x150",
-      "purpose": "any"
     }
   ],
   "background_color": "#A21CAF",
