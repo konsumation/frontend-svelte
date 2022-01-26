@@ -108,7 +108,6 @@
       "${installdir}/": {
         "base": "build"
       },
-      "${nginx.sites.dir}/${name}.conf": "pkg/nginx.conf",
       "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
     },
     "depends": {
