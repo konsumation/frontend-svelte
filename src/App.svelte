@@ -30,7 +30,7 @@
 <Router {base}>
   <TopNav offset={42}>
     <Route href="/" path="*" component={Home}>
-      <img class="logo" src="images/icon.svg" alt="Konsum" />
+      <img class="logo" src="images/icon.svg" width="48px" height="48px" alt="Konsum" />
       Konsum
     </Route>
     <ul class="left">
