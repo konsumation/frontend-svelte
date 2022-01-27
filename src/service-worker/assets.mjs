@@ -1,4 +1,4 @@
-import version from "consts:version";
+import { version } from "../constants.mjs";
 
 export const ASSET_GENERATION = version;
 export const ASSETS = [
