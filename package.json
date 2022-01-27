@@ -1,6 +1,6 @@
 {
   "name": "@konsumation/frontend-svelte",
-  "version": "1.30.79",
+  "version": "0.0.0-semantic-release",
   "publishConfig": {
     "access": "public"
   },
@@ -22,13 +22,13 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
+    "prepare": "vite build",
     "startkonsum": "node_modules/konsum/src/konsum-cli.mjs -c tests/config start",
     "startfrontend": "npm run dev",
     "start": "vite",
     "test": "npm run test:ava && npm run test:cafe",
     "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 7000 --app \"vite\"",
     "test:ava": "ava --timeout 2m tests/*.mjs",
-    "prepare": "vite build",
     "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
     "dev": "vite",
     "pkg": "npm-pkgbuild --verbose -Dversion=0.0.0",
@@ -56,7 +56,7 @@
     "konsum": "github:konsumation/konsum",
     "npm-pkgbuild": "^7.22.6",
     "semantic-release": "^19.0.2",
-    "svelte": "^3.46.2",
+    "svelte": "^3.46.3",
     "testcafe": "^1.18.3",
     "vite": "^2.7.13"
   },
@@ -75,6 +75,12 @@
   },
   "release": {
     "plugins": [
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --verbose"
+        }
+      ],
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       [
@@ -106,7 +112,7 @@
     "name": "konsum-frontend-svelte",
     "content": {
       "${installdir}/": {
-        "base": "build"
+        "base": "public/"
       },
       "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
     },
@@ -116,7 +122,7 @@
     },
     "groups": "web",
     "hooks": "pkg/hooks.sh",
-    "installdir": "/services/konsum/frontend",
+    "installdir": "/services/frontend-svelte/frontend",
     "output": {
       "arch": {}
     }
