@@ -39,7 +39,7 @@
     "layercake": "^6.0.2",
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.5",
-    "svelte-command": "^1.1.5",
+    "svelte-command": "^1.1.6",
     "svelte-common": "^4.4.20",
     "svelte-guard-history-router": "^4.5.2",
     "svelte-session-manager": "^2.0.10",
