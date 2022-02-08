@@ -7,4 +7,5 @@ node_modules
 .tmp
 *.node
 .test
+bundle.*
 *.map
