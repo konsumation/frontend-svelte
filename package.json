@@ -50,7 +50,7 @@
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.37",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.36",
     "ava": "^4.0.1",
     "konsum": "github:konsumation/konsum",
     "npm-pkgbuild": "^7.25.7",
@@ -73,23 +73,23 @@
     "title": "Konsum"
   },
   "pkg": {
-    "name": "konsum-frontend-svelte",
     "content": {
       "${installdir}/": {
         "base": "build"
       },
       "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
     },
+    "output": {
+      "arch": {}
+    },
+    "hooks": "pkg/hooks.sh",
+    "groups": "web",
     "depends": {
       "nginx-mainline": ">=1.21.4",
       "konsum": ">=5.0.39"
     },
-    "groups": "web",
-    "hooks": "pkg/hooks.sh",
     "installdir": "/services/konsum/frontend",
-    "output": {
-      "arch": {}
-    }
+    "name": "konsum-frontend-svelte"
   },
   "release": {
     "plugins": [
@@ -97,6 +97,12 @@
         "@semantic-release/exec",
         {
           "publishCmd": "npx npm-pkgbuild --verbose"
+        }
+      ],
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild"
         }
       ],
       "@semantic-release/commit-analyzer",
