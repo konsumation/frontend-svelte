@@ -35,12 +35,12 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "imask": "^6.3.0",
+    "imask": "^6.4.2",
     "layercake": "^6.0.2",
     "mf-styling": "arlac77/mf-styling",
     "streamsaver": "^2.0.5",
     "svelte-command": "^1.1.6",
-    "svelte-common": "^4.4.20",
+    "svelte-common": "^4.4.21",
     "svelte-guard-history-router": "^4.5.2",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.4.7"
@@ -50,14 +50,14 @@
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.36",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.37",
     "ava": "^4.0.1",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^7.25.6",
+    "npm-pkgbuild": "^7.25.7",
     "semantic-release": "^19.0.2",
     "svelte": "^3.46.4",
     "testcafe": "^1.18.3",
-    "vite": "^2.7.13"
+    "vite": "^2.8.0"
   },
   "repository": {
     "type": "git",
