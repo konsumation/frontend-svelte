@@ -1,5 +1,6 @@
 import { ASSET_GENERATION, ASSETS } from "./assets.mjs";
 
+console.log("service worker main");
 const CURRENT_ASSET_CACHE = `assets-${ASSET_GENERATION}`;
 const RUNTIME_CACHE = "runtime";
 

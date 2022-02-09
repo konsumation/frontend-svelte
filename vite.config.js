@@ -48,7 +48,7 @@ export default defineConfig(async ({ command, mode }) => {
   return {
     root: "src",
     base,
-
+    worker: { format: "es" },
     plugins: [
       svelte({
         compilerOptions: {
