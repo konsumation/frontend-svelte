@@ -53,11 +53,11 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.36",
     "ava": "^4.0.1",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^7.25.7",
+    "npm-pkgbuild": "^7.25.8",
     "semantic-release": "^19.0.2",
     "svelte": "^3.46.4",
     "testcafe": "^1.18.3",
-    "vite": "^2.8.1"
+    "vite": "^2.8.2"
   },
   "repository": {
     "type": "git",
@@ -118,10 +118,10 @@
       }
     },
     "inheritFrom": [
-      "arlac77/template-svelte-app#next",
-      "arlac77/template-pacman",
       "arlac77/template-arlac77-github",
       "arlac77/template-ava",
+      "arlac77/template-pacman",
+      "arlac77/template-svelte-app#next",
       "arlac77/template-testcafe",
       "konsumation/template"
     ],
