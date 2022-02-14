@@ -124,6 +124,9 @@
       "arlac77/template-ava",
       "arlac77/template-testcafe",
       "konsumation/template"
+    ],
+    "usedBy": [
+      "arlac77/npm-navigator"
     ]
   }
 }
