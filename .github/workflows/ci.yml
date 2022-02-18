@@ -49,6 +49,7 @@ jobs:
       - run: npx semantic-release
         env:
           CI: 'true'
+          PACMAN_PUBLISH: ${{ secrets.PACMAN_PUBLISH }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   finish:
