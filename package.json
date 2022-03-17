@@ -118,9 +118,6 @@
       "arlac77/template-svelte-app#next",
       "arlac77/template-testcafe",
       "konsumation/template"
-    ],
-    "usedBy": [
-      "arlac77/hook-ci-frontend-svelte"
     ]
   }
 }
