@@ -50,7 +50,7 @@
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.39",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.40",
     "ava": "^4.1.0",
     "konsum": "github:konsumation/konsum",
     "npm-pkgbuild": "^8.0.2",
