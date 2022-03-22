@@ -96,19 +96,13 @@
       [
         "@semantic-release/exec",
         {
-          "publishCmd": "npx npm-pkgbuild --verbose"
+          "publishCmd": "npx npm-pkgbuild"
         }
       ],
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/npm",
-      "@semantic-release/github",
-      [
-        "@semantic-release/exec",
-        {
-          "publishCmd": "npx npm-pkgbuild"
-        }
-      ]
+      "@semantic-release/github"
     ]
   },
   "template": {
