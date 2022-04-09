@@ -77,13 +77,10 @@
   },
   "pkg": {
     "content": {
-      "${installdir}/": {
+      "${installdir}": {
         "base": "build"
       },
-      "/etc/nginx/sites/common/${name}.conf": "pkg/nginx.conf"
-    },
-    "output": {
-      "arch": {}
+      "{{nginx.config_dir}}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
     "groups": "web",
@@ -91,7 +88,7 @@
       "nginx-mainline": ">=1.21.4",
       "konsum": ">=5.0.39"
     },
-    "installdir": "/services/konsum/frontend",
+    "installdir": "/services/konsum/frontend/",
     "name": "konsum-frontend-svelte"
   },
   "release": {
