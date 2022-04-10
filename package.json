@@ -31,7 +31,7 @@
     "test:ava": "ava --timeout 2m tests/*.mjs",
     "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
     "dev": "vite",
-    "pkg": "npm-pkgbuild --verbose -Dversion=0.0.0",
+    "pkg": "npm-pkgbuild --verbose",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -53,7 +53,7 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.41",
     "ava": "^4.1.0",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^8.3.12",
+    "npm-pkgbuild": "^8.3.13",
     "semantic-release": "^19.0.2",
     "svelte": "^3.46.6",
     "testcafe": "^1.18.5",
@@ -77,7 +77,7 @@
   },
   "pkg": {
     "content": {
-      "${installdir}": {
+      "${install.dir}": {
         "base": "build"
       },
       "{{nginx.config_dir}}${name}.conf": "pkg/nginx.conf"
@@ -88,7 +88,7 @@
       "nginx-mainline": ">=1.21.4",
       "konsum": ">=5.0.39"
     },
-    "installdir": "/services/konsum/frontend/",
+    "install.dir": "/services/konsum/frontend/",
     "name": "konsum-frontend-svelte"
   },
   "release": {
