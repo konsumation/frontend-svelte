@@ -80,7 +80,7 @@
       "${install.dir}": {
         "base": "build"
       },
-      "{{nginx.config_dir}}${name}.conf": "pkg/nginx.conf"
+      "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
     "groups": "web",
