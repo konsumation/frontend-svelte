@@ -88,7 +88,7 @@
       "nginx-mainline": ">=1.21.4",
       "konsum": ">=5.0.39"
     },
-    "install.dir": "/services/konsum/frontend/",
+    "install.dir": "${install.base.dir}konsum/frontend/",
     "name": "konsum-frontend-svelte"
   },
   "release": {
