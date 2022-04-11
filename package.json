@@ -53,7 +53,7 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.41",
     "ava": "^4.2.0",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^8.3.15",
+    "npm-pkgbuild": "^8.3.16",
     "semantic-release": "^19.0.2",
     "svelte": "^3.47.0",
     "testcafe": "^1.18.5",
