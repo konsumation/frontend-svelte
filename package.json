@@ -36,7 +36,7 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^6.1.0",
-    "mf-styling": "arlac77/mf-styling",
+    "mf-styling": "^1.0.6",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.9",
     "svelte-common": "^4.4.32",
@@ -70,8 +70,6 @@
   },
   "homepage": "https://github.com/konsumation/konsum-frontend-svelte#readme",
   "config": {
-    "api": "/services/konsum/api",
-    "base": "/services/konsum",
     "title": "Konsum"
   },
   "pkg": {
@@ -87,6 +85,8 @@
       "nginx-mainline": ">=1.21.4",
       "konsum": ">=5.0.39"
     },
+    "http.base.path": "/services/konsum",
+    "http.api.path": "/services/konsum/api",
     "install.dir": "${install.base.dir}konsum/frontend/",
     "name": "konsum-frontend-svelte"
   },

@@ -37,8 +37,8 @@ export default defineConfig(async ({ command, mode }) => {
     target = `http://localhost:${http.port}/`;
   }
 
-  const base = "/services/konsum/";
-  const api = `${base}api`;
+  const base = pkg.pkg['http.base.path'];
+  const api = pkg.pkg['http.api.path'];
 
   process.env["VITE_API"] = api;
   process.env["VITE_NAME"] = pkg.name;
