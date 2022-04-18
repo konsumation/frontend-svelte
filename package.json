@@ -55,7 +55,7 @@
     "npm-pkgbuild": "^8.3.18",
     "semantic-release": "^19.0.2",
     "svelte": "^3.47.0",
-    "testcafe": "^1.18.5",
+    "testcafe": "^1.18.6",
     "vite": "^2.9.5"
   },
   "optionalDependencies": {
@@ -70,6 +70,7 @@
   },
   "homepage": "https://github.com/konsumation/konsum-frontend-svelte#readme",
   "config": {
+    "base": "/services/frontend-svelte",
     "title": "Konsum"
   },
   "pkg": {
@@ -85,8 +86,8 @@
       "nginx-mainline": ">=1.21.4",
       "konsum": ">=5.0.39"
     },
-    "http.base.path": "/services/konsum",
     "http.api.path": "/services/konsum/api",
+    "http.base.path": "/services/konsum",
     "install.dir": "${install.base.dir}konsum/frontend/",
     "name": "konsum-frontend-svelte"
   },
