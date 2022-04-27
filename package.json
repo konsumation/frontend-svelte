@@ -29,6 +29,8 @@
     "test": "npm run test:ava && npm run test:cafe",
     "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 7000 --app \"vite\"",
     "test:ava": "ava --timeout 2m tests/*.mjs",
+    "lint": "npm run lint:css",
+    "lint:css": "stylelint ./src/*.css",
     "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
     "dev": "vite",
     "serve": "vite preview"
@@ -52,8 +54,10 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.41",
     "ava": "^4.2.0",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^9.0.2",
+    "npm-pkgbuild": "^9.0.4",
     "semantic-release": "^19.0.2",
+    "stylelint": "^14.8.0",
+    "stylelint-config-standard": "^25.0.0",
     "svelte": "^3.47.0",
     "testcafe": "^1.18.6",
     "vite": "^2.9.6"
