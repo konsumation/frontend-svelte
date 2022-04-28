@@ -77,7 +77,7 @@
     "base": "/services/frontend-svelte",
     "title": "Konsum"
   },
-  "pkg": {
+  "pkgbuild": {
     "content": {
       "${install.dir}": {
         "base": "build"
@@ -97,15 +97,15 @@
   },
   "release": {
     "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
       [
         "@semantic-release/exec",
         {
           "publishCmd": "npx npm-pkgbuild"
         }
       ],
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
       "@semantic-release/github"
     ]
   },
