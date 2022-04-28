@@ -54,7 +54,7 @@
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.42",
     "ava": "^4.2.0",
     "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^9.0.4",
+    "npm-pkgbuild": "^10.0.0",
     "semantic-release": "^19.0.2",
     "stylelint": "^14.8.0",
     "stylelint-config-standard": "^25.0.0",
@@ -77,23 +77,19 @@
     "base": "/services/frontend-svelte",
     "title": "Konsum"
   },
-  "pkg": {
+  "pkgbuild": {
+    "groups": "web",
     "content": {
       "${install.dir}": {
-        "base": "build"
+        "base": "public/"
       },
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
+    "install.dir": "/services/frontend-svelte/frontend/",
     "hooks": "pkg/hooks.sh",
-    "groups": "web",
     "depends": {
-      "nginx-mainline": ">=1.21.4",
-      "konsum": ">=5.0.39"
-    },
-    "http.api.path": "/services/konsum/api",
-    "http.base.path": "/services/konsum",
-    "install.dir": "${install.base.dir}konsum/frontend/",
-    "name": "konsum-frontend-svelte"
+      "nginx-mainline": ">=1.21.4"
+    }
   },
   "release": {
     "plugins": [
@@ -123,5 +119,23 @@
       "arlac77/template-testcafe",
       "konsumation/template"
     ]
+  },
+  "pkg": {
+    "content": {
+      "${install.dir}": {
+        "base": "build"
+      },
+      "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
+    },
+    "hooks": "pkg/hooks.sh",
+    "groups": "web",
+    "depends": {
+      "nginx-mainline": ">=1.21.4",
+      "konsum": ">=5.0.39"
+    },
+    "http.api.path": "/services/konsum/api",
+    "http.base.path": "/services/konsum",
+    "install.dir": "${install.base.dir}konsum/frontend/",
+    "name": "konsum-frontend-svelte"
   }
 }
