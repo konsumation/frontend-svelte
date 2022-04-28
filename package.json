@@ -78,18 +78,18 @@
     "title": "Konsum"
   },
   "pkgbuild": {
-    "groups": "web",
     "content": {
       "${install.dir}": {
         "base": "public/"
       },
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
-    "install.dir": "/services/frontend-svelte/frontend/",
     "hooks": "pkg/hooks.sh",
+    "groups": "web",
     "depends": {
       "nginx-mainline": ">=1.21.4"
-    }
+    },
+    "install.dir": "/services/frontend-svelte/frontend/"
   },
   "release": {
     "plugins": [
