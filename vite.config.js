@@ -37,7 +37,7 @@ export default defineConfig(async ({ command, mode }) => {
     target = `http://localhost:${http.port}/`;
   }
 
-  const base = pkg.pkgbuild['http.base.path'];
+  const base = pkg.pkgbuild['http.base.path'] + '/';
   const api = pkg.pkgbuild['http.api.path'];
 
   process.env["VITE_API"] = api;
