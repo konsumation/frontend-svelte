@@ -38,7 +38,7 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^6.1.0",
-    "mf-styling": "^1.0.6",
+    "mf-styling": "^1.0.14",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.9",
     "svelte-common": "^4.4.32",
@@ -63,7 +63,7 @@
     "vite": "^2.9.9"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.1.1"
+    "mf-hosting": "^1.1.2"
   },
   "repository": {
     "type": "git",
