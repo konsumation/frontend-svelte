@@ -63,7 +63,7 @@
     "vite": "^2.9.9"
   },
   "optionalDependencies": {
-    "mf-hosting": "github:arlac77/mf-hosting"
+    "mf-hosting": "^1.1.1"
   },
   "repository": {
     "type": "git",
