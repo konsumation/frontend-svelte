@@ -38,7 +38,7 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^6.1.0",
-    "mf-styling": "^1.0.14",
+    "mf-styling": "^1.2.4",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.9",
     "svelte-common": "^4.4.32",
@@ -47,14 +47,13 @@
     "the-new-css-reset": "^1.5.1"
   },
   "devDependencies": {
-    "@konsumation/konsum": "^5.0.114",
+    "@konsumation/konsum": "^5.0.117",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.44",
     "ava": "^4.2.0",
-    "konsum": "github:konsumation/konsum",
-    "npm-pkgbuild": "^10.6.2",
+    "npm-pkgbuild": "^10.7.1",
     "semantic-release": "^19.0.2",
     "stylelint": "^14.8.2",
     "stylelint-config-standard": "^25.0.0",
@@ -63,7 +62,7 @@
     "vite": "^2.9.9"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.1.2"
+    "mf-hosting": "^1.2.1"
   },
   "repository": {
     "type": "git",
