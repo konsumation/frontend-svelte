@@ -38,11 +38,11 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^6.1.0",
-    "mf-styling": "^1.2.7",
+    "mf-styling": "^1.2.11",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.9",
     "svelte-common": "^4.4.32",
-    "svelte-guard-history-router": "^4.6.7",
+    "svelte-guard-history-router": "^4.6.8",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.5.1"
   },
