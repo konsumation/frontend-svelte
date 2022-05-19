@@ -1,0 +1,68 @@
+jobs:
+  release:
+    steps:
+      - name: Dependencies
+        run: >
+          sudo apt-get update
+
+          sudo apt-get install ksh curl
+
+          wget
+          https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
+
+          sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.2.0
+        with:
+          node-version: 16.15.0
+          cache: npm
+      - run: npm install
+      - run: npx semantic-release
+        env:
+          CI: 'true'
+          PKGBUILD_PUBLISH: ${{ secrets.PKGBUILD_PUBLISH }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    needs:
+      - test
+    runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - -14
+          - -16
+          - -18
+          - 16.15.0
+          - 18.2.0
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build / Test Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v3.2.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm run cover --if-present
+      - name: Coveralls Parallel
+        uses: coverallsapp/github-action@master
+        continue-on-error: true
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          flag-name: run-${{ matrix.test_number }}
+          path-to-lcov: build/coverage/lcov.info
+          parallel: true
+  finish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Coveralls Finished
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: build/coverage/lcov.info
+          parallel-finished: true
+name: CI
+'on': push
