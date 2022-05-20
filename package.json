@@ -89,8 +89,8 @@
       "nginx-mainline": ">=1.21.4",
       "konsum": ">=5.0.39"
     },
-    "http.api.path": "/services/konsum/api",
-    "http.base.path": "/services/konsum",
+    "http.api.path": "{{http.path}}/api",
+    "http.path": "/services/konsum",
     "install.dir": "${install.base.dir}konsum/frontend/",
     "name": "konsum-frontend-svelte"
   },
