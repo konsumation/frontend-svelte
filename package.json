@@ -86,7 +86,6 @@
     "hooks": "pkg/hooks.sh",
     "groups": "web",
     "depends": {
-      "nginx-mainline": ">=1.21.4",
       "konsum": ">=5.0.39"
     },
     "http.api.path": "{{http.path}}/api",
