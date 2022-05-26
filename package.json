@@ -33,6 +33,7 @@
     "lint:css": "stylelint ./src/*.css",
     "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
     "dev": "vite",
+    "preview": "vite preview",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -58,7 +59,7 @@
     "stylelint": "^14.8.5",
     "stylelint-config-standard": "^25.0.0",
     "svelte": "^3.48.0",
-    "testcafe": "^1.18.6",
+    "testcafe": "^1.19.0",
     "vite": "^2.9.9"
   },
   "optionalDependencies": {
