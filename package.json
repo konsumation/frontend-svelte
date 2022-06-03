@@ -37,11 +37,11 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^6.1.0",
-    "mf-styling": "^1.2.20",
+    "mf-styling": "^1.2.21",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^1.1.10",
-    "svelte-common": "^4.4.36",
-    "svelte-guard-history-router": "^4.6.11",
+    "svelte-command": "^1.1.11",
+    "svelte-common": "^4.4.37",
+    "svelte-guard-history-router": "^4.6.12",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.5.1"
   },
