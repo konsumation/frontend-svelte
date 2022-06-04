@@ -39,8 +39,8 @@
     "layercake": "^6.1.0",
     "mf-styling": "^1.2.21",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^1.1.11",
-    "svelte-common": "^4.4.37",
+    "svelte-command": "^1.1.12",
+    "svelte-common": "^4.4.38",
     "svelte-guard-history-router": "^4.6.12",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.5.1"
@@ -61,7 +61,7 @@
     "vite": "^2.9.9"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.6.0"
+    "mf-hosting": "^1.6.3"
   },
   "repository": {
     "type": "git",
