@@ -54,7 +54,7 @@
     "ava": "^4.3.0",
     "npm-pkgbuild": "^10.7.10",
     "semantic-release": "^19.0.3",
-    "stylelint": "^14.9.0",
+    "stylelint": "^14.9.1",
     "stylelint-config-standard": "^26.0.0",
     "svelte": "^3.48.0",
     "testcafe": "^1.19.0",
