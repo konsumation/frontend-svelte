@@ -39,10 +39,10 @@
     "mf-styling": "^1.2.22",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.12",
-    "svelte-common": "^4.6.0",
+    "svelte-common": "^4.5.1",
     "svelte-guard-history-router": "^4.6.14",
     "svelte-session-manager": "^2.0.10",
-    "the-new-css-reset": "^1.5.1"
+    "the-new-css-reset": "^1.6.1"
   },
   "devDependencies": {
     "@konsumation/konsum": "^5.0.117",
