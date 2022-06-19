@@ -39,10 +39,10 @@
     "mf-styling": "^1.2.22",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.12",
-    "svelte-common": "^4.6.0",
+    "svelte-common": "^4.5.1",
     "svelte-guard-history-router": "^4.6.14",
     "svelte-session-manager": "^2.0.10",
-    "the-new-css-reset": "^1.5.1"
+    "the-new-css-reset": "^1.6.1"
   },
   "devDependencies": {
     "@konsumation/konsum": "^5.0.117",
@@ -51,7 +51,7 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.49",
     "ava": "^4.3.0",
-    "npm-pkgbuild": "^10.9.1",
+    "npm-pkgbuild": "^10.9.2",
     "semantic-release": "^19.0.3",
     "stylelint": "^14.9.1",
     "stylelint-config-standard": "^26.0.0",
