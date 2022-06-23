@@ -38,8 +38,8 @@
     "layercake": "^6.1.0",
     "mf-styling": "^1.2.22",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^1.1.13",
-    "svelte-common": "^4.5.1",
+    "svelte-command": "^1.1.16",
+    "svelte-common": "^4.6.1",
     "svelte-guard-history-router": "^4.6.15",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.6.1"
