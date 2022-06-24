@@ -42,7 +42,7 @@
     "svelte-common": "^4.6.1",
     "svelte-guard-history-router": "^4.6.15",
     "svelte-session-manager": "^2.0.10",
-    "the-new-css-reset": "^1.6.1"
+    "the-new-css-reset": "^1.7.2"
   },
   "devDependencies": {
     "@konsumation/konsum": "^5.0.117",
