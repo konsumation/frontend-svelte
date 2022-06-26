@@ -38,9 +38,9 @@
     "layercake": "^6.1.1",
     "mf-styling": "^1.2.24",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^1.1.16",
-    "svelte-common": "^4.6.1",
-    "svelte-guard-history-router": "^4.6.16",
+    "svelte-command": "^1.1.17",
+    "svelte-common": "^4.6.3",
+    "svelte-guard-history-router": "^4.6.17",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.7.2"
   },
