@@ -35,17 +35,17 @@
   },
   "dependencies": {
     "imask": "^6.4.2",
-    "layercake": "^6.1.0",
-    "mf-styling": "^1.2.23",
+    "layercake": "^6.1.1",
+    "mf-styling": "^1.2.24",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.16",
     "svelte-common": "^4.6.1",
-    "svelte-guard-history-router": "^4.6.15",
+    "svelte-guard-history-router": "^4.6.16",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.7.2"
   },
   "devDependencies": {
-    "@konsumation/konsum": "^5.0.117",
+    "@konsumation/konsum": "^5.0.128",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
