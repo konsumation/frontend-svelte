@@ -1,5 +1,4 @@
 <script>
-  import * as style from "./main.css";
   import {
     Outlet,
     Route,
