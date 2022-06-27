@@ -1,4 +1,3 @@
-import { readFile } from "fs/promises";
 import { mkdirSync, readFileSync } from "fs";
 import { execFile } from "child_process";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
@@ -7,12 +6,17 @@ import { defineConfig } from "vite";
 const encodingOptions = { encoding: "utf8" };
 
 export default defineConfig(async ({ command, mode }) => {
-  const pkg = JSON.parse(
-    await readFile(
-      new URL("package.json", import.meta.url).pathname,
-      encodingOptions
-    )
+  const { extractFromPackage } = await import(
+    new URL("node_modules/npm-pkgbuild/src/module.mjs", import.meta.url)
   );
+  const res = extractFromPackage({
+    dir: new URL("./", import.meta.url).pathname
+  });
+  const first = await res.next();
+  const pkg = first.value;
+  const properties = pkg.properties;
+  const base = properties["http.path"] + "/";
+  const api = properties['http.api.path'];
 
   const production = mode === "production";
   let target = "http://localhost:12345";
@@ -36,9 +40,6 @@ export default defineConfig(async ({ command, mode }) => {
 
     target = `http://localhost:${http.port}/`;
   }
-
-  const base = pkg.pkgbuild['http.base.path'] + '/';
-  const api = pkg.pkgbuild['http.api.path'];
 
   process.env["VITE_API"] = api;
   process.env["VITE_NAME"] = pkg.name;
