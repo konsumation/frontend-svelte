@@ -42,9 +42,9 @@ export default defineConfig(async ({ command, mode }) => {
   }
 
   process.env["VITE_API"] = api;
-  process.env["VITE_NAME"] = pkg.name;
-  process.env["VITE_DESCRIPTION"] = pkg.description;
-  process.env["VITE_VERSION"] = pkg.version;
+  process.env["VITE_NAME"] = properties.name;
+  process.env["VITE_DESCRIPTION"] = properties.description;
+  process.env["VITE_VERSION"] = properties.version;
 
   return {
     root: "src",
