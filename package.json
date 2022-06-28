@@ -45,7 +45,7 @@
     "the-new-css-reset": "^1.7.2"
   },
   "devDependencies": {
-    "@konsumation/konsum": "^5.0.128",
+    "@konsumation/konsum": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
