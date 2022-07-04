@@ -40,7 +40,7 @@
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.18",
     "svelte-common": "^4.6.3",
-    "svelte-guard-history-router": "^4.6.20",
+    "svelte-guard-history-router": "^4.6.23",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.7.2"
   },
