@@ -39,9 +39,9 @@
     "mf-hosting": "^1.7.1",
     "mf-styling": "^1.2.33",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^1.1.21",
-    "svelte-common": "^4.6.7",
-    "svelte-guard-history-router": "^5.1.9",
+    "svelte-command": "^1.1.22",
+    "svelte-common": "^4.6.10",
+    "svelte-guard-history-router": "^5.1.10",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.7.2"
   },
