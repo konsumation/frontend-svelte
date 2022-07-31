@@ -3,14 +3,20 @@ import { execFile } from "child_process";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
 
+import {fileURLToPath} from "url"
+
+function pn(path) {
+  return fileURLToPath(new URL(path, import.meta.url));
+}
+
 const encodingOptions = { encoding: "utf8" };
 
 export default defineConfig(async ({ command, mode }) => {
   const { extractFromPackage } = await import(
-    new URL("node_modules/npm-pkgbuild/src/module.mjs", import.meta.url)
+    pn("node_modules/npm-pkgbuild/src/module.mjs")
   );
   const res = extractFromPackage({
-    dir: new URL("./", import.meta.url).pathname
+    dir: pn("./")
   });
   const first = await res.next();
   const pkg = first.value;
