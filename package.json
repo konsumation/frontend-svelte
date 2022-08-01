@@ -1,6 +1,6 @@
 {
   "name": "@konsumation/frontend-svelte",
-  "version": "0.0.0-semantic-release",
+  "version": "1.32.0",
   "publishConfig": {
     "access": "public"
   },
@@ -82,7 +82,6 @@
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
-    "groups": "examples",
     "depends": {
       "konsum": ">=6.1.0"
     },
