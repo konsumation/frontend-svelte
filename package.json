@@ -36,7 +36,6 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
-    "mf-hosting": "^1.7.1",
     "mf-styling": "^1.2.44",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.22",
@@ -48,7 +47,7 @@
     "the-new-css-reset": "^1.7.2"
   },
   "devDependencies": {
-    "@konsumation/konsum": "^6.0.1",
+    "@konsumation/konsum": "^6.1.0",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
@@ -85,7 +84,7 @@
     "hooks": "pkg/hooks.sh",
     "groups": "examples",
     "depends": {
-      "konsum": ">=5.0.39"
+      "konsum": ">=6.1.0"
     },
     "http.api.path": "${http.path}/api",
     "http.path": "${http.base.path}/konsum",
