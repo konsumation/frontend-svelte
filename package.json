@@ -1,6 +1,6 @@
 {
   "name": "@konsumation/frontend-svelte",
-  "version": "1.32.0",
+  "version": "0.0.0-semantic-release",
   "publishConfig": {
     "access": "public"
   },
@@ -59,7 +59,7 @@
     "stylelint": "^14.9.1",
     "stylelint-config-standard": "^26.0.0",
     "svelte": "^3.49.0",
-    "testcafe": "^1.20.0",
+    "testcafe": "^1.20.1",
     "vite": "^3.0.4"
   },
   "optionalDependencies": {
