@@ -1,6 +1,6 @@
 {
   "name": "@konsumation/frontend-svelte",
-  "version": "1.32.0",
+  "version": "0.0.0-semantic-release",
   "publishConfig": {
     "access": "public"
   },
