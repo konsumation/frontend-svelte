@@ -36,13 +36,13 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
-    "mf-hosting": "^1.7.1",
+    "mf-hosting": "^1.7.2",
     "mf-styling": "^1.2.44",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.22",
     "svelte-common": "^4.6.13",
     "svelte-entitlement": "^1.2.30",
-    "svelte-guard-history-router": "^5.1.12",
+    "svelte-guard-history-router": "^5.1.13",
     "svelte-log-view": "^4.2.14",
     "svelte-session-manager": "^2.0.10",
     "the-new-css-reset": "^1.7.2"
@@ -63,7 +63,7 @@
     "vite": "^3.0.5"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.7.1"
+    "mf-hosting": "^1.7.2"
   },
   "repository": {
     "type": "git",
