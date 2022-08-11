@@ -2,6 +2,7 @@ import { mkdirSync, readFileSync } from "fs";
 import { execFile } from "child_process";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
+import { extractFromPackage } from "npm-pkgbuild";
 
 import {fileURLToPath} from "url"
 
@@ -12,9 +13,6 @@ function pn(path) {
 const encodingOptions = { encoding: "utf8" };
 
 export default defineConfig(async ({ command, mode }) => {
-  const { extractFromPackage } = await import(
-    pn("node_modules/npm-pkgbuild/src/module.mjs")
-  );
   const res = extractFromPackage({
     dir: pn("./")
   });
@@ -23,8 +21,8 @@ export default defineConfig(async ({ command, mode }) => {
   const properties = pkg.properties;
   const base = properties["http.path"] + "/";
   const api = properties['http.api.path'];
-
   const production = mode === "production";
+  
   let target = "http://localhost:12345";
 
   if (!production) {
