@@ -54,13 +54,13 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.1",
     "ava": "^4.3.1",
-    "npm-pkgbuild": "^10.14.6",
+    "npm-pkgbuild": "^10.14.7",
     "semantic-release": "^19.0.3",
     "stylelint": "^14.10.0",
     "stylelint-config-standard": "^27.0.0",
     "svelte": "^3.49.0",
     "testcafe": "^1.20.1",
-    "vite": "^3.0.5"
+    "vite": "^3.0.6"
   },
   "optionalDependencies": {
     "mf-hosting": "^1.7.2"
