@@ -37,7 +37,7 @@
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
     "mf-hosting": "^1.7.2",
-    "mf-styling": "^1.2.44",
+    "mf-styling": "^1.2.45",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.22",
     "svelte-common": "^4.6.13",
@@ -60,7 +60,7 @@
     "stylelint-config-standard": "^27.0.0",
     "svelte": "^3.49.0",
     "testcafe": "^1.20.1",
-    "vite": "^3.0.6"
+    "vite": "^3.0.7"
   },
   "optionalDependencies": {
     "mf-hosting": "^1.7.2"
