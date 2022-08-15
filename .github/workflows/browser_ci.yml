@@ -2,7 +2,7 @@ name: CI
 'on': push
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         os:
@@ -11,7 +11,6 @@ jobs:
           - chrome
           - firefox
         node-version: 18.7.0
-        node: 18.7.0
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.4.1
