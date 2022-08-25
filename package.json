@@ -52,7 +52,7 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.2",
-    "ava": "^4.3.1",
+    "ava": "^4.3.3",
     "npm-pkgbuild": "^10.14.8",
     "semantic-release": "^19.0.5",
     "stylelint": "^14.11.0",
