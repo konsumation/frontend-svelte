@@ -1,23 +1,26 @@
 <script>
+  import { writable } from "svelte/store";
+  import { sortable, sorter } from "svelte-common";
   import { ObjectLink, Link } from "svelte-guard-history-router";
 
   export let router;
 
   const route = router.route;
-  const categories = $route.value;
+
+  const sortBy = writable({});
 </script>
 
 <Link href="/category/add">Add New Category</Link>
 <table class="bordered striped hoverable">
   <thead>
     <tr>
-      <th aria-sort="none">Name</th>
-      <th aria-sort="none">Description</th>
-      <th aria-sort="none">Unit</th>
+      <th id="name" use:sortable={sortBy}>Name</th>
+      <th id="description" use:sortable={sortBy}>Description</th>
+      <th id="unit" use:sortable={sortBy}>Unit</th>
     </tr>
   </thead>
   <tbody>
-    {#each categories as category (category.name)}
+    {#each route.value.sort(sorter($sortBy)) as category (category.name)}
       <tr>
         <td>
           <ObjectLink object={category} />

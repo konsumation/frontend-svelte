@@ -1,5 +1,6 @@
 <script>
-  import { DateTime } from "svelte-common";
+  import { writable } from "svelte/store";
+  import { DateTime, sortable, sorter, filter } from "svelte-common";
   import { CommandButton, ConfirmCommand } from "svelte-command";
 
   export let router;
@@ -26,6 +27,9 @@
   }, 1000);
 
   //TODO refresh Site after delete value action
+
+  const sortBy = writable({});
+  const filterBy = router.searchParamStore;
 </script>
 
 <h1>{category.name}</h1>
@@ -33,12 +37,14 @@
 {#if entries}
   <table class="bordered striped hoverable">
     <thead>
-      <th>Date</th>
-      <th>Value</th>
+      <th id="date" use:sortable={sortBy}>Date</th>
+      <th id="value" use:sortable={sortBy}>Value</th>
       <th>Action</th>
     </thead>
     <tbody>
-      {#each entries as entry, i}
+      {#each route.value
+        .filter(filter($filterBy))
+        .sort(sorter($sortBy)) as entry, i}
         <tr id={i === 0 ? "first" : i === entries.length - 1 ? "last" : ""}>
           <td>
             <DateTime date={time2Date(entry.time)} />
