@@ -36,10 +36,11 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
+    "mf-hosting": "^1.7.3",
     "mf-styling": "^1.7.5",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.24",
-    "svelte-common": "^4.17.4",
+    "svelte-common": "^4.17.6",
     "svelte-entitlement": "^1.2.30",
     "svelte-guard-history-router": "^5.4.1",
     "svelte-log-view": "^4.2.14",
@@ -51,7 +52,7 @@
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@sveltejs/vite-plugin-svelte": "^1.0.2",
+    "@sveltejs/vite-plugin-svelte": "^1.0.3",
     "ava": "^4.3.3",
     "npm-pkgbuild": "^10.14.8",
     "semantic-release": "^19.0.5",
@@ -82,6 +83,7 @@
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
+    "groups": "examples",
     "depends": {
       "konsum": ">=6.1.0"
     },
