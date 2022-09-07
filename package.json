@@ -84,7 +84,7 @@
     },
     "hooks": "pkg/hooks.sh",
     "depends": {
-      "konsum": ">=6.1.0"
+      "konsum": ">=6.1.4"
     },
     "http.api.path": "${http.path}/api",
     "http.path": "${http.base.path}/konsum",
