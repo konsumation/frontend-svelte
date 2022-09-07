@@ -3,7 +3,6 @@ import { execFile } from "child_process";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
 import { extractFromPackage } from "npm-pkgbuild";
-
 import {fileURLToPath} from "url"
 
 function pn(path) {
@@ -50,6 +49,8 @@ export default defineConfig(async ({ command, mode }) => {
   process.env["VITE_DESCRIPTION"] = properties.description;
   process.env["VITE_VERSION"] = properties.version;
 
+  const open = process.env.CI ? {} : { open: target };
+
   return {
     root: "src",
     base,
@@ -76,6 +77,8 @@ export default defineConfig(async ({ command, mode }) => {
     },
 
     server: {
+      host: true,
+      ...open,
       proxy: {
         [api]: {
           target,
