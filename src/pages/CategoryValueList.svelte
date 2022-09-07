@@ -1,6 +1,5 @@
 <script>
-  import { writable } from "svelte/store";
-  import { DateTime, sortable, sorter, filter } from "svelte-common";
+  import { DateTime, sortable, sorter, filter, keyPrefixStore } from "svelte-common";
   import { CommandButton, ConfirmCommand } from "svelte-command";
 
   export let router;
@@ -28,8 +27,8 @@
 
   //TODO refresh Site after delete value action
 
-  const sortBy = writable({});
-  const filterBy = router.searchParamStore;
+  const sortBy = keyPrefixStore(router.searchParamStore, "sort.");
+  const filterBy = keyPrefixStore(router.searchParamStore, "filter.");
 </script>
 
 <h1>{category.name}</h1>
