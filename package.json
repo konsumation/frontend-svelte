@@ -73,9 +73,6 @@
     "url": "https://github.com/konsumation/konsum-frontend-svelte/issues"
   },
   "homepage": "https://github.com/konsumation/konsum-frontend-svelte#readme",
-  "config": {
-    "title": "Konsum"
-  },
   "pkgbuild": {
     "content": {
       "${install.dir}": "build/",
@@ -89,7 +86,8 @@
     "http.path": "${http.base.path}/konsum",
     "install.dir": "${install.base.dir}konsum/frontend/",
     "install.sub.dir": "/frontend/",
-    "name": "konsum-frontend-svelte"
+    "name": "konsum-frontend-svelte",
+    "title": "Konsum"
   },
   "release": {
     "plugins": [
