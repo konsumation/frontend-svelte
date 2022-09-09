@@ -1,8 +1,7 @@
 {
-  "name": "{{title}}",
-  "short_name": "{{title}}",
-  "description": "{{description}}",
-  "start_url": "index.html",
+  "name": "Konsum",
+  "short_name": "Konsum",
+  "description": "Keep track of your resource consumantion",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [
