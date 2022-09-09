@@ -3,7 +3,7 @@ import { execFile } from "child_process";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
 import { extractFromPackage } from "npm-pkgbuild";
-import {fileURLToPath} from "url"
+import { fileURLToPath } from "url";
 
 function pn(path) {
   return fileURLToPath(new URL(path, import.meta.url));
@@ -19,9 +19,9 @@ export default defineConfig(async ({ command, mode }) => {
   const pkg = first.value;
   const properties = pkg.properties;
   const base = properties["http.path"] + "/";
-  const api = properties['http.api.path'];
+  const api = properties["http.api.path"];
   const production = mode === "production";
-  
+
   let target = "http://localhost:12345";
 
   if (!production) {
