@@ -59,17 +59,16 @@ export class Note {
 }
 
 export class Category {
+
+  latestSubscriptions = new Set();
+  valuesSubscriptions = new Set();
+
   constructor(json = {}) {
     this.name = json.name;
     this.unit = json.unit;
     this.description = json.description;
     this.fractionalDigits = json.fractionalDigits || 2;
     this.order = json.order || 1.0;
-
-    Object.defineProperties(this, {
-      _latestSubscriptions: { value: new Set() },
-      _valuesSubscriptions: { value: new Set() }
-    });
   }
 
   get url() {
@@ -143,16 +142,16 @@ export class Category {
     }
 
     const entry = (await response.json())[0];
-    this._latestSubscriptions.forEach(subscription => subscription(entry));
+    this.latestSubscriptions.forEach(subscription => subscription(entry));
   }
 
   get latest() {
     return {
       subscribe: subscription => {
-        this._latestSubscriptions.add(subscription);
+        this.latestSubscriptions.add(subscription);
         subscription(undefined);
         this._latest();
-        return () => this._latestSubscriptions.delete(subscription);
+        return () => this.latestSubscriptions.delete(subscription);
       }
     };
   }
@@ -167,16 +166,16 @@ export class Category {
     }
 
     const values = await response.json();
-    this._valuesSubscriptions.forEach(subscription => subscription(values));
+    this.valuesSubscriptions.forEach(subscription => subscription(values));
   }
 
   get values() {
     return {
       subscribe: subscription => {
-        this._valuesSubscriptions.add(subscription);
+        this.valuesSubscriptions.add(subscription);
         subscription([]);
         this._values();
-        return () => this._valuesSubscriptions.delete(subscription);
+        return () => this.valuesSubscriptions.delete(subscription);
       }
     };
   }
