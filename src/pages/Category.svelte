@@ -33,8 +33,10 @@
   <h1>Category {category.name}</h1>
   <form>
     <CategoryCard {category} bind:valid />
-    <CommandButton {command} />
-    <CommandButton command={new ConfirmCommand(deleteCommand)} />
+    <div class="button-group">
+      <CommandButton {command} />
+      <CommandButton command={new ConfirmCommand(deleteCommand)} />  
+    </div>
   </form>
 
   <ul>
