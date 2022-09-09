@@ -28,7 +28,8 @@
     placeholder="Name"
     size="20"
     required
-    bind:value={category.name} />
+    bind:value={category.name}
+  />
 </label>
 
 <label for="description">
@@ -39,7 +40,8 @@
     placeholder="Description"
     size="20"
     required
-    bind:value={category.description} />
+    bind:value={category.description}
+  />
 </label>
 <label for="unit">
   Unit
@@ -49,7 +51,8 @@
     placeholder="Unit"
     size="20"
     required
-    bind:value={category.unit} />
+    bind:value={category.unit}
+  />
 </label>
 
 <label for="fractionalDigits">
@@ -61,5 +64,6 @@
     size="20"
     required
     use:imask={{ mask: Number, scale: 0, signed: false, min: 0, max: 5 }}
-    bind:value={category.fractionalDigits} />
+    bind:value={category.fractionalDigits}
+  />
 </label>

@@ -2,7 +2,7 @@
   import streamSaver from "streamsaver";
   import { CommandButton, FetchCommand } from "svelte-command";
   import { session, headers } from "../util.mjs";
-  import { api } from "../constants.mjs";
+  import { api } from "../constants.mjs";
   let dump;
 
   function backupCommand() {
@@ -29,9 +29,14 @@
 </script>
 
 <div>
-  <CommandButton command={backupCommand}/>
+  <CommandButton command={backupCommand} />
   <CommandButton
-    command={new FetchCommand(api + '/admin/restore', { method: 'POST', headers: headers(session) }, { title: 'Restore' })} />
+    command={new FetchCommand(
+      api + "/admin/restore",
+      { method: "POST", headers: headers(session) },
+      { title: "Restore" }
+    )}
+  />
 
   {#if dump !== undefined}<textarea bind:value={dump} />{/if}
 </div>

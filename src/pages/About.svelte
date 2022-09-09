@@ -1,6 +1,6 @@
 <script>
-    import { server } from "../server.mjs";
-    import {
+  import { server } from "../server.mjs";
+  import {
     About,
     ApplicationDetails,
     SessionDetails,
@@ -14,7 +14,7 @@
   import { serviceWorker, serviceWorkerRegistration } from "../service-worker/registration.mjs";
 */
 
-  import { name, version, description } from "../constants.mjs";  
+  import { name, version, description } from "../constants.mjs";
 </script>
 
 <h1>About</h1>
@@ -22,7 +22,7 @@
 <About>
   <ApplicationDetails {name} {version} {description} />
   <ServerDetails server={$server} />
- <SessionDetails session={$session} />
-<!--   <ServiceWorkerDetails serviceWorker={$serviceWorker}  />
+  <SessionDetails session={$session} />
+  <!--   <ServiceWorkerDetails serviceWorker={$serviceWorker}  />
   <ServiceWorkerRegistrationDetails serviceWorkerRegistration={$serviceWorkerRegistration} />-->
 </About>

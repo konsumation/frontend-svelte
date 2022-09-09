@@ -18,5 +18,5 @@
 
 <form>
   <CategoryCard {category} bind:valid />
-  <CommandButton {command}/>
+  <CommandButton {command} />
 </form>

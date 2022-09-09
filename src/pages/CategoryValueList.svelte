@@ -1,5 +1,11 @@
 <script>
-  import { DateTime, sortable, sorter, filter, keyPrefixStore } from "svelte-common";
+  import {
+    DateTime,
+    sortable,
+    sorter,
+    filter,
+    keyPrefixStore
+  } from "svelte-common";
   import { CommandButton, ConfirmCommand } from "svelte-command";
 
   export let router;

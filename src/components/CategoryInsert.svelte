@@ -55,7 +55,8 @@
       placeholder="31.12.2000, 23:59:59"
       size="16"
       required
-      bind:value={time} />
+      bind:value={time}
+    />
   </label>
 
   <label for="{category.name}_value">
@@ -68,7 +69,8 @@
       required
       use:imask={options}
       on:accept={accept}
-      bind:value />
+      bind:value
+    />
   </label>
-  <CommandButton {command}/>
+  <CommandButton {command} />
 </fieldset>

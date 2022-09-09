@@ -1,18 +1,20 @@
 <script>
-  import { getContext } from 'svelte';
+  import { getContext } from "svelte";
 
-  const { data, xGet, yGet } = getContext('LayerCake');
+  const { data, xGet, yGet } = getContext("LayerCake");
 
-  export let stroke = '#ab00d6';
+  export let stroke = "#ab00d6";
 
-  $: path = 'M' + $data
-    .map(d => {
-      return $xGet(d) + ',' + $yGet(d);
-    })
-    .join('L');
+  $: path =
+    "M" +
+    $data
+      .map(d => {
+        return $xGet(d) + "," + $yGet(d);
+      })
+      .join("L");
 </script>
 
-<path class='path-line' d='{path}' {stroke}></path>
+<path class="path-line" d={path} {stroke} />
 
 <style>
   .path-line {

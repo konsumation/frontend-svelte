@@ -8,8 +8,7 @@
   export let router;
   const route = router.route;
 
-  let data = [
-  ];
+  let data = [];
 
   $: {
     const vv = $route.value;
@@ -23,33 +22,25 @@
         const y = (c.value - last.value) / days;
 
         if (c.time > 0 && y >= 0 && y < 30) {
-          const x = (c.time / (364.25 * 24 * 60 * 60)) + 1970
+          const x = c.time / (364.25 * 24 * 60 * 60) + 1970;
           data.push({ x, y });
-        }
-        else {
+        } else {
           console.log(c.time / (364.25 * 24 * 60 * 60) + 1970);
         }
         last = c;
       }
     }
   }
-  
 </script>
-
-<style>
-  .chart-container {
-    width: 1000px;
-    height: 200px;
-  }
-</style>
 
 <div class="chart-container">
   <LayerCake
     padding={{ right: 10, bottom: 20, left: 25 }}
-    x={'x'}
-    y={'y'}
+    x={"x"}
+    y={"y"}
     yDomain={[0, null]}
-    {data}>
+    {data}
+  >
     <Svg>
       <AxisX />
       <AxisY ticks={4} />
@@ -58,3 +49,10 @@
     </Svg>
   </LayerCake>
 </div>
+
+<style>
+  .chart-container {
+    width: 1000px;
+    height: 200px;
+  }
+</style>

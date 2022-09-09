@@ -24,7 +24,8 @@
   const command = category.saveCommand;
 
   $: {
-    command.disabled = !valid || !session.hasEntitlement("konsum.category.modify");
+    command.disabled =
+      !valid || !session.hasEntitlement("konsum.category.modify");
   }
 </script>
 
@@ -32,7 +33,7 @@
   <h1>Category {category.name}</h1>
   <form>
     <CategoryCard {category} bind:valid />
-    <CommandButton {command}/>
+    <CommandButton {command} />
     <CommandButton command={new ConfirmCommand(deleteCommand)} />
   </form>
 
