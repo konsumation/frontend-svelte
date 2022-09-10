@@ -2,6 +2,7 @@
   "name": "Konsum",
   "short_name": "Konsum",
   "description": "Keep track of your resource consumantion",
+  "start_url": ".",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [
