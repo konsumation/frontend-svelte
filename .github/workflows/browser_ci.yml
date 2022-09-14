@@ -10,8 +10,8 @@ jobs:
         browser:
           - chrome
           - firefox
-        node-version: 18.9.0
-        node: 18.9.0
+        node-version:
+          - 18.9.0
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.4.1
