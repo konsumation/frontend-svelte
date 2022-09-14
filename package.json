@@ -38,9 +38,10 @@
     "layercake": "^7.0.0",
     "mf-hosting": "^1.7.3",
     "mf-styling": "^1.7.18",
+    "npm-dep-graph": "^1.0.61",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.24",
-    "svelte-common": "^4.19.7",
+    "svelte-common": "^4.19.8",
     "svelte-entitlement": "^1.2.30",
     "svelte-guard-history-router": "^5.4.3",
     "svelte-log-view": "^4.2.14",
@@ -79,6 +80,7 @@
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
+    "groups": "examples",
     "depends": {
       "konsum": ">=6.1.4"
     },
@@ -98,6 +100,12 @@
         "@semantic-release/exec",
         {
           "publishCmd": "npx npm-pkgbuild --available --continue --verbose"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": []
         }
       ],
       "@semantic-release/github"
