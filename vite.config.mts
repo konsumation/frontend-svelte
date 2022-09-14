@@ -22,9 +22,10 @@ export default defineConfig(async ({ command, mode }) => {
   const api = properties["http.api.path"];
   const production = mode === "production";
 
-  let target = properties["http.origin"] + properties["http.api.path"];
+  let target = properties["http.origin"] + properties["http.path"];
+  let backend = properties["http.origin"] + properties["http.api.path"];
   let rewrite = path => path.substring(api.length);
-
+ 
   if (!production 
     // hack
     && process.arch !== "arm64") {
@@ -44,7 +45,7 @@ export default defineConfig(async ({ command, mode }) => {
       readFileSync("tests/config/config.json", encodingOptions)
     );
 
-    target = `http://localhost:${http.port}/`;
+    backend = `http://localhost:${http.port}/`;
   }
 
   process.env["VITE_API"] = api;
@@ -84,7 +85,7 @@ export default defineConfig(async ({ command, mode }) => {
       ...open,
       proxy: {
         [api]: {
-          target,
+          backend,
           rewrite
         }
       }
