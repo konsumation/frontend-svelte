@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 import { base, login, clickLink } from "./helpers/util.js";
 
-fixture`Delete Values`.page`${base}/`;
+fixture`Delete Values`.page`${base}`;
 
 const category = "CAT7";
 

@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 import { base, login, clickLink } from "./helpers/util.js";
 
-fixture`Admin`.page`${base}/`;
+fixture`Admin`.page`${base}`;
 
 const category = "CAT3";
 
