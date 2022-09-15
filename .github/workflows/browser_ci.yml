@@ -2,7 +2,7 @@ name: CI
 'on': push
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         os:
