@@ -36,7 +36,9 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
+    "mf-hosting": "^1.7.3",
     "mf-styling": "^1.7.23",
+    "npm-dep-graph": "^1.0.61",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.24",
     "svelte-common": "^4.19.8",
@@ -59,7 +61,7 @@
     "stylelint-config-standard": "^28.0.0",
     "svelte": "^3.50.1",
     "testcafe": "^2.0.0",
-    "vite": "^3.1.1"
+    "vite": "^3.1.2"
   },
   "optionalDependencies": {
     "mf-hosting": "^1.7.3"
@@ -78,6 +80,7 @@
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
+    "groups": "examples",
     "depends": {
       "konsum": ">=6.1.4"
     },
