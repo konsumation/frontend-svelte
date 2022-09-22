@@ -36,12 +36,14 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
+    "mf-hosting": "^1.7.3",
     "mf-styling": "^1.7.23",
+    "npm-dep-graph": "^1.0.61",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.24",
     "svelte-common": "^4.19.8",
     "svelte-entitlement": "^1.2.30",
-    "svelte-guard-history-router": "^5.4.3",
+    "svelte-guard-history-router": "^5.4.4",
     "svelte-log-view": "^4.2.14",
     "svelte-session-manager": "^2.0.11",
     "the-new-css-reset": "^1.7.2"
@@ -51,11 +53,11 @@
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@sveltejs/vite-plugin-svelte": "^1.0.7",
+    "@sveltejs/vite-plugin-svelte": "^1.0.8",
     "ava": "^4.3.3",
     "npm-pkgbuild": "^10.14.14",
     "semantic-release": "^19.0.5",
-    "stylelint": "^14.12.0",
+    "stylelint": "^14.12.1",
     "stylelint-config-standard": "^28.0.0",
     "svelte": "^3.50.1",
     "testcafe": "^2.0.0",
@@ -78,6 +80,7 @@
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
+    "groups": "examples",
     "depends": {
       "konsum": ">=6.1.4"
     },
