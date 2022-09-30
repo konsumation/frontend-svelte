@@ -22,13 +22,15 @@ export default defineConfig(async ({ command, mode }) => {
   const api = properties["http.api.path"];
   const production = mode === "production";
 
-  let target = properties["http.origin"] + properties["http.path"];
+  let frontend = properties["http.origin"] + properties["http.path"];
   let backend = properties["http.origin"] + properties["http.api.path"];
   let rewrite = path => path.substring(api.length);
- 
-  if (!production 
+
+  if (
+    !production &&
     // hack
-    && process.arch !== "arm64") {
+    process.arch !== "arm64"
+  ) {
     mkdirSync("build/db", { recursive: true });
     const konsum = execFile(
       "node",
@@ -53,7 +55,7 @@ export default defineConfig(async ({ command, mode }) => {
   process.env["VITE_DESCRIPTION"] = properties.description;
   process.env["VITE_VERSION"] = properties.version;
 
-  const open = process.env.CI ? {} : { open: target };
+  const open = process.env.CI ? {} : { open: frontend };
 
   return {
     root: "src",
@@ -85,7 +87,7 @@ export default defineConfig(async ({ command, mode }) => {
       ...open,
       proxy: {
         [api]: {
-          backend,
+          target: backend,
           rewrite
         }
       }
