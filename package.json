@@ -55,13 +55,13 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^1.0.8",
     "ava": "^5.0.1",
-    "npm-pkgbuild": "^10.15.3",
+    "npm-pkgbuild": "^10.15.4",
     "semantic-release": "^19.0.5",
     "stylelint": "^14.13.0",
     "stylelint-config-standard": "^28.0.0",
     "svelte": "^3.50.1",
     "testcafe": "^2.0.1",
-    "vite": "^3.1.5"
+    "vite": "^3.1.6"
   },
   "optionalDependencies": {
     "mf-hosting": "^1.7.3"
@@ -80,6 +80,7 @@
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
+    "groups": "examples",
     "depends": {
       "konsum": ">=6.1.4"
     },
