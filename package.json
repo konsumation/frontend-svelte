@@ -36,7 +36,7 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
-    "mf-hosting": "^1.7.7",
+    "mf-hosting": "^1.7.8",
     "mf-styling": "^1.7.23",
     "npm-dep-graph": "^1.0.61",
     "streamsaver": "^2.0.6",
@@ -64,7 +64,7 @@
     "vite": "^3.2.4"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.7.7"
+    "mf-hosting": "^1.7.8"
   },
   "repository": {
     "type": "git",
