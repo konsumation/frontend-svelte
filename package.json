@@ -41,7 +41,7 @@
     "npm-dep-graph": "^1.0.61",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.24",
-    "svelte-common": "^4.19.11",
+    "svelte-common": "^4.19.12",
     "svelte-entitlement": "^1.2.36",
     "svelte-guard-history-router": "^5.5.5",
     "svelte-log-view": "^4.2.14",
