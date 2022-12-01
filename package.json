@@ -36,14 +36,13 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
-    "mf-hosting": "^1.7.9",
     "mf-styling": "^1.7.27",
     "npm-dep-graph": "^1.0.61",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.24",
-    "svelte-common": "^4.19.18",
+    "svelte-common": "^4.19.19",
     "svelte-entitlement": "^1.2.37",
-    "svelte-guard-history-router": "^5.5.6",
+    "svelte-guard-history-router": "^5.5.7",
     "svelte-log-view": "^4.2.14",
     "svelte-session-manager": "^2.0.11",
     "the-new-css-reset": "^1.7.2"
@@ -80,7 +79,6 @@
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
-    "groups": "examples",
     "depends": {
       "konsum": ">=6.1.4"
     },
