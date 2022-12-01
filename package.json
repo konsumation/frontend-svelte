@@ -37,7 +37,7 @@
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
     "mf-hosting": "^1.7.9",
-    "mf-styling": "^1.7.26",
+    "mf-styling": "^1.7.27",
     "npm-dep-graph": "^1.0.61",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.24",
