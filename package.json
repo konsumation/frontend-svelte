@@ -1,6 +1,6 @@
 {
   "name": "@konsumation/frontend-svelte",
-  "version": "0.0.0-semantic-release",
+  "version": "1.34.11",
   "publishConfig": {
     "access": "public"
   },
@@ -97,7 +97,7 @@
       [
         "@semantic-release/exec",
         {
-          "publishCmd": "npx npm-pkgbuild --available --continue"
+          "publishCmd": "npx npm-pkgbuild --available --continue --publist dist"
         }
       ],
       [
