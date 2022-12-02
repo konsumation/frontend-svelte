@@ -1,6 +1,7 @@
 [![Svelte v3](https://img.shields.io/badge/svelte-v3-orange.svg)](https://svelte.dev)
 [![npm](https://img.shields.io/npm/v/@konsumation/frontend-svelte.svg)](https://www.npmjs.com/package/@konsumation/frontend-svelte)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![install size](https://packagephobia.now.sh/badge?p=@konsumation/frontend-svelte/@1.34.11)](https://packagephobia.now.sh/result?p=@konsumation/frontend-svelte@1.34.11)
 [![Open Bundle](https://bundlejs.com/badge-light.svg)](https://bundlejs.com/?q=@konsumation/frontend-svelte)
 [![downloads](http://img.shields.io/npm/dm/@konsumation/frontend-svelte.svg?style=flat-square)](https://npmjs.org/package/@konsumation/frontend-svelte)
 [![GitHub Issues](https://img.shields.io/github/issues/konsumation/konsum-frontend-svelte.svg?style=flat-square)](https://github.com/konsumation/konsum-frontend-svelte/issues)
