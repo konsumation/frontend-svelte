@@ -7,8 +7,13 @@
   const sortBy = keyPrefixStore(router.searchParamStore, "sort.");
 </script>
 
-<Link href="/category/add">Add New Category</Link>
+<Link href="/category/add">New Category</Link>
 <table class="bordered striped hoverable">
+  <colgroup>
+    <col class="name"/>
+    <col class="description"/>
+    <col class="unit"/>
+  </colgroup>      
   <thead>
     <tr>
       <th id="name" use:sortable={sortBy}>Name</th>

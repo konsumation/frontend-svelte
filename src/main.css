@@ -13,3 +13,30 @@
 
 @import "svelte-common/src/common.css";
 @import "svelte-entitlement/src/entitlement.css";
+
+.name {
+  min-width: 3rem;
+  text-align: left;
+}
+
+.description {
+  min-width: 10rem;
+  text-align: left;
+}
+
+.unit {
+  min-width: 3rem;
+}
+
+.date {
+  min-width: 3rem;
+}
+
+.value {
+  min-width: 3rem;
+  text-align: right;
+}
+
+.action {
+  min-width: 1rem;
+}

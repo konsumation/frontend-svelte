@@ -41,6 +41,11 @@
 
 {#if entries}
   <table class="bordered striped hoverable">
+    <colgroup>
+      <col class="date"/>
+      <col class="value"/>
+      <col class="action"/>
+    </colgroup>      
     <thead>
       <th id="date" use:sortable={sortBy}>Date</th>
       <th id="value" use:sortable={sortBy}>Value</th>
