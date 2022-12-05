@@ -44,7 +44,7 @@
     "svelte-command": "^1.1.24",
     "svelte-common": "^4.20.0",
     "svelte-entitlement": "^1.2.38",
-    "svelte-guard-history-router": "^5.5.11",
+    "svelte-guard-history-router": "^5.5.12",
     "svelte-log-view": "^4.2.14",
     "svelte-session-manager": "^2.0.11",
     "the-new-css-reset": "^1.7.2"
