@@ -1,6 +1,6 @@
 {
   "name": "@konsumation/frontend-svelte",
-  "version": "1.34.11",
+  "version": "0.0.0-semantic-release",
   "publishConfig": {
     "access": "public"
   },
@@ -61,7 +61,7 @@
     "stylelint-config-standard": "^29.0.0",
     "svelte": "^3.53.1",
     "testcafe": "^2.1.0",
-    "vite": "^3.2.4"
+    "vite": "^3.2.5"
   },
   "optionalDependencies": {
     "mf-hosting": "^1.7.9"
