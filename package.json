@@ -6,6 +6,7 @@
   },
   "description": "svelte web frontend for konsum",
   "keywords": [
+    "example",
     "konsum",
     "svelte",
     "vite",
@@ -80,6 +81,7 @@
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
+    "groups": "examples",
     "depends": {
       "konsum": ">=6.1.4"
     },
