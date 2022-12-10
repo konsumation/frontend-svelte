@@ -18,7 +18,7 @@ export default defineConfig(async ({ command, mode }) => {
   const first = await res.next();
   const pkg = first.value;
   const properties = pkg.properties;
-  const base = properties["http.path"] + "/";
+  const base = properties["http.path"];
   const api = properties["http.api.path"];
   const production = mode === "production";
 
