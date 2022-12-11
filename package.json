@@ -37,8 +37,7 @@
   "dependencies": {
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
-    "mf-hosting": "^1.7.9",
-    "mf-styling": "^1.7.29",
+    "mf-styling": "^1.7.31",
     "npm-dep-graph": "^1.0.61",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.24",
@@ -65,7 +64,7 @@
     "vite": "^4.0.0"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.7.9"
+    "mf-hosting": "^1.8.0"
   },
   "repository": {
     "type": "git",
@@ -81,7 +80,6 @@
       "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
     },
     "hooks": "pkg/hooks.sh",
-    "groups": "examples",
     "depends": {
       "konsum": ">=6.1.4"
     },
