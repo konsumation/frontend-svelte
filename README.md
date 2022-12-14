@@ -3,7 +3,5 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Open Bundle](https://bundlejs.com/badge-light.svg)](https://bundlejs.com/?q=@konsumation/frontend-svelte)
 [![downloads](http://img.shields.io/npm/dm/@konsumation/frontend-svelte.svg?style=flat-square)](https://npmjs.org/package/@konsumation/frontend-svelte)
-[![GitHub Issues](https://img.shields.io/github/issues/konsumation/konsum-frontend-svelte.svg?style=flat-square)](https://github.com/konsumation/konsum-frontend-svelte/issues)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/konsumation/konsum-frontend-svelte.git)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fkonsumation%2Fkonsum-frontend-svelte%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/konsumation/konsum-frontend-svelte/goto)
-[![Coverage Status](https://coveralls.io/repos/konsumation/konsum-frontend-svelte/badge.svg)](https://coveralls.io/github/konsumation/konsum-frontend-svelte)
-[![Tested with TestCafe](https://img.shields.io/badge/tested%20with-TestCafe-2fa4cf.svg)](https://github.com/DevExpress/testcafe)
