@@ -81,12 +81,11 @@
     },
     "hooks": "pkg/hooks.sh",
     "depends": {
-      "konsum": ">=6.1.4"
+      "konsum": ">=6.1.16"
     },
     "http.api.path": "${http.path}/api",
     "http.path": "${http.base.path}/konsum",
     "install.dir": "${install.base.dir}konsum/frontend/",
-    "install.sub.dir": "/frontend/",
     "name": "konsum-frontend-svelte",
     "title": "Konsum"
   },
