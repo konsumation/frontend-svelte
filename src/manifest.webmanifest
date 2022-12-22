@@ -15,7 +15,9 @@
   "background_color": "#A21CAF",
   "categories": [
     "productivity",
-    "examples"
+    "examples",
+    "utilities",
+    "security"
   ],
   "theme_color": "#A21CAF"
 }
