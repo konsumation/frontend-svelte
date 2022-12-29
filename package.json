@@ -35,6 +35,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@kronos-integration/svelte-components": "^2.4.93",
     "imask": "^6.4.2",
     "layercake": "^7.0.0",
     "mf-styling": "^1.7.33",
@@ -42,10 +43,11 @@
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.25",
     "svelte-common": "^4.21.4",
-    "svelte-entitlement": "^1.2.38",
-    "svelte-guard-history-router": "^5.5.12",
+    "svelte-entitlement": "^1.2.39",
+    "svelte-guard-history-router": "^5.5.13",
     "svelte-log-view": "^4.2.14",
     "svelte-session-manager": "^2.0.11",
+    "svelte-websocket-store": "^1.1.33",
     "the-new-css-reset": "^1.7.2"
   },
   "devDependencies": {
@@ -81,7 +83,8 @@
     },
     "hooks": "pkg/hooks.sh",
     "depends": {
-      "konsum": ">=6.1.16"
+      "konsum": ">=6.1.16",
+      "entitlement-provider": ">=2.9.121"
     },
     "http.api.path": "${http.path}/api",
     "http.path": "${http.base.path}/konsum",
