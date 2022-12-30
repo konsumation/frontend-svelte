@@ -43,7 +43,7 @@
     "svelte-command": "^1.1.26",
     "svelte-common": "^4.21.5",
     "svelte-entitlement": "^1.2.38",
-    "svelte-guard-history-router": "^5.5.14",
+    "svelte-guard-history-router": "^5.5.15",
     "svelte-log-view": "^4.2.14",
     "svelte-session-manager": "^2.0.11",
     "the-new-css-reset": "^1.7.2"
