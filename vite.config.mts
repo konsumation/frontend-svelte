@@ -13,18 +13,22 @@ const encodingOptions = { encoding: "utf8" };
 
 export default defineConfig(async ({ command, mode }) => {
   const res = extractFromPackage({
-    dir: pn("./")
+    dir: pn("./"),
   });
   const first = await res.next();
   const pkg = first.value;
   const properties = pkg.properties;
-  const base = properties["http.path"];
+  if (process.env.CF_PAGES) {
+    const base = "/";
+  } else {
+    const base = properties["http.path"];
+  }
   const api = properties["http.api.path"];
   const production = mode === "production";
 
   let frontend = properties["http.origin"] + properties["http.path"];
   let backend = properties["http.origin"] + properties["http.api.path"];
-  let rewrite = path => path.substring(api.length);
+  let rewrite = (path) => path.substring(api.length);
 
   if (
     !production &&
@@ -38,7 +42,7 @@ export default defineConfig(async ({ command, mode }) => {
         "node_modules/@konsumation/konsum/src/konsum-cli.mjs",
         "-c",
         "tests/config",
-        "start"
+        "start",
       ],
       (error, stdout, stderr) => console.log(error, stdout, stderr)
     );
@@ -55,7 +59,7 @@ export default defineConfig(async ({ command, mode }) => {
   process.env["VITE_DESCRIPTION"] = properties.description;
   process.env["VITE_VERSION"] = properties.version;
 
-  const open = process.env.CI ? {} : { open: frontend };
+  const open = process.env.CI ? {} : { open: true };
 
   return {
     root: "src",
@@ -64,14 +68,14 @@ export default defineConfig(async ({ command, mode }) => {
     plugins: [
       svelte({
         compilerOptions: {
-          dev: !production
-        }
-      })
+          dev: !production,
+        },
+      }),
     ],
     optimizeDeps: {
       exclude: [
-        ...Object.keys(pkg.dependencies).filter(d => d.startsWith("svelte"))
-      ]
+        ...Object.keys(pkg.dependencies).filter((d) => d.startsWith("svelte")),
+      ],
     },
 
     build: {
@@ -79,7 +83,7 @@ export default defineConfig(async ({ command, mode }) => {
       target: "esnext",
       emptyOutDir: true,
       minify: production,
-      sourcemap: true
+      sourcemap: true,
     },
 
     server: {
@@ -88,9 +92,9 @@ export default defineConfig(async ({ command, mode }) => {
       proxy: {
         [api]: {
           target: backend,
-          rewrite
-        }
-      }
-    }
+          rewrite,
+        },
+      },
+    },
   };
 });
