@@ -18,11 +18,7 @@ export default defineConfig(async ({ command, mode }) => {
   const first = await res.next();
   const pkg = first.value;
   const properties = pkg.properties;
-  if (process.env.CF_PAGES) {
-    const base = "/";
-  } else {
-    const base = properties["http.path"];
-  }
+  const base = process.env.CF_PAGES ? "/" : properties["http.path"];
   const api = properties["http.api.path"];
   const production = mode === "production";
 
