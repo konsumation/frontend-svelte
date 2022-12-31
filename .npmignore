@@ -11,3 +11,4 @@ rollup.config.*
 pkg
 jsconfig.json
 .stylelintrc.json
+.node-version
