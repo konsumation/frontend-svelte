@@ -126,6 +126,7 @@
     "inheritFrom": [
       "arlac77/template-arlac77-github",
       "arlac77/template-ava",
+      "arlac77/template-cloudflare",
       "arlac77/template-pacman",
       "arlac77/template-svelte-app",
       "arlac77/template-testcafe",
