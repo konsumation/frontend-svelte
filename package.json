@@ -86,7 +86,7 @@
       "konsum": ">=6.1.16",
       "entitlement-provider": ">=2.9.121"
     },
-    "http.api.path": "${http.path}/api",
+    "http.api.path": "api.konsumation.workers.dev",
     "http.path": "${http.base.path}/konsum",
     "install.dir": "${install.base.dir}konsum/frontend/",
     "name": "konsum-frontend-svelte",
