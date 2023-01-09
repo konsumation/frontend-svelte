@@ -19,7 +19,7 @@ export default defineConfig(async ({ command, mode }) => {
   const pkg = first.value;
   const properties = pkg.properties;
   const base = process.env.CF_PAGES ? "/" : properties["http.path"];
-  const api = properties["http.api.path"];
+  const api = "https://api.konsumation.workers.dev/";
   const production = mode === "production";
 
   let frontend = properties["http.origin"] + properties["http.path"];
