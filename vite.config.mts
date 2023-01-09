@@ -55,6 +55,7 @@ export default defineConfig(async ({ command, mode }) => {
   process.env["VITE_DESCRIPTION"] = properties.description;
   process.env["VITE_VERSION"] = properties.version;
 
+  console.log("#####set vite variables done", api)
   const open = process.env.CI ? {} : { open: true };
 
   return {

@@ -5,6 +5,7 @@ export const server = readable(
   { database: {}, memory: {} },
   set => {
     const f = async () => {
+      console.log("server.mjs", api)
       const data = await fetch(api + "/state");
       set(await data.json());
     };
