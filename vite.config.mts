@@ -88,7 +88,7 @@ export default defineConfig(async ({ command, mode }) => {
       ...open,
       proxy: {
         [api]: {
-          target: "https://api.konsumation.workers.dev/",
+          target: backend,
           rewrite,
         },
       },
