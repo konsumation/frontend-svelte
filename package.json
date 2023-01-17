@@ -90,7 +90,8 @@
     "http.path": "${http.base.path}/konsum",
     "install.dir": "${install.base.dir}konsum/frontend/",
     "name": "konsum-frontend-svelte",
-    "title": "Konsum"
+    "title": "Konsum",
+    "frontend": true
   },
   "release": {
     "plugins": [
