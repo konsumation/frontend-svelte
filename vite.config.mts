@@ -14,6 +14,7 @@ const encodingOptions = { encoding: "utf8" };
 export default defineConfig(async ({ command, mode }) => {
   const res = extractFromPackage({
     dir: pn("./"),
+    verbose: true
   });
   const first = await res.next();
   const pkg = first.value;
