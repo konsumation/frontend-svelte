@@ -81,7 +81,6 @@
     "content": {
       "${install.dir}": "build/"
     },
-    "hooks": "pkg/hooks.sh",
     "depends": {
       "konsum": ">=6.1.16",
       "entitlement-provider": ">=2.9.121"
