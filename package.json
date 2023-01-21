@@ -79,8 +79,7 @@
   "homepage": "https://github.com/konsumation/konsum-frontend-svelte#readme",
   "pkgbuild": {
     "content": {
-      "${install.dir}": "build/",
-      "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
+      "${install.dir}": "build/"
     },
     "hooks": "pkg/hooks.sh",
     "depends": {
