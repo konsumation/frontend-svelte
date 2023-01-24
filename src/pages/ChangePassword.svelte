@@ -1,7 +1,7 @@
 <script>
   import { Modal } from "svelte-common";
   import { CommandButton, FetchCommand } from "svelte-command";
-  import { session } from "../session.mjs";
+  import { session, headers } from "../util.mjs";
   import { api } from "../constants.mjs";
 
   export let router;
@@ -16,10 +16,7 @@
     () => {
       return {
         method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          ...session.authorizationHeader
-        },
+        header: headers(session),
         body: JSON.stringify({
           user: username,
           password,

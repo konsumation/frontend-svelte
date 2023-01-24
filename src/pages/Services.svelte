@@ -4,7 +4,7 @@
     ServiceCanvas
   } from "@kronos-integration/svelte-components";
   import { websocketStore } from "svelte-websocket-store";
-  import { session } from "../session.mjs";
+  import { session } from "../util.mjs";
   import { api_ws } from "../constants.mjs";
 
   const protocols = ["access_token", session.access_token];
