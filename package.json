@@ -41,10 +41,10 @@
     "mf-styling": "^1.7.42",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.35",
-    "svelte-common": "^4.21.26",
+    "svelte-common": "^4.21.27",
     "svelte-entitlement": "^1.2.47",
-    "svelte-guard-history-router": "^5.5.25",
-    "svelte-log-view": "^4.2.14",
+    "svelte-guard-history-router": "^5.5.26",
+    "svelte-log-view": "^4.2.15",
     "svelte-session-manager": "^2.0.11",
     "svelte-websocket-store": "^1.1.33",
     "the-new-css-reset": "^1.8.2"
