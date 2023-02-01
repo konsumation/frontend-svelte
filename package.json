@@ -41,7 +41,7 @@
     "mf-styling": "^1.7.42",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.35",
-    "svelte-common": "^4.21.27",
+    "svelte-common": "^4.21.28",
     "svelte-entitlement": "^1.2.47",
     "svelte-guard-history-router": "^5.5.26",
     "svelte-session-manager": "^2.0.11",
