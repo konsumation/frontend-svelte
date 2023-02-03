@@ -44,7 +44,7 @@
     "svelte-common": "^4.22.4",
     "svelte-entitlement": "^1.2.48",
     "svelte-guard-history-router": "^5.5.28",
-    "svelte-session-manager": "^2.0.11",
+    "svelte-session-manager": "^2.1.0",
     "svelte-websocket-store": "^1.1.33",
     "the-new-css-reset": "^1.8.2"
   },
@@ -55,7 +55,7 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "ava": "^5.1.1",
-    "npm-pkgbuild": "^11.1.15",
+    "npm-pkgbuild": "^11.2.4",
     "semantic-release": "^20.1.0",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0",
