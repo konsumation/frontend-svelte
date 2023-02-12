@@ -19,6 +19,7 @@
   import Insert from "./pages/Insert.svelte";
   import CategoryValueList from "./pages/CategoryValueList.svelte";
   import CategoryGraph from "./pages/CategoryGraph.svelte";
+  import Register from "./pages/Register.svelte";
   import { Category, categoryIterator, valueIterator } from "./category.mjs";
   import { session } from "./util.mjs";
   import { base } from "./constants.mjs";
@@ -108,6 +109,7 @@
           </Menue>
         {:else}
           <Route path="/login" component={Login}>Login</Route>
+          <Route path="/register" component={Register}>Register</Route>
         {/if}
       </li>
     </ul>
