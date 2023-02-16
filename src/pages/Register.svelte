@@ -10,13 +10,13 @@
   } from "svelte-use-form";
   import { Modal } from "svelte-common";
   import { session } from "../util.mjs";
-
+  import { api } from "../constants.mjs";
   export let router;
-  export let endpoint;
+  const endpoint = api + "/register";
 
   const form = useForm();
   const requiredMessage = "This field is required";
-
+let message;
   function passwordMatch(value, form) {
     if (value !== form.values.password) {
       return { passwordMatch: true };
@@ -32,6 +32,10 @@
   }
 
   async function register() {
+    const email = $form.values.email;
+    const name = $form.values.name;
+    const password = $form.values.password;
+    //console.log(email, name, password);
     try {
       const response = await fetch(endpoint, {
         method: "POST",
@@ -44,8 +48,13 @@
       });
       if (response.ok) {
         const data = await response.json();
-        if (!data[tokenmap.access_token]) {
-          return "missing access_token";
+        if (data.error) {
+          message=data.error
+          return false
+        }
+        if (!data.access_token) {
+          message="missing access_token"
+          return false;
         }
         session.update({
           endpoint,
@@ -107,7 +116,11 @@
         <Hint on="passwordMatch" hideWhenRequired>Passwords do not match</Hint>
       </HintGroup><br />
 
-      <button disabled={!$form.valid} on:click|preventDefault={register(form)}>
+      {#if message}
+      <div class="error" id="message">{message}</div>
+      {/if}
+
+      <button disabled={!$form.valid} on:click|preventDefault={register}>
         Submit
       </button>
     </form>
