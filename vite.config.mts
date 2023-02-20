@@ -60,8 +60,6 @@ export default defineConfig(async ({ command, mode }) => {
   process.env["VITE_DESCRIPTION"] = properties.description;
   process.env["VITE_VERSION"] = properties.version;
 
-  const open = process.env.CI ? {} : { open: true };
-
   return {
     root: "src",
     base,
@@ -89,7 +87,6 @@ export default defineConfig(async ({ command, mode }) => {
 
     server: {
       host: true,
-      ...open,
       proxy: {
         [api]: {
           target: backend,
