@@ -55,7 +55,7 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "ava": "^5.2.0",
-    "npm-pkgbuild": "^11.5.7",
+    "npm-pkgbuild": "^11.5.9",
     "semantic-release": "^20.1.0",
     "stylelint": "^15.2.0",
     "stylelint-config-standard": "^30.0.1",
