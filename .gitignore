@@ -9,4 +9,5 @@ node_modules
 .test
 bundle.*
 *.map
+bun.lockb
 dist
