@@ -13,10 +13,12 @@
   import { api } from "../constants.mjs";
   export let router;
   const endpoint = api + "/register";
-
+  const defaultTokenMap = Object.fromEntries(
+  ["access_token", "refresh_token"].map(k => [k, k])
+);
   const form = useForm();
   const requiredMessage = "This field is required";
-let message;
+  let message;
   function passwordMatch(value, form) {
     if (value !== form.values.password) {
       return { passwordMatch: true };
@@ -49,20 +51,21 @@ let message;
       if (response.ok) {
         const data = await response.json();
         if (data.error) {
-          message=data.error
-          return false
+          message = data.error;
+          return false;
         }
         if (!data.access_token) {
-          message="missing access_token"
+          message = "missing access_token";
           return false;
         }
         session.update({
           endpoint,
           email,
           ...Object.fromEntries(
-            Object.entries(tokenmap).map(([k1, k2]) => [k1, data[k2]])
+            Object.entries(defaultTokenMap).map(([k1, k2]) => [k1, data[k2]])
           ),
         });
+        await router.continue("/confirmRegistration")
       } else {
         session.update({ email });
         return handleFailedResponse(response);
@@ -117,7 +120,7 @@ let message;
       </HintGroup><br />
 
       {#if message}
-      <div class="error" id="message">{message}</div>
+        <div class="error" id="message">{message}</div>
       {/if}
 
       <button disabled={!$form.valid} on:click|preventDefault={register}>

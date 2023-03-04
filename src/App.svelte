@@ -6,7 +6,7 @@
     DetailRoute,
     Router,
     redirectGuard,
-    NamedObjectLink
+    NamedObjectLink,
   } from "svelte-guard-history-router";
   import { Menue, TopNav } from "svelte-common";
   import About from "./pages/About.svelte";
@@ -20,6 +20,7 @@
   import CategoryValueList from "./pages/CategoryValueList.svelte";
   import CategoryGraph from "./pages/CategoryGraph.svelte";
   import Register from "./pages/Register.svelte";
+  import ConfirmRegistration from "./pages/ConfirmRegistration.svelte";
   import { Category, categoryIterator, valueIterator } from "./category.mjs";
   import { session } from "./util.mjs";
   import { base } from "./constants.mjs";
@@ -30,9 +31,16 @@
 <Router {base}>
   <TopNav offset={42}>
     <Route href="/" path="*" component={Home}>
-      <img class="logo" src="images/icon.svg" width="48px" height="48px" alt="Konsum" />
+      <img
+        class="logo"
+        src="images/icon.svg"
+        width="48px"
+        height="48px"
+        alt="Konsum"
+      />
       Konsum
     </Route>
+    <Route path="/confirmRegistration" component={ConfirmRegistration}></Route>
     <ul class="left">
       <li>
         <Route
@@ -109,7 +117,9 @@
           </Menue>
         {:else}
           <Route path="/login" component={Login}>Login</Route>
-          <Route path="/register" component={Register}>Register</Route>
+          <Route path="/register" component={Register}
+            >Register
+          </Route>
         {/if}
       </li>
     </ul>
