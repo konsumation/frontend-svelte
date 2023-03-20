@@ -34,7 +34,7 @@
   }
 
   async function register() {
-    const email = $form.values.email;
+    const email = $form.values.email.toLocaleLowerCase();
     const name = $form.values.name;
     const password = $form.values.password;
     //console.log(email, name, password);
@@ -51,7 +51,7 @@
       if (response.ok) {
         const data = await response.json();
         if (data.error) {
-          message = data.error;
+          message = JSON.stringify(data.error);
           return false;
         }
         if (!data.access_token) {
