@@ -38,7 +38,7 @@
     "@kronos-integration/svelte-components": "^2.4.93",
     "imask": "^6.4.2",
     "layercake": "^7.3.4",
-    "mf-styling": "^1.7.51",
+    "mf-styling": "^1.7.52",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.39",
     "svelte-common": "^4.22.13",
