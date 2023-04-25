@@ -1,5 +1,5 @@
 import { Selector } from "testcafe";
-import { base, login, clickLink } from "./helpers/util.js";
+import { base, login, clickLink } from "./helpers/util.mjs";
 
 fixture`Getting Started`.page`${base}`;
 
