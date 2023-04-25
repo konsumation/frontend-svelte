@@ -1,5 +1,4 @@
-import { Selector } from "testcafe";
-import { base, login, clickLink } from "./helpers/util.mjs";
+import { base, login } from "./helpers/util.mjs";
 
 fixture`Admin`.page`${base}`;
 
