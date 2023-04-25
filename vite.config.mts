@@ -1,9 +1,9 @@
-import { mkdirSync, readFileSync } from "fs";
-import { execFile } from "child_process";
+import { mkdirSync, readFileSync } from "node:fs";
+import { execFile } from "node:child_process";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
 import { extractFromPackage } from "npm-pkgbuild";
-import { fileURLToPath } from "url";
+import { fileURLToPath } from "node:url";
 
 function pn(path) {
   return fileURLToPath(new URL(path, import.meta.url));
