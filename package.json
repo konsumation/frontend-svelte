@@ -49,11 +49,11 @@
     "the-new-css-reset": "^1.8.4"
   },
   "devDependencies": {
-    "@konsumation/konsum": "^6.1.7",
+    "@konsumation/konsum": "^6.4.2",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "@sveltejs/vite-plugin-svelte": "^2.1.0",
+    "@sveltejs/vite-plugin-svelte": "^2.1.1",
     "ava": "^5.2.0",
     "npm-pkgbuild": "^11.7.16",
     "semantic-release": "^21.0.1",
