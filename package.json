@@ -46,7 +46,7 @@
     "svelte-guard-history-router": "^5.5.35",
     "svelte-session-manager": "^2.2.5",
     "svelte-websocket-store": "^1.1.33",
-    "the-new-css-reset": "^1.8.4"
+    "the-new-css-reset": "^1.8.6"
   },
   "devDependencies": {
     "@konsumation/konsum": "^6.4.2",
