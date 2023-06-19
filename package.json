@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@kronos-integration/svelte-components": "^2.4.93",
-    "imask": "^6.5.0",
+    "imask": "^7.0.0",
     "layercake": "^7.3.5",
     "mf-styling": "^1.7.57",
     "streamsaver": "^2.0.6",
