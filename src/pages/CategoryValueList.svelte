@@ -59,7 +59,7 @@
           <td>
             <DateTime date={time2Date(entry.time)} />
           </td>
-          <td>{entry.value}</td>
+          <td class="value">{entry.value}</td>
           <td>
             <CommandButton
               command={new ConfirmCommand(
