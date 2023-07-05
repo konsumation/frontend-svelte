@@ -41,7 +41,7 @@ jobs:
           retention-days: 3
         if: always()
       - name: Build / Test Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
