@@ -35,7 +35,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@kronos-integration/svelte-components": "^2.4.93",
+    "@kronos-integration/svelte-components": "^2.4.96",
     "imask": "^7.0.0",
     "layercake": "^7.3.5",
     "mf-styling": "^2.0.1",
