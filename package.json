@@ -35,14 +35,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@kronos-integration/svelte-components": "^2.5.0",
+    "@kronos-integration/svelte-components": "^2.5.1",
     "imask": "^7.0.0",
     "layercake": "^7.3.5",
     "mf-styling": "^2.0.4",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.44",
-    "svelte-common": "^6.2.1",
-    "svelte-entitlement": "^1.2.56",
+    "svelte-common": "^6.2.4",
+    "svelte-entitlement": "^1.2.58",
     "svelte-guard-history-router": "^5.5.40",
     "svelte-session-manager": "^2.2.10",
     "svelte-websocket-store": "^1.1.33",
