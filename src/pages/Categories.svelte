@@ -8,7 +8,7 @@
 </script>
 
 <Link href="/category/add">New Category</Link>
-<table class="bordered striped hoverable">
+<table class="bordered">
   <colgroup>
     <col class="name"/>
     <col class="description"/>
@@ -21,7 +21,7 @@
       <th id="unit" use:sortable={sortBy}>Unit</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="striped hoverable">
     {#each router.value.sort(sorter($sortBy)) as category (category.name)}
       <tr>
         <td>

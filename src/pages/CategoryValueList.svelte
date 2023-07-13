@@ -40,7 +40,7 @@
 <h1>{category.name}</h1>
 
 {#if entries}
-  <table class="bordered striped hoverable">
+  <table class="bordered">
     <colgroup>
       <col class="date"/>
       <col class="value"/>
@@ -51,7 +51,7 @@
       <th id="value" use:sortable={sortBy}>Value</th>
       <th>Action</th>
     </thead>
-    <tbody>
+    <tbody class="striped hoverable">
       {#each route.value
         .filter(filter($filterBy))
         .sort(sorter($sortBy)) as entry, i}
