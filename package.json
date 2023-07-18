@@ -40,7 +40,7 @@
     "layercake": "^7.3.5",
     "mf-styling": "^3.0.2",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^1.1.44",
+    "svelte-command": "^1.1.45",
     "svelte-common": "^6.4.0",
     "svelte-entitlement": "^1.2.59",
     "svelte-guard-history-router": "^5.5.40",
