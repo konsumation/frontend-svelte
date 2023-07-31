@@ -35,16 +35,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@kronos-integration/svelte-components": "^2.5.6",
+    "@kronos-integration/svelte-components": "^2.5.7",
     "imask": "^7.0.1",
     "layercake": "^7.3.5",
     "mf-styling": "^3.0.2",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^1.1.46",
-    "svelte-common": "^6.5.0",
-    "svelte-entitlement": "^1.2.59",
-    "svelte-guard-history-router": "^6.0.2",
-    "svelte-session-manager": "^2.2.11",
+    "svelte-command": "^1.1.47",
+    "svelte-common": "^6.5.2",
+    "svelte-entitlement": "^1.2.60",
+    "svelte-guard-history-router": "^6.0.3",
+    "svelte-session-manager": "^2.2.12",
     "svelte-websocket-store": "^1.1.33",
     "the-new-css-reset": "^1.9.0"
   },
