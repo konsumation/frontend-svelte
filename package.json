@@ -41,7 +41,7 @@
     "mf-styling": "^3.0.2",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.48",
-    "svelte-common": "^6.5.2",
+    "svelte-common": "^6.5.3",
     "svelte-entitlement": "^1.2.60",
     "svelte-guard-history-router": "^6.0.3",
     "svelte-session-manager": "^2.2.12",
@@ -55,13 +55,13 @@
     "@semantic-release/release-notes-generator": "^11.0.4",
     "@sveltejs/vite-plugin-svelte": "^2.4.3",
     "ava": "^5.3.1",
-    "npm-pkgbuild": "^11.10.6",
+    "npm-pkgbuild": "^11.10.7",
     "semantic-release": "^21.0.7",
     "stylelint": "^15.10.2",
     "stylelint-config-standard": "^34.0.0",
     "svelte": "^4.1.2",
     "testcafe": "^3.1.0",
-    "vite": "^4.4.7"
+    "vite": "^4.4.8"
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.5",
