@@ -35,13 +35,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@kronos-integration/svelte-components": "^2.5.7",
+    "@kronos-integration/svelte-components": "^2.5.8",
     "imask": "^7.0.1",
     "layercake": "^7.3.5",
-    "mf-styling": "^3.0.3",
+    "mf-styling": "^3.0.4",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.48",
-    "svelte-common": "^6.6.2",
+    "svelte-common": "^6.6.3",
     "svelte-entitlement": "^1.2.61",
     "svelte-guard-history-router": "^6.0.5",
     "svelte-session-manager": "^2.2.12",
