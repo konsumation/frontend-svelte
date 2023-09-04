@@ -5,10 +5,8 @@ doc
 *.log
 *.tmp
 .vscode
-rollup.config.*
 .github
 *.map
 pkg
-jsconfig.json
 .stylelintrc.json
 .node-version
