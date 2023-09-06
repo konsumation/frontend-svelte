@@ -37,9 +37,9 @@
   "dependencies": {
     "imask": "^7.0.1",
     "layercake": "^7.3.5",
-    "mf-styling": "^3.0.4",
+    "mf-styling": "^3.0.5",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^1.1.48",
+    "svelte-command": "^1.1.49",
     "svelte-common": "^6.6.7",
     "svelte-entitlement": "^1.2.64",
     "svelte-guard-history-router": "^6.0.5",
