@@ -65,7 +65,7 @@
             Object.entries(defaultTokenMap).map(([k1, k2]) => [k1, data[k2]])
           ),
         });
-        await router.continue("/confirmRegistration")
+        await router.push("/confirmRegistration")
       } else {
         session.update({ email });
         return handleFailedResponse(response);
