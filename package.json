@@ -41,7 +41,7 @@
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.50",
     "svelte-common": "^6.9.4",
-    "svelte-entitlement": "^1.2.66",
+    "svelte-entitlement": "^1.2.70",
     "svelte-guard-history-router": "^6.0.6",
     "svelte-session-manager": "^2.2.14",
     "svelte-websocket-store": "^1.1.34",
