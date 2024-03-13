@@ -80,7 +80,7 @@
     "content": {
       "${install.dir}": "build/"
     },
-    "depends": {
+    "dependencies": {
       "konsum": ">=6.1.16"
     },
     "frontend": true,
