@@ -6,12 +6,9 @@
 
   $: {
     valid =
-      category.name &&
-      category.name.length &&
-      category.description &&
-      category.description.length &&
-      category.unit &&
-      category.unit.length &&
+      category.name?.length &&
+      category.description?.length &&
+      category.unit?.length &&
       category.fractionalDigits;
   }
 
