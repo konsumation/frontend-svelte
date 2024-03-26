@@ -1,4 +1,5 @@
 import { FetchCommand } from "svelte-command";
+import { Category, Meter, Note } from "@konsumation/model";
 import { api } from "./constants.mjs";
 import { session, headers } from "./util.mjs";
 
@@ -20,7 +21,7 @@ export async function* categoryIterator(transition) {
     }
 
     for (const c of await response.json()) {
-      const category = new Category(c);
+      const category = new FronendCategory(c);
       categories.push(category);
       yield category;
     }
@@ -44,29 +45,31 @@ export async function* valueIterator(transition) {
   }
 }
 
-export class Meter {
+export { FrontendMeter as Meter };
+export { FrontendNote as Note };
+export { FronendCategory as Category };
+
+class FrontendMeter extends Meter {
   constructor(category, json) {
+    super(json);
     this.category = category;
-    Object.assign(this, json);
   }
 }
 
-export class Note {
+export class FrontendNote extends Note {
   constructor(category, json) {
+    super(json);
     this.category = category;
-    Object.assign(this, json);
   }
 }
 
-export class Category {
+export class FronendCategory extends Category {
 
   latestSubscriptions = new Set();
   valuesSubscriptions = new Set();
 
   constructor(json = {}) {
-    this.name = json.name;
-    this.unit = json.unit;
-    this.description = json.description;
+    super(json);
     this.fractionalDigits = json.fractionalDigits || 2;
     this.order = json.order || 1.0;
   }
@@ -84,7 +87,7 @@ export class Category {
     }
 
     for (const item of await response.json()) {
-      yield new Meter(this, item);
+      yield new FrontendMeter(this, item);
     }
   }
 
@@ -98,7 +101,7 @@ export class Category {
     }
 
     for (const item of await response.json()) {
-      yield new Note(this, item);
+      yield new FrontendNote(this, item);
     }
   }
 
