@@ -7,6 +7,10 @@
   "orientation": "portrait",
   "icons": [
     {
+      "src": "facicon.ico",
+      "sizes": "16x16"
+    },
+    {
       "src": "images/icon.svg",
       "sizes": "150x150",
       "purpose": "any"
