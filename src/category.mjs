@@ -50,10 +50,6 @@ export { FrontendNote as Note };
 export { FronendCategory as Category };
 
 class FrontendMeter extends Meter {
-  constructor(category, json) {
-    super(json);
-    this.category = category;
-  }
 }
 
 export class FrontendNote extends Note {
@@ -87,7 +83,8 @@ export class FronendCategory extends Category {
     }
 
     for (const item of await response.json()) {
-      yield new FrontendMeter(this, item);
+      item.category = this;
+      yield new FrontendMeter(item);
     }
   }
 
