@@ -21,6 +21,7 @@ dependencies:
 git:
   - .gitignore
 rollup:
+  - rollup.config.js
   - rollup.config.mjs
 github:
   - .github/**/*
@@ -30,3 +31,8 @@ openapi:
   - openapi/*
 styling:
   - "**/*.css"
+systemd:
+  - "**/*.service"
+  - "**/*.path"
+  - "**/*.socket"
+  - "**/*.timer"
