@@ -45,12 +45,9 @@ export async function* valueIterator(transition) {
   }
 }
 
-export { FrontendMeter as Meter };
+export { Meter };
 export { FrontendNote as Note };
 export { FronendCategory as Category };
-
-class FrontendMeter extends Meter {
-}
 
 export class FrontendNote extends Note {
   constructor(category, json) {
@@ -84,7 +81,7 @@ export class FronendCategory extends Category {
 
     for (const item of await response.json()) {
       item.category = this;
-      yield new FrontendMeter(item);
+      yield new Meter(item);
     }
   }
 
