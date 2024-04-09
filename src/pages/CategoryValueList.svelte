@@ -16,12 +16,6 @@
   const categoryRoute = route.parent.parent;
   const category = $categoryRoute.value;
 
-  function time2Date(time) {
-    const date = new Date();
-    date.setTime(time * 1000);
-    return date;
-  }
-
   setTimeout(() => {
     if (router.path.match(/#last/)) {
       const last = document.getElementById("last");
@@ -57,13 +51,13 @@
         .sort(sorter($sortBy)) as entry, i}
         <tr id={i === 0 ? "first" : i === entries.length - 1 ? "last" : ""}>
           <td>
-            <DateTime date={time2Date(entry.time)} />
+            <DateTime date={entry.date} />
           </td>
           <td class="value">{entry.value}</td>
           <td>
             <CommandButton
               command={new ConfirmCommand(
-                category.deleteValueCommand(entry.time, async response => {
+                category.deleteValueCommand(entry.date, async response => {
                   route.value = entries.splice(i, 1);
                 })
               )}

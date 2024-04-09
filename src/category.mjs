@@ -57,15 +57,8 @@ export class FrontendNote extends Note {
 }
 
 export class FronendCategory extends Category {
-
   latestSubscriptions = new Set();
   valuesSubscriptions = new Set();
-
-  constructor(json = {}) {
-    super(json);
-    this.fractionalDigits = json.fractionalDigits || 2;
-    this.order = json.order || 1.0;
-  }
 
   get url() {
     return `${api}/category/${this.name}`;
@@ -117,12 +110,7 @@ export class FronendCategory extends Category {
         return {
           method: "PUT",
           headers: headers(session),
-          body: JSON.stringify({
-            order: this.order,
-            unit: this.unit,
-            fractionalDigits: parseInt(this.fractionalDigits),
-            description: this.description
-          })
+          body: JSON.stringify(this.toJSON())
         };
       },
       { title: "Save", shortcuts: "alt+s" }
@@ -163,7 +151,14 @@ export class FronendCategory extends Category {
     }
 
     const values = await response.json();
-    this.valuesSubscriptions.forEach(subscription => subscription(values));
+    this.valuesSubscriptions.forEach(subscription =>
+      subscription(
+        values.map(v => {
+          v.date = new Date(v.date);
+          return v;
+        })
+      )
+    );
   }
 
   get values() {
@@ -185,7 +180,7 @@ export class FronendCategory extends Category {
         return {
           method: "POST",
           headers: headers(session),
-          body: JSON.stringify({ value: v[0], time: v[1].getTime() })
+          body: JSON.stringify({ value: v[0], date: v[1] })
         };
       },
       { title: `Insert ${this.name}` }
@@ -204,7 +199,7 @@ export class FronendCategory extends Category {
         return {
           method: "DELETE",
           headers: headers(session),
-          body: JSON.stringify({ key: key })
+          body: JSON.stringify({ key })
         };
       },
       {

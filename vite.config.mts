@@ -32,10 +32,11 @@ export default defineConfig(async ({ command, mode }) => {
   let rewrite = path => path.substring(api.length);
 
   if (
-    !production &&
+    !production //&&
     // hack
-    process.arch !== "arm64"
+   // process.arch !== "arm64"
   ) {
+    /*
     mkdirSync("build/db", { recursive: true });
     const konsum = execFile(
       "node",
@@ -47,7 +48,7 @@ export default defineConfig(async ({ command, mode }) => {
       ],
       (error, stdout, stderr) => console.log(error, stdout, stderr)
     );
-
+*/
     const { http } = JSON.parse(
       readFileSync("tests/config/config.json", encodingOptions)
     );
