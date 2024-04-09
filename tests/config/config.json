@@ -1,6 +1,6 @@
 {
   "database": {
-    "file": "build/db"
+    "@konsumation/db-level": "build/db"
   },
   "auth": {
     "users": {
