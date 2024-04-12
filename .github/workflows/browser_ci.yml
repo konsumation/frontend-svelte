@@ -22,8 +22,6 @@ jobs:
           - firefox
         node-version:
           - 20.12.2
-          - --delete-- 20.12.1
-          - 20.12.1
         firefox:
           - latest
     steps:
