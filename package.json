@@ -40,11 +40,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@konsumation/model": "^3.10.0",
+    "@konsumation/model": "^3.10.2",
     "imask": "^7.0.1",
     "layercake": "^8.0.0",
     "mf-styling": "^3.1.6",
-    "pacote": "^17.0.6",
+    "pacote": "^17.0.7",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.50",
     "svelte-common": "^6.10.2",
