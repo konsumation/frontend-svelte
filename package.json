@@ -42,7 +42,7 @@
   "dependencies": {
     "@konsumation/model": "^7.0.4",
     "imask": "^7.0.1",
-    "layercake": "^8.0.0",
+    "layercake": "^8.1.2",
     "mf-styling": "^3.1.6",
     "streamsaver": "^2.0.6",
     "svelte-command": "^1.1.50",
@@ -54,7 +54,7 @@
     "the-new-css-reset": "^1.9.0"
   },
   "devDependencies": {
-    "@konsumation/konsum": "^6.10.6",
+    "@konsumation/konsum": "^6.11.0",
     "@semantic-release/commit-analyzer": "^12.0.0",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^13.0.0",
