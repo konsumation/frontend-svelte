@@ -65,7 +65,7 @@ export class FronendCategory extends Category {
   }
 
   async *meters() {
-    const response = await fetch(`${this.url}/meters`, {
+    const response = await fetch(`${this.url}/meter`, {
       headers: headers(session)
     });
     if (!response.ok) {
@@ -79,7 +79,7 @@ export class FronendCategory extends Category {
   }
 
   async *notes() {
-    const response = await fetch(`${this.url}/notes`, {
+    const response = await fetch(`${this.url}/note`, {
       headers: headers(session)
     });
 
@@ -178,7 +178,7 @@ export class FronendCategory extends Category {
       () => {
         const v = values();
         return {
-          method: "POST",
+          method: "PUT",
           headers: headers(session),
           body: JSON.stringify({ value: v[0], date: v[1] })
         };
@@ -194,12 +194,12 @@ export class FronendCategory extends Category {
    */
   deleteValueCommand(key, responseHandler) {
     return new FetchCommand(
-      `${this.url}/value`,
+      `${this.url}/value/${key}`,
       () => {
         return {
           method: "DELETE",
           headers: headers(session),
-          body: JSON.stringify({ key })
+          body: JSON.stringify({ })
         };
       },
       {
