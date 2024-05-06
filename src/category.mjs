@@ -173,14 +173,18 @@ export class FronendCategory extends Category {
   }
 
   insertCommand(values) {
+    const value = values();
+    console.log("INSERT VALUES A",value);
+
     return new FetchCommand(
-      `${this.url}/value`,
+      `${this.url}/value/${value.date}`,
       () => {
-        const v = values();
+        console.log("INSERT VALUES B",value);
+
         return {
           method: "PUT",
           headers: headers(session),
-          body: JSON.stringify({ value: v[0], date: v[1] })
+          body: JSON.stringify(value)
         };
       },
       { title: `Insert ${this.name}` }

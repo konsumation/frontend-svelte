@@ -7,7 +7,7 @@
 
   export let category;
   export let value = "";
-  export let time = "";
+  export let date = "";
 
   //$: time = dateFormatter.format($now);
 
@@ -18,7 +18,7 @@
     const d = new Date();
     d.setTime(v.time * 1000);
     value = v.value;
-    time = dateFormatter.format(d);
+    date = dateFormatter.format(d);
   });
 
   onDestroy(() => unsubscribe());
@@ -41,21 +41,23 @@
     value = maskRef.value;
   }
 
-  const command = category.insertCommand(() => [
-    parseFloat(value),
-    parseDate(time)
-  ]);
+  const command = category.insertCommand(() => {
+    return {
+      value: parseFloat(value),
+      date: parseDate(date)
+    };
+  });
 </script>
 
 <fieldset>
   <label for="{category.name}_time">
     Time<input
       id="{category.name}_time"
-      type="text"
+      type="datetime-local"
       placeholder="31.12.2000, 23:59:59"
       size="16"
       required
-      bind:value={time}
+      bind:value={date}
     />
   </label>
 
