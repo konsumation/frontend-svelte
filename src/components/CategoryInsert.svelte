@@ -1,8 +1,9 @@
 <script>
+  import imask from "../imask.mjs";
   import { onDestroy } from "svelte";
   import { dateFormatter } from "svelte-common";
   import { CommandButton } from "svelte-command";
-  import imask from "../imask.mjs";
+  import { Value } from "@konsumation/model";
   import { parseDate } from "../date.mjs";
 
   export let category;
@@ -31,7 +32,6 @@
     padFractionalZeros: true,
     normalizeZeros: true,
     radix: ".",
-    //mapToRadix: ["."],
     min: 0,
     max: 999999
   };
@@ -42,10 +42,10 @@
   }
 
   const command = category.insertCommand(() => {
-    return {
+    return new Value({
       value: parseFloat(value),
       date: parseDate(date)
-    };
+    });
   });
 </script>
 
@@ -66,7 +66,7 @@
     ({category.unit})<input
       id="{category.name}_value"
       type="text"
-      placeholder="0.0"
+      placeholder={"0." + "0".repeat(category.fractionalDigits)}
       size="16"
       required
       use:imask={options}
