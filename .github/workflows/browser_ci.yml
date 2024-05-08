@@ -22,6 +22,7 @@ jobs:
           - firefox
         node-version:
           - 20.12.2
+          - 20.13.0
         firefox:
           - latest
     steps:
