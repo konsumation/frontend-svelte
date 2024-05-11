@@ -12,8 +12,6 @@ jobs:
       matrix:
         node-version:
           - 20.13.1
-          - --delete-- 20.12.2
-          - --delete-- 20.13.0
         browser:
           - chrome
     steps:
