@@ -49,7 +49,7 @@
     "svelte-command": "^1.1.50",
     "svelte-common": "^6.10.8",
     "svelte-entitlement": "^1.2.78",
-    "svelte-guard-history-router": "^6.0.6",
+    "svelte-guard-history-router": "^6.0.7",
     "svelte-session-manager": "^2.2.16",
     "svelte-websocket-store": "^1.1.34",
     "the-new-css-reset": "^1.9.0"
