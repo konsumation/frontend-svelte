@@ -36,14 +36,16 @@
 {#if entries}
   <table class="bordered">
     <colgroup>
-      <col class="date"/>
-      <col class="value"/>
-      <col class="action"/>
-    </colgroup>      
+      <col class="date" />
+      <col class="value" />
+      <col class="action" />
+    </colgroup>
     <thead>
-      <th id="date" use:sortable={sortBy}>Date</th>
-      <th id="value" use:sortable={sortBy}>Value</th>
-      <th>Action</th>
+      <tr>
+        <th id="date" use:sortable={sortBy}>Date</th>
+        <th id="value" use:sortable={sortBy}>Value</th>
+        <th>Action</th>
+      </tr>
     </thead>
     <tbody class="striped hoverable">
       {#each route.value
