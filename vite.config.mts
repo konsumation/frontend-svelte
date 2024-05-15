@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync } from "node:fs";
 import { execFile } from "node:child_process";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
+import { compression } from "vite-plugin-compression2";
 import { defineConfig } from "vite";
 import { extractFromPackage } from "npm-pkgbuild";
 import { fileURLToPath } from "node:url";
@@ -64,6 +65,18 @@ export default defineConfig(async ({ command, mode }) => {
         compilerOptions: {
           dev: !production
         }
+      }),
+      compression({
+        algorithm: "brotliCompress",
+        exclude: [
+          /\.(br)$/,
+          /\.(gz)$/,
+          /\.(png)$/,
+          /\.(jpg)$/,
+          /\.(webp)$/,
+          /\.(svg)$/
+        ],
+        threshold: 500
       })
     ],
     optimizeDeps: {
