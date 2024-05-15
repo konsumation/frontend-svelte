@@ -55,6 +55,7 @@
     "the-new-css-reset": "^1.9.0"
   },
   "devDependencies": {
+    "@konsumation/db-test": "^4.2.11",
     "@konsumation/konsum": "^6.11.5",
     "@semantic-release/commit-analyzer": "^12.0.0",
     "@semantic-release/exec": "^6.0.3",

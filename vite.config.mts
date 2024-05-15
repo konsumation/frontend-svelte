@@ -10,8 +10,6 @@ function pn(path) {
   return fileURLToPath(new URL(path, import.meta.url));
 }
 
-const encodingOptions = { encoding: "utf8" };
-
 export default defineConfig(async ({ command, mode }) => {
   const res = extractFromPackage(
     {
@@ -34,6 +32,17 @@ export default defineConfig(async ({ command, mode }) => {
 
   if (!production) {
     mkdirSync("build/db", { recursive: true });
+    /*await execFile(
+      "node",
+      [
+        "node_modules/@konsumation/konsum/src/konsum-cli.mjs",
+        "-c",
+        "tests/config",
+        "restore",
+        "node_modules/@konsumation/db-test/src/fixtures/database-version-3.txt"
+      ]
+    );*/
+
     const konsum = execFile(
       "node",
       [
@@ -45,7 +54,7 @@ export default defineConfig(async ({ command, mode }) => {
       (error, stdout, stderr) => console.log(error, stdout, stderr)
     );
     const { http } = JSON.parse(
-      readFileSync("tests/config/config.json", encodingOptions)
+      readFileSync("tests/config/config.json", "utf8")
     );
 
     backend = `http://localhost:${http.port}/`;
