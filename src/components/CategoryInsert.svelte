@@ -16,10 +16,8 @@
     if (v === undefined) {
       return;
     }
-    const d = new Date();
-    d.setTime(v.time * 1000);
     value = v.value;
-    date = dateFormatter.format(d);
+    date = dateFormatter.format(v.date);
   });
 
   onDestroy(() => unsubscribe());
