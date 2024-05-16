@@ -38,5 +38,5 @@
     )}
   />
 
-  {#if dump !== undefined}<textarea bind:value={dump} />{/if}
+  {#if dump !== undefined}<textarea bind:value={dump}></textarea>{/if}
 </div>

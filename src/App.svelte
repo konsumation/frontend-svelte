@@ -95,7 +95,7 @@
                 Logout
                 {$session.username}
               </a>
-              <div class="dropdown-divider" />
+              <div class="dropdown-divider"></div>
               <Route
                 path="/admin"
                 guard={enshureSession}
