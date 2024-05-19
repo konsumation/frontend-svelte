@@ -39,7 +39,7 @@ jobs:
           BROWSER: ${{ matrix.browser }}
       - uses: actions/upload-artifact@v4
         with:
-          name: screenshots-${{ matrix.browser }}
+          name: screenshots
           path: ${{ github.workspace }}/build/test/**/*
           retention-days: 3
         if: always()
