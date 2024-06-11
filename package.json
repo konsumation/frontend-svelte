@@ -29,7 +29,7 @@
     "startkonsum": "node_modules/@konsumation/konsum/src/konsum-cli.mjs -c tests/config start",
     "start": "vite",
     "test": "npm run test:ava && npm run test:cafe",
-    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*-cafe.mjs --esm -s build/test --app-init-delay 7000 --app vite",
+    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*-cafe.mjs --esm -s build/test --page-request-timeout 5000 --app-init-delay 8000 --app vite",
     "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
     "docs": "documentation readme --section=API ./src/**/*.mjs",
@@ -70,7 +70,7 @@
     "stylelint": "^16.6.1",
     "stylelint-config-standard": "^36.0.0",
     "svelte": "^5.0.0-next.151",
-    "testcafe": "^3.6.0",
+    "testcafe": "^3.6.1",
     "vite": "^5.2.13",
     "vite-plugin-compression2": "^1.1.1"
   },
@@ -93,6 +93,7 @@
     "dependencies": {
       "konsum": ">=6.1.16"
     },
+    "example": true,
     "frontend": true,
     "http.api.path": "${http.path}/api",
     "http.path": "${http.base.path}/konsum",
