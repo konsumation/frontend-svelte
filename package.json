@@ -40,7 +40,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@konsumation/model": "^7.1.8",
+    "@konsumation/model": "^7.1.9",
     "imask": "^7.6.1",
     "layercake": "^8.2.0",
     "mf-styling": "^3.1.6",
@@ -56,7 +56,7 @@
   },
   "devDependencies": {
     "@konsumation/db-test": "^4.2.12",
-    "@konsumation/konsum": "^6.11.15",
+    "@konsumation/konsum": "^6.11.14",
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/github": "^10.0.7",
