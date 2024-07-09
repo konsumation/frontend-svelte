@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.7
-      - uses: actions/setup-node@v4.0.2
+      - uses: actions/setup-node@v4.0.3
         with:
-          node-version: 20.15.0
+          node-version: 22.4.1
       - run: npm ci
       - run: npm run docs
       - uses: gr2m/create-or-update-pull-request-action@v1
