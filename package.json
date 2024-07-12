@@ -91,7 +91,7 @@
       "${install.dir}": "build/"
     },
     "dependencies": {
-      "konsum": ">=6.1.16"
+      "konsum": ">=6.11.16"
     },
     "frontend": true,
     "http.api.path": "${http.path}/api",
