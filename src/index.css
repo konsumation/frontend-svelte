@@ -1,1 +1,42 @@
-@import "mf-styling/src/color.css";
+@import url("the-new-css-reset/css/reset.css");
+@import url("mf-styling/src/color-primary-fuchsia.css");
+@import url("mf-styling/src/color.css");
+@import url("mf-styling/src/global.css");
+@import url("mf-styling/src/layout.css");
+@import url("mf-styling/src/nav.css");
+@import url("mf-styling/src/main-nav.css");
+@import url("mf-styling/src/dropdown.css");
+@import url("mf-styling/src/table.css");
+@import url("mf-styling/src/table-sort.css");
+@import url("mf-styling/src/button.css");
+@import url("mf-styling/src/form.css");
+@import url("mf-styling/src/card.css");
+@import url("svelte-common/css");
+@import url("svelte-entitlement/css");
+
+.name {
+  min-width: 3rem;
+  text-align: left;
+}
+
+.description {
+  min-width: 10rem;
+  text-align: left;
+}
+
+.unit {
+  min-width: 3rem;
+}
+
+.date {
+  min-width: 3rem;
+}
+
+.value {
+  min-width: 3rem;
+  text-align: right;
+}
+
+.action {
+  min-width: 1rem;
+}
