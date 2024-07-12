@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-export const base = "http://localhost:4173/services/konsum";
+export const base = "http://localhost:5173/services/konsum";
 
 export async function login(t, data = { user: "user1", password: "secret" }) {
   if (await Selector("#password").exists) {
