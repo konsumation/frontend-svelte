@@ -13,11 +13,10 @@
   //$: time = dateFormatter.format($now);
 
   const unsubscribe = category.latest.subscribe(v => {
-    if (v === undefined) {
-      return;
+    if (v !== undefined) {
+      value = v.value;
+      date = dateFormatter.format(v.date);
     }
-    value = v.value;
-    date = dateFormatter.format(v.date);
   });
 
   onDestroy(() => unsubscribe());
@@ -45,6 +44,11 @@
       date: parseDate(date)
     });
   });
+
+  let valuePlaceholder = "0";
+  if (category.fractionalDigits > 0) {
+    valuePlaceholder + "." + "0".repeat(category.fractionalDigits);
+  }
 </script>
 
 <fieldset>
@@ -64,7 +68,7 @@
     ({category.unit})<input
       id="{category.name}_value"
       type="text"
-      placeholder={"0." + "0".repeat(category.fractionalDigits)}
+      placeholder={valuePlaceholder}
       size="16"
       required
       use:imask={options}
