@@ -1,16 +1,13 @@
 <script>
   import imask from "../imask.mjs";
 
-  export let category;
-  export let valid = false;
+  let { category, valid = false } = $props();
 
-  $: {
-    valid =
-      category.name?.length &&
-      category.description?.length &&
-      category.unit?.length &&
-      category.fractionalDigits;
-  }
+  valid =
+    category.name?.length &&
+    category.description?.length &&
+    category.unit?.length &&
+    category.fractionalDigits;
 
   function accept({ detail: maskRef }) {
     category.fractionalDigits = maskRef.value;

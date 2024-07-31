@@ -1,7 +1,7 @@
 <script>
   import CategoryInsert from "../components/CategoryInsert.svelte";
 
-  export let router;
+  let { router } = $props();
 
   const route = router.route;
   const categories = $route.value;

@@ -8,7 +8,7 @@
   } from "svelte-common";
   import { CommandButton, ConfirmCommand } from "svelte-command";
 
-  export let router;
+  let { router } = $props();
 
   const route = router.route;
   const entries = $route.value;

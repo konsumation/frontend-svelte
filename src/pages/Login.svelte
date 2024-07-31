@@ -4,7 +4,7 @@
   import { session } from "../util.mjs";
   import { api } from "../constants.mjs";
 
-  export let router;
+  let { router } = $props();
 </script>
 
 <Modal close={() => router.abort("/")}>

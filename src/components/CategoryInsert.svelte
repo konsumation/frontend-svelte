@@ -6,9 +6,7 @@
   import { Value } from "@konsumation/model";
   import { parseDate } from "../date.mjs";
 
-  export let category;
-  export let value = "";
-  export let date = "";
+  let { category, value = "", date = "" } = $props();
 
   //$: time = dateFormatter.format($now);
 

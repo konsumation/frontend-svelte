@@ -4,12 +4,12 @@
   import { session, headers } from "../util.mjs";
   import { api } from "../constants.mjs";
 
-  export let router;
+  let { router } = $props();
 
-  let username = "";
-  let password = "";
-  let newPassword = "";
-  let repeatedNewPassword = "";
+  let username = $state("");
+  let password = $state("");
+  let newPassword = $state("");
+  let repeatedNewPassword = $state("");
 
   const command = new FetchCommand(
     `${api}/user/password`,
@@ -30,17 +30,11 @@
     }
   );
 
-  $: command.disabled =
+  command.disabled =
     !password ||
     !username ||
     !newPassword ||
     newPassword !== repeatedNewPassword;
-
-  let active = false;
-
-  $: {
-    active = $command.active;
-  }
 </script>
 
 <Modal close={() => router.abort("/")}>
@@ -61,7 +55,7 @@
           placeholder="Username"
           name="username"
           required
-          disabled={active}
+          disabled={command.active}
           bind:value={username}
         />
       </label>
@@ -79,7 +73,7 @@
           placeholder="Current Password"
           name="password"
           required
-          disabled={active}
+          disabled={command.active}
           bind:value={password}
         />
       </label>
@@ -99,7 +93,7 @@
           placeholder="New Password"
           name="new-password"
           required
-          disabled={active}
+          disabled={command.active}
           bind:value={newPassword}
         />
       </label>
@@ -117,7 +111,7 @@
           placeholder="New Password"
           name="repeated-new-password"
           required
-          disabled={active}
+          disabled={command.active}
           bind:value={repeatedNewPassword}
         />
       </label>

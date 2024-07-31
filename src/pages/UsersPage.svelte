@@ -1,7 +1,7 @@
 <script>
   import { ObjectLink } from "svelte-guard-history-router";
 
-  export let router;
+  let { router } = $props();
 
   const route = router.route;
   const users = $route.value;

@@ -1,7 +1,7 @@
 <script>
   import { EntitlementBadges } from "svelte-entitlement";
 
-  export let router;
+  let { router } = $props();
 
   const route = router.route;
   const entitlements = $route.value;

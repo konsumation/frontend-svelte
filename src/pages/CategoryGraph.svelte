@@ -5,30 +5,29 @@
   import AxisX from "../components/AxisX.svelte";
   import AxisY from "../components/AxisY.svelte";
 
-  export let router;
+  let { router } = $props();
+
   const route = router.route;
 
-  let data = [];
+  let data = $state([]);
 
-  $: {
-    const vv = $route.value;
+  const vv = $route.value;
 
-    if (vv) {
-      let last = vv[0];
+  if (vv) {
+    let last = vv[0];
 
-      data = [];
-      for (const c of vv) {
-        const days = (c.time - last.time) / (24 * 60 * 60);
-        const y = (c.value - last.value) / days;
+    data = [];
+    for (const c of vv) {
+      const days = (c.time - last.time) / (24 * 60 * 60);
+      const y = (c.value - last.value) / days;
 
-        if (c.time > 0 && y >= 0 && y < 30) {
-          const x = c.time / (364.25 * 24 * 60 * 60) + 1970;
-          data.push({ x, y });
-        } else {
-          console.log(c.time / (364.25 * 24 * 60 * 60) + 1970);
-        }
-        last = c;
+      if (c.time > 0 && y >= 0 && y < 30) {
+        const x = c.time / (364.25 * 24 * 60 * 60) + 1970;
+        data.push({ x, y });
+      } else {
+        console.log(c.time / (364.25 * 24 * 60 * 60) + 1970);
       }
+      last = c;
     }
   }
 </script>

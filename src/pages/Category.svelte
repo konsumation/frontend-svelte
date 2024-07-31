@@ -4,29 +4,25 @@
   import CategoryCard from "../components/CategoryCard.svelte";
   import { session } from "../util.mjs";
 
-  export let router;
+  let { router } = $props();
 
   const route = router.route;
   const category = $route.value;
 
-  let valid = false;
+  let valid = $state(false);
 
   const deleteCommand = category.deleteCommand;
 
-  $: {
-    deleteCommand.disabled = !session.hasEntitlement("konsum.category.delete");
+  deleteCommand.disabled = !session.hasEntitlement("konsum.category.delete");
 
-    if ($deleteCommand.completed) {
-      router.push("/category");
-    }
+  if ($deleteCommand.completed) {
+    router.push("/category");
   }
 
   const command = category.saveCommand;
 
-  $: {
-    command.disabled =
-      !valid || !session.hasEntitlement("konsum.category.modify");
-  }
+  command.disabled =
+    !valid || !session.hasEntitlement("konsum.category.modify");
 </script>
 
 {#if category}
@@ -35,7 +31,7 @@
     <CategoryCard {category} bind:valid />
     <div class="button-group">
       <CommandButton {command} />
-      <CommandButton command={new ConfirmCommand(deleteCommand)} />  
+      <CommandButton command={new ConfirmCommand(deleteCommand)} />
     </div>
   </form>
 
