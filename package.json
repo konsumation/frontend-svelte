@@ -93,6 +93,7 @@
     "dependencies": {
       "konsum": ">=6.11.16"
     },
+    "example": true,
     "frontend": true,
     "http.api.path": "${http.path}/api",
     "http.path": "${http.base.path}/konsum",
