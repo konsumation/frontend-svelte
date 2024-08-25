@@ -52,11 +52,11 @@
     "svelte-guard-history-router": "^6.1.2",
     "svelte-session-manager": "^3.0.1",
     "svelte-websocket-store": "^1.1.34",
-    "the-new-css-reset": "^1.9.0"
+    "the-new-css-reset": "^1.11.3"
   },
   "devDependencies": {
     "@konsumation/db-test": "^4.2.15",
-    "@konsumation/konsum": "^6.11.28",
+    "@konsumation/konsum": "^6.11.29",
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/github": "^10.1.7",
