@@ -47,7 +47,7 @@
     "pacote": "^18.0.6",
     "streamsaver": "^2.0.6",
     "svelte-command": "^3.0.3",
-    "svelte-common": "^6.15.6",
+    "svelte-common": "^6.15.7",
     "svelte-entitlement": "^2.0.2",
     "svelte-guard-history-router": "^6.1.2",
     "svelte-session-manager": "^3.0.1",
