@@ -65,11 +65,11 @@
     "ava": "^6.1.3",
     "c8": "^10.1.2",
     "documentation": "^14.0.3",
-    "npm-pkgbuild": "^15.6.0",
+    "npm-pkgbuild": "^15.6.1",
     "semantic-release": "^24.1.2",
     "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1",
-    "svelte": "^5.0.0-next.266",
+    "svelte": "^5.0.0-next.268",
     "testcafe": "^3.6.2",
     "vite": "^5.4.9",
     "vite-plugin-compression2": "^1.3.0"
