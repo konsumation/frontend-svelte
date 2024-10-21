@@ -42,7 +42,7 @@
   "dependencies": {
     "@konsumation/model": "^7.3.0",
     "imask": "^7.6.1",
-    "layercake": "^8.3.4",
+    "layercake": "^8.4.0",
     "mf-styling": "^3.2.4",
     "pacote": "^20.0.0",
     "streamsaver": "^2.0.6",
