@@ -59,7 +59,7 @@
     "@konsumation/konsum": "^6.11.31",
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/exec": "^6.0.3",
-    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/github": "^11.0.1",
     "@semantic-release/release-notes-generator": "^14.0.1",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
     "ava": "^6.2.0",
