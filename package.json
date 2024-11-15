@@ -48,9 +48,9 @@
     "streamsaver": "^2.0.6",
     "svelte-command": "^3.0.7",
     "svelte-common": "^6.15.29",
-    "svelte-entitlement": "^2.0.11",
+    "svelte-entitlement": "^2.0.12",
     "svelte-guard-history-router": "^6.1.2",
-    "svelte-session-manager": "^3.0.10",
+    "svelte-session-manager": "^3.0.11",
     "svelte-websocket-store": "^1.1.34",
     "the-new-css-reset": "^1.11.3"
   },
