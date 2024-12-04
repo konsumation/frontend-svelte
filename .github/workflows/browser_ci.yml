@@ -22,6 +22,10 @@ jobs:
           - firefox
         node-version:
           - 22.12.0
+          - --delete-- 22.10.0
+          - --delete-- 22.11.0
+          - 22.10.0
+          - 22.11.0
         firefox:
           - latest
     steps:
@@ -85,7 +89,7 @@ jobs:
       - name: prepare node
         uses: actions/setup-node@v4.1.0
         with:
-          node-version: 22.12.0
+          node-version: 22.11.0
           cache: npm
           cache-dependency-path: package-lock.json
       - run: npm ci
