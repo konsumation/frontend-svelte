@@ -22,7 +22,7 @@
       "name": "Konstantin Karpman"
     }
   ],
-  "license": "BSD-2-Clause",
+  "license": "0BSD",
   "scripts": {
     "prepare": "node --run prepare:vite",
     "prepare:vite": "vite build",
