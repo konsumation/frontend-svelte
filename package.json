@@ -43,7 +43,7 @@
     "@konsumation/model": "^7.3.0",
     "imask": "^7.6.1",
     "layercake": "^8.4.2",
-    "mf-styling": "^3.2.7",
+    "mf-styling": "^3.2.9",
     "pacote": "^21.0.0",
     "streamsaver": "^2.0.6",
     "svelte-command": "^3.0.20",
