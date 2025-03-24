@@ -46,7 +46,7 @@
     "mf-styling": "^3.2.12",
     "pacote": "^21.0.0",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^3.0.25",
+    "svelte-command": "^3.0.26",
     "svelte-common": "^6.18.7",
     "svelte-entitlement": "^2.0.35",
     "svelte-guard-history-router": "^6.1.2",
