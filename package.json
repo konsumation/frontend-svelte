@@ -50,7 +50,7 @@
     "svelte-common": "^6.19.15",
     "svelte-entitlement": "^2.0.43",
     "svelte-guard-history-router": "^6.1.2",
-    "svelte-session-manager": "^3.0.44",
+    "svelte-session-manager": "^3.0.45",
     "svelte-websocket-store": "^1.1.34",
     "the-new-css-reset": "^1.11.3"
   },
@@ -69,7 +69,7 @@
     "semantic-release": "^24.2.5",
     "stylelint": "^16.20.0",
     "stylelint-config-standard": "^38.0.0",
-    "svelte": "^5.34.3",
+    "svelte": "^5.34.5",
     "testcafe": "^3.7.2",
     "vite": "^6.3.5",
     "vite-plugin-compression2": "^2.0.1"
