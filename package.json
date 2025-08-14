@@ -46,7 +46,7 @@
     "mf-styling": "^3.2.13",
     "pacote": "^21.0.0",
     "streamsaver": "^2.0.6",
-    "svelte-command": "^3.0.37",
+    "svelte-command": "^3.0.38",
     "svelte-common": "^6.19.29",
     "svelte-entitlement": "^2.0.47",
     "svelte-guard-history-router": "^6.1.2",
@@ -76,7 +76,7 @@
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.8",
-    "mf-hosting-frontend": "^3.9.4"
+    "mf-hosting-frontend": "^3.9.5"
   },
   "repository": {
     "type": "git",
