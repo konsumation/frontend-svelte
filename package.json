@@ -42,9 +42,9 @@
   "dependencies": {
     "@konsumation/model": "^7.3.3",
     "imask": "^7.6.1",
-    "layercake": "^10.0.0",
+    "layercake": "^10.0.1",
     "mf-styling": "^3.2.13",
-    "pacote": "^21.0.0",
+    "pacote": "^21.0.1",
     "streamsaver": "^2.0.6",
     "svelte-command": "^3.0.39",
     "svelte-common": "^6.19.33",
