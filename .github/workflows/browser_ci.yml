@@ -31,7 +31,7 @@ jobs:
           firefox-version: ${{ matrix.firefox }}
       - name: checkout
         uses: actions/checkout@v5.0.0
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: screenshots-${{ matrix.browser }}
           path: ${{ github.workspace }}/build/test/**/*
