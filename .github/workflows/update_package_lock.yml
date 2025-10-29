@@ -12,6 +12,8 @@ jobs:
       matrix:
         node-version:
           - 24.10.0
+          - --delete-- 24.10.0
+          - 24.11.0
         browser:
           - chrome
     steps:
