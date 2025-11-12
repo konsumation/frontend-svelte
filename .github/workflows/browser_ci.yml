@@ -23,6 +23,8 @@ jobs:
           - firefox
         node-version:
           - 24.11.0
+          - --delete-- 24.11.0
+          - 24.11.1
         firefox:
           - latest
     steps:
