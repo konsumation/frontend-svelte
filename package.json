@@ -41,7 +41,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@konsumation/model": "^7.3.3",
+    "@konsumation/model": "^7.3.4",
     "imask": "^7.6.1",
     "layercake": "^10.0.2",
     "mf-styling": "^3.2.16",
