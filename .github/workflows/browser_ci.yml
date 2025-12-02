@@ -98,6 +98,6 @@ jobs:
           PKGEXT: .pkg.tar.xz
       - uses: actions/setup-node@v6.0.0
         with:
-          node-version: 22.7.0
+          node-version: 24.11.1
           cache: npm
           cache-dependency-path: package-lock.json
