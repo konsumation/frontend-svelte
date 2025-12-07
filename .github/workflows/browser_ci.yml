@@ -26,17 +26,8 @@ jobs:
         firefox:
           - latest
     steps:
-      - uses: browser-actions/setup-firefox@latest
-        with:
-          firefox-version: ${{ matrix.firefox }}
       - name: checkout
         uses: actions/checkout@v6.0.1
-      - uses: actions/upload-artifact@v5
-        with:
-          name: screenshots-${{ matrix.browser }}
-          path: ${{ github.workspace }}/build/test/**/*
-          retention-days: 3
-        if: always()
       - name: prepare node
         uses: actions/setup-node@v6.1.0
         with:
@@ -57,6 +48,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
           cache-dependency-path: package-lock.json
+      - uses: actions/upload-artifact@v5
+        with:
+          name: screenshots-${{ matrix.browser }}
+          path: ${{ github.workspace }}/build/test/**/*
+          retention-days: 3
+        if: always()
+      - uses: browser-actions/setup-firefox@latest
+        with:
+          firefox-version: ${{ matrix.firefox }}
       - run: npm cit
         env:
           BROWSER: ${{ matrix.browser }}
@@ -70,6 +70,14 @@ jobs:
       pull-requests: write
       id-token: write
     steps:
+      - name: checkout
+        uses: actions/checkout@v6.0.1
+      - name: prepare node
+        uses: actions/setup-node@v6.1.0
+        with:
+          node-version: 24.11.1
+      - name: install
+        run: npm ci
       - name: install dependencies
         run: |
           if [ ! -f /usr/bin/pacman ]
@@ -79,15 +87,6 @@ jobs:
           wget https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
           sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
           fi
-      - name: checkout
-        uses: actions/checkout@v6.0.1
-      - name: prepare node
-        uses: actions/setup-node@v6.1.0
-        with:
-          node-version: 24.11.1
-      - run: npm ci
-      - name: install
-        run: npm ci
       - name: release
         run: npx semantic-release
         env:
@@ -101,3 +100,4 @@ jobs:
           node-version: 24.11.1
           cache: npm
           cache-dependency-path: package-lock.json
+      - run: npm ci
