@@ -7,6 +7,7 @@ doc
 .vscode
 .github
 *.map
+vite.config.mts
 pkg
 vite.config.mts
 .stylelintrc.json
