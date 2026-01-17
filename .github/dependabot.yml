@@ -1,5 +1,13 @@
 version: 2
 updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+    commit-message:
+      prefix: "chore(action):"
+    labels:
+      - build dependencies
   - package-ecosystem: npm
     directory: /
     schedule:
@@ -17,3 +25,14 @@ updates:
       prefix: "chore(action):"
     labels:
       - dependencies
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+    cooldown:
+      default-days: 2
+    commit-message:
+      prefix: "fix(deps):"
+      prefix-development: "chore(deps):"
+    labels:
+      - npm dependencies
