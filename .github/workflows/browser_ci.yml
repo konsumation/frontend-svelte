@@ -24,6 +24,8 @@ jobs:
         node-version:
           - 24.11.1
           - 24.13.0
+          - --delete-- 24.13.0
+          - 24.13.1
         firefox:
           - latest
     steps:
