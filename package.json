@@ -51,7 +51,7 @@
     "svelte-common": "^6.19.72",
     "svelte-entitlement": "^2.0.66",
     "svelte-guard-history-router": "^7.0.15",
-    "svelte-session-manager": "^3.0.81",
+    "svelte-session-manager": "^3.0.82",
     "svelte-websocket-store": "^1.2.7",
     "the-new-css-reset": "^1.11.3"
   },
