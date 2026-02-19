@@ -22,12 +22,12 @@ export default defineConfig(async ({ command, mode }) => {
   const first = await res.next();
   const pkg = first.value;
   const properties = pkg.properties;
-  const base = properties["http.path"]; // CF_PAGES automatically uses value from mf-hosting-cloudflare
-  const api = properties["http.api.path"];
+  const base = properties["http_path"]; // CF_PAGES automatically uses value from mf-hosting-cloudflare
+  const api = properties["http_api_path"];
   const production = mode === "production";
 
-  let frontend = properties["http.origin"] + properties["http.path"];
-  let backend = properties["http.origin"] + properties["http.api.path"];
+  let frontend = properties["http_origin"] + properties["http_path"];
+  let backend = properties["http_origin"] + properties["http_api_path"];
   let rewrite = path => path.substring(api.length);
 
   if (!production) {
