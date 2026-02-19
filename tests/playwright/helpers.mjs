@@ -8,20 +8,27 @@ export const USERS = {
 
 /**
  * Logs in via the login modal.
- * Navigates to /login first if the modal isn't already open.
+ * We first load the base URL, then click the Categories nav link to
+ * trigger the redirectGuard, which shows the login modal in the Outlet.
  */
 export async function login(page, user = USERS.user1) {
-  const passwordField = page.locator("#password");
-
-  if (!(await passwordField.isVisible())) {
-    await page.goto(`${BASE}/login`);
+  // Load base URL first — lets the SPA mount properly
+  if (!page.url().startsWith(BASE)) {
+    await page.goto(BASE);
+    await page.waitForLoadState("networkidle");
   }
+
+  // Click the Categories link — the guard will redirect to /login and show the modal
+  await page.locator("a", { hasText: "Categories" }).first().click();
+
+  const passwordField = page.locator("#password");
+  await passwordField.waitFor({ state: "visible", timeout: 10_000 });
 
   await page.locator("#username").fill(user.username);
   await page.locator("#password").fill(user.password);
-  await page.locator("button[type=submit], form button").first().click();
+  await page.locator("button[type=submit]").click();
 
-  // Wait until the modal closes (login modal disappears after success)
+  // Wait until the modal closes (redirect back after successful login)
   await passwordField.waitFor({ state: "hidden", timeout: 10_000 });
 }
 
@@ -29,9 +36,9 @@ export async function login(page, user = USERS.user1) {
  * Logs out via the user dropdown menu.
  */
 export async function logout(page) {
-  // Open user dropdown
   await page.locator(".dropdown-trigger").click();
-  await page.locator("text=Logout").first().click();
+  await page.locator("a", { hasText: /Logout/i }).first().click();
+  await page.waitForLoadState("networkidle");
 }
 
 /**
