@@ -96,7 +96,7 @@ export default defineConfig(async ({ command, mode }) => {
     ],
     optimizeDeps: {
       exclude: [
-        ...Object.keys(pkg.dependencies).filter(d => d.startsWith("svelte"))
+        ...Object.keys(pkg.dependencies ?? {}).filter(d => d.startsWith("svelte"))
       ]
     },
 
