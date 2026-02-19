@@ -38,7 +38,8 @@
     "lint:css": "stylelint ./src**/*.css",
     "lint:docs": "documentation lint ./src**/*.mjs",
     "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:playwright": "playwright test"
   },
   "dependencies": {
     "@konsumation/model": "^7.3.4",
@@ -73,7 +74,8 @@
     "svelte": "^5.53.0",
     "testcafe": "^3.7.4",
     "vite": "^7.3.1",
-    "vite-plugin-compression2": "^2.4.0"
+    "vite-plugin-compression2": "^2.4.0",
+    "@playwright/test": "^1.50.0"
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^2.0.0",
