@@ -1,16 +1,31 @@
 <script>
   import imask from "../imask.mjs";
 
-  let { category, valid = false } = $props();
+  let { category, valid = $bindable(false) } = $props();
 
-  valid =
-    category.name?.length &&
-    category.description?.length &&
-    category.unit?.length &&
-    category.fractionalDigits;
+  // Local $state vars so $effect can track changes reactively
+  let name = $state(category.name ?? "");
+  let description = $state(category.description ?? "");
+  let unit = $state(category.unit ?? "");
+  let fractionalDigits = $state(category.fractionalDigits ?? "");
+
+  // Sync local state back to category and compute valid
+  $effect(() => {
+    category.name = name;
+    category.description = description;
+    category.unit = unit;
+    category.fractionalDigits = fractionalDigits;
+
+    valid = Boolean(
+      name?.length &&
+        description?.length &&
+        unit?.length &&
+        fractionalDigits
+    );
+  });
 
   function accept({ detail: maskRef }) {
-    category.fractionalDigits = maskRef.value;
+    fractionalDigits = maskRef.value;
   }
 </script>
 
@@ -22,7 +37,7 @@
     placeholder="Name"
     size="20"
     required
-    bind:value={category.name}
+    bind:value={name}
   />
 </label>
 
@@ -34,7 +49,7 @@
     placeholder="Description"
     size="20"
     required
-    bind:value={category.description}
+    bind:value={description}
   />
 </label>
 <label for="unit">
@@ -45,7 +60,7 @@
     placeholder="Unit"
     size="20"
     required
-    bind:value={category.unit}
+    bind:value={unit}
   />
 </label>
 
@@ -58,6 +73,6 @@
     size="20"
     required
     use:imask={{ mask: Number, scale: 0, signed: false, min: 0, max: 5 }}
-    bind:value={category.fractionalDigits}
+    bind:value={fractionalDigits}
   />
 </label>

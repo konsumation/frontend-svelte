@@ -2,6 +2,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests/playwright",
+  timeout: 30_000,
   fullyParallel: false, // tests depend on each other (state in DB)
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
@@ -27,6 +28,8 @@ export default defineConfig({
     command: "npm run start",
     url: "http://localhost:5173/services/konsum",
     reuseExistingServer: !process.env.CI,
-    timeout: 30_000,
+    timeout: 60_000,
+    stdout: "pipe",
+    stderr: "pipe",
   },
 });

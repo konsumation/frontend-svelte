@@ -5,13 +5,13 @@
   import { session } from "../util.mjs";
 
   const category = new Category();
-  let valid;
+  let valid = $state(false);
 
   const command = category.saveCommand;
 
-  $: {
+  $effect(() => {
     command.disabled = !valid || !session.hasEntitlement("konsum.category.add");
-  }
+  });
 </script>
 
 <h1>New Category</h1>
