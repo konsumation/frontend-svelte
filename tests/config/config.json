@@ -27,7 +27,7 @@
       },
       "admin1": {
         "password": "secret",
-        "entitlements": ["konsum", "konsum.admin.backup", "konsum.admin.stop"]
+        "entitlements": ["konsum", "konsum.admin.backup", "konsum.admin.stop", "konsum.category.add"]
       }
     },
     "jwt": {
