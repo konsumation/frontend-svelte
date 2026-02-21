@@ -1,9 +1,9 @@
 export const BASE = "http://localhost:5173/services/konsum";
 
 export const USERS = {
-  user1: { username: "user1", password: "secret" },
-  user2: { username: "user2", password: "secret" },
-  admin1: { username: "admin1", password: "secret" },
+  user1: { username: "user1", password: "secret_1234" },
+  user2: { username: "user2", password: "secret_1234" },
+  admin1: { username: "admin1", password: "secret_1234" },
 };
 
 /**

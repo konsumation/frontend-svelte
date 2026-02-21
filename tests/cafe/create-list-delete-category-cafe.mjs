@@ -44,7 +44,7 @@ test("category add forbidden", async t => {
   const category = "CAT3";
 
   await t.navigateTo(`${base}/category/add`);
-  await login(t, { user: "user2", password: "secret" });
+  await login(t, { user: "user2", password: "secret_1234" });
 
   await t
     .typeText("#name", category, { replace: true })

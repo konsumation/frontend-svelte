@@ -2,7 +2,7 @@ import { Selector } from "testcafe";
 
 export const base = "http://localhost:5173";
 
-export async function login(t, data = { user: "user1", password: "secret" }) {
+export async function login(t, data = { user: "user1", password: "secret_1234" }) {
   if (await Selector("#password").exists) {
     await t
       .typeText("#username", data.user, { replace: true })
