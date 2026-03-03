@@ -1,23 +1,27 @@
 <script>
   import imask from "../imask.mjs";
-  import { onDestroy } from "svelte";
-  import { dateFormatter } from "svelte-common";
   import { CommandButton } from "svelte-command";
   import { Value } from "@konsumation/model";
   import { parseDate } from "../date.mjs";
 
-  let { category, value = "", date = "" } = $props();
+  let { category } = $props();
 
-  //$: time = dateFormatter.format($now);
+  let value = $state("");
+  let date = $state("");
 
-  const unsubscribe = category.latest.subscribe(v => {
-    if (v !== undefined) {
-      value = v.value;
-      date = dateFormatter.format(v.date);
-    }
+  $effect(() => {
+    const unsubscribe = category.latest.subscribe(v => {
+      if (v !== undefined) {
+        value = v.value;
+        const d = new Date(v.date);
+        if (!isNaN(d)) {
+          const pad = n => String(n).padStart(2, "0");
+          date = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+        }
+      }
+    });
+    return unsubscribe;
   });
-
-  onDestroy(() => unsubscribe());
 
   const options = {
     mask: Number,
@@ -43,10 +47,9 @@
     });
   });
 
-  let valuePlaceholder = "0";
-  if (category.fractionalDigits > 0) {
-    valuePlaceholder + "." + "0".repeat(category.fractionalDigits);
-  }
+  const valuePlaceholder = $derived(
+    category.fractionalDigits > 0 ? "0." + "0".repeat(category.fractionalDigits) : "0"
+  );
 </script>
 
 <fieldset>
@@ -54,8 +57,7 @@
     Time<input
       id="{category.name}_time"
       type="datetime-local"
-      placeholder="31.12.2000, 23:59:59"
-      size="16"
+      step="1"
       required
       bind:value={date}
     />
@@ -70,8 +72,8 @@
       size="16"
       required
       use:imask={options}
-      on:accept={accept}
-      bind:value
+      onaccept={accept}
+      bind:value={value}
     />
   </label>
   <CommandButton {command} />
