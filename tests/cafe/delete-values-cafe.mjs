@@ -1,5 +1,5 @@
 import { Selector } from "testcafe";
-import { base, login, clickLink } from "./helpers/util.mjs";
+import { base, login, clickLink, setDateTimeLocal } from "./helpers/util.mjs";
 
 fixture`Delete Values`.page`${base}`;
 
@@ -12,13 +12,6 @@ const entries = [
   { time: "2006-12-25T22:22:22", value: "1.4" },
   { time: "2006-12-26T22:22:22", value: "1.9" }
 ];
-
-/*
-delete action need to be fullfilles, chrome has error:
-/testcafe-core.js:1 The specified value "23.12.2006, 22:22:22" does not conform to the required format.  The format is "yyyy-MM-ddThh:mm" followed by optional ":ss" or ":ss.SSS".
-
-find one element to delete and check if this doesn exists more
-*/
 
 test("delete values from a category", async t => {
   await t.navigateTo(`${base}/category/add`);
@@ -33,10 +26,8 @@ test("delete values from a category", async t => {
   await clickLink(t, "/insert");
 
   for (const entry of entries) {
-    await t
-      .typeText(`#${category}_time`, entry.time, { replace: true })
-      .typeText(`#${category}_value`, entry.value, { replace: true });
-
+    await setDateTimeLocal(`#${category}_time`, entry.time);
+    await t.typeText(`#${category}_value`, entry.value, { replace: true });
     await t.click(Selector("button").withText(`Insert ${category}`));
   }
 
@@ -49,14 +40,11 @@ test("delete values from a category", async t => {
 
   await t.expect(Selector("td").withText("1.9").exists).ok();
 
-  //find one element to delete and check if this doesn exists more
-  //const link =  Selector('#last');
-  //console.log(await link.textContent)
   await t.setNativeDialogHandler(() => true).click(Selector("#last > td:nth-child(3) > button"));
-  
+
   await t.takeScreenshot({
     path: "category_delete_value_after_delete.png"
   });
 
-  await t.expect(Selector("td").withText("1.9").exists).notOk();
+  await t.expect(Selector("td").withText("1.9").exists).notOk({ timeout: 5000 });
 });

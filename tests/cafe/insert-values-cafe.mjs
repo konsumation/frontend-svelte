@@ -1,5 +1,5 @@
 import { Selector } from "testcafe";
-import { base, login, clickLink } from "./helpers/util.mjs";
+import { base, login, clickLink, setDateTimeLocal } from "./helpers/util.mjs";
 
 fixture`Insert Values`.page`${base}`;
 
@@ -30,10 +30,8 @@ test("insert values to a category", async t => {
   });
 
   for (const entry of entries) {
-    await t
-      .typeText(`#${category}_time`, entry.time, { replace: true })
-      .typeText(`#${category}_value`, entry.value, { replace: true });
-
+    await setDateTimeLocal(`#${category}_time`, entry.time);
+    await t.typeText(`#${category}_value`, entry.value, { replace: true });
     await t.click(Selector("button").withText(`Insert ${category}`));
   }
 
