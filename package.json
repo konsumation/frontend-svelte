@@ -59,6 +59,7 @@
   "devDependencies": {
     "@konsumation/db-test": "^4.2.19",
     "@konsumation/konsum": "^6.11.31",
+    "@playwright/test": "^1.50.0",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/github": "^12.0.6",
@@ -74,8 +75,7 @@
     "svelte": "^5.53.6",
     "testcafe": "^3.7.4",
     "vite": "^8.0.0",
-    "vite-plugin-compression2": "^2.5.0",
-    "@playwright/test": "^1.50.0"
+    "vite-plugin-compression2": "^2.5.0"
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^2.0.0",

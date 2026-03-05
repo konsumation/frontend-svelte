@@ -1,5 +1,7 @@
 import { Selector, ClientFunction } from "testcafe";
 
+// TestCafe tests use the root path — the Vite dev server proxies /api to konsum backend.
+// Playwright tests use /services/konsum since they test the full production-like path.
 export const base = "http://localhost:5173";
 
 export async function login(t, data = { user: "user1", password: "secret_1234" }) {

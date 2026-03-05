@@ -16,6 +16,11 @@
 
   let entries = $state($route.value ?? []);
 
+  // Keep entries in sync when route value changes (e.g. navigating to different category)
+  $effect(() => {
+    entries = $route.value ?? [];
+  });
+
   setTimeout(() => {
     if (router.path.match(/#last/)) {
       const last = document.getElementById("last");

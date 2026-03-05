@@ -9,13 +9,16 @@
   let unit = $state(category.unit ?? "");
   let fractionalDigits = $state(category.fractionalDigits ?? "");
 
-  // Sync local state back to category and compute valid
+  // Sync local state back to category — pure side effect, no valid computation
   $effect(() => {
     category.name = name;
     category.description = description;
     category.unit = unit;
     category.fractionalDigits = fractionalDigits;
+  });
 
+  // valid as separate $effect — avoids potential reactivity loop
+  $effect(() => {
     valid = Boolean(
       name?.length &&
         description?.length &&

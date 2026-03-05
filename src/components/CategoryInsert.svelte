@@ -13,8 +13,10 @@
     const unsubscribe = category.latest.subscribe(v => {
       if (v !== undefined) {
         value = v.value;
-        const d = new Date(v.date);
-        if (!isNaN(d)) {
+        // v.date is already a Date object (parsed in category.mjs valueIterator)
+        const d = v.date;
+        if (d instanceof Date && !isNaN(d)) {
+          // Manual local-time formatting — toISOString() would give UTC, not local time
           const pad = n => String(n).padStart(2, "0");
           date = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
         }
