@@ -34,10 +34,19 @@ test("category add list remove", async t => {
 
   await t.click(Selector("button").withText("Delete"));
 
-  await clickLink(t, "/category");
+  // after delete, Category.svelte should redirect to /category automatically
+  await t
+    .expect(Selector("a").withText("New Category").exists)
+    .ok("should have redirected to category list after delete", { timeout: 5000 });
+
   await t.takeScreenshot({
     path: "category_add_list_remove_overview_after_delete.png"
   });
+
+  // verify the category is actually gone from the list
+  await t
+    .expect(Selector("td").withText(category).exists)
+    .notOk(`Category "${category}" should no longer appear in the list after deletion`);
 });
 
 test("category add forbidden", async t => {
