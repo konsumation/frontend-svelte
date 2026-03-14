@@ -11,10 +11,15 @@
   let { router } = $props();
 
   const route = router.route;
-  const entries = $route.value;
-
   const categoryRoute = route.parent.parent;
   const category = $categoryRoute.value;
+
+  let entries = $state($route.value ?? []);
+
+  // Keep entries in sync when route value changes (e.g. navigating to different category)
+  $effect(() => {
+    entries = $route.value ?? [];
+  });
 
   setTimeout(() => {
     if (router.path.match(/#last/)) {
@@ -24,8 +29,6 @@
       }
     }
   }, 1000);
-
-  //TODO refresh Site after delete value action
 
   const sortBy = keyPrefixStore(router.searchParamStore, "sort.");
   const filterBy = keyPrefixStore(router.searchParamStore, "filter.");
@@ -48,7 +51,7 @@
       </tr>
     </thead>
     <tbody class="striped hoverable">
-      {#each route.value
+      {#each entries
         .filter(filter($filterBy))
         .sort(sorter($sortBy)) as entry, i}
         <tr id={i === 0 ? "first" : i === entries.length - 1 ? "last" : ""}>
@@ -60,7 +63,7 @@
             <CommandButton
               command={new ConfirmCommand(
                 category.deleteValueCommand(entry.date, async response => {
-                  route.value = entries.splice(i, 1);
+                  entries = entries.filter(e => e.date !== entry.date);
                 })
               )}
             /></td

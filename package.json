@@ -30,15 +30,16 @@
     "startkonsum": "node_modules/@konsumation/konsum/src/konsum-cli.mjs -c tests/config start",
     "start": "vite",
     "test": "node --run test:ava && node --run test:cafe",
-    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*-cafe.mjs --esm -s build/test --page-request-timeout 5000 --app-init-delay 8000 --app vite",
+    "test:cafe": "testcafe ${BROWSER:-chrome}:headless tests/cafe/*-cafe.mjs --esm -s build/test --page-request-timeout 5000 --app-init-delay 8000 --app vite",
     "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
     "docs": "documentation readme --section=API ./src**/*.mjs",
     "lint": "node --run lint:css && node --run lint:docs",
     "lint:css": "stylelint ./src**/*.css",
     "lint:docs": "documentation lint ./src**/*.mjs",
-    "cafeHead": "testcafe chrome tests/cafe/deleteValues.js -s build/test",
-    "preview": "vite preview"
+    "cafeHead": "testcafe chrome tests/cafe/insert-values-cafe.mjs -s build/test --page-request-timeout 5000 --app-init-delay 8000 --app vite",
+    "preview": "vite preview",
+    "test:playwright": "playwright test"
   },
   "dependencies": {
     "@konsumation/model": "^7.3.4",
@@ -58,6 +59,7 @@
   "devDependencies": {
     "@konsumation/db-test": "^4.2.19",
     "@konsumation/konsum": "^6.11.31",
+    "@playwright/test": "^1.50.0",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/github": "^12.0.6",
