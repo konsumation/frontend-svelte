@@ -5,7 +5,7 @@
   "auth": {
     "users": {
       "user1": {
-        "password": "secret",
+        "password": "secret_1234",
         "entitlements": [
           "konsum",
           "konsum.category.add",
@@ -22,12 +22,12 @@
         ]
       },
       "user2": {
-        "password": "secret",
+        "password": "secret_1234",
         "entitlements": ["konsum"]
       },
       "admin1": {
-        "password": "secret",
-        "entitlements": ["konsum", "konsum.admin.backup", "konsum.admin.stop"]
+        "password": "secret_1234",
+        "entitlements": ["konsum", "konsum.admin.backup", "konsum.admin.stop", "konsum.category.add"]
       }
     },
     "jwt": {

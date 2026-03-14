@@ -11,3 +11,4 @@ bundle.*
 *.map
 bun.lockb
 dist
+test-results/

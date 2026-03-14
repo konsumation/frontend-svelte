@@ -15,9 +15,13 @@
 
   deleteCommand.disabled = !session.hasEntitlement("konsum.category.delete");
 
-  if ($deleteCommand.completed) {
-    router.push("/category");
-  }
+  $effect(() => {
+    return deleteCommand.subscribe(cmd => {
+      if (cmd.completed) {
+        router.push("/category");
+      }
+    });
+  });
 
   const command = category.saveCommand;
 

@@ -23,7 +23,7 @@ jobs:
           - firefox
         node-version:
           - 24.11.1
-          - 24.13.1
+          - 24.14.0
         firefox:
           - latest
     steps:
@@ -38,13 +38,13 @@ jobs:
         env:
           BROWSER: ${{ matrix.browser }}
       - name: upload artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: screenshots-${{ matrix.browser }}
           path: ${{ github.workspace }}/build/test/**/*
           retention-days: 3
         if: always()
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         with:
           name: screenshots-${{ matrix.browser }}
           path: ${{ github.workspace }}/build/test/**/*
@@ -75,7 +75,7 @@ jobs:
       - name: prepare node
         uses: actions/setup-node@v6.2.0
         with:
-          node-version: 24.13.1
+          node-version: 24.14.0
       - name: install
         run: npm ci
       - name: install dependencies

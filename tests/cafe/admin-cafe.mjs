@@ -7,7 +7,7 @@ const category = "CAT3";
 test("category insert and backup", async t => {
   await t.navigateTo(`${base}/category/add`);
 
-  await login(t, { user: "admin1", password: "secret" });
+  await login(t, { user: "admin1", password: "secret_1234" });
   await t.takeScreenshot({
     path: "admin_after_login.png"
   });

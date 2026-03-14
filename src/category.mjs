@@ -41,6 +41,7 @@ export async function* valueIterator(transition) {
   }
 
   for (const value of await response.json()) {
+    value.date = new Date(value.date);
     yield value;
   }
 }
