@@ -14,14 +14,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v6.0.3
       - name: git checkout
         run: git checkout
         if: ${{ github.event_name == 'pull_request' }}
       - name: prepare node
         uses: actions/setup-node@v6.4.0
         with:
-          node-version: 26.2.0
+          node-version: 26.3.0
       - name: prepare CodeQL
         uses: github/codeql-action/init@v4
         with:
