@@ -27,6 +27,8 @@ jobs:
           - 24.15.0
           - 26.1.0
           - 26.2.0
+          - --delete-- 26.1.0
+          - 26.3.0
         firefox:
           - latest
     steps:
