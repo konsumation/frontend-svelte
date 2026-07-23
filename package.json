@@ -44,7 +44,7 @@
   "dependencies": {
     "@konsumation/model": "^7.3.4",
     "imask": "^7.6.1",
-    "layercake": "^10.0.2",
+    "layercake": "^10.0.3",
     "mf-styling": "^3.3.27",
     "pacote": "^22.0.0",
     "streamsaver": "^2.0.6",
