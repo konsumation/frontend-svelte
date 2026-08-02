@@ -27,6 +27,7 @@ jobs:
           - 24.15.0
           - 26.4.0
           - 26.5.0
+          - 26.5.1
         firefox:
           - latest
     steps:
