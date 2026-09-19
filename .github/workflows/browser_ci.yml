@@ -31,6 +31,7 @@ jobs:
           - 26.7.0
           - 26.8.1
           - 26.8.2
+          - 26.9.0
         firefox:
           - latest
     steps:
@@ -82,7 +83,7 @@ jobs:
       - name: prepare node
         uses: actions/setup-node@v7.0.0
         with:
-          node-version: 26.8.2
+          node-version: 26.9.0
       - name: install
         run: npm ci
       - name: install dependencies
